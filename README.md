@@ -1,1 +1,1 @@
-# lcn-design-system
+# LCN Design System

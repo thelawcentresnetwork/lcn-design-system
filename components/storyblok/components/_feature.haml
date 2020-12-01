@@ -1,0 +1,5 @@
+.card.mb-4.feature{ class: "feature_#{blok['title'].downcase.parameterize(separator: "_")}" }
+  .card-header
+    =blok['title']
+  .card-body
+    =simple_format(blok['content'])

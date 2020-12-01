@@ -1,0 +1,41 @@
+.transformation.mb-4.pt-4
+
+  -if @data['content']['introduction'].present?
+
+    %section.w-md-50.mx-auto.text-center.introduction.pt-5.pb-5.px-4.px-md-0
+
+      .text-center.mb-3.mt-3.pt-3
+        =link_to root_path, class: 'navbar-brand' do
+          =image_pack_tag "logo-lcn-dark.gif", alt: "Law Centres Network"
+
+      .storyblock.pb-3.mb-2
+        -@data['content']['introduction'].each do |blok|
+          =blok['_editable'].html_safe
+          =render partial: "components/storyblok/blocks/#{blok['component'].downcase.parameterize(separator: "_")}", locals: { blok: blok }
+
+  -if @data['content']['stages'].present?
+
+    %section.stages.py-5.px-5
+
+      .storyblock.pt-3.pb-2
+        -@data['content']['stages'].each do |blok|
+          =blok['_editable'].html_safe if blok['_editable'].present?
+          =render partial: "components/storyblok/blocks/#{blok['component'].downcase.parameterize(separator: "_")}", locals: { blok: blok }
+
+  -if @data['content']['how'].present?
+
+    %section.w-md-50.mx-auto.text-center.how.pt-5.pb-5.px-5.px-md-0
+
+      .storyblock.py-4
+        =@lcn_client.render(@data['content']['how']).html_safe
+
+  -if @data['content']['body'].present?
+
+    %section.body
+
+      .storyblock
+        -@data['content']['body'].each do |blok|
+          =blok['_editable'].html_safe if blok['_editable'].present?
+          =render partial: "components/storyblok/blocks/#{blok['component'].downcase.parameterize(separator: "_")}", locals: { blok: blok }
+
+=render "components/storyblok/preview"

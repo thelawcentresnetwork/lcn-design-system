@@ -1,0 +1,113 @@
+body, p {
+  color: $body-text-color;
+  font-size: 100%;
+  line-height: 1.5em;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+body.dashboard, body.public {
+  h1, h2, h3, h4, h5, h6 {
+    //font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  }
+}
+
+body.platform {
+  font-weight: 200;
+  font-family: 'Be Vietnam', Helvetica, Arial, sans-serif;
+}
+
+h1, h2 {
+  font-weight: 400;
+  color: lighten($body-text-color,5%);
+}
+
+h3, h4, h5, h6 {
+  font-weight: 300;
+  color: lighten($body-text-color,5%);
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+a{
+  @extend %anchor;
+}
+
+%anchor{
+  color: $navigation-text-color;
+  text-decoration: none;
+  &:hover{
+    color: $navigation-text-color-hover;
+    text-decoration: underline;
+  }
+  &:active{
+    color: $navigation-text-color-active;
+    text-decoration: underline;
+  }
+  &:visited{
+    color: $navigation-text-color;
+  }
+  &.link-unstyled {
+    &:hover, &:active {
+      text-decoration: none;
+      color: darken($primary-green, 25%)
+    }
+  }
+}
+
+.help-text{
+  @extend .text-muted;
+}
+
+.text-info {
+  color: $primary-green !important;
+}
+
+.text-warning {
+  color: #ea642f !important;
+}
+
+.text-failure {
+  color: $primary-red !important;
+}
+
+.bg-warning {
+  background-color: $primary-red !important;
+}
+
+.small-text{
+  font-size: rem(14);
+}
+
+.large-text{
+  font-size: rem(18);
+}
+
+.xl-text{
+  font-size: rem(22);
+}
+
+.error-text{
+  position: relative;
+  @extend .small-text;
+  text-align: left !important;
+  color: white;
+  background-color: $error-msg-bg-color;
+  display: inline-block;
+  @extend .p-2;
+  @include border-radius(3px);
+  width: 100%;
+}
+
+strong {
+  font-weight: 400;
+  a {
+    font-weight: 300;
+  }
+}
