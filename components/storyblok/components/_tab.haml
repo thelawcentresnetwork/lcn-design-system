@@ -1,3 +1,0 @@
--tab['content'].each do |blok|
-  =blok['_editable'].html_safe if blok['_editable'].present?
-  =render partial: "components/storyblok/blocks/#{blok['component'].downcase.parameterize(separator: "_")}", locals: { blok: blok }

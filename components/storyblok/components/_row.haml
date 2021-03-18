@@ -1,4 +1,0 @@
-.row
-  -blok['columns'].each do |col|
-    =col['_editable'].html_safe if col['_editable'].present?
-    =render partial: "components/storyblok/blocks/#{col['component'].downcase.parameterize(separator: "_")}", locals: { col: col }

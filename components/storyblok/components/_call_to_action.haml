@@ -1,9 +1,0 @@
--if blok['link'].present?
-  -if blok['link']['linktype'] == 'email'
-    =link_to blok['title'], blok['link']['url'], class: "btn btn--large"
-  -elsif blok['link']['linktype'] == 'url'
-    =link_to blok['title'], blok['link']['url'], class: "btn btn--large", target: "_blank"
-  -elsif blok['link']['linktype'] == 'asset'
-    =link_to blok['title'], blok['link']['url'], class: "btn btn--large fa fa-download", target: "_blank"
-  -elsif blok['link']['linktype'] == 'story'
-    =link_to blok['title'], "/pages/#{blok['link']['url']}", class: "btn btn--large"
