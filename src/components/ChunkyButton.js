@@ -8,6 +8,7 @@ function ChunkyButton(props) {
     <Button
       {...props}
       as="a"
+      cursor="pointer"
       borderRadius="3xl"
       borderWidth="5px"
       borderColor="brand.Green"

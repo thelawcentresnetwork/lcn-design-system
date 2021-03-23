@@ -8,23 +8,20 @@ function ActionButton(props) {
     <Button
       {...props}
       as="a"
-      borderRadius="lg"
-      fontSize="0.85rem"
-      color="white"
-      bg="green.700"
-      borderLeftWidth="1px"
-      borderRightWidth="3px"
-      borderBottomWidth="3px"
-      borderColor="green.800"
-      _hover={{ bg: "green.800" }}
-      _focus={{ outline: 0 }}
-      _active={{ outline: 0 }}
-      px="5"
-      pt="5"
-      pb="1.2rem">
-      { props.icon &&
-        <ChakraAwesome color="white" mr='4' icon={['fas', props.icon]} />
-      }
+      role="group"
+      size="sm"
+      fontSize="xs"
+      py="1rem"
+      px="4"
+      cursor="pointer"
+      boxShadow="sm"
+      borderColor="gray.200"
+      fontWeight="500"
+      color="gray.600"
+      _hover={{ bg: 'gray.50', boxShadow: 'none' }}
+      _active={{ bg: 'gray.50', boxShadow: 'none' }}
+      _focus={{ bg: 'gray.50', boxShadow: 'none' }}
+      variant="outline">
       {props.children}
     </Button>
   )
