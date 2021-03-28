@@ -6,7 +6,6 @@ function ChunkyButton(props) {
 
   return (
     <Button
-      {...props}
       as="a"
       cursor="pointer"
       borderRadius="3xl"
@@ -18,10 +17,11 @@ function ChunkyButton(props) {
       _hover={{ bg: "brand.Green", color: '#fff' }}
       _focus={{  bg: "brand.Green", color: '#fff', outline: 0 }}
       _active={{  bg: "brand.Green", color: '#fff', outline: 0 }}
-      bg="white"
+      bg="transparent"
       px="4"
       pt="1.15rem"
-      pb="5">
+      pb="5"
+      {...props}>
       { props.icon &&
         <ChakraAwesome color="brand.Green" mr='3' icon={['far', props.icon]} />
       }

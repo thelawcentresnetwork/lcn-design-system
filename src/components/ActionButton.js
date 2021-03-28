@@ -6,12 +6,11 @@ function ActionButton(props) {
 
   return (
     <Button
-      {...props}
       as="a"
       role="group"
       size="sm"
-      fontSize="xs"
-      py="1rem"
+      fontSize="0.8rem"
+      py="1.1rem"
       px="4"
       cursor="pointer"
       boxShadow="sm"
@@ -21,7 +20,8 @@ function ActionButton(props) {
       _hover={{ bg: 'gray.50', boxShadow: 'none' }}
       _active={{ bg: 'gray.50', boxShadow: 'none' }}
       _focus={{ bg: 'gray.50', boxShadow: 'none' }}
-      variant="outline">
+      variant="outline"
+      {...props}>
       {props.children}
     </Button>
   )
