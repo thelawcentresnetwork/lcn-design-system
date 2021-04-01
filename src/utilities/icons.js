@@ -4,9 +4,7 @@ config.autoAddCss = false;
 import { fal } from '@fortawesome/pro-light-svg-icons'
 
 import {
-  faAngleRight,
-  faSearch,
-  faTimesCircle
+  far
 } from '@fortawesome/pro-regular-svg-icons'
 
 import {
@@ -16,9 +14,7 @@ import {
 library.add(
   fal,
   fas,
-  faAngleRight,
-  faSearch,
-  faTimesCircle
+  far
 )
 
 const icons = {}
