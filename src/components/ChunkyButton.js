@@ -9,23 +9,37 @@ function ChunkyButton(props) {
       as="a"
       cursor="pointer"
       borderRadius="3xl"
-      borderWidth="5px"
-      borderColor="brand.Green"
       borderTopLeftRadius="0"
-      color="brand.Green"
-      fontFamily="Poppins"
-      _hover={{ bg: "brand.Green", color: '#fff' }}
-      _focus={{  bg: "brand.Green", color: '#fff', outline: 0 }}
-      _active={{  bg: "brand.Green", color: '#fff', outline: 0 }}
-      bg="transparent"
-      px="4"
-      pt="1.15rem"
-      pb="5"
+      color="white"
+      bg="brand.Green"
+      fontFamily="Poppins, Helvetica"
+      _hover={{  }}
+      px="10"
+      pt="1.325rem"
+      pb="6"
+      role="group"
+      position="relative"
+      overflow="hidden"
       {...props}>
       { props.icon &&
-        <ChakraAwesome color="brand.Green" mr='3' icon={['far', props.icon]} />
+        <ChakraAwesome
+          position="absolute"
+          top="5em"
+          left="1.75em"
+          transition="top 0.5s"
+          _groupHover={{ top: '1em' }}
+          color="white"
+          mr='3'
+          icon={['fas', props.icon]} />
       }
-      {props.children}
+      <Text
+        left="0em"
+        transition="left 0.5s"
+        _groupHover={{ left: '1.1em' }}
+        position="relative"
+        as="span">
+        {props.children}
+      </Text>
     </Button>
   )
 

@@ -9,13 +9,14 @@ function ActionButton(props) {
       as="a"
       role="group"
       size="sm"
+      fontFamily="Poppins, Helvetica"
       fontSize="0.8rem"
-      py="1.1rem"
+      py="1.25rem"
       px="4"
       cursor="pointer"
       boxShadow="sm"
       borderColor="gray.200"
-      fontWeight="500"
+      fontWeight="400"
       color="gray.600"
       _hover={{ bg: 'gray.50', boxShadow: 'none' }}
       _active={{ bg: 'gray.50', boxShadow: 'none' }}
