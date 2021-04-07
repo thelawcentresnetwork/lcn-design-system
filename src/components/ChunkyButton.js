@@ -26,7 +26,7 @@ function ChunkyButton(props) {
           position="absolute"
           top="5em"
           left="1.75em"
-          transition="top 0.5s"
+          transition="top 0.3s"
           _groupHover={{ top: '1em' }}
           color="white"
           mr='3'
@@ -34,7 +34,7 @@ function ChunkyButton(props) {
       }
       <Text
         left="0em"
-        transition="left 0.5s"
+        transition="left 0.3s"
         _groupHover={{ left: '1.1em' }}
         position="relative"
         as="span">
