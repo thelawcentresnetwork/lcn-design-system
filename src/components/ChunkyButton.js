@@ -9,9 +9,11 @@ function ChunkyButton(props) {
       as="a"
       cursor="pointer"
       borderRadius="3xl"
+      borderWidth="4px"
+      borderColor="brand.Green"
       borderTopLeftRadius="0"
-      color="white"
-      bg="brand.Green"
+      color="brand.Green"
+      bg="white"
       fontFamily="Poppins, Helvetica"
       _hover={{  }}
       px="10"
@@ -28,14 +30,14 @@ function ChunkyButton(props) {
           left="1.75em"
           transition="top 0.3s"
           _groupHover={{ top: '1em' }}
-          color="white"
+          color="brand.Green"
           mr='3'
-          icon={['fas', props.icon]} />
+          icon={['far', props.icon]} />
       }
       <Text
         left="0em"
         transition="left 0.3s"
-        _groupHover={{ left: '1.1em' }}
+        _groupHover={{ left: '1em' }}
         position="relative"
         as="span">
         {props.children}
