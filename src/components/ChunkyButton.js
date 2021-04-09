@@ -18,7 +18,7 @@ function ChunkyButton(props) {
       _hover={{  }}
       px="10"
       pt="1.325rem"
-      pb="6"
+      pb="1.325rem"
       role="group"
       position="relative"
       overflow="hidden"
