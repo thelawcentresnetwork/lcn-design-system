@@ -13,7 +13,7 @@ function ChunkyButton(props) {
       borderColor="brand.Green"
       borderTopLeftRadius="0"
       color="brand.Green"
-      bg="white"
+      bg="transparent"
       fontFamily="Poppins, Helvetica"
       _hover={{  }}
       px="10"
