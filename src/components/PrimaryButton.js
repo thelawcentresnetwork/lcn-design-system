@@ -8,10 +8,13 @@ function PrimaryButton(props) {
     <Button
       as="a"
       borderRadius="lg"
-      fontSize="0.85rem"
       color="white"
       bg="green.700"
       cursor="pointer"
+      borderLeftWidth="1px"
+      borderRightWidth="3px"
+      borderBottomWidth="3px"
+      borderColor="brand.Green"
       _hover={{ bg: "brand.Green" }}
       _focus={{ outline: 0 }}
       _active={{ outline: 0 }}
