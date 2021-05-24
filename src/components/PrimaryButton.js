@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Button } from "@chakra-ui/react"
 import ChakraAwesome from './ChakraAwesome'
 
-function FormButton(props) {
+function PrimaryButton(props) {
 
   return (
     <Button
@@ -32,4 +32,4 @@ function FormButton(props) {
 
 }
 
-export default FormButton
+export default PrimaryButton

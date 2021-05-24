@@ -29,7 +29,7 @@ function ChunkyButton(props) {
           top="5em"
           left="1.75em"
           transition="top 0.3s"
-          _groupHover={{ top: '1em' }}
+          _groupHover={{ top: '0.95em' }}
           color="white"
           mr='3'
           icon={['far', props.icon]} />
