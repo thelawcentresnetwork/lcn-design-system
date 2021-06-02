@@ -30,8 +30,8 @@
     "@chakra-ui/react": "^1.4.2",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/pro-duotone-svg-icons": "^5.15.2",
     "@fortawesome/pro-light-svg-icons": "^5.15.2",
     "@fortawesome/pro-regular-svg-icons": "^5.15.2",
@@ -39,7 +39,8 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "framer-motion": "^3.3.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-select": "^4.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.5",
@@ -50,11 +51,11 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/pro-duotone-svg-icons": "^5.15.2",
     "@fortawesome/pro-light-svg-icons": "^5.15.2",
     "@fortawesome/pro-regular-svg-icons": "^5.15.2",
     "@fortawesome/pro-solid-svg-icons": "^5.15.2",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.3",
@@ -65,6 +66,7 @@
     "react-dom": "17.0.1",
     "rollup": "^1.29.0",
     "rollup-plugin-sass": "^1.2.2",
-    "stylis": "^3.5.0"
+    "stylis": "^3.5.0",
+    "react-select": "^4.3.1"
   }
 }
