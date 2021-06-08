@@ -2,7 +2,7 @@ import React from 'react'
 import CreatableSelect from 'react-select/creatable';
 import { useEffect, useState } from 'react'
 
-export default function LawCentreDataSelect({ dataEndpoint, isMulti, contentfulField }) {
+export default function LawCentreDataSelect({ dataEndpoint, isMulti, inputProps, callbacks }) {
 
     // Currently selected options
     const [selectedOptions, setSelectedOptions] = useState([]);
@@ -17,21 +17,33 @@ export default function LawCentreDataSelect({ dataEndpoint, isMulti, contentfulF
     const handleChange = (options) => {
 
       setSelectedOptions(options);
-      contentfulField.setValue(options);
-      //console.log(options)
-      //setValue(options);
+
+      if(callbacks) {
+        if(dataEndpoint) {
+          callbacks.setValue(options);
+        } else {
+          callbacks.setValue(options.map((item) => item.value));
+        }
+      }
+
 
     };
 
     const handleCreate = (value) => {
 
-      let newItem = {
-          type: "custom",
-          id: "custom",
-          attributes: {
-            label: value,
-            value: value
+      let newItem = null
+
+      if(dataEndpoint) {
+        newItem = {
+            type: "custom",
+            id: "custom",
+            attributes: {
+              label: value,
+              value: value
+          }
         }
+      } else {
+        newItem = value
       }
 
       let newItems = [...items]
@@ -40,13 +52,21 @@ export default function LawCentreDataSelect({ dataEndpoint, isMulti, contentfulF
       setItems(newItems)
 
       let newSelectedOptions = [...selectedOptions]
+
       newSelectedOptions.push({
         value: value,
         label: value
       })
 
       setSelectedOptions(newSelectedOptions)
-      contentfulField.setValue(newSelectedOptions);
+
+      if(callbacks) {
+        if(dataEndpoint) {
+          callbacks.setValue(newSelectedOptions);
+        } else {
+          callbacks.setValue(newSelectedOptions.map((item) => item.value));
+        }
+      }
 
     }
 
@@ -61,9 +81,11 @@ export default function LawCentreDataSelect({ dataEndpoint, isMulti, contentfulF
 
               setItems(response.data)
 
-              let selected = contentfulField.getValue()
-              if(selected?.length>0) {
-                setSelectedOptions(selected)
+              if(callbacks) {
+                let selected = callbacks.getValue()
+                if(selected?.length>0) {
+                  setSelectedOptions(selected)
+                }
               }
 
             },
@@ -72,21 +94,42 @@ export default function LawCentreDataSelect({ dataEndpoint, isMulti, contentfulF
             }
           );
 
+      } else if(callbacks) {
+
+        let selected = callbacks.getValue()
+        if(selected?.length>0) {
+
+          setItems(selected)
+          setSelectedOptions( selected.map((item) => ({ label: item, value: item }) ))
+
         }
 
-    }, [dataEndpoint])
+      }
+
+    }, [])
 
     useEffect(() => {
 
-      let newOptions = items.map((item) => {
-             if(item.attributes) {
-               return {
-                 label: item.attributes.label,
-                 value: item.attributes.value
+      let newOptions = []
+
+      if(dataEndpoint) {
+        newOptions = items.map((item) => {
+               if(item.attributes) {
+                 return {
+                   label: item.attributes.label,
+                   value: item.attributes.value
+                 }
                }
              }
-           }
-         )
+           )
+      } else {
+        newOptions = items.map((item) => {
+          return {
+            label: item,
+            value: item
+          }
+        })
+      }
 
       setAvailableOptions(newOptions)
 
@@ -100,7 +143,8 @@ export default function LawCentreDataSelect({ dataEndpoint, isMulti, contentfulF
         onCreateOption={ e => handleCreate(e) }
         isLoading={ (dataEndpoint && items.length <= 1) }
         onChange={ options => handleChange(options) }
-        options={ availableOptions } />
+        options={ availableOptions }
+        { ... inputProps } />
     )
 
 }
