@@ -34,7 +34,7 @@ function ChunkyButton(props) {
           }}
           color="white"
           mr='4'
-          icon={['fas', props.icon]} />
+          icon={props.icon} />
       }
       <Text
         position="relative"

@@ -23,7 +23,7 @@ function PrimaryButton(props) {
       pb="1.2rem"
       {...props}>
       { props.icon &&
-        <ChakraAwesome color="white" mr='4' icon={['fas', props.icon]} />
+        <ChakraAwesome color="white" mr='4' icon={props.icon} />
       }
       {props.children}
     </Button>
