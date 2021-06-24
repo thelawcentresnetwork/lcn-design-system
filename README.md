@@ -8,7 +8,13 @@ A design system for Law Centre sites and apps utilising [Chakra](https://chakra-
 
 Then install peer dependancies.
 
-## Developing locally
+## Styleguide
+
+We use [Styleguidist](https://react-styleguidist.js.org/) to create a hot-loading styleguide. Markdown files for each component can be created as examples, run:
+
+`yarn styleguidist server`
+
+## Using locally
 
 If developing and using in another local project, use [`yalc`](https://www.npmjs.com/package/yalc) to publish to a local store
 
