@@ -6,7 +6,5 @@ Accessibility, Language, Editor, Webchat, Feedback, Emails, Donations, Enquiry f
 ActionButton example:
 
 ```js
-<ThemeProvider>
-  <ActionButton>Click me</ActionButton>
-</ThemeProvider>
+<ActionButton>Click me</ActionButton>
 ```

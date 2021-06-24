@@ -6,14 +6,14 @@ const Theme = extendTheme({
     heading: "Poppins, Helvetica, sans-serif",
     mono: "Menlo, monospace"
   },
-  "colors": {
-    "brand": {
+  colors: {
+    brand: {
       'Orange': '#E45E37',
       'Red': '#C90061',
       'Blue': '#425390',
       'Green': '#00838A',
     },
-    "orange": {
+    orange: {
       50: '#ffeae2',
       100: '#fbc7b9',
       200: '#f2a48d',
@@ -25,7 +25,7 @@ const Theme = extendTheme({
       800: '#461405',
       900: '#1e0300',
     },
-    "red": {
+    red: {
       50: '#ffe2f5',
       100: '#ffb1d8',
       200: '#ff7fbd',
@@ -37,7 +37,7 @@ const Theme = extendTheme({
       800: '#4f0025',
       900: '#1f000e',
     },
-    "blue": {
+    blue: {
       50: '#eaf0ff',
       100: '#c9d1ec',
       200: '#a7b2da',
@@ -49,17 +49,17 @@ const Theme = extendTheme({
       800: '#151e38',
       900: '#040a19',
     },
-    "green": {
-      50: '#f5fafb',
-      100: '#e1f0f1',
-      200: '#cbe6e7',
-      300: '#b3dadc',
-      400: '#98cdd0',
-      500: '#7abec2',
-      600: '#56adb1',
-      700: '#29979d',
-      800: '#00838A',
-      900: '#00474b',
+    green: {
+      '50': '#f5fafb',
+      '100': '#e1f0f1',
+      '200': '#cbe6e7',
+      '300': '#b3dadc',
+      '400': '#98cdd0',
+      '500': '#7abec2',
+      '600': '#56adb1',
+      '700': '#29979d',
+      '800': '#00838A',
+      '900': '#00474b',
     }
   }
 })
