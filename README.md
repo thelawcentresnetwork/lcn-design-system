@@ -2,19 +2,23 @@
 
 A design system for Law Centre sites and apps utilising [Chakra](https://chakra-ui.com/), [FontAwesome](https://fontawesome.com/icons?d=gallery) and [Google Fonts](https://fonts.google.com/).
 
+[View on Vercel](https://lcn-design-system.vercel.app/)
+
 ## Usage
 
 `yarn add law-centres-design-system`
 
 Then install peer dependancies.
 
-## Styleguide
+## Documentation
 
 We use [Styleguidist](https://react-styleguidist.js.org/) to create a hot-loading styleguide. Markdown files for each component can be created as examples, run:
 
 `yarn styleguidist server`
 
-## Using locally
+Currently this is deployed to Vercel, using `npx styleguidist build` with the output directory of `styleguide`.
+
+## Using local version
 
 If developing and using in another local project, use [`yalc`](https://www.npmjs.com/package/yalc) to publish to a local store
 
