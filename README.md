@@ -2,7 +2,7 @@
 
 A design system for Law Centre sites and apps utilising [Chakra](https://chakra-ui.com/), [FontAwesome](https://fontawesome.com/icons?d=gallery) and [Google Fonts](https://fonts.google.com/).
 
-[View on Vercel](https://lcn-design-system.vercel.app/)
+[View Documentation](http://design-system.lawcentres.org.uk/)
 
 ## Usage
 
