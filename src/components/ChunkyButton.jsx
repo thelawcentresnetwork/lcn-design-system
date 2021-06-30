@@ -9,7 +9,7 @@ function ChunkyButton(props) {
       as="a"
       cursor="pointer"
       borderRadius="3xl"
-      borderWidth="2px"
+      borderWidth="3px"
       borderColor="white"
       borderTopRightRadius="0"
       color="white"
