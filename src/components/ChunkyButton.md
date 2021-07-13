@@ -1,5 +1,5 @@
 ChunkyButton example:
 
 ```js
-<ChunkyButton bg="pink">Click me</ChunkyButton>
+<ChunkyButton>Click me</ChunkyButton>
 ```
