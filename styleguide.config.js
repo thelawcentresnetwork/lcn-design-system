@@ -4,6 +4,7 @@ const path = require('path')
 // https://github.com/styleguidist/react-styleguidist/tree/master/src/client/rsg-components
 
 module.exports = {
+  assetsDir: './docs/public/',
   title: "Design System – The Law Centres Network",
   template: {
     favicon: 'https://members.lawcentres.org.uk/favicon.ico',
