@@ -12,11 +12,10 @@ const styles = ({ fontFamily, color }) => ({
     fontWeight: '700',
   },
   container: {
-    padding: '10px 10px 0px'
+    padding: '10px 10px 10px 15px'
   },
   image: {
-    width: '150px',
-    marginBottom: '0.5em'
+    width: '165px',
   },
 });
 

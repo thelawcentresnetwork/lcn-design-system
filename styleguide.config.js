@@ -4,7 +4,7 @@ const path = require('path')
 // https://github.com/styleguidist/react-styleguidist/tree/master/src/client/rsg-components
 
 module.exports = {
-  title: "Design System",
+  title: "Design System – The Law Centres Network",
   template: {
     favicon: 'https://members.lawcentres.org.uk/favicon.ico',
     head: {
@@ -23,12 +23,31 @@ module.exports = {
           fontFamily: 'Poppins, sans-serif'
         },
         heading1: {
-          fontWeight: '900'
+          fontWeight: '900',
+          marginBottom: '0.5em'
         },
         heading2: {
           fontWeight: '700'
         }
       },
+      TableOfContents: {
+        root: {
+          padding: '10px 15px 0'
+        },
+        input: {
+          borderRadius: '30px',
+          paddingLeft: "20px"
+        }
+      },
+      ComponentsList: {
+        item: {
+          margin: "10px 1px"
+        },
+        isSelected: {
+          color: '#777',
+          fontWeight: 'normal'
+        }
+      }
     }
   },
   theme: {
@@ -47,39 +66,62 @@ module.exports = {
   tocMode: 'collapse',
   sections: [
     {
-      name: 'Design System',
+      name: 'Introduction',
       content: 'docs/introduction.md'
     },
     {
-      name: 'Getting Started',
-      content: 'docs/get_started.md'
+      name: 'Setup',
+      content: 'docs/Setup.md'
     },
     {
       name: 'Styles',
       content: 'docs/styles.md',
       components: 'src/styles/*.jsx',
-      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'collapse' // 'hide' | 'collapse' | 'expand'
+      exampleMode: 'collapse',
+      usageMode: 'collapse',
+      sections: [
+        {
+          name: 'Typography',
+          content: 'docs/styles/typography.md'
+        },
+        {
+          name: 'Colour',
+          content: 'docs/styles/colour.md'
+        },
+        {
+          name: 'Icons',
+          content: 'docs/styles/icons.md'
+        },
+        {
+          name: 'Brand',
+          content: 'docs/styles/brand.md'
+        },
+        {
+          name: 'Language',
+          content: 'docs/styles/language.md'
+        }
+      ]
     },
     {
       name: 'Components',
       content: 'docs/components.md',
       components: 'src/components/*.jsx',
-      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'collapse' // 'hide' | 'collapse' | 'expand'
+      exampleMode: 'collapse',
+      usageMode: 'collapse'
+
     },
     {
       name: 'Patterns',
       content: 'docs/patterns.md',
       components: 'src/patterns/*.jsx',
-      exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'collapse' // 'hide' | 'collapse' | 'expand'
+      exampleMode: 'collapse',
+      usageMode: 'collapse'
     }
   ],
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'styleguide/components/Provider.js'),
-    LogoRenderer: path.join(__dirname, 'styleguide/components/Logo'),
-    SectionsRenderer: path.join(__dirname, 'styleguide/components/SectionsRenderer')
+    Wrapper: path.join(__dirname, 'docs/helpers/Provider'),
+    StyleGuideRenderer: path.join(__dirname, 'docs/helpers/StyleGuideRenderer'),
+    LogoRenderer: path.join(__dirname, 'docs/helpers/Logo')
   },
   webpackConfig: {
     module: {

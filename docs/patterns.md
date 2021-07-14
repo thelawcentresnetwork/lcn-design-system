@@ -1,1 +1,12 @@
-Accessibility, Language, Editor, Webchat, Feedback, Emails, Donations, Enquiry forms, Self-service, Softphones, Cookie consent, Data privacy
+Ideas for patterns:
+
+- Accessibility features
+- Content Editor,
+- Webchat, 
+- Feedback,
+- Emails,
+- Donations, 
+- Enquiry forms, 
+- Softphone
+- Cookie Consent, 
+- Data Privacy
