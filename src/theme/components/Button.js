@@ -19,7 +19,7 @@ const Button = {
       _active: { bg: `${colorScheme}.500` }
     }),
     outline: ({ colorScheme }) => ({
-      boxShadow: "sm",
+      boxShadow: "md",
       fontWeight: "400",
       color: `${colorScheme}.500`,
       _hover: { bg: `${colorScheme}.50`, boxShadow: 'none' },

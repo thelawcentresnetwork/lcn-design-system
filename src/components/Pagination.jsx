@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Flex, Button, Text, Link } from "@chakra-ui/react"
+import { Flex, Button, Text } from "@chakra-ui/react"
 
 export default function Pagination(props) {
   const { totalPages, currentPage, prevDisabled, nextDisabled, path } = props;
@@ -14,23 +13,19 @@ export default function Pagination(props) {
 
   return (
     <Flex w="full" justify='space-between'>
-      <Button disabled={prevDisabled}>
+      <Button disabled={prevDisabled} as="a" href={prevPageUrl}>
         {prevDisabled && <span>Previous page</span>}
         {!prevDisabled && (
-          <Link href={prevPageUrl}>
-            <a>Previous</a>
-          </Link>
+          "Previous"
         )}
       </Button>
       <Text fontSize="xs" pt="3" color="gray.400">
         Page {currentPage} of {totalPages}
       </Text>
-      <Button disabled={nextDisabled}>
+      <Button disabled={nextDisabled} as="a" href={nextPageUrl}>
         {nextDisabled && <span>Next page</span>}
         {!nextDisabled && (
-          <Link href={nextPageUrl}>
-            <a>Next</a>
-          </Link>
+          "Next"
         )}
       </Button>
     </Flex>

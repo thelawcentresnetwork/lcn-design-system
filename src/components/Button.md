@@ -28,9 +28,9 @@ import { HStack, ButtonGroup, IconButton } from "@chakra-ui/react";
    <Button isLoading loadingText="Loading Button" variant="solid">
     Loading Button
   </Button>
-  <ButtonGroup isAttached variant="outline">
-    <Button mr="-px">Save</Button>
-    <IconButton aria-label="Add to friends" icon={<ChakraAwesome icon={['fas','plus']} />} />
+  <ButtonGroup isAttached variant="outline" colorScheme="gray">
+    <Button mr="-px">Action Button</Button>
+    <IconButton aria-label="Save" icon={<ChakraAwesome icon={['fas','plus']} />} />
   </ButtonGroup>
 </HStack>
 ```
