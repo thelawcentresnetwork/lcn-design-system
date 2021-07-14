@@ -1,1 +1,1 @@
-Components are reusable parts of the user interface that have been made to support a variety of applications.
+Components are reusable parts of the user interface that have been made to support a variety of applications. Many more are available in the [base Chakra component](https://chakra-ui.com/docs/getting-started) documentation.

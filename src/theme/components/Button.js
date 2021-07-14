@@ -19,12 +19,11 @@ const Button = {
       _active: { bg: `${colorScheme}.500` }
     }),
     outline: ({ colorScheme }) => ({
-      boxShadow: "md",
       fontWeight: "400",
       color: `${colorScheme}.500`,
-      _hover: { bg: `${colorScheme}.50`, boxShadow: 'none' },
-      _active: { bg: `${colorScheme}.50`, boxShadow: 'none' },
-      _focus: { bg: `${colorScheme}.50`, boxShadow: 'none' }
+      _hover: { bg: `${colorScheme}.50` },
+      _active: { bg: `${colorScheme}.50` },
+      _focus: { bg: `${colorScheme}.50` }
     }),
     brand: ({ colorScheme }) => ({
       borderRadius: "3xl",

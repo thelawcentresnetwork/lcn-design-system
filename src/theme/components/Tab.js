@@ -1,8 +1,12 @@
-import { Tab } from "@chakra-ui/react"
+const Tab = {
+  baseStyle: {
+    
+  }
+}
 
-export default function SimpleTab(props) {
-  return (
-    <Tab
+export default Tab
+
+{/* <Tab
       fontFamily="Poppins, Helvetica, sans-serif"
       color="gray.400"
       fontWeight="600"
@@ -14,6 +18,4 @@ export default function SimpleTab(props) {
       {...props}
     >
       {props.children}
-    </Tab>
-  )
-}
+    </Tab> */}

@@ -3,7 +3,7 @@ import Theme from '../../src/theme';
 import { SimpleGrid, Heading } from "@chakra-ui/react";
 import ColorDescription from '../helpers/ColorDescription';
 <>
-  <SimpleGrid columns={[1, null, 4]} spacing="10" pt="5">
+  <SimpleGrid columns={[1, null, 4]} spacing="10" pt="5" mb="7">
     { Theme.colors.brand &&
       Object.keys(Theme.colors.brand).map(function(keyName, keyIndex) {
         return (<ColorDescription
@@ -15,8 +15,6 @@ import ColorDescription from '../helpers/ColorDescription';
     }
   </SimpleGrid>
       
-  <Heading as="h3" size="md" mb="5" mt="10">Extended Colour Palettes</Heading>
-
   <SimpleGrid columns={[1, null, 4]} spacing="10" py='7'>
     { Theme.colors.green &&
       Object.keys(Theme.colors.green).map(function(keyName, keyIndex) {

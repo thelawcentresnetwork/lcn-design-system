@@ -21,7 +21,6 @@ const StyleGuideRenderer = ({
       children={children}
       toc={toc}
       hasSidebar={hasSidebar}/>
-    
   </ChakraProvider>
 )
 

@@ -16,11 +16,10 @@ Full documentation and props can be found in the [Chakra Documentation](https://
 </Button>
 ```
 
-Buttons can be extended
+Buttons can be extended:
 
 ```js
-import ChakraAwesome from '../utilities/ChakraAwesome';
-import { HStack, ButtonGroup, IconButton } from "@chakra-ui/react";
+import { ButtonGroup, IconButton } from "@chakra-ui/react";
 <HStack spacing="4">
   <Button leftIcon={<ChakraAwesome icon={['fas','user']} />} variant="solid">
     Button with icon
@@ -38,18 +37,17 @@ import { HStack, ButtonGroup, IconButton } from "@chakra-ui/react";
 Each variant style can have a color scheme applied. See [color reference](#/Styles?id=section-colour)
 
 ```js padded
-<Button colorScheme="blue" variant="solid">
-  Button
-</Button>
-<Button colorScheme="orange" variant="brand">
-  Brand Button
-</Button>
-<Button colorScheme="gray" variant="outline">
-  Button
-</Button>
-<Button colorScheme="red" variant="link">
-  Button
-</Button>
+<VStack spacing="7" py="4">
+  <Button colorScheme="red" variant="solid">
+    Warning Button
+  </Button>
+  <Button colorScheme="blue" variant="brand">
+    Brand Button
+  </Button>
+  <Button colorScheme="gray" variant="outline">
+    Muted Button
+  </Button>
+</VStack>
 ```
 
 Buttons can also be sized:

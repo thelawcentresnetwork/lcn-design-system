@@ -4,6 +4,7 @@ const path = require('path')
 // https://github.com/styleguidist/react-styleguidist/tree/master/src/client/rsg-components
 
 module.exports = {
+  require: [path.resolve(__dirname, './docs/helpers/global.js')],
   assetsDir: './docs/public/',
   title: "Design System – The Law Centres Network",
   template: {
@@ -74,49 +75,82 @@ module.exports = {
       name: 'Usage',
       content: 'docs/usage.md'
     },
-    {
-      name: 'Styles',
-      content: 'docs/styles.md',
-      components: 'src/styles/*.jsx',
-      exampleMode: 'collapse',
-      usageMode: 'collapse',
+    { 
+      name: 'Design System',
+      pagePerSection: true,
+      tocMode: 'collapse',
       sections: [
         {
-          name: 'Typography',
-          content: 'docs/styles/typography.md'
+          name: 'Styles',
+          content: 'docs/styles.md',
+          components: 'src/styles/*.jsx',
+          exampleMode: 'collapse',
+          usageMode: 'collapse',
+          sections: [
+            {
+              name: 'Typography',
+              content: 'docs/styles/typography.md'
+            },
+            {
+              name: 'Colour',
+              content: 'docs/styles/colour.md'
+            },
+            {
+              name: 'Icons',
+              content: 'docs/styles/icons.md'
+            },
+            {
+              name: 'Brand',
+              content: 'docs/styles/brand.md'
+            },
+            {
+              name: 'Language',
+              content: 'docs/styles/language.md'
+            }
+          ]
         },
         {
-          name: 'Colour',
-          content: 'docs/styles/colour.md'
+          name: 'Components',
+          content: 'docs/components.md',
+          components: 'src/components/*.jsx',
+          exampleMode: 'collapse',
+          usageMode: 'collapse',
+          sections: [
+            {
+              name: 'Button',
+              content: 'docs/components/Button.md'
+            },
+            {
+              name: 'Menu',
+              content: 'docs/components/Menu.md'
+            },
+            {
+              name: 'Badge',
+              content: 'docs/components/Badge.md'
+            },
+            {
+              name: 'Tooltip',
+              content: 'docs/components/Tooltip.md'
+            },
+            {
+              name: 'Tabs',
+              content: 'docs/components/Tabs.md'
+            }
+          ]
         },
         {
-          name: 'Icons',
-          content: 'docs/styles/icons.md'
+          name: 'Patterns',
+          content: 'docs/patterns.md',
+          components: 'src/patterns/*.jsx',
+          exampleMode: 'collapse',
+          usageMode: 'collapse'
         },
-        {
-          name: 'Brand',
-          content: 'docs/styles/brand.md'
-        },
-        {
-          name: 'Language',
-          content: 'docs/styles/language.md'
-        }
       ]
     },
     {
-      name: 'Components',
-      content: 'docs/components.md',
-      components: 'src/components/*.jsx',
-      exampleMode: 'collapse',
-      usageMode: 'collapse'
-
-    },
-    {
-      name: 'Patterns',
-      content: 'docs/patterns.md',
-      components: 'src/patterns/*.jsx',
-      exampleMode: 'collapse',
-      usageMode: 'collapse'
+      name: 'More from Chakra',
+      href: 'https://chakra-ui.com/docs/',
+      external: true
     }
   ],
   styleguideComponents: {

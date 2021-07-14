@@ -1,7 +1,7 @@
 We use [Poppins](https://fonts.google.com/specimen/Poppins) for Headings and [Lato](https://fonts.google.com/specimen/Lato) for body text. Both can be used for free from [Google Fonts](https://fonts.google.com/).
 
 Further typography options can be found in [Chakra Documentation](https://chakra-ui.com/docs/typography/text)
-
+ 
 ```js
   import { VStack, Heading } from "@chakra-ui/react";
   <VStack align="left">
