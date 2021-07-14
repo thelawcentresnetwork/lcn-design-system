@@ -152,6 +152,10 @@ module.exports = {
             {
               name: 'Tooltip',
               content: 'docs/components/Tooltip.md'
+            },
+            {
+              name: 'Forms',
+              content: 'docs/components/Form.md'
             }
           ]
         },
