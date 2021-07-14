@@ -5,17 +5,18 @@ Further typography options can be found in [Chakra Documentation](https://chakra
 ```js
   import { VStack, Heading } from "@chakra-ui/react";
   <VStack align="left">
-    <Heading as="h1" size="2xl" fontWeight="900">Heading 1</Heading>
-    <Heading as="h2" size="xl">Heading 2</Heading>
-    <Heading as="h3" size="lg">Heading 3</Heading>
-    <Heading as="h4" size="md">Heading 4</Heading>
+    <Heading as="h1" variant="h1">Heading 1</Heading>
+    <Heading as="h2" variant="h2">Heading 2</Heading>
+    <Heading as="h3" variant="h3">Heading 3</Heading>
+    <Heading as="h4" variant="h4">Heading 4</Heading>
   </VStack>
 ```
 
 ```js
-  import { VStack, Text } from "@chakra-ui/react";
-  <VStack align="left">
-    <Text>Body copy</Text>
-    <Text fontSize="sm" color='gray.500'>Muted</Text>
-  </VStack>
+  import { Box, Text } from "@chakra-ui/react";
+  <Box>
+    <Text>Body copy, morbi egestas leo fringilla, molestie ipsum et, pulvinar ligula. Mauris eu risus faucibus, ultricies eros at, iaculis est. Cras ut justo porta enim cursus efficitur. Donec vitae scelerisque magna. Integer semper sem tortor, eget consectetur turpis finibus non.</Text>
+    <Text>Body copy, morbi egestas leo fringilla, molestie ipsum et, pulvinar ligula. Mauris eu risus faucibus, ultricies eros at, iaculis est. Cras ut justo porta enim cursus efficitur. Donec vitae scelerisque magna. Integer semper sem tortor, eget consectetur turpis finibus non.</Text>
+    <Text variant="muted">Muted, pellentesque habitant morbi tristique senectus.</Text>
+  </Box>
 ```

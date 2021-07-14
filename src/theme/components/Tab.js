@@ -1,21 +1,13 @@
 const Tab = {
-  baseStyle: {
-    
-  }
+  baseStyle: ({ colorScheme }) => ({
+    color: "gray.400",
+    fontFamily: "Poppins, Helvetica, sans-serif",
+    fontWeight: "600",
+    px: "6",
+    _focus: { outline: "none" },
+    _hover: { color: `${colorScheme}.500`, borderColor: `${colorScheme}.500` },
+    _selected: { color: `${colorScheme}.500`, borderColor: `${colorScheme}.500` }
+  })
 }
 
 export default Tab
-
-{/* <Tab
-      fontFamily="Poppins, Helvetica, sans-serif"
-      color="gray.400"
-      fontWeight="600"
-      fontSize="sm"
-      px="6"
-      _focus={{ outline: "none" }}
-      _hover={{ color: "brand.Green", borderColor: "brand.Green" }}
-      _selected={{ color: "brand.Green", borderColor: "brand.Green" }}
-      {...props}
-    >
-      {props.children}
-    </Tab> */}

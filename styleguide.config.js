@@ -20,15 +20,35 @@ module.exports = {
   },
   styles: function (theme) {
     return {
+      TabButton: {
+        button: {
+          fontSize: '0.625rem',
+          fontWeight: 'bold',
+          background: '#F7FAFC',
+          borderRadius: '0.5rem',
+          color: '#777',
+          padding: '0.5rem 1rem'
+        }
+      },
       Heading: {
         heading: {
           fontFamily: 'Poppins, sans-serif'
         },
         heading1: {
-          fontWeight: '900',
-          marginBottom: '0.5em'
+          fontWeight: '800',
+          fontSize: '3rem',
+          marginBottom: '0.25em'
         },
         heading2: {
+          fontSize: '1.625rem',
+          fontWeight: '700'
+        },
+        heading3: {
+          fontSize: '1.625rem',
+          fontWeight: '700'
+        },
+        heading4: {
+          fontSize: '1.25rem',
           fontWeight: '700'
         }
       },
@@ -37,13 +57,14 @@ module.exports = {
           padding: '10px 15px 0'
         },
         input: {
-          borderRadius: '30px',
+          borderRadius: '7px',
           paddingLeft: "20px"
         }
       },
       ComponentsList: {
         item: {
-          margin: "10px 1px"
+          margin: "10px 1px",
+          fontWeight: '600'
         },
         isSelected: {
           color: '#777',
@@ -131,10 +152,6 @@ module.exports = {
             {
               name: 'Tooltip',
               content: 'docs/components/Tooltip.md'
-            },
-            {
-              name: 'Tabs',
-              content: 'docs/components/Tabs.md'
             }
           ]
         },

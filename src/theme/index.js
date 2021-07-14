@@ -8,6 +8,10 @@ import Menu from "./components/Menu"
 import Tab from "./components/Tab"
 import Tooltip from "./components/Tooltip"
 
+import FormLabel from "./components/FormLabel"
+import Input from "./components/Input"
+import Textarea from "./components/Textarea"
+
 import Button from "./components/Button"
 import Text from "./components/Text"
 import Heading from "./components/Heading"
@@ -22,7 +26,10 @@ const Theme = extendTheme({
     Badge,
     Menu,
     Tab,
-    Tooltip
+    Tooltip,
+    FormLabel,
+    Textarea,
+    Input
   }
 })
 
