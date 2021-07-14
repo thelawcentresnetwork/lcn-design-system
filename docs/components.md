@@ -1,0 +1,1 @@
+Components are reusable parts of the user interface that have been made to support a variety of applications.

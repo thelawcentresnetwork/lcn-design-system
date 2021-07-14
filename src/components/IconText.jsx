@@ -2,7 +2,7 @@ import React from 'react'
 import ChakraAwesome from '../utilities/ChakraAwesome'
 import { Flex, Text, Box } from "@chakra-ui/react"
 
-function SimpleIconText(props) {
+function IconText(props) {
   const { color = 'brand.Orange', bg = "orange.50", icon, children, ...rest } = props
   return (
     <Flex
@@ -73,6 +73,6 @@ function LargeIconText(props) {
 }
 
 export {
-  SimpleIconText,
+  IconText,
   LargeIconText
 }

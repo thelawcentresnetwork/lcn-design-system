@@ -70,8 +70,8 @@ module.exports = {
       content: 'docs/introduction.md'
     },
     {
-      name: 'Setup',
-      content: 'docs/Setup.md'
+      name: 'Usage',
+      content: 'docs/usage.md'
     },
     {
       name: 'Styles',
