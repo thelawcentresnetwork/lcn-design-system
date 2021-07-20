@@ -8,6 +8,13 @@ const Button = {
     }
   },
   variants: {
+    simple: ({ colorScheme }) => ({
+      bg: `${colorScheme}.400`,
+      color: 'white',
+      _hover: { bg: `${colorScheme}.300` },
+      _focus: { bg: `${colorScheme}.300` },
+      _active: { bg: `${colorScheme}.300` }
+    }),
     solid: ({ colorScheme }) => ({
       borderLeftWidth: "1px",
       borderRightWidth: "3px",

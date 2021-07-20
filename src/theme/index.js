@@ -16,6 +16,8 @@ import Button from "./components/Button"
 import Text from "./components/Text"
 import Heading from "./components/Heading"
 
+import Drawer from "./components/Drawer"
+
 const Theme = extendTheme({
   colors,
   fonts,
@@ -29,10 +31,9 @@ const Theme = extendTheme({
     Tooltip,
     FormLabel,
     Textarea,
-    Input
+    Input,
+    Drawer
   }
 })
-
-console.log(Theme)
 
 export default Theme;
