@@ -18,6 +18,8 @@ import Heading from "./components/Heading"
 
 import Drawer from "./components/Drawer"
 
+// https://github.com/chakra-ui/chakra-ui/tree/75edcf41e7ff4acc2569f2169949063c164d8f6e/packages/theme/src/components
+
 const Theme = extendTheme({
   colors,
   fonts,

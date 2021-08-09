@@ -8,6 +8,10 @@ const Drawer = {
       dialogContainer: {
         pointerEvents: 'none',
       },
+      header: {
+        fontSize: "xl",
+        fontWeight: "700"
+      }
     },
   },
 }
