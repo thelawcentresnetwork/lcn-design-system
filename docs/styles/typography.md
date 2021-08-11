@@ -12,11 +12,17 @@ Further typography options can be found in [Chakra Documentation](https://chakra
   </VStack>
 ```
 
+##### Core body text
+
 ```js
-  import { Box, Text } from "@chakra-ui/react";
-  <Box>
-    <Text>Body copy, morbi egestas leo fringilla, molestie ipsum et, pulvinar ligula. Mauris eu risus faucibus, ultricies eros at, iaculis est. Cras ut justo porta enim cursus efficitur. Donec vitae scelerisque magna. Integer semper sem tortor, eget consectetur turpis finibus non.</Text>
-    <Text>Body copy, morbi egestas leo fringilla, molestie ipsum et, pulvinar ligula. Mauris eu risus faucibus, ultricies eros at, iaculis est. Cras ut justo porta enim cursus efficitur. Donec vitae scelerisque magna. Integer semper sem tortor, eget consectetur turpis finibus non.</Text>
-    <Text variant="muted">Muted, pellentesque habitant morbi tristique senectus.</Text>
-  </Box>
+  import { Text } from "@chakra-ui/react";
+  <Text>Body copy, morbi egestas leo fringilla, molestie ipsum et, pulvinar ligula. Mauris eu risus faucibus, ultricies eros at, iaculis est. Cras ut justo porta enim cursus efficitur. Donec vitae scelerisque magna. Integer semper sem tortor, eget consectetur turpis finibus non.</Text>
+    
+```
+
+#####  Muted text, hints, etc
+
+```js
+  import { Text } from "@chakra-ui/react";
+  <Text variant="muted">Muted, pellentesque habitant morbi tristique senectus.</Text>
 ```

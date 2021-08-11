@@ -164,7 +164,22 @@ module.exports = {
           content: 'docs/patterns.md',
           components: 'src/patterns/*.jsx',
           exampleMode: 'collapse',
-          usageMode: 'collapse'
+          usageMode: 'collapse',
+          sections: [
+            {
+              name: 'Cookie Consent',
+              content: 'docs/patterns/CookieConsent.md'
+            },
+            {
+              name: 'Feedback',
+              content: 'docs/patterns/Feedback.md'
+            },
+            ,
+            {
+              name: 'NPS Widget',
+              content: 'docs/patterns/NPSWidget.md'
+            }
+          ]
         },
       ]
     },

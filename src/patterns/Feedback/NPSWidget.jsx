@@ -1,7 +1,6 @@
-import { NPSFeedback } from '~/Widgets/feedback'
+import { NPSFeedback } from './Feedback'
 import { Box, Text } from "@chakra-ui/react"
 import { ChakraAwesome } from 'law-centres-design-system'
-import { useRouter } from 'next/router'
 
 export default function NPSWidget(props) {
 
@@ -17,7 +16,7 @@ export default function NPSWidget(props) {
       <NPSFeedback
         originType="NPS"
         originName="Site-wide NPS Widget"
-        originUrl={"https://members.lawcentres.org.uk/" + router.asPath}>
+        originUrl={"http://design-system.lawcentres.org.uk/" + router.asPath}>
         <Box
           cursor="pointer"
           boxShadow="lg"

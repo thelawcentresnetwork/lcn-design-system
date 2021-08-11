@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react'
-import { useUser } from '@auth0/nextjs-auth0';
 import { useForm } from "react-hook-form";
 import axios from "axios"
 
@@ -25,7 +24,7 @@ import {
   useDisclosure
 } from "@chakra-ui/react"
 
-import { ChakraAwesome, ActionButton } from 'law-centres-design-system'
+import { ChakraAwesome } from 'law-centres-design-system'
 import MicroHeader from '~/Elements/MicroHeader'
 import { RadioGroup } from '~/Elements/RadioGroup'
 

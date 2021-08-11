@@ -1,6 +1,5 @@
 const Text = {
   baseStyle: {
-    color: 'gray.700',
   },
   variants: {
     muted: {

@@ -1,14 +1,14 @@
 Patterns are best practice design solutions for specific user-focused tasks and page types. All of the patterns in this section are supported by written guidance and contain coded examples and open source libraries where possible.
 
-## Potential patterns:
+### Patterns coming soon
 
-- Enquiry forms, 
-- Accessibility features
-- Webchat, 
-- Donations, 
-- Feedback,
-- Cookie Consent,
-- Emails,
-- Content Editor,
+- Enquiry / Contact Forms
+- Accessibility Features
+- Webchat / Conversation
+- Donations
+- Login / Single-Sign On
+- Form Builder
+- Email Templates
+- Content Editor
 - Softphone
-- Data Privacy
+- File Upload
