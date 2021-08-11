@@ -16,7 +16,7 @@ We use [Styleguidist](https://react-styleguidist.js.org/) to create a hot-loadin
 
 `yarn styleguidist server`
 
-Currently this is deployed to Vercel, using `npx styleguidist build` with the output directory of `styleguide`.
+Currently this is automatically deployed to Vercel on push to Github, using `npx styleguidist build` with the output directory of `styleguide`.
 
 ## Using local version
 
