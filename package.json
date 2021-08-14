@@ -33,11 +33,11 @@
     "@fortawesome/pro-regular-svg-icons": "^6.0.0-beta1",
     "@fortawesome/pro-solid-svg-icons": "^6.0.0-beta1",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@palmabit/react-cookie-law": "^0.6.2",
     "framer-motion": "^4.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-select": "^4.3.1",
-    "@palmabit/react-cookie-law": "^0.6.2"
+    "react-select": "^4.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.5",
@@ -54,6 +54,7 @@
     "@fortawesome/pro-regular-svg-icons": "^6.0.0-beta1",
     "@fortawesome/pro-solid-svg-icons": "^6.0.0-beta1",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@palmabit/react-cookie-law": "^0.6.2",
     "@types/react": "^17.0.3",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
@@ -66,10 +67,13 @@
     "rollup": "^1.29.0",
     "rollup-plugin-sass": "^1.2.2",
     "stylis": "^3.5.0",
-    "webpack": "^4.33.0",
-    "@palmabit/react-cookie-law": "^0.6.2"
+    "ts-loader": "^8.3.0",
+    "typescript": "^4.3.5",
+    "webpack": "^4.33.0"
   },
   "dependencies": {
-    "react-cookie": "^4.1.0"
+    "loader-utils": "^2.0.0",
+    "react-cookie": "^4.1.0",
+    "react-docgen-typescript": "^2.1.0"
   }
 }

@@ -18,6 +18,31 @@ module.exports = {
       ]
     }
   },
+  propsParser: (filePath, source, resolver, handlers) => {
+    const { ext } = path.parse(filePath);
+    return ext === '.tsx'
+      ? require('react-docgen-typescript')
+        .withDefaultConfig({
+          propFilter: props => {
+            return (
+              props.parent &&
+              props.parent.fileName.startsWith(
+                path
+                  .dirname(__filename)
+                  .split(path.sep)
+                  .pop() + '/src/'
+              )
+            );
+          }
+        })
+        .parse(
+          filePath,
+          source,
+          resolver,
+          handlers
+        )
+      : require('react-docgen').parse(source, resolver, handlers);
+  },
   styles: function (theme) {
     return {
       TabButton: {
@@ -64,7 +89,7 @@ module.exports = {
       ComponentsList: {
         item: {
           margin: "10px 1px",
-          fontWeight: '600'
+          fontWeight: 'normal'
         },
         isSelected: {
           color: '#777',
@@ -96,7 +121,7 @@ module.exports = {
       name: 'Usage',
       content: 'docs/usage.md'
     },
-    { 
+    {
       name: 'Design System',
       pagePerSection: true,
       tocMode: 'collapse',
@@ -104,7 +129,7 @@ module.exports = {
         {
           name: 'Styles',
           content: 'docs/styles.md',
-          components: 'src/styles/*.jsx',
+          components: 'src/styles/*.{jsx,tsx}',
           exampleMode: 'collapse',
           usageMode: 'collapse',
           sections: [
@@ -133,7 +158,7 @@ module.exports = {
         {
           name: 'Components',
           content: 'docs/components.md',
-          components: 'src/components/*.jsx',
+          components: 'src/components/*.{jsx,tsx}',
           exampleMode: 'collapse',
           usageMode: 'collapse',
           sections: [
@@ -156,13 +181,13 @@ module.exports = {
             {
               name: 'Forms',
               content: 'docs/components/Form.md'
-            }
+            },
           ]
         },
         {
           name: 'Patterns',
           content: 'docs/patterns.md',
-          components: 'src/patterns/*.jsx',
+          components: 'src/patterns/*.{jsx,tsx}',
           exampleMode: 'collapse',
           usageMode: 'collapse',
           sections: [
@@ -201,6 +226,11 @@ module.exports = {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
+        },
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
         }
       ]
     }
