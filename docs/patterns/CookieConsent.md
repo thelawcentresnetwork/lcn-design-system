@@ -31,10 +31,8 @@ const cc = new CC({
 For React projects, you can simply use the [react-cookie-law](https://www.npmjs.com/package/@palmabit/react-cookie-law) component.
 
 ```js padded
-
-    import { CookieBanner } from '@palmabit/react-cookie-law';
+    import CookieConsent from '/src/patterns/CookieConsent';
     import { useCookies } from "react-cookie";
-    import Theme from "/src/theme";
     const [cookies, setCookie, removeCookie] = useCookies(["rcl_consent_given"]);
     <>
     <Button 
@@ -43,13 +41,6 @@ For React projects, you can simply use the [react-cookie-law](https://www.npmjs.
         Show Banner
     </Button>
 
-    <CookieBanner
-        message="Cookie banner message"
-        showDeclineButton={true}
-        styles={{
-            dialog: { backgroundColor: Theme.colors["green"]["50"] },
-            button: { backgroundColor: Theme.colors["green"]["500"] }
-        }}
-        />
+    <CookieConsent />
     </>
 ```
