@@ -7,6 +7,8 @@ module.exports = {
         useBuiltIns: 'usage'
       }
     ],
-    '@babel/react'
-  ]
+    '@babel/react',
+    "@babel/typescript"
+  ],
+  plugins: ["@babel/plugin-transform-runtime"]
 }

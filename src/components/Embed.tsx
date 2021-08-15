@@ -1,21 +1,22 @@
 import React from 'react'
+import parse from 'html-react-parser';
 
 import {
     Box,
     BoxProps
 } from "@chakra-ui/react"
 
-interface CardProps extends BoxProps {
-    /** Link to wrap around entire card */
-    link?: string,
-    /** URL to source to use as hero image */
-    image?: string
+interface EmbedProps extends BoxProps {
+    /** Embed code (HTML string) */
+    code: string
 }
 
-function Embed({ link, image, children, ...boxProps }: CardProps) {
+function Embed({ code, ...boxProps }: EmbedProps) {
 
     return (
-        <></>
+        <Box {...boxProps}>
+            {parse(code)}
+        </Box>
     )
 }
 
