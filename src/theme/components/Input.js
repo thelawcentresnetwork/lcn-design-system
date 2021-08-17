@@ -26,6 +26,11 @@ const Input = {
           borderColor: "brand.Green",
           boxShadow: '0 0 0 2px var(--chakra-colors-brand-Green)'
         }
+      },
+      addon: {
+        border: '1px solid',
+        borderColor: 'green.100',
+        bg: 'green.100'
       }
     }
   }
