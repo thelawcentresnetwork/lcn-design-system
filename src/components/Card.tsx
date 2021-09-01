@@ -37,7 +37,7 @@ function Card({ link, image, title, children, ...linkBoxProps }: CardProps) {
         {image &&
           <Img height="60" objectFit="cover" src={image} />
         }
-        <Flex direction="column" px={{ sm: '6' }} py="5">
+        <Flex direction="column" px={{ sm: '6' }} pt="5" pb="7">
           {(link && title) &&
             <Heading as="h3" size="sm" mb="2" lineHeight="base">
               <LinkOverlay href={link}>{title}</LinkOverlay>

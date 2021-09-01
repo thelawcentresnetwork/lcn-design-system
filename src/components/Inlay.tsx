@@ -10,15 +10,14 @@ import {
 interface InlayProps extends BoxProps {
     /** URL to source to use as hero image */
     image?: string
+    context?: string
 }
 
-function Inlay({ image, children, ...boxProps }: InlayProps) {
-
+function Inlay({ image, children, context = 'light', ...boxProps }: InlayProps) {
     return (
         <Flex
             justifyContent="flex-end"
             py="5%"
-
             position="relative">
             {image &&
                 <Img
@@ -37,10 +36,11 @@ function Inlay({ image, children, ...boxProps }: InlayProps) {
                 borderRadius="lg"
                 zIndex="10"
                 w="55%"
-                bg="brand.Blue"
+                bg={context === 'dark' ? 'white' : "brand.Blue"}
                 boxShadow="xl"
-                color="white"
-                p="10">
+                color={context === 'dark' ? 'gray.800' : "white"}
+                p="10"
+                {...boxProps}>
                 {children}
             </Box>
         </Flex>

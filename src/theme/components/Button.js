@@ -3,6 +3,15 @@ const Button = {
     fontWeight: "600",
   },
   sizes: {
+    xs: {
+      h: 7,
+      px: 3
+    },
+    sm: {
+      h: 8,
+      pt: "0.1rem",
+      fontSize: '0.8rem',
+    },
     md: {
       fontSize: 'sm'
     }
@@ -14,6 +23,13 @@ const Button = {
       _hover: { bg: `${colorScheme}.300` },
       _focus: { bg: `${colorScheme}.300` },
       _active: { bg: `${colorScheme}.300` }
+    }),
+    inverse: ({ colorScheme }) => ({
+      bg: `${colorScheme}.50`,
+      color: `${colorScheme}.500`,
+      _hover: { bg: `${colorScheme}.100` },
+      _focus: { bg: `${colorScheme}.100` },
+      _active: { bg: `${colorScheme}.100` }
     }),
     solid: ({ colorScheme }) => ({
       borderLeftWidth: "1px",

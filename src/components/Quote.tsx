@@ -21,10 +21,11 @@ interface QuoteProps extends BoxProps {
     /** URL to source to use as avatar image */
     image?: string,
     /** icon to use to highlight this quote */
-    icon?: BoxProps
+    icon?: BoxProps,
+    context?: string
 }
 
-function Quote({ quote, icon, citation, citationTitle, image, children, ...boxProps }: QuoteProps) {
+function Quote({ quote, icon, citation, citationTitle, image, children, context, ...boxProps }: QuoteProps) {
 
     return (
         <Flex direction="column" {...boxProps}>
@@ -33,14 +34,14 @@ function Quote({ quote, icon, citation, citationTitle, image, children, ...boxPr
                 rounded="lg"
                 bg='white'
                 shadow="base"
-                px="10"
-                pt="8"
-                pb="12"
+                px="12"
+                pt="10"
+                pb="14"
                 pos="relative"
                 mb="10"
             >
                 {icon}
-                <Text mt="5" fontSize="lg" fontWeight="bold">
+                <Text mt="2" fontSize="lg" fontWeight="bold">
                     {quote}
                 </Text>
                 <chakra.svg
@@ -58,10 +59,16 @@ function Quote({ quote, icon, citation, citationTitle, image, children, ...boxPr
                 </chakra.svg>
             </Box>
             <HStack spacing="4">
-                <Center rounded="full" w="4rem" h="4rem" p="1" border="3px solid" borderColor="brand.Green">
+                <Center
+                    rounded="full"
+                    w="4rem"
+                    h="4rem"
+                    p="1"
+                    border="3px solid"
+                    borderColor={context == 'dark' ? 'white' : "brand.Green"}>
                     <Img w="100%" h="100%" rounded="full" objectFit="cover" src={image} />
                 </Center>
-                <Box>
+                <Box color={context == 'dark' ? 'white' : "gray.800"}>
                     <Text fontWeight="bold">{citation}</Text>
                     <Text fontSize="sm">{citationTitle}</Text>
                 </Box>
