@@ -182,6 +182,10 @@ module.exports = {
               name: 'Forms',
               content: 'docs/components/Form.md'
             },
+            {
+              name: 'Tabs',
+              content: 'docs/components/Tabs.md'
+            },
           ]
         },
         {
@@ -231,6 +235,10 @@ module.exports = {
           test: /\.tsx?$/,
           use: 'ts-loader',
           exclude: /node_modules/,
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
         }
       ]
     }

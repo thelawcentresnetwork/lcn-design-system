@@ -1,38 +1,34 @@
 const Input = {
   variants: {
-    outline: {
-      field: {
-        bg: 'white',
-        _focus: {
-          borderColor: "brand.Green",
-          boxShadow: '0 0 0 1px var(--chakra-colors-brand-Green)'
-        },
-        _active: {
-          borderColor: "brand.Green",
-          boxShadow: '0 0 0 1px var(--chakra-colors-brand-Green)'
-        }
-      }
-    },
-    inverse: {
-      field: {
-        bg: 'white',
-        borderWidth: '1px',
-        borderColor: 'green.100',
-        _focus: {
-          borderColor: "brand.Green",
-          boxShadow: '0 0 0 2px var(--chakra-colors-brand-Green)'
-        },
-        _active: {
-          borderColor: "brand.Green",
-          boxShadow: '0 0 0 2px var(--chakra-colors-brand-Green)'
-        }
-      },
+    outline: ({ colorScheme }) => ({
       addon: {
-        border: '1px solid',
-        borderColor: 'green.100',
-        bg: 'green.100'
+        fontSize: 'xs',
+        bg: `${colorScheme}.50`,
+        color: `${colorScheme}.500`,
+        borderColor: `${colorScheme}.200`
+      },
+      field: {
+        borderColor: `${colorScheme}.200`,
+        bg: 'white',
+        fontSize: "sm",
+        _hover: {
+          borderColor: `${colorScheme}.500`,
+          boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`
+        },
+        _focus: {
+          borderColor: `${colorScheme}.500`,
+          boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`
+        },
+        _active: {
+          borderColor: `${colorScheme}.500`,
+          boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`
+        }
       }
-    }
+    })
+  },
+  defaultProps: {
+    colorScheme: 'gray',
+    variant: "outline"
   }
 }
 

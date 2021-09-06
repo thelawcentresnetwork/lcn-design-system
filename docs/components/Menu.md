@@ -15,7 +15,7 @@ import {
   MenuDivider
 } from "@chakra-ui/react";
 
-<Menu >
+<Menu>
   <MenuButton as={Button} rightIcon={<ChakraAwesome icon="chevron-down" />}>
     Actions
   </MenuButton>
@@ -30,4 +30,29 @@ import {
     <MenuItem>Attend a Workshop</MenuItem>
   </MenuList>
 </Menu>
+```
+
+You can also use `colorScheme` for Menus:
+
+```jsx
+
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
+
+<Menu colorScheme="orange">
+  <MenuButton 
+    as={Button} 
+    colorScheme="orange" 
+    rightIcon={<ChakraAwesome icon="chevron-down" />}>
+    Orange
+  </MenuButton>
+  <MenuList>
+    <MenuItem>Hover me</MenuItem>
+  </MenuList>
+</Menu>
+
 ```

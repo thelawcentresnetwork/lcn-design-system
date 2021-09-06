@@ -1,4 +1,7 @@
 const Textarea = {
+  baseStyle: {
+    fontSize: "sm",
+  },
   variants: {
     outline: {
       _focus: {

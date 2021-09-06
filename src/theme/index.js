@@ -5,17 +5,22 @@ import fonts from "./foundations/fonts"
 
 import Badge from "./components/Badge"
 import Menu from "./components/Menu"
-import Tab from "./components/Tab"
 import Tooltip from "./components/Tooltip"
 
 import FormLabel from "./components/FormLabel"
 import Input from "./components/Input"
+import Radio from "./components/Radio"
+
+import Checkbox from "./components/Checkbox"
+import Switch from "./components/Switch"
 
 import Textarea from "./components/Textarea"
 
 import Button from "./components/Button"
 import Text from "./components/Text"
 import Heading from "./components/Heading"
+
+import Tabs from "./components/Tabs"
 
 import Drawer from "./components/Drawer"
 
@@ -30,12 +35,15 @@ const Theme = extendTheme({
     Heading,
     Badge,
     Menu,
-    Tab,
     Tooltip,
     FormLabel,
     Textarea,
     Input,
-    Drawer
+    Checkbox,
+    Drawer,
+    Tabs,
+    Switch,
+    Radio
   }
 })
 

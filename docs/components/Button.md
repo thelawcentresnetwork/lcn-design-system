@@ -14,6 +14,9 @@ Full documentation and props can be found in the [Chakra Documentation](https://
 <Button variant="link">
   Link Button
 </Button>
+<Button variant="inverse">
+  Inverse Button
+</Button>
 ```
 
 Buttons can be extended:
