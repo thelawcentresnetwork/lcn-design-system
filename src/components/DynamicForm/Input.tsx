@@ -40,7 +40,9 @@ export default function DInput({
 
     return (
         <FormControl isInvalid={errors[name]}>
-            <FormLabel>{label || name}</FormLabel>
+            {label &&
+                <FormLabel>{label}</FormLabel>
+            }
             <InputGroup colorScheme={colorScheme}>
                 {leftAddon &&
                     <InputLeftAddon children={leftAddon} />

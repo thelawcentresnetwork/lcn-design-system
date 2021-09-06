@@ -47,7 +47,9 @@ export default function DDate({
 
     return (
         <FormControl isInvalid={errors[name]}>
-            <FormLabel>{label || name}</FormLabel>
+            {label &&
+                <FormLabel>{label}</FormLabel>
+            }
             <InputGroup colorScheme={colorScheme}>
 
                 {leftAddon &&

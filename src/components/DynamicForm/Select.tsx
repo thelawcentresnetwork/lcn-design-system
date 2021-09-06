@@ -3,6 +3,8 @@ import { useFormContext, Controller } from "react-hook-form";
 
 //@ts-ignore
 import Select from 'react-select';
+//@ts-ignore
+import CreatableSelect from 'react-select/creatable';
 
 //@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome';
@@ -21,6 +23,7 @@ interface DSelectProps {
     label?: string,
     hint?: string,
     colorScheme?: string,
+    creatable?: boolean,
     options: [{
         value: string,
         label: string
@@ -32,6 +35,7 @@ export default function DSelect({
     label,
     hint,
     options,
+    creatable,
     colorScheme,
     ...inputProps
 }: DSelectProps) {
@@ -41,7 +45,9 @@ export default function DSelect({
 
     return (
         <FormControl isInvalid={errors[name]}>
-            <FormLabel>{label || name}</FormLabel>
+            {label &&
+                <FormLabel>{label}</FormLabel>
+            }
 
             <Controller
                 name={name}
@@ -49,35 +55,74 @@ export default function DSelect({
                 defaultValue={null}
                 rules={{ required: false }}
                 render={({ field }) => (
-                    <Select
-                        {...inputProps}
-                        theme={(theme) => ({
-                            ...theme,
-                            colors: {
-                                ...theme.colors,
-                                primary25: 'var(--chakra-colors-green-50)',
-                                primary75: 'var(--chakra-colors-green-200)',
-                                primary50: 'var(--chakra-colors-green-100)',
-                                primary: 'var(--chakra-colors-green-400)',
-                                danger: 'var(--chakra-colors-red-500)'
-                            }
-                        })}
-                        styles={{
-                            option: (provided, state) => ({
-                                ...provided,
-                                fontSize: 'var(--chakra-fontSizes-sm)',
-                            }),
-                            control: (provided, state) => ({
-                                ...provided,
-                                borderRadius: 'var(--chakra-radii-md)',
-                                fontSize: 'var(--chakra-fontSizes-sm)',
-                                color: `var(--chakra-colors-${color}-500)`,
-                                borderColor: `var(--chakra-colors-${color}-200)`
 
-                            })
-                        }}
-                        options={options}
-                    />
+                    <>
+                        {creatable &&
+                            <CreatableSelect
+                                {...inputProps}
+                                theme={(theme) => ({
+                                    ...theme,
+                                    colors: {
+                                        ...theme.colors,
+                                        primary25: 'var(--chakra-colors-green-50)',
+                                        primary75: 'var(--chakra-colors-green-200)',
+                                        primary50: 'var(--chakra-colors-green-100)',
+                                        primary: 'var(--chakra-colors-green-400)',
+                                        danger: 'var(--chakra-colors-red-500)'
+                                    }
+                                })}
+                                styles={{
+                                    option: (provided, state) => ({
+                                        ...provided,
+                                        fontSize: 'var(--chakra-fontSizes-sm)',
+                                    }),
+                                    control: (provided, state) => ({
+                                        ...provided,
+                                        borderRadius: 'var(--chakra-radii-md)',
+                                        fontSize: 'var(--chakra-fontSizes-sm)',
+                                        color: `var(--chakra-colors-${color}-500)`,
+                                        borderColor: `var(--chakra-colors-${color}-200)`
+
+                                    })
+                                }}
+                                options={options}
+                            />
+                        }
+                        {!creatable &&
+                            <Select
+                                {...inputProps}
+                                theme={(theme) => ({
+                                    ...theme,
+                                    colors: {
+                                        ...theme.colors,
+                                        primary25: 'var(--chakra-colors-green-50)',
+                                        primary75: 'var(--chakra-colors-green-200)',
+                                        primary50: 'var(--chakra-colors-green-100)',
+                                        primary: 'var(--chakra-colors-green-400)',
+                                        danger: 'var(--chakra-colors-red-500)'
+                                    }
+                                })}
+                                styles={{
+                                    option: (provided, state) => ({
+                                        ...provided,
+                                        fontSize: 'var(--chakra-fontSizes-sm)',
+                                    }),
+                                    control: (provided, state) => ({
+                                        ...provided,
+                                        borderRadius: 'var(--chakra-radii-md)',
+                                        fontSize: 'var(--chakra-fontSizes-sm)',
+                                        color: `var(--chakra-colors-${color}-500)`,
+                                        borderColor: `var(--chakra-colors-${color}-200)`
+
+                                    })
+                                }}
+                                options={options}
+                            />
+                        }
+                    </>
+
+
+
                 )}
             />
 

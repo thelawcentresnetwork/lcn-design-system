@@ -32,7 +32,9 @@ export default function DTextarea({
 
     return (
         <FormControl isInvalid={errors[name]}>
-            <FormLabel>{label || name}</FormLabel>
+            {label &&
+                <FormLabel>{label}</FormLabel>
+            }
             <Textarea
                 {...register(name)}
                 {...inputProps} />

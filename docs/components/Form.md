@@ -79,6 +79,7 @@ const ShortForm = () => {
 
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <DFormSchema schema={exampleSchema} />
+        <DSelect options={[]} isMulti creatable={true}/>
         <Box py="5">
           <DActions onCancel={onCancel}/>
         </Box>
