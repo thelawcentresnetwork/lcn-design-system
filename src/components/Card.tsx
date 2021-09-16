@@ -6,6 +6,7 @@ import {
   LinkOverlay,
   Flex,
   Img,
+  Spacer,
   Heading,
   Box
 } from "@chakra-ui/react"
@@ -24,34 +25,39 @@ function Card({ link, image, title, children, ...linkBoxProps }: CardProps) {
   return (
 
     <LinkBox
-      as="article"
+      as={Flex}
       bg='white'
       shadow={{ sm: 'base' }}
       rounded={{ sm: 'lg' }}
       overflow="hidden"
       transition="all 0.2s"
+      direction="column"
       _hover={{ shadow: { sm: 'lg' } }}
       {...linkBoxProps}
     >
-      <Flex direction="column">
-        {image &&
-          <Img height="60" objectFit="cover" src={image} />
+      {image &&
+        <Img height="60" objectFit="cover" src={image} />
+      }
+      <Box px={{ sm: '6' }} pt="5" flexGrow={0}>
+        {(link && title) &&
+          <Heading as="h3" size="sm" mb="2" lineHeight="base">
+            <LinkOverlay href={link}>{title}</LinkOverlay>
+          </Heading>
         }
-        <Flex direction="column" px={{ sm: '6' }} pt="5" pb="7">
-          {(link && title) &&
-            <Heading as="h3" size="sm" mb="2" lineHeight="base">
-              <LinkOverlay href={link}>{title}</LinkOverlay>
-            </Heading>
-          }
-          {(!link && title) &&
-            <Heading as="h3" size="sm" mb="2" lineHeight="base">
-              {title}
-            </Heading>
-          }
-          <Box>
-            {children}
-          </Box>
-        </Flex>
+        {(!link && title) &&
+          <Heading as="h3" size="sm" mb="2" lineHeight="base">
+            {title}
+          </Heading>
+        }
+      </Box>
+      <Flex
+        px={{ sm: '6' }}
+        pt="0"
+        pb="7"
+        direction='column'
+        justify='space-between'
+        flexGrow={3}>
+        {children}
       </Flex>
     </LinkBox>
 
