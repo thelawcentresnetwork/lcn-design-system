@@ -24,6 +24,7 @@ interface DSelectProps {
     hint?: string,
     colorScheme?: string,
     creatable?: boolean,
+    required?: boolean,
     options: [{
         value: string,
         label: string
@@ -36,6 +37,7 @@ export default function DSelect({
     hint,
     options,
     creatable,
+    required,
     colorScheme,
     ...inputProps
 }: DSelectProps) {
@@ -52,9 +54,10 @@ export default function DSelect({
             <Controller
                 name={name}
                 control={control}
-                defaultValue={null}
-                rules={{ required: false }}
-                render={({ field }) => (
+                rules={{ required: required || false }}
+                render={({
+                    field: { onChange, onBlur, value, name, ref },
+                }) => (
 
                     <>
                         {creatable &&
@@ -90,7 +93,6 @@ export default function DSelect({
                         }
                         {!creatable &&
                             <Select
-                                {...inputProps}
                                 theme={(theme) => ({
                                     ...theme,
                                     colors: {
@@ -116,7 +118,11 @@ export default function DSelect({
 
                                     })
                                 }}
+                                inputRef={ref}
                                 options={options}
+                                value={value}
+                                onChange={val => onChange(val)}
+                                {...inputProps}
                             />
                         }
                     </>

@@ -36,7 +36,7 @@ function Quote({ quote, icon, citation, citationTitle, image, children, context,
                 shadow="base"
                 px="12"
                 pt="10"
-                pb="14"
+                pb="10"
                 pos="relative"
                 mb="10"
             >
@@ -44,19 +44,7 @@ function Quote({ quote, icon, citation, citationTitle, image, children, context,
                 <Text mt="2" fontSize="lg" fontWeight="bold">
                     {quote}
                 </Text>
-                <chakra.svg
-                    pos="absolute"
-                    bottom="-7"
-                    insetStart="3.5rem"
-                    w="10"
-                    viewBox="0 0 38 28"
-                    color='white'
-                    style={{
-                        filter: 'drop-shadow(0px 1px 1px rgba(0, 0, 0, .1)',
-                    }}
-                >
-                    <path d="M0 28V0H38L0 28Z" fill="currentColor" />
-                </chakra.svg>
+
             </Box>
             <HStack spacing="4">
                 <Center

@@ -65,18 +65,17 @@ export default function DDate({
                             {...register(name)}
                             {...inputProps} />
                     </PopoverTrigger>
-                    <Portal>
-                        <PopoverContent
-                            boxShadow="xl"
-                            _focus={{ outline: "none" }}>
-                            <PopoverArrow />
-                            <PopoverBody>
-                                <Calendar
-                                    date={new Date()}
-                                />
-                            </PopoverBody>
-                        </PopoverContent>
-                    </Portal>
+                    <PopoverContent
+                        width="24rems"
+                        boxShadow="xl"
+                        _focus={{ outline: "none" }}>
+                        <PopoverArrow />
+                        <PopoverBody>
+                            <Calendar
+                                date={new Date()}
+                            />
+                        </PopoverBody>
+                    </PopoverContent>
                 </Popover>
 
                 {rightAddon &&
