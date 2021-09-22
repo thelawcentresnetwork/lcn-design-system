@@ -1,5 +1,5 @@
 import React from 'react'
-import { useFormContext } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 //@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome';
 
@@ -22,7 +22,8 @@ interface DInputProps extends InputProps {
     label?: string,
     hint?: string,
     rightAddon?: string,
-    leftAddon?: string
+    leftAddon?: string,
+    useForm?: UseFormReturn
 }
 
 export default function DInput({
@@ -33,40 +34,43 @@ export default function DInput({
     leftAddon,
     rightAddon,
     colorScheme,
+    useForm,
     ...inputProps
 }: DInputProps) {
 
-    const { register, formState: { errors } } = useFormContext();
-
     return (
-        <FormControl isInvalid={errors[name]}>
-            {label &&
-                <FormLabel>{label}</FormLabel>
-            }
-            <InputGroup colorScheme={colorScheme}>
-                {leftAddon &&
-                    <InputLeftAddon children={leftAddon} />
-                }
-                <Input
-                    colorScheme={colorScheme}
-                    type={type || "text"}
-                    {...register(name)}
-                    {...inputProps} />
-                {rightAddon &&
-                    <InputRightAddon children={rightAddon} />
-                }
-            </InputGroup>
+        <>
+            {useForm &&
+                <FormControl isInvalid={useForm.formState.errors[name]}>
+                    {label &&
+                        <FormLabel>{label}</FormLabel>
+                    }
+                    <InputGroup colorScheme={colorScheme}>
+                        {leftAddon &&
+                            <InputLeftAddon children={leftAddon} />
+                        }
+                        <Input
+                            colorScheme={colorScheme}
+                            type={type || "text"}
+                            {...useForm.register(name)}
+                            {...inputProps} />
+                        {rightAddon &&
+                            <InputRightAddon children={rightAddon} />
+                        }
+                    </InputGroup>
 
-            {errors[name] &&
-                <FormErrorMessage>
-                    <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
-                    {errors[name]}
-                </FormErrorMessage>
+                    {useForm.formState.errors[name] &&
+                        <FormErrorMessage>
+                            <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
+                            {useForm.formState.errors[name]}
+                        </FormErrorMessage>
+                    }
+                    {hint &&
+                        <FormHelperText>{hint}</FormHelperText>
+                    }
+                </FormControl>
             }
-            {hint &&
-                <FormHelperText>{hint}</FormHelperText>
-            }
-        </FormControl>
+        </>
     )
 
 }

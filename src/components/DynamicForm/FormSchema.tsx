@@ -1,4 +1,5 @@
 import React from 'react'
+import { UseFormReturn } from "react-hook-form";
 
 import {
     Stack
@@ -12,6 +13,7 @@ import DSelect from "./Select";
 import DDate from "./Date";
 
 interface DFormProps {
+    useForm: UseFormReturn,
     schema: {
         properties: {
             type: string,
@@ -27,7 +29,7 @@ interface DFormFieldProps {
     input: string
 }
 
-export default function DFormSchema({ schema }: DFormProps) {
+export default function DFormSchema({ schema, useForm }: DFormProps) {
 
     const FormField = ({ input }: DFormFieldProps) => {
         let field = schema.properties[input]
@@ -35,6 +37,7 @@ export default function DFormSchema({ schema }: DFormProps) {
             case "string":
                 return (
                     <DInput
+                        useForm={useForm}
                         placeholder={field.placeholder}
                         hint={field.hint}
                         name={input}
@@ -43,6 +46,7 @@ export default function DFormSchema({ schema }: DFormProps) {
             case "integer":
                 return (
                     <DInput
+                        useForm={useForm}
                         placeholder={field.placeholder}
                         hint={field.hint}
                         name={input}
@@ -51,6 +55,7 @@ export default function DFormSchema({ schema }: DFormProps) {
             case "date":
                 return (
                     <DDate
+                        useForm={useForm}
                         placeholder={field.placeholder}
                         hint={field.hint}
                         name={input}
@@ -62,6 +67,7 @@ export default function DFormSchema({ schema }: DFormProps) {
                         {
                             field.ui == "switch" &&
                             <DCheckbox
+                                useForm={useForm}
                                 type='switch'
                                 name={input}
                                 label={field.label} />
@@ -69,6 +75,7 @@ export default function DFormSchema({ schema }: DFormProps) {
                         {
                             !field.ui &&
                             <DCheckbox
+                                useForm={useForm}
                                 name={input}
                                 label={field.label} />
                         }
@@ -81,6 +88,7 @@ export default function DFormSchema({ schema }: DFormProps) {
                         {
                             field.ui == "radio" &&
                             <DRadio
+                                useForm={useForm}
                                 options={field.items}
                                 name={input}
                                 label={field.label} />
@@ -88,6 +96,7 @@ export default function DFormSchema({ schema }: DFormProps) {
                         {
                             !field.ui &&
                             <DSelect
+                                useForm={useForm}
                                 options={field.items}
                                 name={input}
                                 label={field.label} />
@@ -97,6 +106,7 @@ export default function DFormSchema({ schema }: DFormProps) {
             case "text":
                 return (
                     <DTextarea
+                        useForm={useForm}
                         hint={field.hint}
                         placeholder={field.placeholder}
                         name={input}
@@ -114,8 +124,8 @@ export default function DFormSchema({ schema }: DFormProps) {
                 schema.properties &&
                 <Stack spacing="5">
 
-                    {Object.keys(schema.properties).map((input) => (
-                        <FormField input={input} />
+                    {Object.keys(schema.properties).map((input, idx) => (
+                        <FormField key={idx} input={input} />
                     ))}
 
                 </Stack>

@@ -38,13 +38,12 @@ function Quote({ quote, icon, citation, citationTitle, image, children, context,
                 pt="10"
                 pb="10"
                 pos="relative"
-                mb="10"
+                mb="5"
             >
                 {icon}
-                <Text mt="2" fontSize="lg" fontWeight="bold">
+                <Text mt="2" fontSize="lg" fontWeight="600">
                     {quote}
                 </Text>
-
             </Box>
             <HStack spacing="4">
                 <Center

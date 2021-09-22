@@ -1,5 +1,5 @@
 import React from 'react'
-import { useFormContext, Controller } from "react-hook-form";
+import { UseFormReturn, Controller } from "react-hook-form";
 //@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome';
 
@@ -19,29 +19,25 @@ interface DCheckboxProps extends CheckboxProps {
     name: string,
     type?: string,
     label?: string,
-    hint?: string
+    hint?: string,
+    useForm: UseFormReturn
 }
 
 export default function DCheckbox({
     name,
     label,
     type,
+    useForm,
     ...inputProps
 }: DCheckboxProps) {
 
-    const {
-        control,
-        register,
-        formState: { errors }
-    } = useFormContext();
-
     return (
-        <FormControl isInvalid={errors[name]}>
+        <FormControl isInvalid={useForm.formState.errors[name]}>
 
             {type == "switch" &&
                 <Flex>
                     <Controller
-                        control={control}
+                        control={useForm.control}
                         name={name}
                         render={({
                             field: { onChange, value },
@@ -63,15 +59,15 @@ export default function DCheckbox({
             {!type &&
                 <Checkbox
                     {...inputProps}
-                    {...register(name)}>
+                    {...useForm.register(name)}>
                     {label || name}
                 </Checkbox>
             }
 
-            {errors[name] &&
+            {useForm.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
-                    {errors[name]}
+                    {useForm.formState.errors[name]}
                 </FormErrorMessage>
             }
 

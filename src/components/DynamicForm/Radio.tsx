@@ -1,5 +1,5 @@
 import React from 'react'
-import { useFormContext } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 //@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome';
 
@@ -19,6 +19,7 @@ interface DRadioProps extends RadioProps {
     name: string,
     label?: string,
     hint?: string,
+    useForm: UseFormReturn,
     options: [{
         value: string,
         label: string
@@ -30,13 +31,12 @@ export default function DRadio({
     label,
     hint,
     options,
+    useForm,
     ...inputProps
 }: DRadioProps) {
 
-    const { register, formState: { errors } } = useFormContext();
-
     return (
-        <FormControl isInvalid={errors[name]}>
+        <FormControl isInvalid={useForm.formState.errors[name]}>
             <FormLabel>{label || name}</FormLabel>
 
             <RadioGroup>
@@ -52,10 +52,10 @@ export default function DRadio({
                 </Stack>
             </RadioGroup>
 
-            {errors[name] &&
+            {useForm.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
-                    {errors[name]}
+                    {useForm.formState.errors[name]}
                 </FormErrorMessage>
             }
             {hint &&

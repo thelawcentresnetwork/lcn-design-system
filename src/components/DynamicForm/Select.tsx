@@ -1,5 +1,5 @@
 import React from 'react'
-import { useFormContext, Controller } from "react-hook-form";
+import { UseFormReturn, Controller } from "react-hook-form";
 
 //@ts-ignore
 import Select from 'react-select';
@@ -25,6 +25,7 @@ interface DSelectProps {
     colorScheme?: string,
     creatable?: boolean,
     required?: boolean,
+    useForm: UseFormReturn,
     options: [{
         value: string,
         label: string
@@ -38,22 +39,22 @@ export default function DSelect({
     options,
     creatable,
     required,
+    useForm,
     colorScheme,
     ...inputProps
 }: DSelectProps) {
 
-    const { control, register, formState: { errors } } = useFormContext();
     let color = colorScheme || 'gray'
 
     return (
-        <FormControl isInvalid={errors[name]}>
+        <FormControl isInvalid={useForm.formState.errors[name]}>
             {label &&
                 <FormLabel>{label}</FormLabel>
             }
 
             <Controller
                 name={name}
-                control={control}
+                control={useForm.control}
                 rules={{ required: required || false }}
                 render={({
                     field: { onChange, onBlur, value, name, ref },
@@ -132,10 +133,10 @@ export default function DSelect({
                 )}
             />
 
-            {errors[name] &&
+            {useForm.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
-                    {errors[name]}
+                    {useForm.formState.errors[name]}
                 </FormErrorMessage>
             }
             {hint &&

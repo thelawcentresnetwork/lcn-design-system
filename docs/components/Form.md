@@ -64,7 +64,7 @@ import { Stack, Box } from "@chakra-ui/react";
 
 const ShortForm = () => {
 
-  const { ...methods } = useForm();
+  const methods = useForm();
 
   const onSubmit = (values) => {
     console.log(values)
@@ -75,17 +75,15 @@ const ShortForm = () => {
   }
   
   return (
-    <FormProvider {...methods}>
 
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <DFormSchema schema={exampleSchema} />
-        <DSelect options={[]} isMulti creatable={true}/>
+        <DFormSchema useForm={methods} schema={exampleSchema} />
+        <DSelect useForm={methods} options={[]} isMulti creatable={true}/>
         <Box py="5">
           <DActions onCancel={onCancel}/>
         </Box>
       </form>
       
-    </FormProvider>
   )
 
 }
