@@ -6,6 +6,7 @@ const colors = {
     'Green': '#00838A',
   },
   orange: {
+    25: '#fcefeb',
     50: '#fbe7e1',
     100: '#f6cbbf',
     200: '#f2b09d',
@@ -18,6 +19,7 @@ const colors = {
     900: '#491e12',
   },
   red: {
+    25: '##fae6ef',
     50: '#f7d9e7',
     100: '#eeadcc',
     200: '#e582b2',
@@ -30,6 +32,7 @@ const colors = {
     900: '#40001f',
   },
   blue: {
+    25: '#f4f5f9',
     50: '#e3e5ef',
     100: '#c3c8dc',
     200: '#a2abc9',
