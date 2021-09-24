@@ -11,6 +11,8 @@ import DCheckbox from "./Checkbox";
 import DRadio from "./Radio";
 import DSelect from "./Select";
 import DDate from "./Date";
+//@ts-ignore
+import DFile from "./File";
 
 interface DFormProps {
     useForm: UseFormReturn,
@@ -70,6 +72,7 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
                                 useForm={useForm}
                                 type='switch'
                                 name={input}
+                                hint={field.hint}
                                 label={field.label} />
                         }
                         {
@@ -77,6 +80,7 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
                             <DCheckbox
                                 useForm={useForm}
                                 name={input}
+                                hint={field.hint}
                                 label={field.label} />
                         }
                     </>
@@ -91,6 +95,7 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
                                 useForm={useForm}
                                 options={field.items}
                                 name={input}
+                                hint={field.hint}
                                 label={field.label} />
                         }
                         {
@@ -99,6 +104,7 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
                                 useForm={useForm}
                                 options={field.items}
                                 name={input}
+                                hint={field.hint}
                                 label={field.label} />
                         }
                     </>
@@ -106,6 +112,16 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
             case "text":
                 return (
                     <DTextarea
+                        rows={field.rows}
+                        useForm={useForm}
+                        hint={field.hint}
+                        placeholder={field.placeholder}
+                        name={input}
+                        label={field.label} />
+                )
+            case "file":
+                return (
+                    <DFile
                         useForm={useForm}
                         hint={field.hint}
                         placeholder={field.placeholder}
@@ -122,7 +138,7 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
         <>
             {
                 schema.properties &&
-                <Stack spacing="5">
+                <Stack spacing="6">
 
                     {Object.keys(schema.properties).map((input, idx) => (
                         <FormField key={idx} input={input} />

@@ -7,6 +7,7 @@ import Badge from "./components/Badge"
 import Menu from "./components/Menu"
 import Tooltip from "./components/Tooltip"
 
+import Form from "./components/Form"
 import FormLabel from "./components/FormLabel"
 import Input from "./components/Input"
 import Radio from "./components/Radio"
@@ -37,6 +38,7 @@ const Theme = extendTheme({
     Menu,
     Tooltip,
     FormLabel,
+    Form,
     Textarea,
     Input,
     Checkbox,

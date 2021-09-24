@@ -39,8 +39,12 @@ export default function DRadio({
         <FormControl isInvalid={useForm.formState.errors[name]}>
             <FormLabel>{label || name}</FormLabel>
 
+            {hint &&
+                <FormHelperText mb="4">{hint}</FormHelperText>
+            }
+
             <RadioGroup>
-                <Stack spacing={5} direction="row">
+                <Stack spacing={4}>
                     {options.map((option) => (
                         <Radio
                             {...inputProps}
@@ -58,9 +62,7 @@ export default function DRadio({
                     {useForm.formState.errors[name]}
                 </FormErrorMessage>
             }
-            {hint &&
-                <FormHelperText>{hint}</FormHelperText>
-            }
+
         </FormControl>
     )
 

@@ -18,6 +18,7 @@ interface DTextareaProps extends TextareaProps {
     type?: string,
     label?: string,
     hint?: string,
+    rows?: number,
     useForm: UseFormReturn
 }
 
@@ -26,6 +27,7 @@ export default function DTextarea({
     label,
     type,
     hint,
+    rows,
     useForm,
     ...inputProps
 }: DTextareaProps) {
@@ -36,6 +38,7 @@ export default function DTextarea({
                 <FormLabel>{label}</FormLabel>
             }
             <Textarea
+                rows={rows || 3}
                 {...useForm.register(name)}
                 {...inputProps} />
             {useForm.formState.errors[name] &&

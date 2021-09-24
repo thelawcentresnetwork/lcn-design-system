@@ -61,6 +61,10 @@ export default {
             "type": 'boolean',
             "label": "Toggle me"
         },
+        "file": {
+            "type": 'file',
+            "label": "Upload"
+        },
         "keydate": {
             "type": 'date',
             "label": "Key date"
