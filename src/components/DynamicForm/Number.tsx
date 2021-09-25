@@ -13,10 +13,16 @@ import {
     FormErrorIcon,
     InputLeftAddon,
     InputGroup,
-    InputRightAddon
+    InputRightAddon,
+    NumberInputProps,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    NumberIncrementStepper,
+    NumberDecrementStepper
 } from '@chakra-ui/react'
 
-interface DInputProps extends InputProps {
+interface DNumberProps extends NumberInputProps {
     name: string,
     label?: string,
     hint?: string,
@@ -26,17 +32,17 @@ interface DInputProps extends InputProps {
     validation?: RegisterOptions
 }
 
-export default function DInput({
+export default function DNumber({
     name,
     label,
     hint,
     leftAddon,
     rightAddon,
     colorScheme,
-    validation,
     useForm,
+    validation,
     ...inputProps
-}: DInputProps) {
+}: DNumberProps) {
 
     return (
         <>
@@ -49,10 +55,14 @@ export default function DInput({
                         {leftAddon &&
                             <InputLeftAddon children={leftAddon} />
                         }
-                        <Input
-                            colorScheme={colorScheme}
-                            {...useForm.register(name, validation)}
-                            {...inputProps} />
+                        <NumberInput
+                            {...inputProps} >
+                            <NumberInputField {...useForm.register(name, validation)} />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper />
+                                <NumberDecrementStepper />
+                            </NumberInputStepper>
+                        </NumberInput>
                         {rightAddon &&
                             <InputRightAddon children={rightAddon} />
                         }

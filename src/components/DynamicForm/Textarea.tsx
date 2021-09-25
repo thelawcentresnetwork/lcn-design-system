@@ -1,5 +1,5 @@
 import React from 'react'
-import { UseFormReturn } from "react-hook-form";
+import { UseFormReturn, RegisterOptions } from "react-hook-form";
 //@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome';
 
@@ -19,7 +19,8 @@ interface DTextareaProps extends TextareaProps {
     label?: string,
     hint?: string,
     rows?: number,
-    useForm: UseFormReturn
+    useForm: UseFormReturn,
+    validation?: RegisterOptions
 }
 
 export default function DTextarea({
@@ -27,24 +28,23 @@ export default function DTextarea({
     label,
     type,
     hint,
-    rows,
     useForm,
+    validation,
     ...inputProps
 }: DTextareaProps) {
 
     return (
-        <FormControl isInvalid={useForm.formState.errors[name]}>
+        <FormControl isInvalid={useForm.formState.errors[name] || false}>
             {label &&
                 <FormLabel>{label}</FormLabel>
             }
             <Textarea
-                rows={rows || 3}
-                {...useForm.register(name)}
+                {...useForm.register(name, validation)}
                 {...inputProps} />
             {useForm.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
-                    {useForm.formState.errors[name]}
+                    {useForm.formState.errors[name].message}
                 </FormErrorMessage>
             }
             {hint &&

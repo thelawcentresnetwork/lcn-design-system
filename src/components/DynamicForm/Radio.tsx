@@ -1,5 +1,5 @@
 import React from 'react'
-import { UseFormReturn } from "react-hook-form";
+import { UseFormReturn, Controller, RegisterOptions } from "react-hook-form";
 //@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome';
 
@@ -20,6 +20,7 @@ interface DRadioProps extends RadioProps {
     label?: string,
     hint?: string,
     useForm: UseFormReturn,
+    validation?: RegisterOptions,
     options: [{
         value: string,
         label: string
@@ -32,34 +33,44 @@ export default function DRadio({
     hint,
     options,
     useForm,
+    validation,
     ...inputProps
 }: DRadioProps) {
 
     return (
-        <FormControl isInvalid={useForm.formState.errors[name]}>
+        <FormControl isInvalid={useForm.formState.errors[name] || false}>
             <FormLabel>{label || name}</FormLabel>
 
             {hint &&
                 <FormHelperText mb="4">{hint}</FormHelperText>
             }
 
-            <RadioGroup>
-                <Stack spacing={4}>
-                    {options.map((option) => (
-                        <Radio
-                            {...inputProps}
-                            value={option.value}
-                            key={option.value}>
-                            {option.label}
-                        </Radio>
-                    ))}
-                </Stack>
-            </RadioGroup>
+            <Controller
+                control={useForm.control}
+                name={name}
+                rules={validation}
+                render={({
+                    field: { onChange, value },
+                }) => (
+                    <RadioGroup onChange={onChange} value={value}>
+                        <Stack spacing={4}>
+                            {options.map((option) => (
+                                <Radio
+                                    {...inputProps}
+                                    value={option.value}
+                                    key={option.value}>
+                                    {option.label}
+                                </Radio>
+                            ))}
+                        </Stack>
+                    </RadioGroup>
+                )} />
 
-            {useForm.formState.errors[name] &&
+            {
+                useForm.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
-                    {useForm.formState.errors[name]}
+                    {useForm.formState.errors[name].message}
                 </FormErrorMessage>
             }
 

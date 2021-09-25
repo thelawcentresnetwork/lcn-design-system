@@ -19,6 +19,7 @@ import ColorDescription from '../helpers/ColorDescription';
     { Theme.colors.green &&
       Object.keys(Theme.colors.green).map(function(keyName, keyIndex) {
         return (<ColorDescription
+        key={keyIndex}
           color={Theme.colors.green[keyName]}
           name={ "Green "+keyName.toString() }
         />)
@@ -29,6 +30,7 @@ import ColorDescription from '../helpers/ColorDescription';
     { Theme.colors.red &&
       Object.keys(Theme.colors.red).map(function(keyName, keyIndex) {
         return (<ColorDescription
+        key={keyIndex}
           color={Theme.colors.red[keyName]}
           name={ "Red "+keyName.toString() }
         />)
@@ -39,6 +41,7 @@ import ColorDescription from '../helpers/ColorDescription';
     { Theme.colors.blue &&
       Object.keys(Theme.colors.blue).map(function(keyName, keyIndex) {
         return (<ColorDescription
+        key={keyIndex}
           color={Theme.colors.blue[keyName]}
           name={ "Blue "+keyName.toString() }
         />)
@@ -49,6 +52,7 @@ import ColorDescription from '../helpers/ColorDescription';
     { Theme.colors.orange &&
       Object.keys(Theme.colors.orange).map(function(keyName, keyIndex) {
         return (<ColorDescription
+        key={keyIndex}
           color={Theme.colors.orange[keyName]}
           name={ "Orange "+keyName.toString() }
         />)
@@ -60,6 +64,7 @@ import ColorDescription from '../helpers/ColorDescription';
     { Theme.colors.gray &&
       Object.keys(Theme.colors.gray).map(function(keyName, keyIndex) {
         return (<ColorDescription
+        key={keyIndex}
           color={Theme.colors.gray[keyName]}
           name={ "Gray "+keyName.toString() }
         />)

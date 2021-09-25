@@ -8,8 +8,15 @@ export default {
         "first_name": {
             "type": "string",
             "label": "First name",
+            "validation": { required: 'Please fill this in...' }
         },
-        "second_name": {
+        "phone": {
+            "type": "string",
+            "label": "Phone",
+            "leftAddon": "+44",
+            "rightAddon": "UK"
+        },
+        "link": {
             "type": "string",
             "label": "Link",
             "hint": "This is some helper text to explain what a link is.",
@@ -17,46 +24,49 @@ export default {
         },
         "number_of_cats": {
             "type": "integer",
-            "label": "Number of cats"
+            "label": "Number of cats",
+            "min": 1,
+            "max": 5
         },
-        "select_one": {
+        "choose": {
             "type": "array",
             "ui": "radio",
             "label": "Choose me",
             "items": [
                 {
                     "value": "1",
-                    "label": "An option"
+                    "label": "An option for 1"
                 },
                 {
                     "value": "2",
-                    "label": "An option"
+                    "label": "An option for 2"
                 }
             ]
         },
-        "select_two": {
+        "select": {
             "type": "array",
             "label": "Choose me",
             "items": [
                 {
                     "value": "1",
-                    "label": "An option"
+                    "label": "An option for 1"
                 },
                 {
                     "value": "2",
-                    "label": "An option"
+                    "label": "An option for 2"
                 }
             ]
         },
-        "sometext": {
+        "address": {
             "type": "text",
-            "label": "Address"
+            "label": "Address",
+            "rows": 5
         },
-        "bool_1": {
+        "check": {
             "type": 'boolean',
             "label": "Check me"
         },
-        "bool_2": {
+        "toggle": {
             "ui": "switch",
             "type": 'boolean',
             "label": "Toggle me"
@@ -69,6 +79,5 @@ export default {
             "type": 'date',
             "label": "Key date"
         }
-    },
-    "required": ["first_name"]
+    }
 }

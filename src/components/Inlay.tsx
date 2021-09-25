@@ -4,7 +4,7 @@ import {
     Box,
     Flex,
     BoxProps,
-    Img
+    Image
 } from "@chakra-ui/react"
 
 interface InlayProps extends BoxProps {
@@ -20,17 +20,22 @@ function Inlay({ image, children, context = 'light', ...boxProps }: InlayProps) 
             py="5%"
             position="relative">
             {image &&
-                <Img
-                    borderRadius="lg"
+                <Box
                     left="0"
                     position="absolute"
                     top="0"
-                    fit="cover"
                     boxShadow="base"
+                    borderRadius="lg"
                     height="100%"
-                    width="70%"
-                    src={image}
-                />
+                    overflow="hidden"
+                    width="70%">
+                    <Image
+                        fit="cover"
+                        width="100%"
+                        height="100%"
+                        src={image}
+                    />
+                </Box>
             }
             <Box
                 borderRadius="lg"

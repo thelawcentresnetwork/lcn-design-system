@@ -6,6 +6,7 @@ import {
 } from '@chakra-ui/react'
 
 import DInput from "./Input";
+import DNumber from "./Number";
 import DTextarea from "./Textarea";
 import DCheckbox from "./Checkbox";
 import DRadio from "./Radio";
@@ -35,53 +36,51 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
 
     const FormField = ({ input }: DFormFieldProps) => {
         let field = schema.properties[input]
-        switch (field.type) {
+        let { validation, type, items, ui, ...inputProps } = field
+        switch (type) {
             case "string":
                 return (
                     <DInput
                         useForm={useForm}
-                        placeholder={field.placeholder}
-                        hint={field.hint}
                         name={input}
-                        label={field.label} />
+                        validation={validation}
+                        {...inputProps} />
                 )
             case "integer":
                 return (
-                    <DInput
-                        useForm={useForm}
-                        placeholder={field.placeholder}
-                        hint={field.hint}
+                    <DNumber
                         name={input}
-                        label={field.label} />
+                        useForm={useForm}
+                        validation={validation}
+                        {...inputProps} />
                 )
             case "date":
                 return (
                     <DDate
                         useForm={useForm}
-                        placeholder={field.placeholder}
-                        hint={field.hint}
                         name={input}
-                        label={field.label} />
+                        validation={validation}
+                        {...inputProps} />
                 )
             case "boolean":
                 return (
                     <>
                         {
-                            field.ui == "switch" &&
+                            ui == "switch" &&
                             <DCheckbox
                                 useForm={useForm}
                                 type='switch'
                                 name={input}
-                                hint={field.hint}
-                                label={field.label} />
+                                validation={validation}
+                                {...inputProps} />
                         }
                         {
-                            !field.ui &&
+                            !ui &&
                             <DCheckbox
                                 useForm={useForm}
                                 name={input}
-                                hint={field.hint}
-                                label={field.label} />
+                                validation={validation}
+                                {...inputProps} />
                         }
                     </>
                 )
@@ -93,40 +92,37 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
                             field.ui == "radio" &&
                             <DRadio
                                 useForm={useForm}
-                                options={field.items}
+                                options={items}
                                 name={input}
-                                hint={field.hint}
-                                label={field.label} />
+                                validation={validation}
+                                {...inputProps} />
                         }
                         {
                             !field.ui &&
                             <DSelect
                                 useForm={useForm}
-                                options={field.items}
+                                options={items}
                                 name={input}
-                                hint={field.hint}
-                                label={field.label} />
+                                validation={validation}
+                                {...inputProps} />
                         }
                     </>
                 )
             case "text":
                 return (
                     <DTextarea
-                        rows={field.rows}
                         useForm={useForm}
-                        hint={field.hint}
-                        placeholder={field.placeholder}
                         name={input}
-                        label={field.label} />
+                        validation={validation}
+                        {...inputProps} />
                 )
             case "file":
                 return (
                     <DFile
                         useForm={useForm}
-                        hint={field.hint}
-                        placeholder={field.placeholder}
                         name={input}
-                        label={field.label} />
+                        validation={validation}
+                        {...inputProps} />
                 )
             default:
                 console.log("Can not render field: " + input);
