@@ -87,7 +87,10 @@ export default function DDate({
                                     as={Box}
                                     color="gray.400"
                                     borderLeftRadius="none">
-                                    <Text py="2">{value && value.toDateString()}</Text>
+                                    <Text py="2">
+                                        {value && (value instanceof Date) && value.toDateString()}
+                                        {value && !(value instanceof Date) && new Date(value).toDateString()}
+                                    </Text>
                                 </Input>
                             </PopoverTrigger>
                             <PopoverContent
@@ -97,7 +100,7 @@ export default function DDate({
                                 <PopoverArrow />
                                 <PopoverBody>
                                     <Calendar
-                                        onChange={(e: Event) => { console.log(e); onChange(e) }}
+                                        onChange={(e: Event) => { onChange(e) }}
                                         date={new Date()}
                                         {...inputProps} />
                                 </PopoverBody>
