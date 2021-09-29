@@ -46,39 +46,37 @@ export default function DNumber({
 
     return (
         <>
-            {useForm &&
-                <FormControl isInvalid={useForm.formState.errors[name] || false}>
-                    {label &&
-                        <FormLabel>{label}</FormLabel>
+            <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+                {label &&
+                    <FormLabel>{label}</FormLabel>
+                }
+                <InputGroup colorScheme={colorScheme}>
+                    {leftAddon &&
+                        <InputLeftAddon children={leftAddon} />
                     }
-                    <InputGroup colorScheme={colorScheme}>
-                        {leftAddon &&
-                            <InputLeftAddon children={leftAddon} />
-                        }
-                        <NumberInput
-                            {...inputProps} >
-                            <NumberInputField {...useForm.register(name, validation)} />
-                            <NumberInputStepper>
-                                <NumberIncrementStepper />
-                                <NumberDecrementStepper />
-                            </NumberInputStepper>
-                        </NumberInput>
-                        {rightAddon &&
-                            <InputRightAddon children={rightAddon} />
-                        }
-                    </InputGroup>
+                    <NumberInput
+                        {...inputProps} >
+                        <NumberInputField {...useForm?.register(name, validation)} />
+                        <NumberInputStepper>
+                            <NumberIncrementStepper />
+                            <NumberDecrementStepper />
+                        </NumberInputStepper>
+                    </NumberInput>
+                    {rightAddon &&
+                        <InputRightAddon children={rightAddon} />
+                    }
+                </InputGroup>
 
-                    {useForm.formState.errors[name] &&
-                        <FormErrorMessage>
-                            <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
-                            {useForm.formState.errors[name].message}
-                        </FormErrorMessage>
-                    }
-                    {hint &&
-                        <FormHelperText>{hint}</FormHelperText>
-                    }
-                </FormControl>
-            }
+                {useForm?.formState.errors[name] &&
+                    <FormErrorMessage>
+                        <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
+                        {useForm.formState.errors[name].message}
+                    </FormErrorMessage>
+                }
+                {hint &&
+                    <FormHelperText>{hint}</FormHelperText>
+                }
+            </FormControl>
         </>
     )
 

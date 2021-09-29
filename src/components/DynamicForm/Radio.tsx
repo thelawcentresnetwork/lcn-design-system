@@ -19,7 +19,7 @@ interface DRadioProps extends RadioProps {
     name: string,
     label?: string,
     hint?: string,
-    useForm: UseFormReturn,
+    useForm?: UseFormReturn,
     validation?: RegisterOptions,
     options: [{
         value: string,
@@ -38,7 +38,7 @@ export default function DRadio({
 }: DRadioProps) {
 
     return (
-        <FormControl isInvalid={useForm.formState.errors[name] || false}>
+        <FormControl isInvalid={useForm?.formState.errors[name] || false}>
             <FormLabel>{label || name}</FormLabel>
 
             {hint &&
@@ -46,7 +46,7 @@ export default function DRadio({
             }
 
             <Controller
-                control={useForm.control}
+                control={useForm?.control}
                 name={name}
                 rules={validation}
                 render={({
@@ -67,7 +67,7 @@ export default function DRadio({
                 )} />
 
             {
-                useForm.formState.errors[name] &&
+                useForm?.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
                     {useForm.formState.errors[name].message}

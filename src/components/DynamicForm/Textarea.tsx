@@ -19,7 +19,7 @@ interface DTextareaProps extends TextareaProps {
     label?: string,
     hint?: string,
     rows?: number,
-    useForm: UseFormReturn,
+    useForm?: UseFormReturn,
     validation?: RegisterOptions
 }
 
@@ -34,14 +34,14 @@ export default function DTextarea({
 }: DTextareaProps) {
 
     return (
-        <FormControl isInvalid={useForm.formState.errors[name] || false}>
+        <FormControl isInvalid={useForm?.formState.errors[name] || false}>
             {label &&
                 <FormLabel>{label}</FormLabel>
             }
             <Textarea
-                {...useForm.register(name, validation)}
+                {...useForm?.register(name, validation)}
                 {...inputProps} />
-            {useForm.formState.errors[name] &&
+            {useForm?.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
                     {useForm.formState.errors[name].message}

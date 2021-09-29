@@ -25,7 +25,7 @@ interface DSelectProps {
     colorScheme?: string,
     creatable?: boolean,
     required?: boolean,
-    useForm: UseFormReturn,
+    useForm?: UseFormReturn,
     validation?: RegisterOptions,
     options: [{
         value: string,
@@ -49,14 +49,14 @@ export default function DSelect({
     let color = colorScheme || 'gray'
 
     return (
-        <FormControl isInvalid={useForm.formState.errors[name] || false}>
+        <FormControl isInvalid={useForm?.formState.errors[name] || false}>
             {label &&
                 <FormLabel>{label}</FormLabel>
             }
 
             <Controller
                 name={name}
-                control={useForm.control}
+                control={useForm?.control}
                 rules={validation}
                 render={({
                     field: { onChange, onBlur, value, name, ref },
@@ -135,7 +135,7 @@ export default function DSelect({
                 )}
             />
 
-            {useForm.formState.errors[name] &&
+            {useForm?.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
                     {useForm.formState.errors[name].message}

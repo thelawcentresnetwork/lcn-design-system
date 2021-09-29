@@ -20,7 +20,7 @@ interface DCheckboxProps extends CheckboxProps {
     type?: string,
     label?: string,
     hint?: string,
-    useForm: UseFormReturn,
+    useForm?: UseFormReturn,
     validation?: RegisterOptions
 }
 
@@ -34,12 +34,12 @@ export default function DCheckbox({
 }: DCheckboxProps) {
 
     return (
-        <FormControl isInvalid={useForm.formState.errors[name] || false}>
+        <FormControl isInvalid={useForm?.formState.errors[name] || false}>
 
             {type == "switch" &&
                 <Flex>
                     <Controller
-                        control={useForm.control}
+                        control={useForm?.control}
                         name={name}
                         rules={validation}
                         render={({
@@ -62,12 +62,12 @@ export default function DCheckbox({
             {!type &&
                 <Checkbox
                     {...inputProps}
-                    {...useForm.register(name, validation)}>
+                    {...useForm?.register(name, validation)}>
                     {label || name}
                 </Checkbox>
             }
 
-            {useForm.formState.errors[name] &&
+            {useForm?.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
                     {useForm.formState.errors[name].message}

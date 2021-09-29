@@ -33,7 +33,7 @@ interface DInputProps extends InputProps {
     rightAddon?: string,
     leftAddon?: string,
     validation?: RegisterOptions,
-    useForm: UseFormReturn
+    useForm?: UseFormReturn
 }
 
 export default function DDate({
@@ -50,13 +50,13 @@ export default function DDate({
 }: DInputProps) {
 
     return (
-        <FormControl isInvalid={useForm.formState.errors[name] || false}>
+        <FormControl isInvalid={useForm?.formState.errors[name] || false}>
             {label &&
                 <FormLabel>{label}</FormLabel>
             }
 
             <Controller
-                control={useForm.control}
+                control={useForm?.control}
                 name={name}
                 rules={validation}
                 render={({
@@ -114,7 +114,7 @@ export default function DDate({
                     </InputGroup>
                 )} />
 
-            {useForm.formState.errors[name] &&
+            {useForm?.formState.errors[name] &&
                 <FormErrorMessage>
                     <FormErrorIcon icon={<ChakraAwesome icon={['fas', 'circle-exclamation']} />} />
                     {useForm.formState.errors[name].message}
