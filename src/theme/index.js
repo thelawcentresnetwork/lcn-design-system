@@ -10,6 +10,8 @@ import Tooltip from "./components/Tooltip"
 import Form from "./components/Form"
 import FormLabel from "./components/FormLabel"
 import Input from "./components/Input"
+import NumberInput from "./components/NumberInput"
+
 import Radio from "./components/Radio"
 
 import Checkbox from "./components/Checkbox"
@@ -40,6 +42,7 @@ const Theme = extendTheme({
     FormLabel,
     Form,
     Textarea,
+    NumberInput,
     Input,
     Checkbox,
     Drawer,

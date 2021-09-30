@@ -1,32 +1,37 @@
 const Textarea = {
   baseStyle: {
-    fontSize: "sm",
+    fontSize: "sm"
   },
   variants: {
-    outline: {
+    outline: ({ colorScheme }) => ({
+      bg: 'white',
       _focus: {
-        borderColor: "brand.Green",
-        boxShadow: '0 0 0 1px var(--chakra-colors-brand-Green)'
+        borderColor: `${colorScheme}.500`,
+        boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`
       },
       _active: {
-        borderColor: "brand.Green",
-        boxShadow: '0 0 0 1px var(--chakra-colors-brand-Green)'
+        borderColor: `${colorScheme}.500`,
+        boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`
       }
-    },
-    inverse: {
+    }),
+    inverse: ({ colorScheme }) => ({
       bg: 'white',
       borderWidth: '1px',
-      borderColor: 'green.100',
+      borderColor: `${colorScheme}.100`,
       _focus: {
-        borderColor: "brand.Green",
-        boxShadow: '0 0 0 2px var(--chakra-colors-brand-Green)'
+        borderColor: `${colorScheme}.500`,
+        boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`
       },
       _active: {
-        borderColor: "brand.Green",
-        boxShadow: '0 0 0 2px var(--chakra-colors-brand-Green)'
+        borderColor: `${colorScheme}.500`,
+        boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`
       }
-    }
+    })
   },
+  defaultProps: {
+    colorScheme: 'gray',
+    variant: "outline"
+  }
 }
 
 export default Textarea
