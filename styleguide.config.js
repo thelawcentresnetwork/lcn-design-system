@@ -200,6 +200,10 @@ module.exports = {
               content: 'docs/patterns/CookieConsent.md'
             },
             {
+              name: 'Form Builder',
+              content: 'docs/patterns/FormBuilder.md'
+            },
+            {
               name: 'Feedback',
               content: 'docs/patterns/Feedback.md'
             },

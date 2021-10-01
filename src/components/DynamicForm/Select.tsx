@@ -27,10 +27,10 @@ interface DSelectProps {
     required?: boolean,
     useForm?: UseFormReturn,
     validation?: RegisterOptions,
-    options: [{
+    options?: {
         value: string,
         label: string
-    }]
+    }[]
 }
 
 export default function DSelect({
@@ -65,7 +65,6 @@ export default function DSelect({
                     <>
                         {creatable &&
                             <CreatableSelect
-                                {...inputProps}
                                 theme={(theme) => ({
                                     ...theme,
                                     colors: {
@@ -91,7 +90,11 @@ export default function DSelect({
 
                                     })
                                 }}
+                                inputRef={ref}
                                 options={options}
+                                value={value}
+                                onChange={val => onChange(val)}
+                                {...inputProps}
                             />
                         }
                         {!creatable &&

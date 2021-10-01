@@ -52,7 +52,7 @@ export default function DCheckbox({
                             />
                         )}
                     />
-                    <FormLabel htmlFor={name}>
+                    <FormLabel fontWeight="400" pl="1" color="gray.800" htmlFor={name}>
                         {label || name}
                     </FormLabel>
                 </Flex>

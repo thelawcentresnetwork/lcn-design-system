@@ -21,10 +21,10 @@ interface DRadioProps extends RadioProps {
     hint?: string,
     useForm?: UseFormReturn,
     validation?: RegisterOptions,
-    options: [{
+    options?: {
         value: string,
         label: string
-    }]
+    }[]
 }
 
 export default function DRadio({
@@ -54,7 +54,7 @@ export default function DRadio({
                 }) => (
                     <RadioGroup onChange={onChange} value={value}>
                         <Stack spacing={4}>
-                            {options.map((option) => (
+                            {options?.map((option) => (
                                 <Radio
                                     {...inputProps}
                                     value={option.value}
