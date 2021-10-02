@@ -3,7 +3,18 @@
 ```js padded
     import { useState } from 'react';
     import { useForm } from "react-hook-form";
-    import { Button, useDisclosure, Code, Box, Heading } from "@chakra-ui/react";
+   
+   import { 
+        Modal,
+        ModalOverlay,
+        ModalContent,
+        ModalHeader,
+        ModalFooter,
+        ModalBody,
+        ModalCloseButton,
+        Button, useDisclosure, Code, Box, Heading 
+    } from "@chakra-ui/react";
+
     import FormBuilder from '/src/patterns/FormBuilder/FormBuilder';
     import exampleSchema from "../helpers/exampleBuilderSchema";
     import DFormSchema from "../../src/components/DynamicForm/FormSchema";
@@ -22,15 +33,12 @@
     }
 
     <>
-        <Button onClick={onOpen}>
-            Create an example form
-        </Button>
+        
         <Box>
             <FormBuilder 
                 onSave={onSave}
                 schema={exampleSchema}
-                onClose={onClose}
-                isOpen={isOpen} />
+                onCancel={onCancel} />
         </Box>
 
         {data && 

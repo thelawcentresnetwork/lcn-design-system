@@ -5,13 +5,7 @@ import { useForm, FormProvider, useFieldArray } from "react-hook-form";
 import {
     Button,
     Stack,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
+    Heading,
     Table,
     Tr,
     Th,
@@ -52,7 +46,7 @@ const fieldTypes = [
     }
 ]
 
-export default function FormBuilder({ schema, onClose, isOpen, onSave }) {
+export default function FormBuilder({ schema, onCancel, onSave }) {
 
     const formMethods = useForm();
     const { reset, formState: { errors } } = formMethods
@@ -68,7 +62,7 @@ export default function FormBuilder({ schema, onClose, isOpen, onSave }) {
 
     useEffect(() => {
 
-        if (schema?.properties && isOpen) {
+        if (schema?.properties) {
 
             const schemaFields = schema?.properties?.map((field, index) => {
                 return {
@@ -86,7 +80,7 @@ export default function FormBuilder({ schema, onClose, isOpen, onSave }) {
 
         }
 
-    }, [isOpen])
+    }, [schema])
 
     const onSubmit = (values) => {
 
@@ -118,78 +112,66 @@ export default function FormBuilder({ schema, onClose, isOpen, onSave }) {
     return (
 
         <>
+            {schema &&
+                <>
+                    <FormProvider {...formMethods}>
+                        <form onSubmit={formMethods.handleSubmit(onSubmit)}>
+                            <Box pb="5" px="0" mt="-8">
+                                <Stack spacing="5">
 
-            <Modal size='4xl' isOpen={isOpen} onClose={onClose}>
+                                    {fields &&
+                                        <Table variant="simple">
+                                            <Thead>
+                                                <Tr>
+                                                    <Th borderBottom="0"></Th>
+                                                    <Th borderBottom="0"></Th>
+                                                    <Th borderBottom="0"></Th>
+                                                </Tr>
+                                            </Thead>
+                                            <Tbody>
 
-                <ModalOverlay />
-                {schema &&
-                    <ModalContent mt="10" p="5">
-                        <ModalHeader>
-                            Customise {schema.title}
-                            <ModalCloseButton />
-                        </ModalHeader>
+                                                {
+                                                    fields.map((field, index) => (
+                                                        <Field
+                                                            fieldTypes={fieldTypes}
+                                                            key={field.id}
+                                                            index={index}
+                                                            total={fields.length}
+                                                            field={field}
+                                                            swapField={swapField}
+                                                            removeField={removeField} />
+                                                    ))
+                                                }
 
-                        <FormProvider {...formMethods}>
-                            <form onSubmit={formMethods.handleSubmit(onSubmit)}>
-                                <ModalBody pb="5" px="0" mt="-8">
-                                    <Stack spacing="5">
+                                            </Tbody>
+                                        </Table>
+                                    }
 
-                                        {fields &&
-                                            <Table variant="simple">
-                                                <Thead>
-                                                    <Tr>
-                                                        <Th borderBottom="0"></Th>
-                                                        <Th borderBottom="0"></Th>
-                                                        <Th borderBottom="0"></Th>
-                                                    </Tr>
-                                                </Thead>
-                                                <Tbody>
+                                    <Button
+                                        variant="inverse"
+                                        leftIcon={<ChakraAwesome icon="plus" />}
+                                        onClick={e => appendField({ type: "text" })}>Add field</Button>
 
-                                                    {
-                                                        fields.map((field, index) => (
-                                                            <Field
-                                                                fieldTypes={fieldTypes}
-                                                                key={field.id}
-                                                                index={index}
-                                                                total={fields.length}
-                                                                field={field}
-                                                                swapField={swapField}
-                                                                removeField={removeField} />
-                                                        ))
-                                                    }
+                                </Stack>
+                            </Box>
 
-                                                </Tbody>
-                                            </Table>
-                                        }
-
-                                        <Button
-                                            variant="inverse"
-                                            leftIcon={<ChakraAwesome icon="plus" />}
-                                            onClick={e => appendField({ type: "text" })}>Add field</Button>
-
-                                    </Stack>
-                                </ModalBody>
-
-                                <ModalFooter
-                                    mt="0"
-                                    borderTopWidth="1px"
-                                    borderColor='gray.100'
-                                    pt="7"
-                                    justifyContent="flex-start">
-                                    <DActions
-                                        labels={{
-                                            submit: 'Save Form',
-                                            cancel: 'Cancel'
-                                        }}
-                                        onCancel={onClose} />
-                                </ModalFooter>
-
-                            </form>
-                        </FormProvider>
-
-                    </ModalContent>
-                }
-            </Modal>
+                            <Box
+                                mt="0"
+                                borderTopWidth="1px"
+                                borderColor='gray.100'
+                                pt="7"
+                                justifyContent="flex-start">
+                                <DActions
+                                    labels={{
+                                        submit: 'Save Form',
+                                        cancel: 'Cancel'
+                                    }}
+                                    onCancel={onCancel} />
+                            </Box>
+                        </form>
+                    </FormProvider>
+                </>
+            }
         </>
     )
 
