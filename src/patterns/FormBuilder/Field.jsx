@@ -66,11 +66,13 @@ export default function Field({ index, total, field, swapField, removeField, fie
                             <DCheckbox
                                 useForm={formMethods}
                                 name={`fields.${index}.required`}
+                                fontSize="xs"
                                 label="Mandatory field"
                             />
                             <DCheckbox
                                 useForm={formMethods}
                                 name={`fields.${index}.ppi`}
+                                fontSize="xs"
                                 label="Personally Identifiable Information (PII)"
                             />
 

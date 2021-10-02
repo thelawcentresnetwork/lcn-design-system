@@ -46,7 +46,7 @@ const fieldTypes = [
     }
 ]
 
-export default function FormBuilder({ schema, onCancel, onSave }) {
+export default function FormBuilder({ schema, onCancel, onSave, labels }) {
 
     const formMethods = useForm();
     const { reset, formState: { errors } } = formMethods
@@ -156,13 +156,10 @@ export default function FormBuilder({ schema, onCancel, onSave }) {
                             </Box>
 
                             <Box
-                                mt="0"
-                                borderTopWidth="1px"
-                                borderColor='gray.100'
-                                pt="7"
+                                pt="10"
                                 justifyContent="flex-start">
                                 <DActions
-                                    labels={{
+                                    labels={labels || {
                                         submit: 'Save Form',
                                         cancel: 'Cancel'
                                     }}
