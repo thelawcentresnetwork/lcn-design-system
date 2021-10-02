@@ -27,7 +27,7 @@ export default function Field({ index, total, field, swapField, removeField, fie
         <Tr>
             <Td pt="6" pb="7" fontSize="sm">
                 <Flex>
-                    <Box mr="5" pt="0">
+                    <Box mr="5" pb="0">
 
                         <Stack spacing="0">
                             {index > 0 &&
@@ -63,18 +63,22 @@ export default function Field({ index, total, field, swapField, removeField, fie
                                 name={`fields.${index}.label`}
                                 label="Field label"
                             />
-                            <DCheckbox
-                                useForm={formMethods}
-                                name={`fields.${index}.required`}
-                                fontSize="xs"
-                                label="Mandatory field"
-                            />
-                            <DCheckbox
-                                useForm={formMethods}
-                                name={`fields.${index}.ppi`}
-                                fontSize="xs"
-                                label="Personally Identifiable Information (PII)"
-                            />
+                            <Stack spacing="2" pt="2">
+                                <DCheckbox
+                                    type="switch"
+                                    size="sm"
+                                    useForm={formMethods}
+                                    name={`fields.${index}.required`}
+                                    label="Mandatory field"
+                                />
+                                <DCheckbox
+                                    type="switch"
+                                    size="sm"
+                                    useForm={formMethods}
+                                    name={`fields.${index}.ppi`}
+                                    label="Contains PII"
+                                />
+                            </Stack>
 
                         </Stack>
                     </Box>

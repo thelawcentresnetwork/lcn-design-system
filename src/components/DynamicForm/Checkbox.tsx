@@ -37,7 +37,7 @@ export default function DCheckbox({
         <FormControl isInvalid={useForm?.formState.errors[name] || false}>
 
             {type == "switch" &&
-                <Flex>
+                <Flex alignItems='center'>
                     <Controller
                         control={useForm?.control}
                         name={name}
@@ -49,10 +49,17 @@ export default function DCheckbox({
                                 mr="3"
                                 onChange={(e) => onChange(e.target.checked)}
                                 isChecked={value}
+                                size={inputProps.size}
                             />
                         )}
                     />
-                    <FormLabel fontWeight="400" pl="1" color="gray.800" htmlFor={name}>
+                    <FormLabel
+                        fontSize={inputProps.size}
+                        fontFamily="Lato, sans-serif"
+                        fontWeight="400"
+                        pb="0"
+                        mb="0"
+                        pl="1" color="gray.800" htmlFor={name}>
                         {label || name}
                     </FormLabel>
                 </Flex>
