@@ -98,7 +98,7 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
             }
 
             if (field.required) {
-                newField['validation'] = { required: true }
+                newField['validation'] = { required: 'Please fill in this field.' }
             }
 
             newSchema.properties.push(newField)
@@ -156,7 +156,7 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
                             </Box>
 
                             <Box
-                                pt="10"
+                                pt="5"
                                 justifyContent="flex-start">
                                 <DActions
                                     labels={labels || {
