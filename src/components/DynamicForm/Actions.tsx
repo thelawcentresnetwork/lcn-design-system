@@ -24,7 +24,7 @@ export default function DActions({
 
         <HStack w="100%" spacing="5" {...boxProps}>
             <Button type="submit">{labels?.submit || "Submit"}</Button>
-            {!onCancel &&
+            {onCancel &&
                 <Button
                     onClick={onCancel}
                     variant="outline"

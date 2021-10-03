@@ -156,7 +156,7 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
                             </Box>
 
                             <Box
-                                pt="5"
+                                pt="3"
                                 justifyContent="flex-start">
                                 <DActions
                                     labels={labels || {
