@@ -123,7 +123,6 @@ module.exports = {
     },
     {
       name: 'Design System',
-      pagePerSection: true,
       tocMode: 'collapse',
       sections: [
         {

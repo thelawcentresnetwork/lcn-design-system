@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 
 //@ts-ignore
-import ChakraAwesome from '../../src/utilities/ChakraAwesome';
+import ChakraAwesome from '../utilities/ChakraAwesome';
 
 interface FeatureProps extends BoxProps {
     /** Title of card, must be included for link overlays to work */

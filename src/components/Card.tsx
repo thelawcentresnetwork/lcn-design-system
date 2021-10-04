@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react"
 
 //@ts-ignore
-import ChakraAwesome from '../../src/utilities/ChakraAwesome';
+import ChakraAwesome from '../utilities/ChakraAwesome';
 
 interface CardProps extends LinkBoxProps {
   /** Link overlayed on entire card, if title included */
