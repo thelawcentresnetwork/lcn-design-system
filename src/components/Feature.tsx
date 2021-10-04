@@ -24,7 +24,7 @@ export default function Feature({ title, description, icon, ...rest }: FeaturePr
     return (
         <Box {...rest}>
             <Box fontSize="2.5rem">
-                <ChakraAwesome icon={['fad', icon]} />
+                <ChakraAwesome icon={['fas', icon]} />
             </Box>
             <Stack mt="3">
                 <Text as="h3" fontSize="lg" fontWeight="bold">
