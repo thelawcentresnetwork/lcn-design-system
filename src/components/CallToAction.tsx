@@ -19,7 +19,7 @@ interface CallToActionProps extends BoxProps {
     link?: string,
 }
 
-export const CallToAction = ({ heading, description, buttonText, link, ...rest }: CallToActionProps) => {
+const CallToAction = ({ heading, description, buttonText, link, ...rest }: CallToActionProps) => {
     return (
         <Box as="section">
             <Box
@@ -48,3 +48,5 @@ export const CallToAction = ({ heading, description, buttonText, link, ...rest }
         </Box>
     )
 }
+
+export default CallToAction

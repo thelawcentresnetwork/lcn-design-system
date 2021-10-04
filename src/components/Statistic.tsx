@@ -14,7 +14,7 @@ interface StatProps extends StackProps {
     value?: string,
 }
 
-export const Statistic = ({ title, value, ...rest }: StatProps) => {
+const Statistic = ({ title, value, ...rest }: StatProps) => {
     return (
         <Stack direction="column-reverse" maxW="12rem" mx="auto" as="dl" textAlign="center" {...rest}>
             <Box as="dt" color={useColorModeValue('gray.600', 'whiteAlpha.700')} fontWeight="medium">
@@ -31,3 +31,5 @@ export const Statistic = ({ title, value, ...rest }: StatProps) => {
         </Stack>
     )
 }
+
+export default Statistic
