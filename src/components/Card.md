@@ -1,30 +1,34 @@
 ```js 
   import { Heading, Text, Spacer, SimpleGrid, Box } from '@chakra-ui/react';
-  <SimpleGrid columns={2} spacing="5">
-    <Card 
-      title="Title of this card"
-      link="http://google.com"
-      image="http://images.ctfassets.net/zz4093a0xiy6/2fUTCGDeYE8TFbou5tGutp/d7719dbb672450f75112f4928160e729/hero">
-      
-      <Box>
-        <Text>Any other content can be included here.</Text>
-        <Text>Any other content can be included here.</Text>
-        <Text>Any other content can be included here.</Text>
-        <Text>Any other content can be included here.</Text>
-      </Box>
+  <>
+    <SimpleGrid columns={2} spacing="5">
+      <Card 
+        title="Title of this card"
+        link="http://google.com"
+        image="http://images.ctfassets.net/zz4093a0xiy6/2fUTCGDeYE8TFbou5tGutp/d7719dbb672450f75112f4928160e729/hero">
+        
+        <Box>
+          <Text>Any other content can be included here.</Text>
+        </Box>
 
-      <Spacer />
+        <Spacer />
 
-      <Text>Something in the footer</Text>
+        <Text>Something in the footer</Text>
 
-    </Card>
-    <Card 
-      title="Title of this card"
-      link="http://google.com"
-      image="https://images.unsplash.com/photo-1604881991664-593b31b88488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80">
-      <Text>Any other content can be included here.</Text>
-      <Spacer />
-      <Text>Something in the footer</Text>
-    </Card>
-  </SimpleGrid>
+      </Card>
+    </SimpleGrid>
+
+    <SimpleGrid mt="10" columns={2} spacing="10">
+      <Card 
+        collapsable={true}
+        title="This card collapses">
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Text>
+      </Card>
+      <Card 
+        collapsable={true}
+        title="So does this card">
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Text>
+      </Card>
+    </SimpleGrid>
+  </>
 ```

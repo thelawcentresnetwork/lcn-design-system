@@ -207,7 +207,6 @@ module.exports = {
               name: 'Feedback',
               content: 'docs/patterns/Feedback.md'
             },
-            ,
             {
               name: 'NPS Widget',
               content: 'docs/patterns/NPSWidget.md'
