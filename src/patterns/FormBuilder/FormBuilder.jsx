@@ -69,8 +69,8 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
                     name: field.name,
                     id: index,
                     label: field.label,
-                    type: fieldTypes.find(c => c.value === field.type),
-                    items: field.items,
+                    type: field.type,
+                    items: field.items?.map((item) => item.value),
                     ppi: field.ppi,
                     required: field.validation?.hasOwnProperty('required')
                 }
@@ -92,9 +92,9 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
             let newField = {
                 name: field.label,
                 label: field.label,
-                type: field.type?.value,
+                type: field.type,
                 ppi: field.ppi,
-                items: field.items
+                items: field.items?.map((item) => ({ value: item, label: item }))
             }
 
             if (field.required) {
@@ -150,7 +150,7 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
                                     <Button
                                         variant="inverse"
                                         leftIcon={<ChakraAwesome icon="plus" />}
-                                        onClick={e => appendField({ type: "text" })}>Add field</Button>
+                                        onClick={e => appendField({ type: "string" })}>Add field</Button>
 
                                 </Stack>
                             </Box>

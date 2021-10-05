@@ -27,6 +27,7 @@ interface DSelectProps {
     required?: boolean,
     useForm?: UseFormReturn,
     validation?: RegisterOptions,
+    isMulti?: boolean,
     options?: {
         value: string,
         label: string
@@ -43,10 +44,30 @@ export default function DSelect({
     useForm,
     colorScheme,
     validation,
+    isMulti,
     ...inputProps
 }: DSelectProps) {
 
     let color = colorScheme || 'gray'
+
+    const generateValue = (value: any, isMulti: any, options: any) => {
+
+        if (Array.isArray(value)) {
+            return value?.map((val: any) => {
+
+                let opt = options?.find((o: any) => o.value == val)
+                if (opt) {
+                    return options?.find((o: any) => o.value == val)
+                } else if (typeof val == 'string') {
+                    return { value: val, label: val }
+                }
+
+            })
+        } else {
+            return options?.find((o: any) => o.value == value)
+        }
+
+    }
 
     return (
         <FormControl isInvalid={useForm?.formState.errors[name] || false}>
@@ -73,7 +94,12 @@ export default function DSelect({
                                         primary75: 'var(--chakra-colors-green-200)',
                                         primary50: 'var(--chakra-colors-green-100)',
                                         primary: 'var(--chakra-colors-green-400)',
-                                        danger: 'var(--chakra-colors-red-500)'
+                                        danger: 'white',
+                                        dangerLight: 'var(--chakra-colors-red-500)',
+                                        neutral20: 'var(--chakra-colors-gray-100)',
+                                        neutral30: 'var(--chakra-colors-gray-100)',
+                                        neutral10: 'var(--chakra-colors-gray-100)',
+                                        neutral40: 'var(--chakra-colors-gray-100)'
                                     }
                                 })}
                                 styles={{
@@ -92,8 +118,15 @@ export default function DSelect({
                                 }}
                                 inputRef={ref}
                                 options={options}
-                                value={value}
-                                onChange={val => onChange(val)}
+                                isMulti={isMulti}
+                                value={generateValue(value, isMulti, options)}
+                                onChange={selected => {
+                                    if (selected && Array.isArray(selected)) {
+                                        onChange(selected.map((o) => o.value))
+                                    } else if (selected && !Array.isArray(selected)) {
+                                        onChange(selected['value'])
+                                    }
+                                }}
                                 {...inputProps}
                             />
                         }
@@ -107,7 +140,12 @@ export default function DSelect({
                                         primary75: 'var(--chakra-colors-green-200)',
                                         primary50: 'var(--chakra-colors-green-100)',
                                         primary: 'var(--chakra-colors-green-400)',
-                                        danger: 'var(--chakra-colors-red-500)'
+                                        danger: 'white',
+                                        dangerLight: 'var(--chakra-colors-red-500)',
+                                        neutral20: 'var(--chakra-colors-gray-100)',
+                                        neutral30: 'var(--chakra-colors-gray-100)',
+                                        neutral10: 'var(--chakra-colors-gray-100)',
+                                        neutral40: 'var(--chakra-colors-gray-100)'
                                     }
                                 })}
                                 styles={{
@@ -121,19 +159,23 @@ export default function DSelect({
                                         fontSize: 'var(--chakra-fontSizes-sm)',
                                         color: `var(--chakra-colors-${color}-500)`,
                                         borderColor: `var(--chakra-colors-${color}-200)`
-
                                     })
                                 }}
                                 inputRef={ref}
                                 options={options}
-                                value={value}
-                                onChange={val => onChange(val)}
+                                isMulti={isMulti}
+                                value={(isMulti ? options?.filter((o) => value?.includes(o.value)) : options?.find((o) => o.value == value))}
+                                onChange={selected => {
+                                    if (selected && Array.isArray(selected)) {
+                                        onChange(selected.map((o) => o.value))
+                                    } else if (selected && !Array.isArray(selected)) {
+                                        onChange(selected['value'])
+                                    }
+                                }}
                                 {...inputProps}
                             />
                         }
                     </>
-
-
 
                 )}
             />

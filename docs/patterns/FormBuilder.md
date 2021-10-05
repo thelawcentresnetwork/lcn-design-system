@@ -3,24 +3,14 @@
 ```js padded
     import { useState } from 'react';
     import { useForm } from "react-hook-form";
-   
-   import { 
-        Modal,
-        ModalOverlay,
-        ModalContent,
-        ModalHeader,
-        ModalFooter,
-        ModalBody,
-        ModalCloseButton,
-        Button, useDisclosure, Code, Box, Heading 
-    } from "@chakra-ui/react";
+
+    import { Box, Heading, Code } from "@chakra-ui/react";
 
     import FormBuilder from '/src/patterns/FormBuilder/FormBuilder';
     import exampleSchema from "../helpers/exampleBuilderSchema";
     import DFormSchema from "../../src/components/DynamicForm/FormSchema";
 
     const methods = useForm();
-    const {isOpen, onOpen, onClose} = useDisclosure();
     const [data, setData] = useState();
 
     const onCancel = (e) => {

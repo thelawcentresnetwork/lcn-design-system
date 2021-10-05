@@ -79,7 +79,7 @@ export default function DDate({
                             </InputLeftAddon>
                         }
 
-                        <Popover>
+                        <Popover placement="right" >
                             <PopoverTrigger>
                                 <Input
                                     _hover={{ bg: "gray.50" }}
@@ -93,20 +93,22 @@ export default function DDate({
                                     </Text>
                                 </Input>
                             </PopoverTrigger>
-                            <PopoverContent
-                                width="24rems"
-                                boxShadow="xl"
-                                _focus={{ outline: "none" }}>
-                                <PopoverArrow />
-                                <PopoverBody>
-                                    <Calendar
-                                        onChange={(e: Event) => { onChange(e) }}
-                                        date={new Date()}
-                                        {...inputProps} />
-                                </PopoverBody>
-                            </PopoverContent>
+                            <Portal appendToParentPortal={false}>
+                                <PopoverContent
+                                    rootProps={{ zIndex: '1500' }}
+                                    width="24rem"
+                                    boxShadow="xl"
+                                    _focus={{ outline: "none" }}>
+                                    <PopoverArrow />
+                                    <PopoverBody>
+                                        <Calendar
+                                            onChange={(e: Event) => { onChange(e) }}
+                                            date={new Date()}
+                                            {...inputProps} />
+                                    </PopoverBody>
+                                </PopoverContent>
+                            </Portal>
                         </Popover>
-
 
                         {rightAddon &&
                             <InputRightAddon children={rightAddon} />

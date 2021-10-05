@@ -5,6 +5,7 @@ import ChakraAwesome from './utilities/ChakraAwesome'
 //import { RatingFeedback, TextFeedback } from './patterns/Feedback/Feedback'
 
 import CookieConsent from './patterns/CookieConsent'
+import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
 import Card from './components/Card'
 import Embed from './components/Embed'
@@ -31,6 +32,7 @@ export {
   CallToAction,
   Feature,
   CookieConsent,
+  FormBuilder,
   Card,
   Embed,
   Hero,

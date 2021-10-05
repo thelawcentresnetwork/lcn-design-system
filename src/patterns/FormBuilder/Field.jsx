@@ -20,7 +20,7 @@ export default function Field({ index, total, field, swapField, removeField, fie
 
     const formMethods = useFormContext();
 
-    const fieldType = formMethods.watch(`fields.${index}.type`)?.value
+    const fieldType = formMethods.watch(`fields.${index}.type`)
 
     return (
 
@@ -98,7 +98,7 @@ export default function Field({ index, total, field, swapField, removeField, fie
                             useForm={formMethods}
                             placeholder="Add options..."
                             name={`fields.${index}.items`}
-                            isMulti
+                            isMulti={true}
                             options={field.items}
                             creatable={true}
                         />
