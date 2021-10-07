@@ -16,7 +16,10 @@ const Tabs = {
                 borderBottomWidth: '4px',
                 _focus: { outline: "0", boxShadow: '0' },
                 marginBottom: "-4px",
-                _selected: { borderColor: `${colorScheme}.400` },
+                _selected: {
+                    color: `${colorScheme}.500`,
+                    borderColor: `${colorScheme}.400`
+                },
             },
             tablist: {
                 borderBottomWidth: '4px',

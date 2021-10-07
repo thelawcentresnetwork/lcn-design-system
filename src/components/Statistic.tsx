@@ -17,12 +17,14 @@ interface StatProps extends StackProps {
 const Statistic = ({ title, value, ...rest }: StatProps) => {
     return (
         <Stack direction="column-reverse" maxW="12rem" mx="auto" as="dl" textAlign="center" {...rest}>
-            <Box as="dt" color={useColorModeValue('gray.600', 'whiteAlpha.700')} fontWeight="medium">
+            <Box
+                as="dt"
+                color={useColorModeValue('gray.600', 'whiteAlpha.700')} fontWeight="medium">
                 {title}
             </Box>
             <Box
                 as="dd"
-                fontSize="6xl"
+                fontSize="4xl"
                 fontWeight="extrabold"
                 color={useColorModeValue('green.500', 'green.300')}
             >
