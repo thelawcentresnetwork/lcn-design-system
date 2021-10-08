@@ -14,7 +14,11 @@ const Tabs = {
         line: ({ colorScheme }) => ({
             tab: {
                 borderBottomWidth: '4px',
-                _focus: { outline: "0", boxShadow: '0' },
+                _focus: {
+                    bg: 'transparent',
+                    outline: "0",
+                    boxShadow: '0'
+                },
                 marginBottom: "-4px",
                 _selected: {
                     color: `${colorScheme}.500`,
