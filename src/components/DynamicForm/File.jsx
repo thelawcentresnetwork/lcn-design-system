@@ -4,6 +4,7 @@ import {
     FormControl,
     InputGroup,
     InputLeftAddon,
+    FormHelperText,
     FormErrorMessage,
     Box,
     Input,
