@@ -36,14 +36,16 @@ export default function Banner({ text, type, link, linkText, icon, ...stackProps
           {text}
         </Text>
       </HStack>
-      <Button
-        size='sm'
-        as="a"
-        href={link}
-        variant="outline"
-        colorScheme="white">
-        {linkText}
-      </Button>
+      {linkText &&
+        <Button
+          size='sm'
+          as="a"
+          href={link}
+          variant="outline"
+          colorScheme="white">
+          {linkText}
+        </Button>
+      }
     </Stack>
   )
 
