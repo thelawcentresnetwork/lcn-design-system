@@ -86,14 +86,15 @@ function Card({ link, image, title, collapsable, children, ...linkBoxProps }: Ca
         </Box>
       }
 
-      <Collapse in={isOpen || !collapsable} animateOpacity>
+      <Collapse endingHeight="100%" in={isOpen || !collapsable} animateOpacity>
         <Flex
           px={{ sm: '6' }}
           pt="0"
           pb="7"
           direction='column'
           justify='space-between'
-          flexGrow={3}>
+          height="100%"
+          flexGrow={5}>
           {children}
         </Flex>
       </Collapse>
