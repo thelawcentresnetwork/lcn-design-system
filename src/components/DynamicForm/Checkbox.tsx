@@ -5,6 +5,7 @@ import ChakraAwesome from '../../utilities/ChakraAwesome';
 
 import {
     CheckboxProps,
+    FormLabelProps,
     FormControl,
     FormLabel,
     Checkbox,
@@ -21,7 +22,8 @@ interface DCheckboxProps extends CheckboxProps {
     label?: string,
     hint?: string,
     useForm?: UseFormReturn,
-    validation?: RegisterOptions
+    validation?: RegisterOptions,
+    labelProps?: FormLabelProps
 }
 
 export default function DCheckbox({
@@ -30,6 +32,7 @@ export default function DCheckbox({
     type,
     useForm,
     validation,
+    labelProps,
     ...inputProps
 }: DCheckboxProps) {
 
@@ -49,18 +52,15 @@ export default function DCheckbox({
                                 mr="3"
                                 onChange={(e) => onChange(e.target.checked)}
                                 isChecked={value}
-                                size={inputProps.size}
+                                {...inputProps.size}
                                 defaultChecked={inputProps.defaultChecked}
                             />
                         )}
                     />
                     <FormLabel
-                        fontSize={inputProps.size}
-                        fontFamily="Lato, sans-serif"
-                        fontWeight="400"
-                        pb="0"
-                        mb="0"
-                        pl="1" color="gray.800" htmlFor={name}>
+                        pl="1"
+                        {...labelProps}
+                        htmlFor={name}>
                         {label || name}
                     </FormLabel>
                 </Flex>
