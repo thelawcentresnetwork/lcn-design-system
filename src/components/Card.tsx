@@ -46,7 +46,7 @@ function Card({ link, image, title, collapsable, children, ...linkBoxProps }: Ca
       {...linkBoxProps}
     >
       {image &&
-        <Img height="60" objectFit="cover" src={image} />
+        <Img objectFit="cover" src={image} />
       }
 
       {collapsable &&
