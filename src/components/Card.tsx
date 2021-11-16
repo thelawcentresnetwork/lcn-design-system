@@ -37,12 +37,12 @@ function Card({ link, image, title, collapsable, children, ...linkBoxProps }: Ca
     <LinkBox
       as={Flex}
       bg='white'
-      shadow={{ sm: 'base' }}
-      rounded={{ sm: 'lg' }}
+      shadow={{ base: 'base' }}
+      rounded={{ base: 'lg' }}
       overflow="hidden"
       transition="all 0.2s"
       direction="column"
-      _hover={{ shadow: { sm: 'lg' } }}
+      _hover={{ shadow: { base: 'lg' } }}
       {...linkBoxProps}
     >
       {image &&
@@ -72,7 +72,7 @@ function Card({ link, image, title, collapsable, children, ...linkBoxProps }: Ca
       }
 
       {!collapsable &&
-        <Box px={{ sm: '6' }} pt="5" flexGrow={0}>
+        <Box px={{ base: '6' }} pt="5" flexGrow={0}>
           {(link && title) &&
             <Heading as="h3" size="sm" mb="2" lineHeight="base">
               <LinkOverlay href={link}>{title}</LinkOverlay>
@@ -88,7 +88,7 @@ function Card({ link, image, title, collapsable, children, ...linkBoxProps }: Ca
 
       <Collapse endingHeight="100%" in={isOpen || !collapsable} animateOpacity>
         <Flex
-          px={{ sm: '6' }}
+          px={{ base: '6' }}
           pt="0"
           pb="7"
           direction='column'
