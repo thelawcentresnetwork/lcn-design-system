@@ -53,9 +53,11 @@ export default function DSelect({
     const generateValue = (value: any, isMulti: any, options: any) => {
 
         if (Array.isArray(value)) {
+
             return value?.map((val: any) => {
 
                 let opt = options?.find((o: any) => o.value == val)
+
                 if (opt) {
                     return options?.find((o: any) => o.value == val)
                 } else if (typeof val == 'string') {
@@ -63,6 +65,7 @@ export default function DSelect({
                 }
 
             })
+
         } else {
             return options?.find((o: any) => o.value == value)
         }
@@ -107,8 +110,39 @@ export default function DSelect({
                                         ...provided,
                                         fontSize: 'var(--chakra-fontSizes-sm)',
                                     }),
+                                    multiValue: (provided, state) => ({
+                                        ...provided,
+                                        background: `var(--chakra-colors-green-500)`,
+                                        borderRadius: "20px",
+                                        paddingLeft: '5px',
+                                        margin: '5px 5px 5px 0'
+                                    }),
+                                    multiValueLabel: (provided, state) => ({
+                                        ...provided,
+                                        color: 'white',
+                                        borderRadius: '0',
+                                        borderWidth: '0',
+                                        paddingRight: '5px'
+                                    }),
+                                    multiValueRemove: (provided, state) => ({
+                                        ...provided,
+                                        color: 'white',
+                                        borderRadius: "0 20px 20px 0",
+                                        cursor: 'pointer',
+                                        paddingRight: '5px',
+                                        marginLeft: '5px',
+                                        background: `var(--chakra-colors-green-400)`
+                                    }),
+                                    placeholder: (defaultStyles) => {
+                                        return {
+                                            ...defaultStyles,
+                                            fontSize: 'var(--chakra-fontSizes-sm)',
+                                            color: `var(--chakra-colors-${color}-500)`,
+                                        }
+                                    },
                                     control: (provided, state) => ({
                                         ...provided,
+                                        padding: '2px 7px',
                                         borderRadius: 'var(--chakra-radii-md)',
                                         fontSize: 'var(--chakra-fontSizes-sm)',
                                         color: `var(--chakra-colors-${color}-500)`,
@@ -119,6 +153,7 @@ export default function DSelect({
                                 inputRef={ref}
                                 options={options}
                                 isMulti={isMulti}
+                                menuPlacement="auto"
                                 value={generateValue(value, isMulti, options)}
                                 onChange={selected => {
                                     if (selected && Array.isArray(selected)) {
@@ -153,8 +188,39 @@ export default function DSelect({
                                         ...provided,
                                         fontSize: 'var(--chakra-fontSizes-sm)',
                                     }),
+                                    multiValue: (provided, state) => ({
+                                        ...provided,
+                                        background: `var(--chakra-colors-green-500)`,
+                                        borderRadius: "20px",
+                                        paddingLeft: '5px',
+                                        margin: '5px 5px 5px 0'
+                                    }),
+                                    multiValueLabel: (provided, state) => ({
+                                        ...provided,
+                                        color: 'white',
+                                        borderRadius: '0',
+                                        borderWidth: '0',
+                                        paddingRight: '5px'
+                                    }),
+                                    multiValueRemove: (provided, state) => ({
+                                        ...provided,
+                                        color: 'white',
+                                        borderRadius: "0 20px 20px 0",
+                                        cursor: 'pointer',
+                                        marginLeft: '5px',
+                                        paddingRight: '5px',
+                                        background: `var(--chakra-colors-green-400)`
+                                    }),
+                                    placeholder: (defaultStyles) => {
+                                        return {
+                                            ...defaultStyles,
+                                            fontSize: 'var(--chakra-fontSizes-sm)',
+                                            color: `var(--chakra-colors-${color}-500)`,
+                                        }
+                                    },
                                     control: (provided, state) => ({
                                         ...provided,
+                                        padding: '2px 7px',
                                         borderRadius: 'var(--chakra-radii-md)',
                                         fontSize: 'var(--chakra-fontSizes-sm)',
                                         color: `var(--chakra-colors-${color}-500)`,
@@ -164,7 +230,8 @@ export default function DSelect({
                                 inputRef={ref}
                                 options={options}
                                 isMulti={isMulti}
-                                value={(isMulti ? options?.filter((o) => value?.includes(o.value)) : options?.find((o) => o.value == value))}
+                                menuPlacement="auto"
+                                value={generateValue(value, isMulti, options)}
                                 onChange={selected => {
                                     if (selected && Array.isArray(selected)) {
                                         onChange(selected.map((o) => o.value))
