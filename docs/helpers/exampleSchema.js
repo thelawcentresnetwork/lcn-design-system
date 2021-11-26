@@ -51,16 +51,28 @@ export default {
         {
             name: "select",
             "type": "array",
-            "label": "Choose me",
+            "label": "Choose a site",
+            "leftAddon": "https://",
             "items": [
                 {
                     "value": "1",
-                    "label": "An option for 1"
+                    "label": "google.com"
                 },
                 {
                     "value": "2",
-                    "label": "An option for 2"
+                    "label": "bing.com"
                 }
+            ]
+        },
+        {
+            name: "select2",
+            "type": "array",
+            'leftAddon': "Add to me",
+            "creatable": true,
+            "isMulti": true,
+            "label": "I have no options but create some please",
+            "items": [
+
             ]
         },
         {

@@ -25,7 +25,7 @@ import DCheckbox from "./components/DynamicForm/Checkbox";
 import DRadio from "./components/DynamicForm/Radio";
 import DSelect from "./components/DynamicForm/Select";
 import DDate from "./components/DynamicForm/Date";
-
+import DFile from "./components/DynamicForm/File";
 
 export {
   ChakraAwesome,
@@ -48,5 +48,6 @@ export {
   DCheckbox,
   DRadio,
   DDate,
+  DFile,
   DSelect
 }
