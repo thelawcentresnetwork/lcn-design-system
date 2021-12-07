@@ -67,6 +67,10 @@ export default function Field({ index, total, field, swapField, removeField, fie
                                 <DCheckbox
                                     type="switch"
                                     size="sm"
+                                    labelProps={{
+                                        pt: "2",
+                                        fontWeight: 400
+                                    }}
                                     useForm={formMethods}
                                     name={`fields.${index}.required`}
                                     label="Mandatory field"
@@ -74,6 +78,10 @@ export default function Field({ index, total, field, swapField, removeField, fie
                                 <DCheckbox
                                     type="switch"
                                     size="sm"
+                                    labelProps={{
+                                        pt: "2",
+                                        fontWeight: 400
+                                    }}
                                     useForm={formMethods}
                                     name={`fields.${index}.ppi`}
                                     label="Contains PII"
