@@ -25,22 +25,3 @@ const cc = new CC({
     }
 })
 ```
-
-##### React Component
-
-For React projects, you can simply use the [react-cookie-law](https://www.npmjs.com/package/@palmabit/react-cookie-law) component.
-
-```js padded
-    import CookieConsent from '/src/patterns/CookieConsent';
-    import { useCookies } from "react-cookie";
-    const [cookies, setCookie, removeCookie] = useCookies(["rcl_consent_given"]);
-    <>
-    <Button 
-        mb="5"
-        onClick={ e=> removeCookie("rcl_consent_given") }>
-        Show Banner
-    </Button>
-
-    <CookieConsent />
-    </>
-```
