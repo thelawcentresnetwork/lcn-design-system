@@ -4,11 +4,15 @@ Non-technical users can import this design system for use in their Framer projec
 
 ## Using in your React application
 
-Grab the system from [NPM](https://www.npmjs.com/package/law-centres-design-system)
+Set up Chakra UI using the latest [installation guide](https://chakra-ui.com/guides/getting-started/nextjs-guide).
+
+Then grab the system from [NPM](https://www.npmjs.com/package/law-centres-design-system)
 
 ```bash static
 npm install law-centres-design-system
 ```
+
+... and install dependancies.
 
 Then setup the Chakra provider using the LCN theme:
 
