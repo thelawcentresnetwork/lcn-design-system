@@ -53,6 +53,7 @@ export default function DDate({
   validation,
   ...inputProps
 }: DInputProps) {
+  const value = useForm?.getValues(name);
   return (
     <FormControl isInvalid={useForm?.formState.errors[name] || false}>
       {label && <FormLabel>{label}</FormLabel>}
@@ -121,8 +122,8 @@ export default function DDate({
                       date={
                         value
                           ? value instanceof Date
-                            ? value.toDateString()
-                            : new Date(value).toDateString()
+                            ? value
+                            : new Date(value)
                           : new Date()
                       }
                       {...inputProps}
