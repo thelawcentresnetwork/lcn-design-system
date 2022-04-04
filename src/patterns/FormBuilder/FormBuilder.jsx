@@ -89,7 +89,7 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
     values.fields.forEach((field, index) => {
       let newField = {
         //name: parameterize(field.label),
-        name: field.label.replace("'", ""),
+        name: field.label?.replace("'", ""),
         label: field.label,
         type: field.type,
         ppi: field.ppi,
