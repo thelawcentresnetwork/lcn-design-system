@@ -62,6 +62,7 @@ export default function DDate({
         control={useForm?.control}
         name={name}
         rules={validation}
+        defaultValue=""
         render={({ field: { onChange, value } }) => (
           <InputGroup colorScheme={colorScheme}>
             {!value && (
