@@ -43,7 +43,6 @@ export default function DCheckbox({
             control={useForm?.control}
             name={name}
             rules={validation}
-            defaultValue=""
             render={({ field: { onChange, value } }) => (
               <Switch
                 mr="3"

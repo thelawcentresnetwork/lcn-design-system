@@ -43,7 +43,6 @@ export default function DRadio({
       {hint && <FormHelperText mb="4">{hint}</FormHelperText>}
 
       <Controller
-        defaultValue=""
         control={useForm?.control}
         name={name}
         rules={validation}
