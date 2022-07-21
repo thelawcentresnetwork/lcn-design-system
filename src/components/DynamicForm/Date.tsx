@@ -140,9 +140,7 @@ export default function DDate({
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <FormErrorIcon
-            icon={<ChakraAwesome icon={["fas", "circle-exclamation"]} />}
-          />
+          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
           {useForm.formState.errors[name].message}
         </FormErrorMessage>
       )}

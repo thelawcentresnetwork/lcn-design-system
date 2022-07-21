@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import {
   LinkBox,
@@ -6,54 +6,55 @@ import {
   LinkOverlay,
   Flex,
   Img,
-  Spacer,
   Heading,
   Box,
   Collapse,
   Button,
-  useDisclosure
-} from "@chakra-ui/react"
+  useDisclosure,
+} from "@chakra-ui/react";
 
 //@ts-ignore
-import ChakraAwesome from '../utilities/ChakraAwesome';
+import ChakraAwesome from "../utilities/ChakraAwesome";
 
 interface CardProps extends LinkBoxProps {
   /** Link overlayed on entire card, if title included */
-  link?: string,
+  link?: string;
   /** Title of card, must be included for link overlays to work */
-  title?: string,
+  title?: string;
   /** URL to source to use as hero image */
-  image?: string,
+  image?: string;
   /** If this card can be collasped by the user */
-  collapsable?: boolean
+  collapsable?: boolean;
 }
 
-function Card({ link, image, title, collapsable, children, ...linkBoxProps }: CardProps) {
-
-  const { isOpen, onToggle } = useDisclosure()
+function Card({
+  link,
+  image,
+  title,
+  collapsable,
+  children,
+  ...linkBoxProps
+}: CardProps) {
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
-
     <LinkBox
       as={Flex}
-      bg='white'
-      shadow={{ base: 'base' }}
-      rounded={{ base: 'lg' }}
+      bg="white"
+      shadow={{ base: "base" }}
+      rounded={{ base: "lg" }}
       overflow="hidden"
       transition="all 0.2s"
       direction="column"
-      _hover={{ shadow: { base: 'lg' } }}
+      _hover={{ shadow: { base: "lg" } }}
       {...linkBoxProps}
     >
-      {image &&
-        <Img objectFit="cover" src={image} />
-      }
+      {image && <Img objectFit="cover" src={image} />}
 
-      {collapsable &&
+      {collapsable && (
         <Button
           variant="link"
           onClick={onToggle}
-          justify="space-between"
           fontSize="md"
           fontWeight="700"
           alignItems="left"
@@ -62,46 +63,46 @@ function Card({ link, image, title, collapsable, children, ...linkBoxProps }: Ca
           justifyContent="space-between"
           _focus={{ outline: 0 }}
           _active={{ outline: 0 }}
-          _hover={{ textDecoration: 'none', color: 'brand.Green' }}
+          _hover={{ textDecoration: "none", color: "brand.Green" }}
           color="gray.800"
           py="3"
           fontFamily="Poppins, sans-serif"
-          rightIcon={<ChakraAwesome icon="angle-down" />}>
+          rightIcon={<ChakraAwesome icon="angle-down" />}
+        >
           {title}
         </Button>
-      }
+      )}
 
-      {!collapsable &&
-        <Box px={{ base: '6' }} pt="5" flexGrow={0}>
-          {(link && title) &&
+      {!collapsable && (
+        <Box px={{ base: "6" }} pt="5" flexGrow={0}>
+          {link && title && (
             <Heading as="h3" size="sm" mb="2" lineHeight="base">
               <LinkOverlay href={link}>{title}</LinkOverlay>
             </Heading>
-          }
-          {(!link && title) &&
+          )}
+          {!link && title && (
             <Heading as="h3" size="sm" mb="2" lineHeight="base">
               {title}
             </Heading>
-          }
+          )}
         </Box>
-      }
+      )}
 
       <Collapse endingHeight="100%" in={isOpen || !collapsable} animateOpacity>
         <Flex
-          px={{ base: '6' }}
+          px={{ base: "6" }}
           pt="0"
           pb="7"
-          direction='column'
-          justify='space-between'
+          direction="column"
+          justify="space-between"
           height="100%"
-          flexGrow={5}>
+          flexGrow={5}
+        >
           {children}
         </Flex>
       </Collapse>
-
     </LinkBox>
-
-  )
+  );
 }
 
-export default Card
+export default Card;
