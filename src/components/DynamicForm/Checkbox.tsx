@@ -47,6 +47,7 @@ export default function DCheckbox({
                 mr="3"
                 onChange={(e) => onChange(e.target.checked)}
                 isChecked={value}
+                // {...inputProps.size}
                 defaultChecked={inputProps.defaultChecked}
               />
             )}
