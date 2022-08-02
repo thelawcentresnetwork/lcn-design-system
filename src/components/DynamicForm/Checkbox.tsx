@@ -11,7 +11,6 @@ import {
   Checkbox,
   Switch,
   Flex,
-  FormHelperText,
   FormErrorMessage,
   FormErrorIcon,
 } from "@chakra-ui/react";
@@ -48,7 +47,6 @@ export default function DCheckbox({
                 mr="3"
                 onChange={(e) => onChange(e.target.checked)}
                 isChecked={value}
-                {...inputProps.size}
                 defaultChecked={inputProps.defaultChecked}
               />
             )}
@@ -67,9 +65,7 @@ export default function DCheckbox({
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <FormErrorIcon
-            icon={<ChakraAwesome icon={["fas", "circle-exclamation"]} />}
-          />
+          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
           {useForm.formState.errors[name].message}
         </FormErrorMessage>
       )}

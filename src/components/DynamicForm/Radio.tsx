@@ -9,7 +9,6 @@ import {
   FormLabel,
   FormHelperText,
   FormErrorMessage,
-  FormErrorIcon,
   Radio,
   RadioGroup,
   Stack,
@@ -61,9 +60,7 @@ export default function DRadio({
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <FormErrorIcon
-            icon={<ChakraAwesome icon={["fas", "circle-exclamation"]} />}
-          />
+          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
           {useForm.formState.errors[name].message}
         </FormErrorMessage>
       )}

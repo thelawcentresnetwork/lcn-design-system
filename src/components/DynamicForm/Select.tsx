@@ -10,12 +10,10 @@ import CreatableSelect from "react-select/creatable";
 import ChakraAwesome from "../../utilities/ChakraAwesome";
 
 import {
-  SelectProps,
   FormControl,
   FormLabel,
   FormHelperText,
   FormErrorMessage,
-  FormErrorIcon,
   InputLeftAddon,
   InputGroup,
   InputRightAddon,
@@ -171,6 +169,7 @@ export default function DSelect({
                     },
                   }}
                   inputRef={ref}
+                  classNamePrefix="select"
                   options={options}
                   isMulti={isMulti}
                   menuPlacement="auto"
@@ -272,6 +271,7 @@ export default function DSelect({
                     },
                   }}
                   inputRef={ref}
+                  classNamePrefix="select"
                   options={options}
                   isMulti={isMulti}
                   menuPlacement="auto"
@@ -294,9 +294,7 @@ export default function DSelect({
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <FormErrorIcon
-            icon={<ChakraAwesome icon={["fas", "circle-exclamation"]} />}
-          />
+          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
           {useForm.formState.errors[name].message}
         </FormErrorMessage>
       )}
