@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 import {
   useController,
   Controller,
   RegisterOptions,
   UseFormReturn,
-} from "react-hook-form";
+} from 'react-hook-form'
 //@ts-ignore
-import ChakraAwesome from "../../utilities/ChakraAwesome";
+import ChakraAwesome from '../../utilities/ChakraAwesome'
 //@ts-ignore
-import { Calendar } from "react-date-range";
+import { Calendar } from 'react-date-range'
 
 import {
   InputProps,
@@ -29,16 +29,16 @@ import {
   Popover,
   PopoverTrigger,
   Portal,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 interface DInputProps extends InputProps {
-  name: string;
-  label?: string;
-  hint?: string;
-  rightAddon?: string;
-  leftAddon?: string;
-  validation?: RegisterOptions;
-  useForm?: UseFormReturn;
+  name: string
+  label?: string
+  hint?: string
+  rightAddon?: string
+  leftAddon?: string
+  validation?: RegisterOptions
+  useForm?: UseFormReturn
 }
 
 export default function DDate({
@@ -53,7 +53,7 @@ export default function DDate({
   validation,
   ...inputProps
 }: DInputProps) {
-  const value = useForm?.getValues(name);
+  const value = useForm?.getValues(name)
   return (
     <FormControl isInvalid={useForm?.formState.errors[name] || false}>
       {label && <FormLabel>{label}</FormLabel>}
@@ -67,7 +67,7 @@ export default function DDate({
             {!value && (
               <InputLeftAddon
                 children={
-                  <ChakraAwesome fixedWidth icon={["fal", "calendar-days"]} />
+                  <ChakraAwesome fixedWidth icon={['fal', 'calendar-days']} />
                 }
               />
             )}
@@ -76,23 +76,23 @@ export default function DDate({
                 cursor="pointer"
                 bg="white"
                 _hover={{
-                  bg: "brand.Red",
-                  color: "white",
-                  borderColor: "brand.Red",
+                  bg: 'brand.Red',
+                  color: 'white',
+                  borderColor: 'brand.Red',
                 }}
                 onClick={() => {
-                  onChange("");
+                  onChange('')
                 }}
                 color="red.500"
               >
-                <ChakraAwesome fixedWidth icon={["fa", "circle-xmark"]} />
+                <ChakraAwesome fixedWidth icon={['fa', 'circle-xmark']} />
               </InputLeftAddon>
             )}
 
             <Popover placement="right">
               <PopoverTrigger>
                 <Input
-                  _hover={{ bg: "gray.50" }}
+                  _hover={{ bg: 'gray.50' }}
                   cursor="pointer"
                   as={Box}
                   color="gray.400"
@@ -108,16 +108,16 @@ export default function DDate({
               </PopoverTrigger>
               <Portal appendToParentPortal={false}>
                 <PopoverContent
-                  rootProps={{ zIndex: "1500" }}
+                  rootProps={{ zIndex: '1500' }}
                   width="24rem"
                   boxShadow="xl"
-                  _focus={{ outline: "none" }}
+                  _focus={{ outline: 'none' }}
                 >
                   <PopoverArrow />
                   <PopoverBody>
                     <Calendar
                       onChange={(e: Event) => {
-                        onChange(e);
+                        onChange(e)
                       }}
                       date={
                         value
@@ -140,11 +140,11 @@ export default function DDate({
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
+          <ChakraAwesome icon={['fas', 'circle-exclamation']} />
           {useForm.formState.errors[name].message}
         </FormErrorMessage>
       )}
       {hint && <FormHelperText>{hint}</FormHelperText>}
     </FormControl>
-  );
+  )
 }

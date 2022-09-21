@@ -1,7 +1,7 @@
-import React from "react";
-import { UseFormReturn, RegisterOptions } from "react-hook-form";
+import React from 'react'
+import { UseFormReturn, RegisterOptions } from 'react-hook-form'
 //@ts-ignore
-import ChakraAwesome from "../../utilities/ChakraAwesome";
+import ChakraAwesome from '../../utilities/ChakraAwesome'
 
 import {
   InputProps,
@@ -14,16 +14,16 @@ import {
   InputLeftAddon,
   InputGroup,
   InputRightAddon,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 interface DInputProps extends InputProps {
-  name: string;
-  label?: string;
-  hint?: string;
-  rightAddon?: string;
-  leftAddon?: string;
-  useForm?: UseFormReturn;
-  validation?: RegisterOptions;
+  name: string
+  label?: string
+  hint?: string
+  rightAddon?: string
+  leftAddon?: string
+  useForm?: UseFormReturn
+  validation?: RegisterOptions
 }
 
 export default function DInput({
@@ -53,12 +53,12 @@ export default function DInput({
 
         {useForm?.formState.errors[name] && (
           <FormErrorMessage>
-            <ChakraAwesome icon={["fas", "circle-exclamation"]} />
+            <ChakraAwesome icon={['fas', 'circle-exclamation']} />
             {useForm.formState.errors[name].message}
           </FormErrorMessage>
         )}
         {hint && <FormHelperText>{hint}</FormHelperText>}
       </FormControl>
     </>
-  );
+  )
 }

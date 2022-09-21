@@ -18,13 +18,13 @@ import Statistic from './components/Statistic'
 
 import DFormSchema from './components/DynamicForm/FormSchema'
 import DActions from './components/DynamicForm/Actions'
-import DInput from "./components/DynamicForm/Input";
-import DTextarea from "./components/DynamicForm/Textarea";
-import DCheckbox from "./components/DynamicForm/Checkbox";
-import DRadio from "./components/DynamicForm/Radio";
-import DSelect from "./components/DynamicForm/Select";
-import DDate from "./components/DynamicForm/Date";
-import DFile from "./components/DynamicForm/File";
+import DInput from './components/DynamicForm/Input'
+import DTextarea from './components/DynamicForm/Textarea'
+import DCheckbox from './components/DynamicForm/Checkbox'
+import DRadio from './components/DynamicForm/Radio'
+import DSelect from './components/DynamicForm/Select'
+import DDate from './components/DynamicForm/Date'
+import DFile from './components/DynamicForm/File'
 
 export {
   ChakraAwesome,
@@ -47,5 +47,5 @@ export {
   DRadio,
   DDate,
   DFile,
-  DSelect
+  DSelect,
 }

@@ -1,53 +1,53 @@
-import React from "react";
-import { UseFormReturn } from "react-hook-form";
+import React from 'react'
+import { UseFormReturn } from 'react-hook-form'
 
-import { Stack } from "@chakra-ui/react";
+import { Stack } from '@chakra-ui/react'
 
-import DInput from "./Input";
-import DNumber from "./Number";
-import DTextarea from "./Textarea";
-import DCheckbox from "./Checkbox";
-import DRadio from "./Radio";
-import DSelect from "./Select";
-import DDate from "./Date";
+import DInput from './Input'
+import DNumber from './Number'
+import DTextarea from './Textarea'
+import DCheckbox from './Checkbox'
+import DRadio from './Radio'
+import DSelect from './Select'
+import DDate from './Date'
 //@ts-ignore
-import DFile from "./File";
+import DFile from './File'
 
 interface DFormProps {
-  useForm: UseFormReturn;
+  useForm: UseFormReturn
   schema: {
     properties: {
-      name: string;
-      type: string;
-      label?: string;
-      hint?: string;
+      name: string
+      type: string
+      label?: string
+      hint?: string
       items?: {
-        value: string;
-        label: string;
-      }[];
-      ui?: string;
-      ppi?: boolean;
-      placeholder?: string;
-      leftAddon?: string;
-      rightAddon?: string;
-      validation?: {};
-    }[];
-  };
+        value: string
+        label: string
+      }[]
+      ui?: string
+      ppi?: boolean
+      placeholder?: string
+      leftAddon?: string
+      rightAddon?: string
+      validation?: {}
+    }[]
+  }
 }
 
 interface DFormFieldProps {
-  input: string;
+  input: string
 }
 
 export default function DFormSchema({ schema, useForm }: DFormProps) {
   const FormField = ({ input }: DFormFieldProps) => {
-    let field = schema.properties.find((p) => p.name === input);
+    let field = schema.properties.find((p) => p.name === input)
 
     if (field) {
-      let { validation, type, items, ui, name, ppi, ...inputProps } = field;
+      let { validation, type, items, ui, name, ppi, ...inputProps } = field
 
       switch (type) {
-        case "string":
+        case 'string':
           return (
             <DInput
               useForm={useForm}
@@ -55,8 +55,8 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
               validation={validation}
               {...inputProps}
             />
-          );
-        case "integer":
+          )
+        case 'integer':
           return (
             <DNumber
               name={input}
@@ -64,8 +64,8 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
               validation={validation}
               {...inputProps}
             />
-          );
-        case "date":
+          )
+        case 'date':
           return (
             <DDate
               useForm={useForm}
@@ -73,11 +73,11 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
               validation={validation}
               {...inputProps}
             />
-          );
-        case "boolean":
+          )
+        case 'boolean':
           return (
             <>
-              {ui == "switch" && (
+              {ui == 'switch' && (
                 <DCheckbox
                   useForm={useForm}
                   type="switch"
@@ -95,12 +95,12 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
                 />
               )}
             </>
-          );
+          )
 
-        case "array":
+        case 'array':
           return (
             <>
-              {field.ui == "radio" && (
+              {field.ui == 'radio' && (
                 <DRadio
                   useForm={useForm}
                   options={items}
@@ -119,8 +119,8 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
                 />
               )}
             </>
-          );
-        case "text":
+          )
+        case 'text':
           return (
             <DTextarea
               useForm={useForm}
@@ -128,8 +128,8 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
               validation={validation}
               {...inputProps}
             />
-          );
-        case "file":
+          )
+        case 'file':
           return (
             <DFile
               useForm={useForm}
@@ -137,16 +137,16 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
               validation={validation}
               {...inputProps}
             />
-          );
+          )
         default:
-          console.log("Can not render field: " + input);
-          return <></>;
+          console.log('Can not render field: ' + input)
+          return <></>
       }
     } else {
-      console.log("Can not render field: " + input);
-      return <></>;
+      console.log('Can not render field: ' + input)
+      return <></>
     }
-  };
+  }
 
   return (
     <>
@@ -158,5 +158,5 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
         </Stack>
       )}
     </>
-  );
+  )
 }

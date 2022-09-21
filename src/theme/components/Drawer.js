@@ -9,9 +9,9 @@ const Drawer = {
         pointerEvents: 'none',
       },
       header: {
-        fontSize: "xl",
-        fontWeight: "700"
-      }
+        fontSize: 'xl',
+        fontWeight: '700',
+      },
     },
   },
 }
