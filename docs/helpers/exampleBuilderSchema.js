@@ -43,10 +43,5 @@ export default {
       type: 'boolean',
       label: 'Check me',
     },
-    {
-      name: 'keydate',
-      type: 'date',
-      label: 'Key date',
-    },
   ],
 }

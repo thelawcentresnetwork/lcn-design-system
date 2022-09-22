@@ -1,6 +1,5 @@
 import React from 'react'
 import { UseFormReturn, RegisterOptions } from 'react-hook-form'
-//@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome'
 
 import {
@@ -37,7 +36,7 @@ export default function DTextarea({
       <Textarea {...useForm?.register(name, validation)} {...inputProps} />
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <ChakraAwesome icon={['fas', 'circle-exclamation']} />
+          <ChakraAwesome icon={['fas', 'exclamation-circle']} />
           {useForm.formState.errors[name].message}
         </FormErrorMessage>
       )}

@@ -1,5 +1,5 @@
 const Form = {
-  baseStyle: ({ colorScheme }) => ({
+  baseStyle: () => ({
     helperText: {
       lineHeight: '1.5',
     },

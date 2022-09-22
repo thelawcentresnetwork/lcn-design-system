@@ -1,16 +1,14 @@
 import React from 'react'
-import { UseFormReturn } from 'react-hook-form'
-
+import { UseFormReturn, RegisterOptions } from 'react-hook-form'
 import { Stack } from '@chakra-ui/react'
 
 import DInput from './Input'
-import DNumber from './Number'
+import Number from './Number'
 import DTextarea from './Textarea'
 import DCheckbox from './Checkbox'
 import DRadio from './Radio'
 import DSelect from './Select'
 import DDate from './Date'
-//@ts-ignore
 import DFile from './File'
 
 interface DFormProps {
@@ -30,7 +28,7 @@ interface DFormProps {
       placeholder?: string
       leftAddon?: string
       rightAddon?: string
-      validation?: {}
+      validation?: RegisterOptions
     }[]
   }
 }
@@ -41,10 +39,10 @@ interface DFormFieldProps {
 
 export default function DFormSchema({ schema, useForm }: DFormProps) {
   const FormField = ({ input }: DFormFieldProps) => {
-    let field = schema.properties.find((p) => p.name === input)
+    const field = schema.properties.find((p) => p.name === input)
 
     if (field) {
-      let { validation, type, items, ui, name, ppi, ...inputProps } = field
+      const { validation, type, items, ui, name, ppi, ...inputProps } = field
 
       switch (type) {
         case 'string':
@@ -58,7 +56,7 @@ export default function DFormSchema({ schema, useForm }: DFormProps) {
           )
         case 'integer':
           return (
-            <DNumber
+            <Number
               name={input}
               useForm={useForm}
               validation={validation}

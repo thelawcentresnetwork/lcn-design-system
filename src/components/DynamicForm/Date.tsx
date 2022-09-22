@@ -1,14 +1,10 @@
 import React from 'react'
-import {
-  useController,
-  Controller,
-  RegisterOptions,
-  UseFormReturn,
-} from 'react-hook-form'
-//@ts-ignore
+import { Controller, RegisterOptions, UseFormReturn } from 'react-hook-form'
 import ChakraAwesome from '../../utilities/ChakraAwesome'
+/* eslint-disable */
 //@ts-ignore
 import { Calendar } from 'react-date-range'
+/* eslint-enable */
 
 import {
   InputProps,
@@ -19,7 +15,6 @@ import {
   Text,
   FormHelperText,
   FormErrorMessage,
-  FormErrorIcon,
   InputLeftAddon,
   InputGroup,
   InputRightAddon,
@@ -38,7 +33,7 @@ interface DInputProps extends InputProps {
   rightAddon?: string
   leftAddon?: string
   validation?: RegisterOptions
-  useForm?: UseFormReturn
+  useForm: UseFormReturn
 }
 
 export default function DDate({
@@ -55,7 +50,7 @@ export default function DDate({
 }: DInputProps) {
   const value = useForm?.getValues(name)
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
       {label && <FormLabel>{label}</FormLabel>}
 
       <Controller
@@ -65,11 +60,9 @@ export default function DDate({
         render={({ field: { onChange, value } }) => (
           <InputGroup colorScheme={colorScheme}>
             {!value && (
-              <InputLeftAddon
-                children={
-                  <ChakraAwesome fixedWidth icon={['fal', 'calendar-days']} />
-                }
-              />
+              <InputLeftAddon>
+                {<ChakraAwesome fixedWidth icon={['fal', 'calendar']} />}
+              </InputLeftAddon>
             )}
             {value && (
               <InputLeftAddon
@@ -85,7 +78,7 @@ export default function DDate({
                 }}
                 color="red.500"
               >
-                <ChakraAwesome fixedWidth icon={['fa', 'circle-xmark']} />
+                <ChakraAwesome fixedWidth icon={['fal', 'times-circle']} />
               </InputLeftAddon>
             )}
 
@@ -133,15 +126,15 @@ export default function DDate({
               </Portal>
             </Popover>
 
-            {rightAddon && <InputRightAddon children={rightAddon} />}
+            {rightAddon && <InputRightAddon>{rightAddon}</InputRightAddon>}
           </InputGroup>
         )}
       />
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <ChakraAwesome icon={['fas', 'circle-exclamation']} />
-          {useForm.formState.errors[name].message}
+          <ChakraAwesome icon={['fas', 'exclamation-circle']} />
+          {useForm?.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
       {hint && <FormHelperText>{hint}</FormHelperText>}

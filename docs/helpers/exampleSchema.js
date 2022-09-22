@@ -96,10 +96,5 @@ export default {
       type: 'file',
       label: 'Upload',
     },
-    {
-      name: 'keydate',
-      type: 'date',
-      label: 'Key date',
-    },
   ],
 }

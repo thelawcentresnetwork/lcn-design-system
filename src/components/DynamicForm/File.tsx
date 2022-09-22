@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useRef } from 'react'
 import {
   FormControl,
   InputGroup,
@@ -9,24 +9,34 @@ import {
   Box,
   Input,
   FormLabel,
+  InputProps,
 } from '@chakra-ui/react'
-
-import { useController } from 'react-hook-form'
-import { useRef } from 'react'
+import { UseFormReturn, RegisterOptions, useController } from 'react-hook-form'
 import ChakraAwesome from '../../utilities/ChakraAwesome'
+
+interface DFileProps extends InputProps {
+  name: string
+  placeholder?: string
+  label?: string
+  hint?: string
+  rightAddon?: string
+  leftAddon?: string
+  useForm: UseFormReturn
+  validation?: RegisterOptions
+}
 
 const File = ({
   name,
   placeholder,
-  useForm,
   label,
   hint,
-  validation,
   colorScheme,
+  useForm,
+  validation,
   isRequired = false,
   ...groupProps
-}) => {
-  const inputRef = useRef()
+}: DFileProps) => {
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   const {
     field: { ref, onChange, value, ...inputProps },
@@ -42,11 +52,9 @@ const File = ({
       <FormLabel>{label}</FormLabel>
       <InputGroup>
         {(!value || value.length < 1) && (
-          <InputLeftAddon
-            children={
-              <ChakraAwesome fixedWidth icon={['fal', 'cloud-arrow-up']} />
-            }
-          />
+          <InputLeftAddon>
+            <ChakraAwesome fixedWidth icon={['fal', 'cloud-upload-alt']} />
+          </InputLeftAddon>
         )}
         {value && value.length > 0 && (
           <InputLeftAddon
@@ -63,13 +71,12 @@ const File = ({
             }}
             color="red.500"
           >
-            <ChakraAwesome fixedWidth icon={['fa', 'circle-xmark']} />
+            <ChakraAwesome fixedWidth icon={['fal', 'times-circle']} />
           </InputLeftAddon>
         )}
         <Input
           onChange={(e) => onChange(e.target.files)}
           type="file"
-          name={name}
           ref={inputRef}
           style={{ display: 'none' }}
           {...inputProps}
@@ -81,7 +88,7 @@ const File = ({
           borderColor={invalid ? 'brand.Red' : 'gray.200'}
           py="2"
           color="gray.400"
-          onClick={() => inputRef.current.click()}
+          onClick={() => inputRef?.current?.click()}
         >
           {value && value.length > 0 && value[0].name}
           {!value && (placeholder || 'Select file from computer ...')}

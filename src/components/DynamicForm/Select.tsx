@@ -1,12 +1,8 @@
 import React from 'react'
 import { UseFormReturn, Controller, RegisterOptions } from 'react-hook-form'
-
-//@ts-ignore
 import Select from 'react-select'
-//@ts-ignore
 import CreatableSelect from 'react-select/creatable'
 
-//@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome'
 
 import {
@@ -52,12 +48,12 @@ export default function DSelect({
   rightAddon,
   ...inputProps
 }: DSelectProps) {
-  let color = colorScheme || 'gray'
+  const color = colorScheme || 'gray'
 
   const generateValue = (value: any, isMulti: any, options: any) => {
     if (Array.isArray(value)) {
       return value?.map((val: any) => {
-        let opt = options?.find((o: any) => o.value == val)
+        const opt = options?.find((o: any) => o.value == val)
 
         if (opt) {
           return options?.find((o: any) => o.value == val)
@@ -75,7 +71,7 @@ export default function DSelect({
       {label && <FormLabel>{label}</FormLabel>}
 
       <InputGroup colorScheme={colorScheme}>
-        {leftAddon && <InputLeftAddon children={leftAddon} />}
+        {leftAddon && <InputLeftAddon>{leftAddon}</InputLeftAddon>}
         <Controller
           name={name}
           control={useForm?.control}
@@ -289,12 +285,12 @@ export default function DSelect({
             </>
           )}
         />
-        {rightAddon && <InputRightAddon children={rightAddon} />}
+        {rightAddon && <InputRightAddon>{rightAddon}</InputRightAddon>}
       </InputGroup>
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <ChakraAwesome icon={['fas', 'circle-exclamation']} />
+          <ChakraAwesome icon={['fas', 'exclamation-circle']} />
           {useForm.formState.errors[name].message}
         </FormErrorMessage>
       )}

@@ -13,7 +13,6 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-//@ts-ignore
 import ChakraAwesome from '../utilities/ChakraAwesome'
 
 interface CardProps extends LinkBoxProps {

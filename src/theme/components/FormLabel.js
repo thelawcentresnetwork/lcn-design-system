@@ -1,5 +1,5 @@
 const FormLabel = {
-  baseStyle: ({ colorScheme }) => ({
+  baseStyle: () => ({
     fontFamily: 'Poppins, Helvetica, sans-serif',
     fontWeight: '600',
     fontSize: 'sm',

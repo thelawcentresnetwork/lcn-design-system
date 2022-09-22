@@ -18,10 +18,11 @@ const StyleGuideRenderer = ({
       title={title}
       version={version}
       homepageUrl={homepageUrl}
-      children={children}
       toc={toc}
       hasSidebar={hasSidebar}
-    />
+    >
+      {children}
+    </DefaultStyleGuideRenderer>
   </ChakraProvider>
 )
 

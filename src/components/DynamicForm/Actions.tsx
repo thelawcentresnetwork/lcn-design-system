@@ -11,7 +11,7 @@ interface DActionsProps extends StackProps {
     submit: string
     cancel: string
   }
-  onCancel?: () => {}
+  onCancel?: Function
 }
 
 export default function DActions({
@@ -27,7 +27,7 @@ export default function DActions({
       </Button>
       {onCancel && (
         <Button
-          onClick={onCancel}
+          onClick={() => onCancel}
           variant="outline"
           colorScheme="gray"
           {...buttonProps?.cancel}

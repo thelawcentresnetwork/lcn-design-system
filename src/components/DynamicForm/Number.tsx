@@ -1,6 +1,5 @@
 import React from 'react'
 import { UseFormReturn, RegisterOptions } from 'react-hook-form'
-//@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome'
 
 import {
@@ -19,7 +18,7 @@ import {
   NumberDecrementStepper,
 } from '@chakra-ui/react'
 
-interface DNumberProps extends NumberInputProps {
+interface NumberProps extends NumberInputProps {
   name: string
   label?: string
   hint?: string
@@ -29,7 +28,7 @@ interface DNumberProps extends NumberInputProps {
   validation?: RegisterOptions
 }
 
-export default function DNumber({
+export default function Number({
   name,
   label,
   hint,
@@ -39,13 +38,13 @@ export default function DNumber({
   useForm,
   validation,
   ...inputProps
-}: DNumberProps) {
+}: NumberProps) {
   return (
     <>
       <FormControl isInvalid={useForm?.formState.errors[name] || false}>
         {label && <FormLabel>{label}</FormLabel>}
         <InputGroup colorScheme={colorScheme}>
-          {leftAddon && <InputLeftAddon children={leftAddon} />}
+          {leftAddon && <InputLeftAddon>{leftAddon}</InputLeftAddon>}
           <NumberInput {...inputProps}>
             <NumberInputField {...useForm?.register(name, validation)} />
             <NumberInputStepper>
@@ -53,12 +52,12 @@ export default function DNumber({
               <NumberDecrementStepper />
             </NumberInputStepper>
           </NumberInput>
-          {rightAddon && <InputRightAddon children={rightAddon} />}
+          {rightAddon && <InputRightAddon>{rightAddon}</InputRightAddon>}
         </InputGroup>
 
         {useForm?.formState.errors[name] && (
           <FormErrorMessage>
-            <ChakraAwesome icon={['fas', 'circle-exclamation']} />
+            <ChakraAwesome icon={['fas', 'exclamation-circle']} />
             {useForm.formState.errors[name].message}
           </FormErrorMessage>
         )}

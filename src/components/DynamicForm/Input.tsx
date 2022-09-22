@@ -1,6 +1,5 @@
 import React from 'react'
 import { UseFormReturn, RegisterOptions } from 'react-hook-form'
-//@ts-ignore
 import ChakraAwesome from '../../utilities/ChakraAwesome'
 
 import {
@@ -42,18 +41,18 @@ export default function DInput({
       <FormControl isInvalid={useForm?.formState.errors[name] || false}>
         {label && <FormLabel>{label}</FormLabel>}
         <InputGroup colorScheme={colorScheme}>
-          {leftAddon && <InputLeftAddon children={leftAddon} />}
+          {leftAddon && <InputLeftAddon>{leftAddon}</InputLeftAddon>}
           <Input
             colorScheme={colorScheme}
             {...useForm?.register(name, validation)}
             {...inputProps}
           />
-          {rightAddon && <InputRightAddon children={rightAddon} />}
+          {rightAddon && <InputRightAddon>{rightAddon}</InputRightAddon>}
         </InputGroup>
 
         {useForm?.formState.errors[name] && (
           <FormErrorMessage>
-            <ChakraAwesome icon={['fas', 'circle-exclamation']} />
+            <ChakraAwesome icon={['fas', 'exclamation-circle']} />
             {useForm.formState.errors[name].message}
           </FormErrorMessage>
         )}
