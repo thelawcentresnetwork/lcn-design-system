@@ -16,5 +16,13 @@
     "plugins": [
         "react",
         "@typescript-eslint"
-    ]
+    ],
+    "rules": {
+        "react/prop-types": "off",
+        "@typescript-eslint/ban-types": "warn"
+    },
+    "globals": {
+        "global": true
+    }
+    
 }
