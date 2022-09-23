@@ -31,13 +31,13 @@ export default function DTextarea({
   ...inputProps
 }: DTextareaProps) {
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
       {label && <FormLabel>{label}</FormLabel>}
       <Textarea {...useForm?.register(name, validation)} {...inputProps} />
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
           <ChakraAwesome icon={['fas', 'exclamation-circle']} />
-          {useForm.formState.errors[name].message}
+          {useForm?.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
       {hint && <FormHelperText>{hint}</FormHelperText>}

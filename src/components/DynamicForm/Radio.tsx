@@ -35,7 +35,7 @@ export default function DRadio({
   ...inputProps
 }: DRadioProps) {
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
       <FormLabel>{label || name}</FormLabel>
 
       {hint && <FormHelperText mb="4">{hint}</FormHelperText>}
@@ -60,7 +60,7 @@ export default function DRadio({
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
           <ChakraAwesome icon={['fas', 'exclamation-circle']} />
-          {useForm.formState.errors[name].message}
+          {useForm.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
     </FormControl>

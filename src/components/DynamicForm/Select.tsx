@@ -67,7 +67,7 @@ export default function DSelect({
   }
 
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
       {label && <FormLabel>{label}</FormLabel>}
 
       <InputGroup colorScheme={colorScheme}>
@@ -291,7 +291,7 @@ export default function DSelect({
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
           <ChakraAwesome icon={['fas', 'exclamation-circle']} />
-          {useForm.formState.errors[name].message}
+          {useForm?.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
       {hint && <FormHelperText>{hint}</FormHelperText>}

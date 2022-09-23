@@ -34,7 +34,7 @@ export default function DCheckbox({
   ...inputProps
 }: DCheckboxProps) {
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
       {type == 'switch' && (
         <Flex alignItems="center">
           <Controller
@@ -46,7 +46,6 @@ export default function DCheckbox({
                 mr="3"
                 onChange={(e) => onChange(e.target.checked)}
                 isChecked={value}
-                // {...inputProps.size}
                 defaultChecked={inputProps.defaultChecked}
               />
             )}
@@ -66,7 +65,7 @@ export default function DCheckbox({
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
           <ChakraAwesome icon={['fas', 'exclamation-circle']} />
-          {useForm.formState.errors[name].message}
+          {useForm?.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
     </FormControl>
