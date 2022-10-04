@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 import {
   Box,
@@ -8,20 +8,20 @@ import {
   HStack,
   Img,
   Text,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 interface QuoteProps extends BoxProps {
   /** The actual quote */
-  quote?: string;
+  quote?: string
   /** Name of person cited */
-  citation?: string;
+  citation?: string
   /** Other information about citataion; role, organisation etc. */
-  citationTitle?: string;
+  citationTitle?: string
   /** URL to source to use as avatar image */
-  image?: string;
+  image?: string
   /** icon to use to highlight this quote */
-  icon?: BoxProps;
-  context?: string;
+  icon?: BoxProps
+  context?: string
 }
 
 function Quote({
@@ -61,17 +61,17 @@ function Quote({
           h="4rem"
           p="1"
           border="3px solid"
-          borderColor={context == "dark" ? "white" : "brand.Green"}
+          borderColor={context == 'dark' ? 'white' : 'brand.Green'}
         >
           <Img w="100%" h="100%" rounded="full" objectFit="cover" src={image} />
         </Center>
-        <Box color={context == "dark" ? "white" : "gray.800"}>
+        <Box color={context == 'dark' ? 'white' : 'gray.800'}>
           <Text fontWeight="bold">{citation}</Text>
           <Text fontSize="sm">{citationTitle}</Text>
         </Box>
       </HStack>
     </Flex>
-  );
+  )
 }
 
-export default Quote;
+export default Quote

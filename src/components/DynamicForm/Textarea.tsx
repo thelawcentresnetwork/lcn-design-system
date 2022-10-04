@@ -1,7 +1,6 @@
-import React from "react";
-import { UseFormReturn, RegisterOptions } from "react-hook-form";
-//@ts-ignore
-import ChakraAwesome from "../../utilities/ChakraAwesome";
+import React from 'react'
+import { UseFormReturn, RegisterOptions } from 'react-hook-form'
+import ChakraAwesome from '../../utilities/ChakraAwesome'
 
 import {
   TextareaProps,
@@ -10,16 +9,16 @@ import {
   Textarea,
   FormHelperText,
   FormErrorMessage,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 interface DTextareaProps extends TextareaProps {
-  name: string;
-  type?: string;
-  label?: string;
-  hint?: string;
-  rows?: number;
-  useForm?: UseFormReturn;
-  validation?: RegisterOptions;
+  name: string
+  type?: string
+  label?: string
+  hint?: string
+  rows?: number
+  useForm?: UseFormReturn
+  validation?: RegisterOptions
 }
 
 export default function DTextarea({
@@ -32,16 +31,16 @@ export default function DTextarea({
   ...inputProps
 }: DTextareaProps) {
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
       {label && <FormLabel>{label}</FormLabel>}
       <Textarea {...useForm?.register(name, validation)} {...inputProps} />
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
-          {useForm.formState.errors[name].message}
+          <ChakraAwesome icon={['fas', 'exclamation-circle']} />
+          {useForm?.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
       {hint && <FormHelperText>{hint}</FormHelperText>}
     </FormControl>
-  );
+  )
 }

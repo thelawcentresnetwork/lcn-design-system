@@ -2,8 +2,13 @@
 build
 dist
 
+# ignore all md files
+*.md
+
 # dependencies
 node_modules/
+package-lock.json
+package.json
 
 # eslint cache
 .eslintcache

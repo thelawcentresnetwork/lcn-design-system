@@ -4,11 +4,11 @@ module.exports = {
       '@babel/env',
       {
         modules: false,
-        useBuiltIns: 'usage'
-      }
+        useBuiltIns: 'usage',
+      },
     ],
     '@babel/react',
-    "@babel/typescript"
+    '@babel/typescript',
   ],
-  plugins: ["@babel/plugin-transform-runtime"]
+  plugins: ['@babel/plugin-transform-runtime'],
 }

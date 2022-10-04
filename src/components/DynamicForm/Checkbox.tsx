@@ -1,7 +1,6 @@
-import React from "react";
-import { UseFormReturn, Controller, RegisterOptions } from "react-hook-form";
-//@ts-ignore
-import ChakraAwesome from "../../utilities/ChakraAwesome";
+import React from 'react'
+import { UseFormReturn, Controller, RegisterOptions } from 'react-hook-form'
+import ChakraAwesome from '../../utilities/ChakraAwesome'
 
 import {
   CheckboxProps,
@@ -13,16 +12,16 @@ import {
   Flex,
   FormErrorMessage,
   FormErrorIcon,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 interface DCheckboxProps extends CheckboxProps {
-  name: string;
-  type?: string;
-  label?: string;
-  hint?: string;
-  useForm?: UseFormReturn;
-  validation?: RegisterOptions;
-  labelProps?: FormLabelProps;
+  name: string
+  type?: string
+  label?: string
+  hint?: string
+  useForm?: UseFormReturn
+  validation?: RegisterOptions
+  labelProps?: FormLabelProps
 }
 
 export default function DCheckbox({
@@ -35,8 +34,8 @@ export default function DCheckbox({
   ...inputProps
 }: DCheckboxProps) {
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
-      {type == "switch" && (
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
+      {type == 'switch' && (
         <Flex alignItems="center">
           <Controller
             control={useForm?.control}
@@ -65,10 +64,10 @@ export default function DCheckbox({
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
-          {useForm.formState.errors[name].message}
+          <ChakraAwesome icon={['fas', 'exclamation-circle']} />
+          {useForm?.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
     </FormControl>
-  );
+  )
 }
