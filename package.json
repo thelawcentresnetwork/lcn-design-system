@@ -2,11 +2,13 @@
   "name": "law-centres-design-system",
   "version": "2.6.6",
   "description": "A design system for Law Centre sites and apps. Built using Chakra-ui.",
-  "author": "andrewflett",
+  "author": {
+    "name": "andrewflett"
+  },
   "license": "NPOSL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thelawcentresnetwork/lcn-design-system"
+    "url": "git+https://github.com/thelawcentresnetwork/lcn-design-system.git"
   },
   "babel": {
     "presets": [
@@ -82,6 +84,7 @@
     "babel-core": "^4.7.16",
     "babel-loader": "^8.2.2",
     "babel-runtime": "^6.26.0",
+    "chromatic": "^6.19.8",
     "css-loader": "^6.2.0",
     "date-fns": "^2.23.0",
     "eslint": "^8.23.1",
@@ -112,8 +115,11 @@
   },
   "dependencies": {
     "parameterize-js": "^1.0.0"
-  }
-  
-
-
+  },
+  "bugs": {
+    "url": "https://github.com/thelawcentresnetwork/lcn-design-system/issues"
+  },
+  "readme": "https://github.com/thelawcentresnetwork/lcn-design-system#readme",
+  "homepage": "https://github.com/thelawcentresnetwork/lcn-design-system#readme",
+  "_id": "law-centres-design-system@2.6.6"
 }
