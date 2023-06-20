@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Box, BoxProps, Button, Text, Heading } from '@chakra-ui/react'
 
-interface CallToActionProps extends BoxProps {
+export interface CallToActionProps extends BoxProps {
   /** Heading for callto action */
   heading: string
   /** Short description */

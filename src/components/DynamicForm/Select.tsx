@@ -164,7 +164,7 @@ export default function DSelect({
                       }
                     },
                   }}
-                  inputRef={ref}
+                  ref={ref}
                   classNamePrefix="select"
                   options={options}
                   isMulti={isMulti}
@@ -266,7 +266,7 @@ export default function DSelect({
                       }
                     },
                   }}
-                  inputRef={ref}
+                  ref={ref}
                   classNamePrefix="select"
                   options={options}
                   isMulti={isMulti}
