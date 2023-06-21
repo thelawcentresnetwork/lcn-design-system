@@ -22,7 +22,8 @@
     "styleguide:build": "styleguidist build",
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
   },
   "main": "dist/index.js",
   "keywords": [
@@ -92,6 +93,8 @@
     "eslint-plugin-storybook": "^0.6.12",
     "framer-motion": "^4.1.0",
     "html-react-parser": "^1.2.8",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "loader-utils": "^2.0.0",
     "prettier": "2.7.1",
     "prop-types": "^15.8.1",
@@ -115,6 +118,9 @@
   },
   "dependencies": {
     "parameterize-js": "^1.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}":["eslint --fix", "prettier --write --ignore-unknown"]
   },
   "bugs": {
     "url": "https://github.com/thelawcentresnetwork/lcn-design-system/issues"
