@@ -22,6 +22,7 @@ node_modules/
 
 # misc
 
+commitlint.config.js
 DS_Store
 
 # react styleguidist
