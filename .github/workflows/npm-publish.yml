@@ -6,6 +6,7 @@ name: Node.js Package
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
+      - run: npm install --dev
       - run: npm run build
       - run: npm release
       - run: npm publish
