@@ -5,7 +5,8 @@ name: Node.js Package
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,8 +16,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
+      - run: npm install --dev
       - run: npm run build
-      - run: npm release
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+      - run: npm run release
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
