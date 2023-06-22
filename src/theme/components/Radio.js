@@ -1,14 +1,14 @@
 const Radio = {
-    sizes: {
-        md: {
-            label: {
-                fontSize: 'sm'
-            }
-        }
+  sizes: {
+    md: {
+      label: {
+        fontSize: 'sm',
+      },
     },
-    defaultProps: {
-        colorScheme: "green"
-    }
+  },
+  defaultProps: {
+    colorScheme: 'green',
+  },
 }
 
 export default Radio

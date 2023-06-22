@@ -1,9 +1,8 @@
 import { NPSFeedback } from './Feedback'
-import { Box, Text } from "@chakra-ui/react"
+import { Box, Text } from '@chakra-ui/react'
 import { ChakraAwesome } from 'law-centres-design-system'
 
 export default function NPSWidget(props) {
-
   const router = useRouter()
 
   return (
@@ -12,11 +11,13 @@ export default function NPSWidget(props) {
       right="0"
       position="fixed"
       zIndex="75"
-      className="tourFeedback">
+      className="tourFeedback"
+    >
       <NPSFeedback
         originType="NPS"
         originName="Site-wide NPS Widget"
-        originUrl={"http://design-system.lawcentres.org.uk/" + router.asPath}>
+        originUrl={'http://design-system.lawcentres.org.uk/' + router.asPath}
+      >
         <Box
           cursor="pointer"
           boxShadow="lg"
@@ -33,7 +34,13 @@ export default function NPSWidget(props) {
           borderBottomLeftRadius="xl"
           _hover={{ boxShadow: 'none' }}
         >
-          <Box transform="rotate(270deg)" width="8rem" position="relative" top="2.25rem" left="-2.6rem">
+          <Box
+            transform="rotate(270deg)"
+            width="8rem"
+            position="relative"
+            top="2.25rem"
+            left="-2.6rem"
+          >
             <ChakraAwesome icon={['fas', 'messages']} mr="3" />
             <Text as="span">Feedback</Text>
           </Box>
@@ -41,5 +48,4 @@ export default function NPSWidget(props) {
       </NPSFeedback>
     </Box>
   )
-
 }

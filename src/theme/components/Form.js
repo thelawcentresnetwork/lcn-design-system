@@ -1,11 +1,9 @@
 const Form = {
-  baseStyle: ({ colorScheme }) => ({
+  baseStyle: () => ({
     helperText: {
-      lineHeight: '1.5'
-    }
-  })
+      lineHeight: '1.5',
+    },
+  }),
 }
 
 export default Form
-
-

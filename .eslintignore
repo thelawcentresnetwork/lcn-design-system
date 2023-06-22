@@ -1,0 +1,34 @@
+# production
+
+build
+dist
+
+# dependencies
+
+node_modules/
+
+# eslint cache
+
+.eslintcache
+
+# local env files
+
+.env
+.env.test
+
+# next.js
+
+.next
+
+# misc
+
+commitlint.config.js
+DS_Store
+
+# react styleguidist
+
+styleguide.config.js
+
+# babel
+
+babel.config.js

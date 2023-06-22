@@ -1,12 +1,11 @@
 const Text = {
-  baseStyle: {
-  },
+  baseStyle: {},
   variants: {
     muted: {
       color: 'gray.500',
-      fontSize: "xs"
-    }
-  }
+      fontSize: 'xs',
+    },
+  },
 }
 
 export default Text

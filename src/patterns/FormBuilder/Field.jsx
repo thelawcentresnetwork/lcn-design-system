@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react'
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form'
 
-import { Flex, IconButton, Box, Tr, Td, Stack } from "@chakra-ui/react";
+import { Flex, IconButton, Box, Tr, Td, Stack } from '@chakra-ui/react'
 
-import ChakraAwesome from "../../utilities/ChakraAwesome";
-import DSelect from "../../components/DynamicForm/Select";
-import DInput from "../../components/DynamicForm/Input";
-import DCheckbox from "../../components/DynamicForm/Checkbox";
+import ChakraAwesome from '../../utilities/ChakraAwesome'
+import DSelect from '../../components/DynamicForm/Select'
+import DInput from '../../components/DynamicForm/Input'
+import DCheckbox from '../../components/DynamicForm/Checkbox'
 
 export default function Field({
   index,
@@ -17,9 +17,9 @@ export default function Field({
   removeField,
   fieldTypes,
 }) {
-  const formMethods = useFormContext();
+  const formMethods = useFormContext()
 
-  const fieldType = formMethods.watch(`fields.${index}.type`);
+  const fieldType = formMethods.watch(`fields.${index}.type`)
 
   return (
     <Tr>
@@ -30,7 +30,7 @@ export default function Field({
               {index > 0 && (
                 <Box>
                   <ChakraAwesome
-                    _hover={{ color: "brand.Green" }}
+                    _hover={{ color: 'brand.Green' }}
                     onClick={(e) => swapField(index, index - 1)}
                     icon="caret-up"
                     fontSize="lg"
@@ -42,7 +42,7 @@ export default function Field({
               {index < total - 1 && (
                 <Box>
                   <ChakraAwesome
-                    _hover={{ color: "brand.Green" }}
+                    _hover={{ color: 'brand.Green' }}
                     onClick={(e) => swapField(index, index + 1)}
                     icon="caret-down"
                     fontSize="lg"
@@ -64,7 +64,7 @@ export default function Field({
                 <DCheckbox
                   type="switch"
                   labelProps={{
-                    pt: "2",
+                    pt: '2',
                     fontWeight: 400,
                   }}
                   useForm={formMethods}
@@ -74,7 +74,7 @@ export default function Field({
                 <DCheckbox
                   type="switch"
                   labelProps={{
-                    pt: "2",
+                    pt: '2',
                     fontWeight: 400,
                   }}
                   useForm={formMethods}
@@ -95,7 +95,7 @@ export default function Field({
             options={fieldTypes}
           />
 
-          {fieldType == "array" && (
+          {fieldType == 'array' && (
             <DSelect
               useForm={formMethods}
               placeholder="Add options..."
@@ -119,5 +119,5 @@ export default function Field({
         />
       </Td>
     </Tr>
-  );
+  )
 }

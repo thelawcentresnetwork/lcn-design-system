@@ -1,14 +1,10 @@
-import React from "react";
-import {
-  useController,
-  Controller,
-  RegisterOptions,
-  UseFormReturn,
-} from "react-hook-form";
+import React from 'react'
+import { Controller, RegisterOptions, UseFormReturn } from 'react-hook-form'
+import ChakraAwesome from '../../utilities/ChakraAwesome'
+/* eslint-disable */
 //@ts-ignore
-import ChakraAwesome from "../../utilities/ChakraAwesome";
-//@ts-ignore
-import { Calendar } from "react-date-range";
+import { Calendar } from 'react-date-range'
+/* eslint-enable */
 
 import {
   InputProps,
@@ -19,7 +15,6 @@ import {
   Text,
   FormHelperText,
   FormErrorMessage,
-  FormErrorIcon,
   InputLeftAddon,
   InputGroup,
   InputRightAddon,
@@ -29,16 +24,16 @@ import {
   Popover,
   PopoverTrigger,
   Portal,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 interface DInputProps extends InputProps {
-  name: string;
-  label?: string;
-  hint?: string;
-  rightAddon?: string;
-  leftAddon?: string;
-  validation?: RegisterOptions;
-  useForm?: UseFormReturn;
+  name: string
+  label?: string
+  hint?: string
+  rightAddon?: string
+  leftAddon?: string
+  validation?: RegisterOptions
+  useForm: UseFormReturn
 }
 
 export default function DDate({
@@ -53,9 +48,9 @@ export default function DDate({
   validation,
   ...inputProps
 }: DInputProps) {
-  const value = useForm?.getValues(name);
+  const value = useForm?.getValues(name)
   return (
-    <FormControl isInvalid={useForm?.formState.errors[name] || false}>
+    <FormControl isInvalid={useForm?.formState.errors[name] ? true : false}>
       {label && <FormLabel>{label}</FormLabel>}
 
       <Controller
@@ -65,34 +60,32 @@ export default function DDate({
         render={({ field: { onChange, value } }) => (
           <InputGroup colorScheme={colorScheme}>
             {!value && (
-              <InputLeftAddon
-                children={
-                  <ChakraAwesome fixedWidth icon={["fal", "calendar-days"]} />
-                }
-              />
+              <InputLeftAddon>
+                {<ChakraAwesome fixedWidth icon={['fal', 'calendar']} />}
+              </InputLeftAddon>
             )}
             {value && (
               <InputLeftAddon
                 cursor="pointer"
                 bg="white"
                 _hover={{
-                  bg: "brand.Red",
-                  color: "white",
-                  borderColor: "brand.Red",
+                  bg: 'brand.Red',
+                  color: 'white',
+                  borderColor: 'brand.Red',
                 }}
                 onClick={() => {
-                  onChange("");
+                  onChange('')
                 }}
                 color="red.500"
               >
-                <ChakraAwesome fixedWidth icon={["fa", "circle-xmark"]} />
+                <ChakraAwesome fixedWidth icon={['fal', 'times-circle']} />
               </InputLeftAddon>
             )}
 
             <Popover placement="right">
               <PopoverTrigger>
                 <Input
-                  _hover={{ bg: "gray.50" }}
+                  _hover={{ bg: 'gray.50' }}
                   cursor="pointer"
                   as={Box}
                   color="gray.400"
@@ -108,16 +101,16 @@ export default function DDate({
               </PopoverTrigger>
               <Portal appendToParentPortal={false}>
                 <PopoverContent
-                  rootProps={{ zIndex: "1500" }}
+                  rootProps={{ zIndex: '1500' }}
                   width="24rem"
                   boxShadow="xl"
-                  _focus={{ outline: "none" }}
+                  _focus={{ outline: 'none' }}
                 >
                   <PopoverArrow />
                   <PopoverBody>
                     <Calendar
                       onChange={(e: Event) => {
-                        onChange(e);
+                        onChange(e)
                       }}
                       date={
                         value
@@ -133,18 +126,18 @@ export default function DDate({
               </Portal>
             </Popover>
 
-            {rightAddon && <InputRightAddon children={rightAddon} />}
+            {rightAddon && <InputRightAddon>{rightAddon}</InputRightAddon>}
           </InputGroup>
         )}
       />
 
       {useForm?.formState.errors[name] && (
         <FormErrorMessage>
-          <ChakraAwesome icon={["fas", "circle-exclamation"]} />
-          {useForm.formState.errors[name].message}
+          <ChakraAwesome icon={['fas', 'exclamation-circle']} />
+          {useForm?.formState?.errors[name]?.message}
         </FormErrorMessage>
       )}
       {hint && <FormHelperText>{hint}</FormHelperText>}
     </FormControl>
-  );
+  )
 }

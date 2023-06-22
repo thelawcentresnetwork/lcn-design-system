@@ -1,9 +1,9 @@
 const colors = {
   brand: {
-    'Orange': '#E45E37',
-    'Red': '#C90061',
-    'Blue': '#425390',
-    'Green': '#00838A',
+    Orange: '#E45E37',
+    Red: '#C90061',
+    Blue: '#425390',
+    Green: '#00838A',
   },
   orange: {
     25: '#fcefeb',
@@ -56,7 +56,7 @@ const colors = {
     700: '#00565b',
     800: '#004044',
     900: '#002a2c',
-  }
+  },
 }
 
-export default colors;
+export default colors

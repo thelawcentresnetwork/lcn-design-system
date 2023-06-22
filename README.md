@@ -22,15 +22,46 @@ Currently this is automatically deployed to Vercel on push to Github, using `npx
 
 If developing and using in another local project, use [`yalc`](https://www.npmjs.com/package/yalc) to publish to a local store
 
-- `yalc publish`
 
-or to publish and push to all current dependant local projects, use
+1. Install yalc globally
 
-- `yalc push`
+If you are using yarn: 
 
-... and in your dependant project, use the local store with
+`yarn add global yalc`
 
-- `yalc add law-centres-design-system`
+If you are using npm:
+
+`npm i -g yalc`
+
+2. Publish the law-centres-design-system package locally 
+
+Run `npm run build` followed by `yalc publish` in the law-centres-design-system project
+
+3. Adding the law-centres-design-system package to desired project
+
+In the project you want to add this package run : 
+
+`yalc add law-centres-design-system`
+
+Note that adding the version number is not necessary but will still work e.g.
+
+`yalc add law-centres-design-system@2.6.6`
+
+IMPORTANT: If you would like to run a local instance of law-centres-design-system in  another project, you need to add the peer dependencies from your law-centres-design-system project to the dependency list of your project's package.json. 
+
+4. Update node_modules 
+
+Run `yarn` to update your yarn.lock 
+
+5. Updating the package after changes 
+
+In your local instance of  law-centres-design-system run:
+
+`yalc push`  
+
+6. Remove the local package
+
+ To remove the local package run `yalc remove law-centres-design-system ` in the dependent project
 
 ## Publishing to NPM
 

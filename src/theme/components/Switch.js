@@ -1,7 +1,7 @@
 const Switch = {
-    defaultProps: {
-        colorScheme: "green"
-    }
+  defaultProps: {
+    colorScheme: 'green',
+  },
 }
 
 export default Switch

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import parameterize from "parameterize-js";
+import React, { useEffect } from 'react'
+import parameterize from 'parameterize-js'
 
-import { useForm, FormProvider, useFieldArray } from "react-hook-form";
+import { useForm, FormProvider, useFieldArray } from 'react-hook-form'
 
 import {
   Button,
@@ -13,46 +13,46 @@ import {
   Thead,
   Tbody,
   Box,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
-import Field from "./Field";
+import Field from './Field'
 
-import ChakraAwesome from "../../utilities/ChakraAwesome";
-import DActions from "../../components/DynamicForm/Actions";
+import ChakraAwesome from '../../utilities/ChakraAwesome'
+import DActions from '../../components/DynamicForm/Actions'
 
 const fieldTypes = [
   {
-    value: "string",
-    label: "Short Text",
+    value: 'string',
+    label: 'Short Text',
   },
   {
-    value: "text",
-    label: "Long text",
+    value: 'text',
+    label: 'Long text',
   },
   {
-    value: "integer",
-    label: "Number",
+    value: 'integer',
+    label: 'Number',
   },
   {
-    value: "array",
-    label: "Dropdown",
+    value: 'array',
+    label: 'Dropdown',
   },
   {
-    value: "boolean",
-    label: "Checkbox",
+    value: 'boolean',
+    label: 'Checkbox',
   },
   {
-    value: "date",
-    label: "Date",
+    value: 'date',
+    label: 'Date',
   },
-];
+]
 
 export default function FormBuilder({ schema, onCancel, onSave, labels }) {
-  const formMethods = useForm();
+  const formMethods = useForm()
   const {
     reset,
     formState: { errors },
-  } = formMethods;
+  } = formMethods
 
   const {
     fields: fields,
@@ -61,8 +61,8 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
     remove: removeField,
   } = useFieldArray({
     control: formMethods.control,
-    name: "fields",
-  });
+    name: 'fields',
+  })
 
   useEffect(() => {
     if (schema?.properties) {
@@ -74,37 +74,37 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
           type: field.type,
           items: field.items?.map((item) => item.value),
           ppi: field.ppi,
-          required: field.validation?.hasOwnProperty("required"),
-        };
-      });
+          required: field.validation?.hasOwnProperty('required'),
+        }
+      })
 
-      reset({ fields: schemaFields });
+      reset({ fields: schemaFields })
     }
-  }, [schema]);
+  }, [schema])
 
   const onSubmit = (values) => {
-    let newSchema = schema;
-    newSchema.properties = [];
+    let newSchema = schema
+    newSchema.properties = []
 
     values.fields.forEach((field, index) => {
       let newField = {
         //name: parameterize(field.label),
-        name: field.label?.replaceAll("'", "")?.replaceAll(".", ""),
+        name: field.label?.replaceAll("'", '')?.replaceAll('.', ''),
         label: field.label,
         type: field.type,
         ppi: field.ppi,
         items: field.items?.map((item) => ({ value: item, label: item })),
-      };
-
-      if (field.required) {
-        newField["validation"] = { required: "Please fill in this field." };
       }
 
-      newSchema.properties.push(newField);
-    });
+      if (field.required) {
+        newField['validation'] = { required: 'Please fill in this field.' }
+      }
 
-    onSave(newSchema);
-  };
+      newSchema.properties.push(newField)
+    })
+
+    onSave(newSchema)
+  }
 
   return (
     <>
@@ -142,7 +142,7 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
                   <Button
                     variant="inverse"
                     leftIcon={<ChakraAwesome icon="plus" />}
-                    onClick={(e) => appendField({ type: "string" })}
+                    onClick={(e) => appendField({ type: 'string' })}
                   >
                     Add field
                   </Button>
@@ -153,8 +153,8 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
                 <DActions
                   labels={
                     labels || {
-                      submit: "Save Form",
-                      cancel: "Cancel",
+                      submit: 'Save Form',
+                      cancel: 'Cancel',
                     }
                   }
                   onCancel={onCancel}
@@ -165,5 +165,5 @@ export default function FormBuilder({ schema, onCancel, onSave, labels }) {
         </>
       )}
     </>
-  );
+  )
 }
