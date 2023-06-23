@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 2.7.1 (2023-06-23)
+
+
+### :lorry: Chores
+
+* update chromatic.yml ([c5588e2](https://github.com/thelawcentresnetwork/lcn-design-system/commit/c5588e2918ac1bb3c8a56f90fc8fbe990dfe2676))
+
 ## 2.7.0 (2023-06-23)
 
 
