@@ -18,10 +18,14 @@ jobs:
           node-version: 18.x
       - run: npm ci
       - run: npm run build
-      - run: |
+      - name: Git configuration
+        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-      - run: npm run release
-      - run: npm publish
+      - name: Bump version and update changelog
+        run: npm run release
+      - name: Publish to npm
+        run: git push --follow-tags && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
