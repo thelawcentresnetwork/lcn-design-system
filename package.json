@@ -129,7 +129,7 @@
     "standard-version": "^9.5.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,md,mdx}": [
       "eslint --fix",
       "prettier --write --ignore-unknown"
     ]
