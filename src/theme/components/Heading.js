@@ -1,24 +1,41 @@
 const Heading = {
   variants: {
     h1: {
-      fontSize: '4xl',
+      fontSize: '5xl',
       lineHeight: 1.2,
-      fontWeight: 900,
+
+      textTransform: 'uppercase',
+      fontFamily: 'Black Han Sans',
     },
     h2: {
-      fontSize: '2xl',
+      fontSize: '3xl',
       lineHeight: 1.33,
-      fontWeight: 700,
+      fontWeight: 500,
     },
-    h3: {
-      fontSize: 'xl',
+
+    h2Alt: {
+      fontSize: '3xl',
       lineHeight: 1.33,
-      fontWeight: 700,
+      fontFamily: 'Black Han Sans',
+      textTransform: 'uppercase',
+    },
+
+    h3: {
+      fontSize: 'lg',
+      lineHeight: 1.33,
+      fontWeight: 500,
     },
     h4: {
-      fontSize: 'md',
+      fontSize: '2xs',
       lineHeight: 1.33,
-      fontWeight: 700,
+      fontWeight: 500,
+    },
+
+    h5: {
+      fontSize: '4xs',
+      lineHeight: 1.33,
+      fontWeight: 500,
+      textTransform: 'uppercase',
     },
   },
 }
