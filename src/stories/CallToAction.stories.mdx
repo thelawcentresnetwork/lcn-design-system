@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import CallToAction from '../components/CallToAction'
+
+<Meta title="Call To Action" />
+
+# Call To Action
+
+<Canvas>
+  <Story
+    name="Call To Action"
+    argTypes={{
+      heading: { control: 'text' },
+      description: { control: 'text' },
+      buttonText: { control: 'text' },
+    }}
+  >
+    {({ heading, description, buttonText }) => (
+      <CallToAction
+        heading={heading || 'Find out how Law Centres can help'}
+        description={
+          description ||
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        }
+        buttonText={buttonText || 'Get Help'}
+        link="/get-help"
+      />
+    )}
+  </Story>
+</Canvas>

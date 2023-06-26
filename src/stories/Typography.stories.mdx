@@ -1,0 +1,56 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { VStack, Heading } from '@chakra-ui/react'
+
+<Meta title="Typography" />
+
+# Typography
+
+The Typography component provides various heading styles and body text. Three Google fonts make up our typography, each of which are referenced below
+
+## Headings
+
+Hero headings use the font type [Black Han Sans](https://fonts.google.com/specimen/Black+Han+Sans). The remaining headings use [Anek Latin](https://fonts.google.com/specimen/Anek+Latin?query=Anek+Latin).
+
+<Canvas>
+  <Story name="Headings" argTypes={{ hero: { control: 'text' }, headingTwo: { control: 'text' }, headingTwoAlt: { control: 'text' }, headingThree: { control: 'text' }, headingFour: { control: 'text' } }}>
+    {({ hero, headingTwo, headingTwoAlt, headingThree, headingFour }) => (
+      <VStack align="left">
+        <Heading as="h1" variant="h1">
+          {hero || 'Hero/Heading 1'}
+        </Heading>
+
+        <Heading as="h2" variant="h2Alt">
+          {headingTwo || 'Heading 2'}
+        </Heading>
+
+        <Heading as="h2" variant="h2">
+          {headingTwoAlt || 'Heading 2'}
+        </Heading>
+
+        <Heading as="h3" variant="h3">
+          {headingThree || 'Heading 3'}
+        </Heading>
+
+        <Heading as="h4" variant="h4">
+          {headingFour || 'Heading 4'}
+        </Heading>
+      </VStack>
+    )}
+
+  </Story>
+</Canvas>
+
+## Body
+
+The Body component contains the main body text. Body text uses [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab?query=Roboto+).
+
+<Canvas>
+  <Story name="Body" argTypes={{ bodyText: { control: 'text' } }}>
+    {({ bodyText }) => (
+      <p>
+        {bodyText ||
+          'Law Centres offer legal advice, casework and representation to individuals and groups. Spotting local trends and issues in the course of their work, they highlight them to bring about necessary policy changes and to prevent future problems. Law Centres also help build capacity within local communities by training and supporting local groups and educating people about the law and their rights.'}
+      </p>
+    )}
+  </Story>
+</Canvas>
