@@ -19,7 +19,6 @@
   "scripts": {
     "build": "rm -rf dist && mkdir dist && babel src/ -d dist --extensions \".js,.jsx,.tsx\" --copy-files",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
