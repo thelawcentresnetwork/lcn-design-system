@@ -1,7 +1,8 @@
 import { extendTheme } from '@chakra-ui/react'
 
 import colors from './foundations/colors'
-import fonts from './foundations/fonts'
+import { fonts, fontSizes } from './foundations/fonts'
+import globalStyles from './foundations/globalStyles'
 
 import Badge from './components/Badge'
 import Menu from './components/Menu'
@@ -30,8 +31,10 @@ import Drawer from './components/Drawer'
 // https://github.com/chakra-ui/chakra-ui/tree/75edcf41e7ff4acc2569f2169949063c164d8f6e/packages/theme/src/components
 
 const Theme = extendTheme({
+  styles: globalStyles,
   colors,
   fonts,
+  fontSizes,
   components: {
     Button,
     Text,
