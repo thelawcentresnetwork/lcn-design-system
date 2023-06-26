@@ -12,11 +12,11 @@ Then install peer dependancies.
 
 ## Documentation
 
-We use [Styleguidist](https://react-styleguidist.js.org/) to create a hot-loading styleguide. Markdown files for each component can be created as examples, run:
+We use [Storybook](https://storybook.js.org/docs/react/get-started/install/) to create a styleguide. To run this locally use:
 
-`yarn styleguidist server`
+`npm run storybook`
 
-Currently this is automatically deployed to Vercel on push to Github, using `npx styleguidist build` with the output directory of `styleguide`.
+Currently this is automatically deployed to Vercel on push to Github.
 
 ## Using local version
 
