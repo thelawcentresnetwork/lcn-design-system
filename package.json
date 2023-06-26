@@ -121,6 +121,8 @@
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@commitlint/cz-commitlint": "^17.5.0",
+    "@mdx-js/react": "^2.3.0",
+    "@storybook/addon-docs": "^7.0.23",
     "commitizen": "^4.3.0",
     "inquirer": "^8.2.5",
     "parameterize-js": "^1.0.0",
