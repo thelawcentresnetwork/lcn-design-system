@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { VStack, Heading } from '@chakra-ui/react'
+import { VStack, Heading, Text } from '@chakra-ui/react'
 
 <Meta title="Typography" />
 
@@ -45,12 +45,52 @@ Hero headings use the font type [Black Han Sans](https://fonts.google.com/specim
 The Body component contains the main body text. Body text uses [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab?query=Roboto+).
 
 <Canvas>
-  <Story name="Body" argTypes={{ bodyText: { control: 'text' } }}>
-    {({ bodyText }) => (
-      <p>
-        {bodyText ||
-          'Law Centres offer legal advice, casework and representation to individuals and groups. Spotting local trends and issues in the course of their work, they highlight them to bring about necessary policy changes and to prevent future problems. Law Centres also help build capacity within local communities by training and supporting local groups and educating people about the law and their rights.'}
-      </p>
+  <Story name="Body" argTypes={{ bodyDefault: { control: 'text' }, bodyLarge: { control: 'text' } }}>
+    {({ bodyDefault, bodyLarge  }) => (
+         <VStack   align="left">
+      <Text>
+        {bodyDefault ||
+          'Body/Default'}
+      </Text>
+
+         <Text fontSize='2xs'>
+        {bodyLarge ||
+          'Body/Large'}
+      </Text>
+
+    </VStack>
+
     )}
+
+  </Story>
+</Canvas>
+
+## Subtitles
+
+Subtitles use [Anek Latin](https://fonts.google.com/specimen/Anek+Latin?query=Anek+Latin)
+
+<Canvas>
+  <Story name="Subtitles" argTypes={{  subtitleDefault:{ control: 'text' }, subtitleBold: { control: 'text' },subtitleLarge:{ control: 'text' } }}>
+    {({  subtitleDefault, subtitleBold, subtitleLarge  }) => (
+         <VStack align="left" fontFamily="bodyAlternative">
+
+         <Text fontSize='sm'>
+        {subtitleDefault ||
+          'Subtitle/Default'}
+      </Text>
+
+       <Text as='b' fontSize='sm'>
+        {subtitleBold ||
+          'Subtitle/Bold'}
+      </Text>
+
+       <Text as='b' fontSize='xl'>
+        {subtitleLarge ||
+          'Subtitle/Large'}
+      </Text>
+    </VStack>
+
+    )}
+
   </Story>
 </Canvas>

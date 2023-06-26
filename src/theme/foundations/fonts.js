@@ -1,5 +1,6 @@
 export const fonts = {
   body: 'Roboto Slab, serif',
+  bodyAlternative: 'Anek Latin, sans-serif',
   heading: 'Anek Latin, sans-serif',
 }
 
