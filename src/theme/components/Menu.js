@@ -8,6 +8,7 @@ const Menu = {
       padding: '0.5rem',
       border: 'none',
       _active: { border: 'solid 1px ', borderColor: 'brand.darkBlue' },
+      _focus: { border: 'solid 1px ', borderColor: 'brand.darkBlue' },
     },
     list: {
       py: '0',

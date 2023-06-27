@@ -1,0 +1,60 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { Logo } from './Logo'
+
+import logo from '../../assets/lcn-logo.svg'
+import logoWhite from '../../assets/lcn-logo-white.svg'
+
+<Meta
+  title="Logos"
+  parameters={{
+    backgrounds: {
+      default: 'white',
+      values: [
+        { name: 'white', value: '#fff' },
+        { name: 'gray', value: '#A9B1B7' },
+      ],
+    },
+  }}
+/>
+
+# LCN Logos
+
+There are two versions of the LCN logo. Within the design system, the logo is used in the header and footer components. The logo is available in full colour or white.
+
+## Primary logo
+
+This is the default LCN logo and is used primarily in the header of every page.
+
+You can [download this logo here](lcn-logo.svg).
+
+<Canvas>
+  <Story
+    name="LCN logo"
+    parameters={{ backgrounds: { default: 'white' }, disable: true }}
+  >
+    <Logo src={logo} alt={'The Law Centres Network Logo'}></Logo>
+  </Story>
+</Canvas>
+
+## White logo
+
+The LCN white logo is primarily used in the footer of all pages as well as on a dark background.
+
+You can [download the white logo here](lcn-logo-white.svg).
+
+<Canvas>
+  <Story
+    name="LCN logo - white"
+    parameters={{
+      backgrounds: { default: 'gray' },
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: '100%',
+        },
+      },
+    }}
+  >
+    <Logo src={logoWhite} alt={'The Law Centres Network Logo'}></Logo>
+  </Story>
+</Canvas>
