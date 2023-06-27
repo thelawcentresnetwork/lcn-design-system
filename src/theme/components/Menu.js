@@ -4,6 +4,10 @@ const Menu = {
       fontFamily: 'Anek Latin, sans-serif',
       textTransform: 'uppercase',
       color: 'brand.darkBlue',
+      borderColor: 'brand.darkBlue',
+      padding: '0.5rem',
+      border: 'none',
+      _active: { border: 'solid 1px ', borderColor: 'brand.darkBlue' },
     },
     list: {
       py: '0',
@@ -45,7 +49,6 @@ const Menu = {
       _first: { mt: '3' },
       mx: '3',
       fontSize: '4xs',
-      textDecoration: 'underline',
       paddingBottom: 0,
     },
   }),
