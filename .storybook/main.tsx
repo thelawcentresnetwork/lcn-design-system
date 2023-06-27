@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-webpack5'
 const config: StorybookConfig = {
+  staticDirs: ['../src/assets'],
   stories: ['../src'],
   addons: [
     '@storybook/addon-links',
