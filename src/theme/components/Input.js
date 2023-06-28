@@ -1,34 +1,34 @@
 const Input = {
   variants: {
-    outline: ({ colorScheme }) => ({
+    default: ({ colorScheme }) => ({
       addon: {
         fontSize: 'xs',
-        bg: `${colorScheme}.50`,
-        color: `${colorScheme}.500`,
-        borderColor: `${colorScheme}.200`,
+        bg: `${colorScheme}`,
+        color: `${colorScheme}`,
+        borderColor: `${colorScheme}`,
       },
       field: {
-        borderColor: `${colorScheme}.200`,
         bg: 'white',
-        fontSize: 'sm',
+        fontSize: '2xs',
+        borderRadius: 'none',
         _hover: {
-          borderColor: `${colorScheme}.500`,
-          boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`,
+          border: '2px solid',
+          borderColor: `${colorScheme}`,
         },
         _focus: {
+          border: '2px solid',
           borderColor: `${colorScheme}.500`,
-          boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`,
         },
         _active: {
+          border: '2px solid',
           borderColor: `${colorScheme}.500`,
-          boxShadow: `0 0 0 1px var(--chakra-colors-${colorScheme}-500)`,
         },
       },
     }),
   },
   defaultProps: {
-    colorScheme: 'gray',
-    variant: 'outline',
+    colorScheme: 'brand.darkBlue',
+    variant: 'default',
   },
 }
 
