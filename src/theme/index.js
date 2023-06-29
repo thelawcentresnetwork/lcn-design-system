@@ -20,7 +20,7 @@ import Switch from './components/Switch'
 
 import Textarea from './components/Textarea'
 
-import Button from './components/Button'
+import { Button } from './components/Button'
 import Text from './components/Text'
 import Heading from './components/Heading'
 
