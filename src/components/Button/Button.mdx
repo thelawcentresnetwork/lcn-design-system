@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks'
+
+import * as ButtonStories from './Button.stories'
+
+<Meta of={ButtonStories} />
+
+# Buttons
+
+Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
+
+## Overview
+
+Our Button component uses the [Chakra Button component](https://chakra-ui.com/docs/components/button/).
+
+## Solid button
+
+This button is our default button.
+
+<Canvas>
+  <Story of={ButtonStories.Solid} />
+</Canvas>
+
+## Outline button
+
+<Canvas>
+  <Story of={ButtonStories.Outline} />
+</Canvas>
