@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story } from '@storybook/blocks'
+
+import * as InputFieldsStories from './InputFields.stories'
+
+<Meta of={InputFieldsStories} />
+
+# Input Fields
+
+The Input Field component is used when the user is required to fill in the information.
+
+## Overview
+
+Our Input component uses the Chakra Input component. Consequently, you can use any props that exist on the that component when you use it. You can read about these props by viewing the [Chakra UI documentation on Inputs](https://chakra-ui.com/docs/components/input/props).
+
+## Text input
+
+<Canvas style={{ background: '#4CDED7' }}>
+  <Story of={InputFieldsStories.Default} />
+</Canvas>
+
+## Accessibility concerns
+
+### Labels
+
+When including inputs, it is an accessibility requirement to add labels alongside. For this reason we recommend you use the [Chakra UI FormControl components](https://chakra-ui.com/docs/components/form-control) and follow the given example to ensure all forms are accessible.

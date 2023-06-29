@@ -1,81 +1,60 @@
-const Button = {
-  baseStyle: {
-    fontWeight: '600',
-  },
-  sizes: {
-    xs: {
-      h: 7,
-      px: 3,
-    },
-    sm: {
-      h: 8,
-      pt: '0.1rem',
-      fontSize: '0.8rem',
-    },
-    md: {
-      fontSize: 'sm',
-    },
-  },
-  variants: {
-    simple: ({ colorScheme }) => ({
-      bg: `${colorScheme}.400`,
-      color: 'white',
-      _hover: { bg: `${colorScheme}.300` },
-      _focus: { bg: `${colorScheme}.300` },
-      _active: { bg: `${colorScheme}.300` },
-    }),
-    inverse: ({ colorScheme }) => ({
-      bg: `${colorScheme}.50`,
-      color: `${colorScheme}.500`,
-      _hover: { bg: `${colorScheme}.100` },
-      _focus: { bg: `${colorScheme}.100` },
-      _active: { bg: `${colorScheme}.100` },
-    }),
-    solid: ({ colorScheme }) => ({
-      borderLeftWidth: '1px',
-      borderRightWidth: '3px',
-      borderBottomWidth: '3px',
-      bg: `${colorScheme}.400`,
-      borderColor: `${colorScheme}.500`,
-      _hover: { bg: `${colorScheme}.500` },
-      _focus: { bg: `${colorScheme}.500` },
-      _active: { bg: `${colorScheme}.500` },
-    }),
-    outline: ({ colorScheme }) => ({
-      fontWeight: '400',
-      color: `${colorScheme}.500`,
-      _hover: { bg: `${colorScheme}.50` },
-      _active: { bg: `${colorScheme}.50` },
-      _focus: { bg: `${colorScheme}.50` },
-    }),
-    brand: ({ colorScheme }) => ({
-      borderRadius: '3xl',
-      borderWidth: '4px',
-      borderColor: `${colorScheme}.500`,
-      borderTopRightRadius: '0',
-      color: `${colorScheme}.500`,
-      bg: 'transparent',
-      fontFamily: 'Poppins, Helvetica, sans-serif',
-      px: '10',
-      py: '4',
-      fontWeight: '600',
-    }),
-    brandSolid: ({ colorScheme }) => ({
-      borderRadius: '3xl',
-      borderWidth: '4px',
-      borderColor: `${colorScheme}.500`,
-      borderTopRightRadius: '0',
-      color: `white`,
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+
+const baseStyle = defineStyle({
+  borderRadius: 0,
+  fontFamily: 'bodyAlternative',
+  fontSize: '2xs',
+  textTransform: 'uppercase',
+})
+
+const solid = defineStyle(({ colorScheme }) => {
+  return {
+    bg: `${colorScheme}.500`,
+    color: `${colorScheme}.accessible`,
+    _hover: { bg: `${colorScheme}.400` },
+    _focus: { bg: `${colorScheme}.400` },
+    _active: { bg: `${colorScheme}.400` },
+    _focusVisible: { bg: `${colorScheme}.400` },
+  }
+})
+
+const outline = defineStyle(({ colorScheme }) => {
+  return {
+    border: '2px solid',
+    borderColor: `${colorScheme}.500`,
+    bg: 'none',
+    color: `${colorScheme}.500`,
+    _hover: { bg: `${colorScheme}.500`, color: `${colorScheme}.accessible` },
+    _focus: { bg: `${colorScheme}.500`, color: `${colorScheme}.accessible` },
+    _active: { bg: `${colorScheme}.500`, color: `${colorScheme}.accessible` },
+    _focusVisible: {
       bg: `${colorScheme}.500`,
-      fontFamily: 'Poppins, Helvetica, sans-serif',
-      px: '10',
-      py: '4',
-      fontWeight: '600',
-    }),
-  },
-  defaultProps: {
-    colorScheme: 'green',
-  },
+      color: `${colorScheme}.accessible`,
+    },
+  }
+})
+
+const sizes = {
+  long: defineStyle({
+    minWidth: '30rem',
+    py: '0.5rem',
+  }),
+  short: defineStyle({
+    minWidth: '15rem',
+    py: '0.5rem',
+  }),
 }
 
-export default Button
+export const Button = defineStyleConfig({
+  baseStyle,
+  sizes,
+  variants: {
+    solid,
+    outline,
+  },
+  defaultProps: {
+    colorScheme: 'brand.warmYellow',
+    variant: 'solid',
+    size: 'long',
+  },
+})

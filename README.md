@@ -12,11 +12,11 @@ Then install peer dependancies.
 
 ## Documentation
 
-We use [Styleguidist](https://react-styleguidist.js.org/) to create a hot-loading styleguide. Markdown files for each component can be created as examples, run:
+We use [Storybook](https://storybook.js.org/docs/react/get-started/install/) to create a styleguide. To run this locally use:
 
-`yarn styleguidist server`
+`npm run storybook`
 
-Currently this is automatically deployed to Vercel on push to Github, using `npx styleguidist build` with the output directory of `styleguide`.
+Currently this is automatically deployed to Vercel on push to Github.
 
 ## Using local version
 
@@ -65,18 +65,4 @@ In your local instance of  law-centres-design-system run:
 
 ## Publishing to NPM
 
-To compile your code, run
-
-- `npm run build`.
-
-To publish your package to npm, make sure you're logged in the correct account by running
-
-- `npm login`.
-
-Update the package version accordingly by using
-
-- [`npm version [patch | minor | major]`](https://docs.npmjs.com/about-semantic-versioning)
-
-Then publish your package by running
-
-- `npm publish`
+This project uses Github actions to publish to npm on a merge into the main branch. This process will also produce a changelog and all notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.

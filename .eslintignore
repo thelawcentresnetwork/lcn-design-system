@@ -32,3 +32,6 @@ styleguide.config.js
 # babel
 
 babel.config.js
+
+# markdown
+*.mdx
