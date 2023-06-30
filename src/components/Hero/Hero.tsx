@@ -11,7 +11,7 @@ export interface HeroProps extends BoxProps {
   textColour?: string
 }
 
-export const Hero = ({
+const Hero = ({
   pageTitle,
   backgroundColour,
   textColour,
@@ -88,3 +88,5 @@ export const Hero = ({
     </ExtendedSectionLeft>
   )
 }
+
+export default Hero
