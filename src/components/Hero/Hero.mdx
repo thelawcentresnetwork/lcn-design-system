@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story } from '@storybook/blocks'
+import * as HeroStories from './Hero.stories'
+
+<Meta of={HeroStories} />
+
+# Hero
+
+The Hero component is used to establish visually appealing sections on webpages. It consists of a main heading, subheading, and an optional small label at the top of the heading. On home pages the Hero component can also include an image.
+
+## General Hero
+
+These can be used on all pages excluding a HomePage. Properties of this component include: `backgroundColour`, `testColour`, `heading`, `pageTitle` and a `description`
+
+<Canvas>
+  <Story of={HeroStories.Default} />
+</Canvas>

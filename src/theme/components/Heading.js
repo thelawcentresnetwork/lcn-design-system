@@ -3,6 +3,7 @@ const Heading = {
     h1: {
       fontSize: '5xl',
       lineHeight: 1.2,
+      fontWeight: '400',
 
       textTransform: 'uppercase',
       fontFamily: 'Black Han Sans',
