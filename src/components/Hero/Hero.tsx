@@ -24,7 +24,13 @@ export const Hero = ({
       display="flex"
       justifyContent="space-evenly"
     >
-      <Flex my="10rem" mx="5rem" width="100%" justifyContent="space-evenly">
+      <Flex
+        my="10rem"
+        mx="5rem"
+        width="100%"
+        justifyContent="space-evenly"
+        flexWrap="wrap"
+      >
         <Flex justifyContent="flex-start">
           <Box mb="1rem">
             <Text

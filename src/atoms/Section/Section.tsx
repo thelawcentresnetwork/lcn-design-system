@@ -9,6 +9,7 @@ export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
   return (
     <Box
       bg={backgroundColor}
+      as="section"
       width="100%"
       minHeight="500px"
       {...restProps}
@@ -27,7 +28,7 @@ export const ExtendedSectionLeft = ({
       _after={{
         content: '""',
         position: 'absolute',
-        bg: '#425390',
+        backgroundColor: 'inherit',
         height: '42px',
         width: '40%',
         left: '0px',
@@ -48,7 +49,7 @@ export const ExtendedSectionRight = ({
       _after={{
         content: '""',
         position: 'absolute',
-        bg: '#425390',
+        backgroundColor: 'inherit',
         height: '42px',
         width: '40%',
         right: '0px',
@@ -69,7 +70,7 @@ export const SlantedSectionTop = ({
       _after={{
         content: '""',
         position: 'absolute',
-        bg: '#425390',
+        backgroundColor: 'inherit',
         height: '50px',
 
         left: '0px',

@@ -1,18 +1,23 @@
+import { Meta, StoryObj } from '@storybook/react'
+import { Hero } from './Hero'
 import React from 'react'
-import { Meta } from '@storybook/react'
-import { Hero, HeroProps } from './Hero'
 
-export default {
+const meta: Meta = {
   title: 'Hero',
-
   parameters: { layout: 'fullscreen' },
-} as Meta
+}
 
-export const Default = (args: HeroProps) => <Hero {...args} />
-Default.args = {
-  pageTitle: 'Page Title',
-  backgroundColour: '#425390',
-  textColour: 'brand.white.500',
-  heading: 'Main Heading',
-  children: 'Content',
+export default meta
+
+type Story = StoryObj<typeof Hero>
+
+export const Default: Story = {
+  args: {
+    pageTitle: 'Page Title',
+    backgroundColour: 'brand.legacyBlue',
+    textColour: 'brand.white.500',
+    heading: 'Main Heading',
+    children: 'Content',
+  },
+  render: (args) => <Hero {...args} />,
 }
