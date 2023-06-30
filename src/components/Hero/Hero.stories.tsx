@@ -17,7 +17,7 @@ export const Default: Story = {
     backgroundColour: 'brand.legacyBlue',
     textColour: 'brand.white.500',
     heading: 'Main Heading',
-    children: 'Content',
+    subHeading: 'Content',
   },
   render: (args) => <Hero {...args} />,
 }
