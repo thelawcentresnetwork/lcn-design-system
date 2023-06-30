@@ -24,6 +24,7 @@ export const ExtendedSectionLeft = ({
   return (
     <Section
       bg={backgroundColor}
+      position="relative"
       {...restProps}
       _after={{
         content: '""',

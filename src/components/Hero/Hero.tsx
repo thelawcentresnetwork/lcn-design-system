@@ -3,12 +3,11 @@ import { ExtendedSectionLeft } from '../../atoms/Section/Section'
 import { Box, BoxProps, Heading, Text, Flex } from '@chakra-ui/react'
 
 export interface HeroProps extends BoxProps {
-  /** Main text heading for the hero */
-
   heading: string
   pageTitle?: string
   backgroundColour?: string
   textColour?: string
+  subHeading?: string
 }
 
 const Hero = ({
@@ -16,7 +15,7 @@ const Hero = ({
   backgroundColour,
   textColour,
   heading,
-  children,
+  subHeading,
 }: HeroProps) => {
   return (
     <ExtendedSectionLeft
@@ -82,7 +81,7 @@ const Hero = ({
           maxWidth="23ch"
           pt="2rem"
         >
-          {children}
+          {subHeading}
         </Text>
       </Flex>
     </ExtendedSectionLeft>
