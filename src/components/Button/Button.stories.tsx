@@ -1,6 +1,7 @@
 import { Button } from '@chakra-ui/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
+import { FaTwitter } from 'react-icons/fa'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -15,11 +16,11 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     variant: {
-      options: ['solid', 'outline'],
+      options: ['solid', 'outline', 'icon'],
       control: { type: 'radio' },
     },
     size: {
-      options: ['long', 'short'],
+      options: ['long', 'short', 'icon'],
       control: { type: 'radio' },
     },
     colorScheme: {
@@ -48,6 +49,19 @@ export const Outline: Story = {
   render: (args) => (
     <Button variant="outline" {...args}>
       Button
+    </Button>
+  ),
+}
+
+export const Icon: Story = {
+  args: {
+    variant: 'icon',
+    size: 'icon',
+    colorScheme: 'brand.warmYellow',
+  },
+  render: (args) => (
+    <Button {...args}>
+      <FaTwitter />
     </Button>
   ),
 }

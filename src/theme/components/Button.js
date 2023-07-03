@@ -34,6 +34,23 @@ const outline = defineStyle(({ colorScheme }) => {
   }
 })
 
+const icon = defineStyle(({ colorScheme }) => {
+  return {
+    border: '2px solid',
+    borderColor: `${colorScheme}.500`,
+    bg: 'none',
+    borderRadius: '5px',
+    color: `${colorScheme}.500`,
+    _hover: { bg: `${colorScheme}.500`, color: `${colorScheme}.accessible` },
+    _focus: { bg: `${colorScheme}.500`, color: `${colorScheme}.accessible` },
+    _active: { bg: `${colorScheme}.500`, color: `${colorScheme}.accessible` },
+    _focusVisible: {
+      bg: `${colorScheme}.500`,
+      color: `${colorScheme}.accessible`,
+    },
+  }
+})
+
 const sizes = {
   long: defineStyle({
     minWidth: '30rem',
@@ -43,6 +60,9 @@ const sizes = {
     minWidth: '15rem',
     py: '0.5rem',
   }),
+  icon: defineStyle({
+    p: '0.5rem',
+  }),
 }
 
 export const Button = defineStyleConfig({
@@ -51,6 +71,7 @@ export const Button = defineStyleConfig({
   variants: {
     solid,
     outline,
+    icon,
   },
   defaultProps: {
     colorScheme: 'brand.warmYellow',
