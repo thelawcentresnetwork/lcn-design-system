@@ -16,7 +16,7 @@ const Menu = {
       padding: '1rem 1rem 0.5rem 1rem',
       borderRadius: 'none',
       fontFamily: 'Anek Latin, sans-serif',
-      bg: 'brand.warmYellow',
+      bg: 'brand.warmYellow.500',
       color: 'brand.darkBlue',
       position: 'relative',
       transform: 'translateX(-12%) !important',
@@ -24,7 +24,7 @@ const Menu = {
       _after: {
         content: '""',
         position: 'absolute',
-        bg: 'brand.warmYellow',
+        bg: 'brand.warmYellow.500',
         height: '42px',
         width: '80%',
         left: '0px',
