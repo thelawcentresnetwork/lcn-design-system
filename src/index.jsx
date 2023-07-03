@@ -8,7 +8,7 @@ import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
 import Card from './components/Card'
 import Embed from './components/Embed'
-import Hero from './components/Hero/Hero'
+import Hero from './components/Hero/PageHero/Hero'
 import Inlay from './components/Inlay'
 import Quote from './components/Quote'
 import Banner from './components/Banner'
