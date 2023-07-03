@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react'
 
 export default {
-  title: 'Menu',
   component: Menu,
   argTypes: {
     menuButton: {
