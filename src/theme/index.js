@@ -27,6 +27,7 @@ import Heading from './components/Heading'
 import Tabs from './components/Tabs'
 
 import Drawer from './components/Drawer'
+import * as Icons from '../atoms/Icons/Icons'
 
 // https://github.com/chakra-ui/chakra-ui/tree/75edcf41e7ff4acc2569f2169949063c164d8f6e/packages/theme/src/components
 
@@ -52,6 +53,7 @@ const Theme = extendTheme({
     Tabs,
     Switch,
     Radio,
+    Icons,
   },
 })
 
