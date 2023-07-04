@@ -11,7 +11,12 @@ import Banner from './components/Banner'
 import Feature from './components/Feature'
 import CallToAction from './components/CallToAction'
 import Statistic from './components/Statistic'
-import * as Icons from '../atoms/Icons/Icons'
+import {
+  IconArrowRight,
+  IconArrowDown,
+  IconPlus,
+  IconMinus,
+} from './atoms/Icons/Icons'
 import HomepageHero from './components/Hero/HomepageHero/HomepageHero'
 
 import DFormSchema from './components/DynamicForm/FormSchema'
@@ -35,7 +40,10 @@ export {
   Embed,
   Hero,
   HomepageHero,
-  Icons,
+  IconArrowRight,
+  IconArrowDown,
+  IconPlus,
+  IconMinus,
   Inlay,
   Quote,
   Banner,
