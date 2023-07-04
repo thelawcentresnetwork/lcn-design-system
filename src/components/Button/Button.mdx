@@ -1,4 +1,4 @@
-import { Canvas, Meta, Story, ArgTypes } from '@storybook/blocks'
+import { Canvas, Meta, Story } from '@storybook/blocks'
 
 import * as ButtonStories from './Button.stories'
 
@@ -26,7 +26,15 @@ This button is our default button.
   <Story of={ButtonStories.Outline} />
 </Canvas>
 
-## Icon buttons
+## Button with Icon
+
+A rarely used button as we are moving away from using icons in the brand. When used copy example given as custom code is required to look like designs. Shouldn't be used with `outline` or `icon` variants of Button.
+
+<Canvas style={{ background: '#7A7D84' }}>
+  <Story of={ButtonStories.ButtonWithIcon} />
+</Canvas>
+
+## Icon only buttons
 
 We only use Icon buttons for social media icons.
 
