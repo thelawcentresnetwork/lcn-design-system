@@ -1,7 +1,8 @@
-import { Button } from '@chakra-ui/react'
+import { Button, Box } from '@chakra-ui/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { FaTwitter } from 'react-icons/fa'
+import { IconArrowRight } from '../../atoms/Icons/Icons'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -49,6 +50,19 @@ export const Outline: Story = {
   render: (args) => (
     <Button variant="outline" {...args}>
       Button
+    </Button>
+  ),
+}
+
+export const ButtonWithIcon: Story = {
+  args: {
+    variant: 'solid',
+    size: 'long',
+    colorScheme: 'brand.white',
+  },
+  render: (args) => (
+    <Button leftIcon={<IconArrowRight />} {...args}>
+      <Box flexGrow={1}>Button with icon</Box>
     </Button>
   ),
 }
