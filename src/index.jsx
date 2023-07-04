@@ -1,9 +1,5 @@
 import Theme from './theme'
 import ChakraAwesome from './utilities/ChakraAwesome'
-
-//import NPSWidget from './patterns/Feedback/NPSWidget'
-//import { RatingFeedback, TextFeedback } from './patterns/Feedback/Feedback'
-
 import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
 import Card from './components/Card'
@@ -15,6 +11,8 @@ import Banner from './components/Banner'
 import Feature from './components/Feature'
 import CallToAction from './components/CallToAction'
 import Statistic from './components/Statistic'
+import * as Icons from '../atoms/Icons/Icons'
+import HomepageHero from './components/Hero/HomepageHero/HomepageHero'
 
 import DFormSchema from './components/DynamicForm/FormSchema'
 import DActions from './components/DynamicForm/Actions'
@@ -36,6 +34,8 @@ export {
   Card,
   Embed,
   Hero,
+  HomepageHero,
+  Icons,
   Inlay,
   Quote,
   Banner,
