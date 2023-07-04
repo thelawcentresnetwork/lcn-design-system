@@ -30,10 +30,10 @@ export const ExtendedSectionLeft = ({
         content: '""',
         position: 'absolute',
         backgroundColor: 'inherit',
-        height: '42px',
+        height: '82px',
         width: '40%',
         left: '0px',
-        bottom: -6,
+        bottom: '-82px',
       }}
     ></Section>
   )

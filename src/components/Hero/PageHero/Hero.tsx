@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExtendedSectionLeft } from '../../atoms/Section/Section'
+import { ExtendedSectionLeft } from '../../../atoms/Section/Section'
 import { Box, BoxProps, Heading, Text, Flex } from '@chakra-ui/react'
 
 export interface HeroProps extends BoxProps {
