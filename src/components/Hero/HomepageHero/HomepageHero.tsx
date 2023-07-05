@@ -3,13 +3,12 @@ import {
   Box,
   Heading,
   Text,
-  Image,
+  Img,
   Flex,
   Button,
   BoxProps,
 } from '@chakra-ui/react'
 
-import heroImage from '../../../assets/homepage-hero-image.png'
 import headingBackground from '../../../assets/heading-background.svg'
 
 import { IconArrowRight } from '../../../atoms/Icons/Icons'
@@ -19,6 +18,7 @@ export interface HeroProps extends BoxProps {
   subHeading: string
   introduction: string
   callToAction: string
+  image: any
 }
 
 const Hero = ({
@@ -26,6 +26,7 @@ const Hero = ({
   heading,
   subHeading,
   callToAction,
+  image,
 }: HeroProps) => {
   return (
     <Flex direction="column" width="100%" as="section">
@@ -46,12 +47,12 @@ const Hero = ({
           minHeight="310px"
           pl="clamp(1.00rem, calc(-0.39rem + 6.96vw), 5.00rem)"
         >
-          <Image
+          <Img
             marginLeft="auto"
             position="absolute"
             height="125%"
             top="-15%"
-            src={heroImage}
+            src={image}
           />
         </Flex>
         <Flex
