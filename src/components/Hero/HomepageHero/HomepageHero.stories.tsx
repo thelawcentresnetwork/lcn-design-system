@@ -18,7 +18,8 @@ export const Default: Story = {
     introduction:
       'We champion the work of Law Centres across the UK, support the services they provide, and campaign together on a national scale for equal access to justice for everyone.',
     callToAction: 'Join the fight for a fairer society',
-    image: 'homepage-hero-image.png',
+    heroImage: 'homepage-hero-image.png',
+    headingBackground: 'heading-background.svg',
   },
   render: (args) => <HomepageHero {...args} />,
 }
