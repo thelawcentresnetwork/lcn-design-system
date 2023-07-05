@@ -125,7 +125,6 @@
     "webpack": "^5.86.0"
   },
   "dependencies": {
-    "babel-plugin-file-loader": "^2.0.0",
     "inquirer": "^8.2.5",
     "parameterize-js": "^1.0.0"
   },
