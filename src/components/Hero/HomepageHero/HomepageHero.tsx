@@ -21,7 +21,7 @@ export interface HeroProps extends BoxProps {
   headingBackground: string
 }
 
-const Hero = ({
+const HomepageHero = ({
   introduction,
   heading,
   subHeading,
@@ -123,4 +123,4 @@ const Hero = ({
   )
 }
 
-export default Hero
+export default HomepageHero
