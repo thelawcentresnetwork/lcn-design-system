@@ -20,6 +20,7 @@ export const Default: Story = {
     callToAction: 'Join the fight for a fairer society',
     heroImage: 'homepage-hero-image.png',
     headingBackground: 'heading-background.svg',
+    callToActionLink: 'https://google.com',
   },
   render: (args) => <HomepageHero {...args} />,
 }
