@@ -15,7 +15,8 @@ export interface HeroProps extends BoxProps {
   heading: string
   subHeading: string
   introduction: string
-  callToAction: string
+  callToAction?: string | undefined
+  callToActionLink?: string | undefined
   heroImage: string
   headingBackground: string
 }
@@ -27,6 +28,7 @@ const Hero = ({
   callToAction,
   headingBackground,
   heroImage,
+  callToActionLink,
 }: HeroProps) => {
   return (
     <Flex direction="column" width="100%" as="section">
@@ -101,19 +103,22 @@ const Hero = ({
           </Text>
         </Flex>
       </Flex>
-
-      <Button
-        marginLeft="auto"
-        leftIcon={<IconArrowRight />}
-        size={{ base: 'short', sm: 'large' }}
-      >
-        <Box
-          fontSize="clamp(0.6rem, calc(0.8rem + 0.37vw), 1.56rem)"
-          flexGrow={1}
+      {callToAction && (
+        <Button
+          marginLeft="auto"
+          leftIcon={<IconArrowRight />}
+          size={{ base: 'short', sm: 'large' }}
+          as="a"
+          href={callToActionLink}
         >
-          {callToAction}
-        </Box>
-      </Button>
+          <Box
+            fontSize="clamp(0.6rem, calc(0.8rem + 0.37vw), 1.56rem)"
+            flexGrow={1}
+          >
+            {callToAction}
+          </Box>
+        </Button>
+      )}
     </Flex>
   )
 }
