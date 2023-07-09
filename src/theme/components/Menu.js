@@ -14,7 +14,7 @@ const Menu = {
       py: '0',
       px: '3',
       padding: '1rem 1rem 0.5rem 1rem',
-      borderRadius: 'none',
+      border: '0',
       fontFamily: 'Anek Latin, sans-serif',
       bg: 'brand.warmYellow.500',
       color: 'brand.darkBlue',
