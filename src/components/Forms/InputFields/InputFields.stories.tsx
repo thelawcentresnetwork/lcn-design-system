@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 const meta: Meta<typeof Input> = {
+  title: 'components/Forms/Input',
   component: Input,
   parameters: {
     backgrounds: {
@@ -24,6 +25,18 @@ export const Default: Story = {
     <FormControl>
       <FormLabel>Your email</FormLabel>
       <Input {...args} type="email" />
+    </FormControl>
+  ),
+}
+
+export const Outline: Story = {
+  parameters: {
+    backgrounds: { default: 'brightTeal' },
+  },
+  render: (args) => (
+    <FormControl>
+      <FormLabel>Your email</FormLabel>
+      <Input {...args} type="email" variant="outline" />
     </FormControl>
   ),
 }
