@@ -53,11 +53,11 @@ const icon = defineStyle(({ colorScheme }) => {
 
 const sizes = {
   long: defineStyle({
-    minWidth: '30rem',
+    width: 'min(100%, 30rem)',
     h: '60px',
   }),
   short: defineStyle({
-    minWidth: '15rem',
+    width: 'min(100%, 15rem)',
     h: '60px',
   }),
   icon: defineStyle({
