@@ -7,10 +7,10 @@ export default {
   title: 'Card',
   component: Card,
   args: {
-    title: 'Hello',
-    body: 'This is a card.',
+    title: 'Title',
+    body: 'Your donations are more important than ever. As the costs of living increase and legal aid gets cut, we need your help so that money is never a barrier to getting justice.',
     type: 'short',
-    backgroundColor: 'blue.500',
+    backgroundColor: 'brand.legacyBlue',
     color: 'white',
   },
   argTypes: {
