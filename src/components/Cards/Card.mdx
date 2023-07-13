@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story } from '@storybook/blocks'
+import * as CardStories from './Card.stories'
+
+<Meta of={CardStories} />
+
+# Cards
+
+This Card component represents a simple card element with a title, body, and optional link.
+
+## Default Card
+
+This card is our default card.
+
+<Canvas>
+  <Story of={CardStories.CardStory} />
+</Canvas>
+
+## Long Card
+
+This card is a longer version of our default card.
+
+<Canvas>
+  <Story of={CardStories.CardStoryLong} />
+</Canvas>
+
+## Card With Extension
+
+This card has an extension at the top.
+
+<Canvas>
+  <Story of={CardStories.CardWithExtendedStory} />
+</Canvas>
+
+## Long Card With Extension
+
+This card is a longer version of the Card With Extension.
+
+<Canvas>
+  <Story of={CardStories.CardWithExtendedStoryLong} />
+</Canvas>
