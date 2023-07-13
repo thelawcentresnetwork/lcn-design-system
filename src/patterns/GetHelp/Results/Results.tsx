@@ -3,7 +3,11 @@ import React from 'react'
 
 import LawCentreDetails from '../LawCentreDetails/LawCentreDetails'
 
-const Results = () => {
+interface resultsProps {
+  goBackToResults: (back: boolean) => void
+  userLocation?: string
+}
+const Results = ({ goBackToResults, userLocation }: resultsProps) => {
   return (
     <Box>
       <Flex
@@ -21,10 +25,10 @@ const Results = () => {
             to help due to funding.
           </Text>
           <Text>It might also be useful to look at other sources of help.</Text>
-          <Button>Back to Search</Button>
+          <Button onClick={() => goBackToResults(false)}>Back to Search</Button>
         </Stack>
         <Text flexGrow={1} flexBasis="440px" fontSize="sm">
-          Results for “E8 3QN”
+          Results for “{userLocation}”
         </Text>
       </Flex>
       <LawCentreDetails />

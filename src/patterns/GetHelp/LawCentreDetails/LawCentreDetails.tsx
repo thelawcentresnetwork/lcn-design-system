@@ -96,7 +96,7 @@ const LawCentreDetails = () => {
           p="40px"
           borderRight="12px solid"
           sx={{
-            'border-image': 'linear-gradient(#4CDED7 10%, 10%, #FCC24B 90%)1',
+            borderImage: 'linear-gradient(#4CDED7 10%, 10%, #FCC24B 90%)1',
           }}
         >
           <Text fontSize="sm">
