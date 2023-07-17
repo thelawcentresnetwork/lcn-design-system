@@ -1,5 +1,14 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { VStack, Heading, Text } from '@chakra-ui/react'
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import {
+  Heading,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  Text,
+  UnorderedList,
+  VStack,
+} from '@chakra-ui/react'
+import { IconArrowRightOutline } from '../Icons/Icons'
 
 <Meta title="Typography" />
 
@@ -45,23 +54,19 @@ Hero headings use the font type [Black Han Sans](https://fonts.google.com/specim
 The Body component contains the main body text. Body text uses [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab?query=Roboto+).
 
 <Canvas>
-  <Story name="Body" argTypes={{ bodyDefault: { control: 'text' }, bodyLarge: { control: 'text' } }}>
-    {({ bodyDefault, bodyLarge  }) => (
-         <VStack   align="left">
-      <Text>
-        {bodyDefault ||
-          'Body/Default'}
-      </Text>
-
-         <Text fontSize='2xs'>
-        {bodyLarge ||
-          'Body/Large'}
-      </Text>
-
-    </VStack>
-
+  <Story
+    name="Body"
+    argTypes={{
+      bodyDefault: { control: 'text' },
+      bodyLarge: { control: 'text' },
+    }}
+  >
+    {({ bodyDefault, bodyLarge }) => (
+      <VStack align="left">
+        <Text>{bodyDefault || 'Body/Default'}</Text>
+        <Text fontSize="2xs">{bodyLarge || 'Body/Large'}</Text>
+      </VStack>
     )}
-
   </Story>
 </Canvas>
 
@@ -70,27 +75,76 @@ The Body component contains the main body text. Body text uses [Roboto Slab](htt
 Subtitles use [Anek Latin](https://fonts.google.com/specimen/Anek+Latin?query=Anek+Latin)
 
 <Canvas>
-  <Story name="Subtitles" argTypes={{  subtitleDefault:{ control: 'text' }, subtitleBold: { control: 'text' },subtitleLarge:{ control: 'text' } }}>
-    {({  subtitleDefault, subtitleBold, subtitleLarge  }) => (
-         <VStack align="left" fontFamily="bodyAlternative">
-
-         <Text fontSize='sm'>
-        {subtitleDefault ||
-          'Subtitle/Default'}
-      </Text>
-
-       <Text as='b' fontSize='sm'>
-        {subtitleBold ||
-          'Subtitle/Bold'}
-      </Text>
-
-       <Text as='b' fontSize='xl'>
-        {subtitleLarge ||
-          'Subtitle/Large'}
-      </Text>
-    </VStack>
-
+  <Story
+    name="Subtitles"
+    argTypes={{
+      subtitleDefault: { control: 'text' },
+      subtitleBold: { control: 'text' },
+      subtitleLarge: { control: 'text' },
+    }}
+  >
+    {({ subtitleDefault, subtitleBold, subtitleLarge }) => (
+      <VStack align="left" fontFamily="bodyAlternative">
+        <Text fontSize="sm">{subtitleDefault || 'Subtitle/Default'}</Text>
+        <Text as="b" fontSize="sm">
+          {subtitleBold || 'Subtitle/Bold'}
+        </Text>
+        <Text as="b" fontSize="xl">
+          {subtitleLarge || 'Subtitle/Large'}
+        </Text>
+      </VStack>
     )}
+  </Story>
+</Canvas>
 
+## Lists
+
+### Unordered Lists
+
+<Canvas>
+  <Story name="Unordered Lists">
+    <UnorderedList styleType="disclosure-closed">
+      <ListItem>
+        We work collaboratively to develop Law Centre services so more people
+        can get help with a wider range of problems closer to home
+      </ListItem>
+      <ListItem>
+        We make sure that people working in Law Centres get the support they
+        need in their work and in their wellbeing
+      </ListItem>
+      <ListItem>
+        We use our expertise to help people, organisations, and public bodies
+        use the law to get better solutions to their problems
+      </ListItem>
+      <ListItem>
+        We identify laws, policies, and systems that hurt vulnerable people and
+        campaign for fairer alternatives
+      </ListItem>
+    </UnorderedList>
+  </Story>
+</Canvas>
+
+### Ordered Lists
+
+<Canvas>
+  <Story name="Ordered Lists">
+    <OrderedList>
+      <ListItem>
+        We work collaboratively to develop Law Centre services so more people
+        can get help with a wider range of problems closer to home
+      </ListItem>
+      <ListItem>
+        We make sure that people working in Law Centres get the support they
+        need in their work and in their wellbeing
+      </ListItem>
+      <ListItem>
+        We use our expertise to help people, organisations, and public bodies
+        use the law to get better solutions to their problems
+      </ListItem>
+      <ListItem>
+        We identify laws, policies, and systems that hurt vulnerable people and
+        campaign for fairer alternatives
+      </ListItem>
+    </OrderedList>
   </Story>
 </Canvas>

@@ -23,6 +23,7 @@ import Textarea from './components/Textarea'
 import { Button } from './components/Button'
 import Text from './components/Text'
 import Heading from './components/Heading'
+import { List } from './components/List'
 
 import Tabs from './components/Tabs'
 
@@ -42,6 +43,7 @@ const Theme = extendTheme({
     Menu,
     Tooltip,
     FormLabel,
+    List,
     Form,
     Textarea,
     NumberInput,
