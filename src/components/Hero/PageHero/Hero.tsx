@@ -1,13 +1,14 @@
 import React from 'react'
 import { ExtendedSectionLeft } from '../../../atoms/Section/Section'
 import { Box, BoxProps, Heading, Text, Flex } from '@chakra-ui/react'
-
 export interface HeroProps extends BoxProps {
   heading: string
   pageTitle?: string
   backgroundColour?: string
   textColour?: string
   subHeading?: string
+  image?: string
+  imageAlt?: string
 }
 
 const Hero = ({
@@ -16,6 +17,8 @@ const Hero = ({
   textColour,
   heading,
   subHeading,
+  image,
+  imageAlt,
 }: HeroProps) => {
   return (
     <ExtendedSectionLeft
@@ -24,7 +27,8 @@ const Hero = ({
       justifyContent="space-evenly"
     >
       <Flex
-        my="10rem"
+        mt="10rem"
+        mb="2rem"
         mx="5rem"
         width="100%"
         justifyContent="space-evenly"
@@ -50,6 +54,18 @@ const Hero = ({
             >
               {heading}
             </Heading>
+            {image && (
+              <Text
+                fontSize="sm"
+                color={textColour}
+                fontFamily="bodyAlternative"
+                maxWidth="30ch"
+                pt="2rem"
+              >
+                {subHeading}
+              </Text>
+            )}
+
             <Flex
               mb="0.5rem"
               position="relative"
@@ -74,15 +90,29 @@ const Hero = ({
             </Flex>
           </Box>
         </Flex>
-        <Text
-          fontSize="sm"
-          color={textColour}
-          fontFamily="bodyAlternative"
-          maxWidth="23ch"
-          pt="2rem"
-        >
-          {subHeading}
-        </Text>
+
+        {image && (
+          <Box
+            display="flex"
+            justifyContent="center"
+            flexDirection="column"
+            maxWidth="500px"
+          >
+            <img src={image} alt={imageAlt} height="auto" width="100%" />
+          </Box>
+        )}
+
+        {!image && (
+          <Text
+            fontSize="sm"
+            color={textColour}
+            fontFamily="bodyAlternative"
+            maxWidth="23ch"
+            pt="2rem"
+          >
+            {subHeading}
+          </Text>
+        )}
       </Flex>
     </ExtendedSectionLeft>
   )
