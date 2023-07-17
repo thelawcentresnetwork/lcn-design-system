@@ -4,7 +4,6 @@ import { selectColours } from '../../atoms/Colours/selectColours'
 import React from 'react'
 import CardImage from '../../assets/card-image.png'
 import HorizontalCardImage from '../../assets/horizontal-card-image.png'
-import { Box } from '@chakra-ui/react'
 export default {
   title: 'Card',
   component: Card,
@@ -61,9 +60,7 @@ CardWithExtendedStoryLong.args = {
 }
 
 export const CardWithImage: StoryObj<typeof Card> = (args: CardProps) => (
-  <Box mt="15rem">
-    <Card {...args} />
-  </Box>
+  <Card {...args} />
 )
 
 CardWithImage.args = {
@@ -74,11 +71,7 @@ CardWithImage.args = {
 
 export const CardWithExtendedLongImageStory: StoryObj<
   typeof CardWithExtended
-> = (args: CardProps) => (
-  <Box mt="25rem">
-    <CardWithExtended {...args} />
-  </Box>
-)
+> = (args: CardProps) => <CardWithExtended {...args} />
 
 CardWithExtendedLongImageStory.args = {
   ...CardWithExtendedLongImageStory.args,

@@ -10,7 +10,7 @@ export interface CardProps {
   type: string
   backgroundColor: string
   color: string
-  image: string
+  image?: string
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -27,17 +27,11 @@ export const Card: React.FC<CardProps> = ({
     width={type === 'short' ? '350px' : '550px'}
     color={color}
     position="relative"
+    display="flex"
+    flexDirection="column"
   >
     {image && (
-      <Box
-        position="absolute"
-        zIndex="0"
-        display="flex"
-        flexGrow="1"
-        bottom="80%"
-        left="1px"
-        width="inherit"
-      >
+      <Box width="inherit">
         <img src={image} width="100%" height="auto" />
       </Box>
     )}
@@ -45,18 +39,16 @@ export const Card: React.FC<CardProps> = ({
     <Box
       padding="25px 20px 20px 20px"
       width="inherit"
-      minHeight="210px"
+      height="100%"
       bg={backgroundColor}
       display="flex"
       flexDirection="column"
-      position="relative"
-      zIndex="10"
     >
-      <Text fontFamily="bodyAlternative" fontSize="lg">
+      <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg">
         {title}
       </Text>
 
-      <Text lineHeight="1.3" fontSize="2xs">
+      <Text mt="1.5rem" lineHeight="1.3" fontSize="2xs">
         {body}
       </Text>
 
@@ -83,23 +75,34 @@ export const CardWithExtended: React.FC<CardProps> = ({
   backgroundColor,
   color,
 }) => (
-  <Box position="relative" maxWidth={type === 'short' ? '350px' : '550px'}>
-    <Box position="absolute" zIndex="0" bottom="78%" left="1px" width="100%">
+  <Box
+    width={type === 'short' ? '350px' : '550px'}
+    color={color}
+    position="relative"
+    display="flex"
+    flexDirection="column"
+    bg={image ? backgroundColor : 'none'}
+  >
+    <Box width="inherit">
       <img src={image} width="100%" height="auto" />
     </Box>
-    <Box zIndex="3" position="relative" mt="2rem" width="100%" color={color}>
-      <Box
-        height="54px"
-        width="82%"
-        left="-20px"
-        bottom="85px"
-        bg={backgroundColor}
-      >
+    <Box
+      position="relative"
+      width="100%"
+      flex="1"
+      display="flex"
+      flexDirection="column"
+      bottom={image ? '55px' : '0'}
+      color={color}
+    >
+      <Box height="auto" width="82%" bg={backgroundColor}>
         <Text
-          lineHeight="1.9"
+          lineHeight="1.5"
           fontFamily="bodyAlternative"
-          fontSize="lg"
+          fontSize="sm"
           pl="20px"
+          mt="0.3rem"
+          mr="1rem"
         >
           {title}
         </Text>
@@ -113,12 +116,14 @@ export const CardWithExtended: React.FC<CardProps> = ({
         display="flex"
         flexDirection="column"
         color={color}
+        position="relative"
+        flexGrow="1"
       >
         <Text fontSize="2xs">{body}</Text>
         {link && (
           <Box href={link} alignItems="center" as="a" mt="2rem" display="flex">
             <FaAngleLeft />
-            <Text ml="0.3rem" fontSize="3xs">
+            <Text ml="0.3rem" fontSize="2xs">
               {' '}
               {linkText}
             </Text>
