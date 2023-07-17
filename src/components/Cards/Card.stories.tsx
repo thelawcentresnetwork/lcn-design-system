@@ -2,7 +2,8 @@ import { Meta, StoryObj } from '@storybook/react'
 import { CardProps, Card, CardWithExtended } from './Cards'
 import { selectColours } from '../../atoms/Colours/selectColours'
 import React from 'react'
-
+import CardImage from '../../assets/card-image.png'
+import HorizontalCardImage from '../../assets/horizontal-card-image.png'
 export default {
   title: 'Card',
   component: Card,
@@ -56,4 +57,24 @@ export const CardWithExtendedStoryLong: StoryObj<typeof CardWithExtended> = (
 CardWithExtendedStoryLong.args = {
   ...CardWithExtendedStoryLong.args,
   type: 'long',
+}
+
+export const CardWithImage: StoryObj<typeof Card> = (args: CardProps) => (
+  <Card {...args} />
+)
+
+CardWithImage.args = {
+  ...CardWithImage.args,
+  type: 'short',
+  image: CardImage,
+}
+
+export const CardWithExtendedLongImageStory: StoryObj<
+  typeof CardWithExtended
+> = (args: CardProps) => <CardWithExtended {...args} />
+
+CardWithExtendedLongImageStory.args = {
+  ...CardWithExtendedLongImageStory.args,
+  type: 'long',
+  image: HorizontalCardImage,
 }
