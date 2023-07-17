@@ -12,16 +12,43 @@ const Input = {
         fontSize: '2xs',
         borderRadius: 'none',
         _hover: {
-          border: '2px solid',
+          border: '3px solid',
           borderColor: `${colorScheme}`,
         },
         _focus: {
-          border: '2px solid',
-          borderColor: `${colorScheme}.500`,
+          border: '3px solid',
+          borderColor: `${colorScheme}`,
         },
         _active: {
-          border: '2px solid',
-          borderColor: `${colorScheme}.500`,
+          border: '3px solid',
+          borderColor: `${colorScheme}`,
+        },
+      },
+    }),
+    outline: ({ colorScheme }) => ({
+      addon: {
+        fontSize: 'xs',
+        bg: `${colorScheme}`,
+        color: `${colorScheme}`,
+        borderColor: `${colorScheme}`,
+      },
+      field: {
+        bg: 'none',
+        borderColor: `${colorScheme}`,
+        border: '2px solid',
+        fontSize: '2xs',
+        borderRadius: 'none',
+        _hover: {
+          border: '3px solid',
+          borderColor: `${colorScheme}`,
+        },
+        _focus: {
+          border: '3px solid',
+          borderColor: `${colorScheme}`,
+        },
+        _active: {
+          border: '3px solid',
+          borderColor: `${colorScheme}`,
         },
       },
     }),
