@@ -8,6 +8,7 @@ import {
   SlantedSectionTop,
   SectionProps,
 } from './Section'
+import { Box } from '@chakra-ui/react'
 
 export default {
   title: 'Components/Section',
@@ -40,7 +41,12 @@ ExtendedRightSection.args = {
 
 export const SlantedTopSection: StoryObj<SectionProps> = (
   args: SectionProps
-) => <SlantedSectionTop {...args} />
+) => (
+  <SlantedSectionTop {...args}>
+    {' '}
+    <Box color="white">Hello tesitng I can pass children into this</Box>
+  </SlantedSectionTop>
+)
 SlantedTopSection.args = {
   bg: 'brand.legacyBlue',
 }

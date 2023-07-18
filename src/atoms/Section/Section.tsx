@@ -24,6 +24,7 @@ export const ExtendedSectionLeft = ({
   return (
     <Section
       bg={backgroundColor}
+      mt="3rem"
       position="relative"
       {...restProps}
       _after={{
@@ -33,7 +34,7 @@ export const ExtendedSectionLeft = ({
         height: '50px',
         width: '40%',
         left: '0px',
-        bottom: '-45px',
+        top: '-45px',
       }}
     ></Section>
   )
