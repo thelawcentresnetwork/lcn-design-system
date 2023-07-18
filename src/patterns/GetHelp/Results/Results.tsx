@@ -2,12 +2,21 @@ import { Button, Flex, Heading, Text, Stack, Box } from '@chakra-ui/react'
 import React from 'react'
 
 import LawCentreDetails from '../LawCentreDetails/LawCentreDetails'
+import { lawCentreDetailsProps } from '../GetHelp.types'
 
 interface resultsProps {
   goBackToResults: (back: boolean) => void
   userLocation?: string
+  nearestLawCentre?: lawCentreDetailsProps
+  searchWordOfCaution: string
 }
-const Results = ({ goBackToResults, userLocation }: resultsProps) => {
+
+const Results = ({
+  goBackToResults,
+  userLocation,
+  nearestLawCentre,
+  searchWordOfCaution,
+}: resultsProps) => {
   return (
     <Box>
       <Flex
@@ -20,18 +29,14 @@ const Results = ({ goBackToResults, userLocation }: resultsProps) => {
           <Heading variant="h3" as="h2">
             Your local Law Centre details
           </Heading>
-          <Text>
-            Please bear in mind that the following Law Centres may not be able
-            to help due to funding.
-          </Text>
-          <Text>It might also be useful to look at other sources of help.</Text>
+          <Text>{searchWordOfCaution}</Text>
           <Button onClick={() => goBackToResults(false)}>Back to Search</Button>
         </Stack>
         <Text flexGrow={1} flexBasis="440px" fontSize="sm">
           Results for “{userLocation}”
         </Text>
       </Flex>
-      <LawCentreDetails />
+      <LawCentreDetails lawCentreDetails={nearestLawCentre} />
     </Box>
   )
 }
