@@ -1,0 +1,42 @@
+import { Canvas, Meta, Story } from '@storybook/blocks'
+import * as SectionStories from './Section.stories'
+
+<Meta of={SectionStories} />
+
+# Section
+
+A section block represents a section of the website. It can contain varying components and accepts a `bg` prop along with all other BoxProps.
+
+## Regular Section
+
+Can be used anywhere and can follow another regular block.
+
+<Canvas>
+  <Story of={SectionStories.DefaultSection} />
+</Canvas>
+
+## Angular section blocks
+
+These are used for page headers and newsletter blocks by default, but can appear elsewhere in a page if needed. Avoid placing the blocks one after another, and intersperse them on the page with regular and slanted blocks.
+
+### Angular Section left
+
+<Canvas>
+  <Story of={SectionStories.ExtendedLeftSection} />
+</Canvas>
+
+### Angular Section right
+
+<Canvas>
+  <Story of={SectionStories.ExtendedRightSection} />
+</Canvas>
+
+## Slanted section blocks
+
+Have a 2° slant (178° to get this specific rotation) at the top of the block. This degree should be maintained despite the length of the block. Should not follow another slanted section block.
+
+In terms of aspect ratio, the slanted part measures 1440x82px.
+
+<Canvas>
+  <Story of={SectionStories.SlantedTopSection} />
+</Canvas>

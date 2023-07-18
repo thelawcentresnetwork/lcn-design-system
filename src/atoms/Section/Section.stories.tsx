@@ -1,0 +1,46 @@
+import React from 'react'
+import { selectColours } from '../Colours/selectColours'
+import { StoryObj, Meta } from '@storybook/react'
+import {
+  Section,
+  ExtendedSectionLeft,
+  ExtendedSectionRight,
+  SlantedSectionTop,
+  SectionProps,
+} from './Section'
+
+export default {
+  title: 'Components/Section',
+  component: Section,
+  argTypes: {
+    bg: selectColours,
+  },
+} as Meta
+
+export const DefaultSection: StoryObj<SectionProps> = (args: SectionProps) => (
+  <Section {...args} />
+)
+DefaultSection.args = {
+  bg: 'brand.legacyBlue',
+}
+
+export const ExtendedLeftSection: StoryObj<SectionProps> = (
+  args: SectionProps
+) => <ExtendedSectionLeft {...args} />
+ExtendedLeftSection.args = {
+  bg: 'brand.legacyBlue',
+}
+
+export const ExtendedRightSection: StoryObj<SectionProps> = (
+  args: SectionProps
+) => <ExtendedSectionRight {...args} />
+ExtendedRightSection.args = {
+  bg: 'brand.legacyBlue',
+}
+
+export const SlantedTopSection: StoryObj<SectionProps> = (
+  args: SectionProps
+) => <SlantedSectionTop {...args} />
+SlantedTopSection.args = {
+  bg: 'brand.legacyBlue',
+}
