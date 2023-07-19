@@ -18,6 +18,7 @@ import {
   IconMinus,
 } from './atoms/Icons/Icons'
 import HomepageHero from './components/Hero/HomepageHero/HomepageHero'
+import Image from './components/Image/Image'
 
 import DFormSchema from './components/DynamicForm/FormSchema'
 import DActions from './components/DynamicForm/Actions'
@@ -32,6 +33,7 @@ import DFile from './components/DynamicForm/File'
 export {
   ChakraAwesome,
   Theme,
+  Image,
   Statistic,
   CallToAction,
   Feature,

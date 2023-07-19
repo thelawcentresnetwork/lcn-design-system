@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Flex,
   Heading,
@@ -10,7 +9,13 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 
-const LawCentreDetails = () => {
+import { lawCentreDetailsProps } from '../GetHelp.types'
+
+interface nearestLawCentreProps {
+  lawCentreDetails?: lawCentreDetailsProps
+}
+
+const LawCentreDetails = ({ lawCentreDetails }: nearestLawCentreProps) => {
   return (
     <>
       <Stack
@@ -20,14 +25,17 @@ const LawCentreDetails = () => {
         p="40px"
       >
         <Heading as="h2" variant="h3">
-          Haringey Law Centre (0.5 miles)
+          {lawCentreDetails?.lawCentreName} (
+          {lawCentreDetails?.distanceFromUser} miles)
         </Heading>
         <Text>
-          Haringey Law Centre might be able to give advice if you live in the
-          following catchment areas: Avon and Bristol, and South West England
+          {lawCentreDetails?.lawCentreName} might be able to give advice if you
+          live in the following catchment areas: {lawCentreDetails?.regions}
           (some services only)
         </Text>
-        <Button>Contact</Button>
+        <Button as="a" href={`${lawCentreDetails?.getHelpLink}`}>
+          Contact
+        </Button>
       </Stack>
       <Flex justifyContent="space-around" flexWrap="wrap-reverse">
         <Stack
@@ -43,31 +51,30 @@ const LawCentreDetails = () => {
               Contact Details
             </Heading>
             <UnorderedList spacing={3} styleType="none" marginInlineStart={0}>
+              <ListItem>{lawCentreDetails?.address}</ListItem>
               <ListItem>
-                {' '}
-                8 Lower Clapton Road
-                <br />
-                London
-                <br />
-                Greater London
-                <br />
-                E5 0PD
-              </ListItem>
-              <ListItem>
-                Telephone: <a href="tel:=+7720 8985 5236">020 8985 5236</a>
-              </ListItem>
-              <ListItem>
-                Email:{' '}
-                <a href="mailto:info@haringeylawcentre.org.uk">
-                  info@haringeylawcentre.org.uk
+                Telephone:{' '}
+                <a href={`tel:=${lawCentreDetails?.telephoneNumber}`}>
+                  {lawCentreDetails?.telephoneNumber}
                 </a>
               </ListItem>
               <ListItem>
-                Website: <a href="www.hclc.org.uk">www.hclc.org.uk</a>
+                Email:{' '}
+                <a href={`mailto:${lawCentreDetails?.email}`}>
+                  {lawCentreDetails?.email}
+                </a>
+              </ListItem>
+              <ListItem>
+                Website:{' '}
+                <a href={`${lawCentreDetails?.website}`}>
+                  {lawCentreDetails?.website}
+                </a>
               </ListItem>
             </UnorderedList>
             <Text>
-              <a href="https://maps.apple.com/?dirflg=w&daddr=51.550593,-0.052204">
+              <a
+                href={`https://maps.apple.com/?dirflg=w&daddr=${lawCentreDetails?.latitude},${lawCentreDetails?.longitude}`}
+              >
                 Get directions
               </a>
             </Text>
@@ -76,15 +83,7 @@ const LawCentreDetails = () => {
             <Heading as="h3" fontSize="sm">
               Opening times
             </Heading>
-            <UnorderedList spacing={3} styleType="none" marginInlineStart={0}>
-              <ListItem>Monday 11am – 4:30pm</ListItem>
-              <ListItem>Tuesday 11am – 4:30pm </ListItem>
-              <ListItem>Wednesday 11am – 4:30pm </ListItem>
-              <ListItem>Thursday 11am – 4:30pm</ListItem>
-              <ListItem>Friday 11am – 4:30pm</ListItem>
-              <ListItem>Saturday closed</ListItem>
-              <ListItem>Sunday closed</ListItem>
-            </UnorderedList>
+            <Text>{lawCentreDetails?.openingTimes}</Text>
           </Stack>
         </Stack>
         <Stack
@@ -100,29 +99,20 @@ const LawCentreDetails = () => {
           }}
         >
           <Text fontSize="sm">
-            Haringey Law Centre might be able to give advice with the following
+            This Law Centre might be able to give advice with the following
             areas of law:
           </Text>
           <Stack gap={3}>
-            <Heading as="h3" fontSize="sm">
-              Housing
-            </Heading>
-            <Text>
-              Law centres can help with problems with your home and how you live
-              in it.
-            </Text>
-            <Text>Your law centre might be able to help with:</Text>
-            <UnorderedList spacing={3}>
-              <ListItem>Item one </ListItem>
-              <ListItem>Item two </ListItem>
-              <ListItem>Item three </ListItem>
-            </UnorderedList>
-            <Text>Your law centre might not be able to help if::</Text>
-            <UnorderedList spacing={3}>
-              <ListItem>Item one </ListItem>
-              <ListItem>Item two </ListItem>
-              <ListItem>Item three </ListItem>
-            </UnorderedList>
+            {lawCentreDetails?.areasOfLaw &&
+              lawCentreDetails?.areasOfLaw.map((areaOfLaw, key) => {
+                return (
+                  <Stack spacing={3} key={key}>
+                    <Heading as="h3" fontSize="sm">
+                      {areaOfLaw}
+                    </Heading>
+                  </Stack>
+                )
+              })}
           </Stack>
         </Stack>
       </Flex>
