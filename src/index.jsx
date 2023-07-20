@@ -2,8 +2,8 @@ import Theme from './theme'
 import ChakraAwesome from './utilities/ChakraAwesome'
 import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
-import Card from './components/Cards/Cards'
-import CardWithExtended from './components/Cards/Cards'
+
+import { Card, CardWithExtended } from './components/Cards/Cards'
 import Embed from './components/Embed'
 import Hero from './components/Hero/PageHero/Hero'
 import Inlay from './components/Inlay'
