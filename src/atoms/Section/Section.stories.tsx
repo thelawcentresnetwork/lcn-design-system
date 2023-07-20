@@ -42,10 +42,8 @@ ExtendedRightSection.args = {
 export const SlantedTopSection: StoryObj<SectionProps> = (
   args: SectionProps
 ) => (
-  <SlantedSectionTop {...args}>
-    {' '}
-    <Box color="white">Hello tesitng I can pass children into this</Box>
-  </SlantedSectionTop>
+  <SlantedSectionTop {...args}/>
+  
 )
 SlantedTopSection.args = {
   bg: 'brand.legacyBlue',
