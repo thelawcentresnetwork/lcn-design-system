@@ -2,6 +2,7 @@ import Theme from './theme'
 import ChakraAwesome from './utilities/ChakraAwesome'
 import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
+
 import { Card, CardWithExtended } from './components/Cards/Cards'
 import Embed from './components/Embed'
 import Hero from './components/Hero/PageHero/Hero'
@@ -18,8 +19,14 @@ import {
   IconMinus,
 } from './atoms/Icons/Icons'
 import HomepageHero from './components/Hero/HomepageHero/HomepageHero'
+import {
+  Section,
+  ExtendedSectionRight,
+  ExtendedSectionLeft,
+  SlantedSectionTop,
+} from './atoms/Section'
 import Image from './components/Image/Image'
-
+import Callout from './atoms/Callout/Callout'
 import DFormSchema from './components/DynamicForm/FormSchema'
 import DActions from './components/DynamicForm/Actions'
 import DInput from './components/DynamicForm/Input'
@@ -34,6 +41,7 @@ export {
   ChakraAwesome,
   Theme,
   Image,
+  Callout,
   Statistic,
   CallToAction,
   Feature,
@@ -41,6 +49,10 @@ export {
   Card,
   CardWithExtended,
   Embed,
+  Section,
+  ExtendedSectionLeft,
+  ExtendedSectionRight,
+  SlantedSectionTop,
   Hero,
   HomepageHero,
   IconArrowRight,
