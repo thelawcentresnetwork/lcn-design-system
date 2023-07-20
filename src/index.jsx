@@ -26,7 +26,7 @@ import {
   SlantedSectionTop,
 } from './atoms/Section'
 import Image from './components/Image/Image'
-
+import Callout from './atoms/Callout/Callout'
 import DFormSchema from './components/DynamicForm/FormSchema'
 import DActions from './components/DynamicForm/Actions'
 import DInput from './components/DynamicForm/Input'
@@ -41,6 +41,7 @@ export {
   ChakraAwesome,
   Theme,
   Image,
+  Callout,
   Statistic,
   CallToAction,
   Feature,

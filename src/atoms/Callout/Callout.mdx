@@ -1,0 +1,30 @@
+import { Canvas, Meta, Story } from '@storybook/blocks'
+import * as CalloutStories from './Callout.stories'
+
+# Callout
+
+The Callout component accepts rich text, and aims to highlight text on a page
+
+## Default
+
+These are used to highlight important or pertinent items of information on a page. They’re used across 6 or more columns. They are used outside the flow of text as standalone items.
+
+<Canvas>
+  <Story of={CalloutStories.DefaultCallout} />
+</Canvas>
+
+## Short
+
+These are used when highlighting short bits of content, over fewer than 6 columns.
+
+<Canvas>
+  <Story of={CalloutStories.ShortCallout} />
+</Canvas>
+
+## Long
+
+These are mostly used to highlight quote remarks within the flow on text on the news pages but can be used anywhere there’s a long flow of content
+
+<Canvas>
+  <Story of={CalloutStories.LongCallout} />
+</Canvas>
