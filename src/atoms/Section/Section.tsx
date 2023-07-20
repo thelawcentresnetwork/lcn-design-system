@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, BoxProps } from '@chakra-ui/react'
 
-interface SectionProps extends BoxProps {
+export interface SectionProps extends BoxProps {
   backgroundColor?: string
 }
 
@@ -24,16 +24,17 @@ export const ExtendedSectionLeft = ({
   return (
     <Section
       bg={backgroundColor}
+      mt="3rem"
       position="relative"
       {...restProps}
       _after={{
         content: '""',
         position: 'absolute',
         backgroundColor: 'inherit',
-        height: '82px',
+        height: '50px',
         width: '40%',
         left: '0px',
-        bottom: '-82px',
+        top: '-45px',
       }}
     ></Section>
   )
@@ -45,16 +46,17 @@ export const ExtendedSectionRight = ({
 }: SectionProps) => {
   return (
     <Section
+      position="relative"
       bg={backgroundColor}
       {...restProps}
       _after={{
         content: '""',
         position: 'absolute',
         backgroundColor: 'inherit',
-        height: '42px',
-        width: '40%',
-        right: '0px',
-        bottom: -6,
+        height: '50px',
+        width: '35%',
+        left: '65%',
+        bottom: '-36px',
       }}
     ></Section>
   )
@@ -67,19 +69,18 @@ export const SlantedSectionTop = ({
   return (
     <Section
       bg={backgroundColor}
+      mt="5rem"
+      minHeight="550px"
       {...restProps}
-      _after={{
+      _before={{
         content: '""',
-        position: 'absolute',
+        position: 'relative',
+        display: 'flex',
         backgroundColor: 'inherit',
-        height: '50px',
-
-        left: '0px',
-        bottom: -2,
-        transform: 'skewY(2deg)',
-        width: '97.8%',
-        ml: '1rem',
-        mr: '1rem',
+        height: '65px',
+        top: '-43',
+        transform: 'skewY(1.5deg)',
+        width: '100%',
 
         backfaceVisibility: 'initial',
       }}
