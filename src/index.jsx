@@ -24,7 +24,7 @@ import {
   ExtendedSectionRight,
   ExtendedSectionLeft,
   SlantedSectionTop,
-} from './atoms/Section'
+} from './atoms/Section/Section'
 import Image from './components/Image/Image'
 import Callout from './atoms/Callout/Callout'
 import DFormSchema from './components/DynamicForm/FormSchema'
