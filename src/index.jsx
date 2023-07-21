@@ -2,7 +2,6 @@ import Theme from './theme'
 import ChakraAwesome from './utilities/ChakraAwesome'
 import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
-
 import { Card, CardWithExtended } from './components/Cards/Cards'
 import Embed from './components/Embed'
 import Hero from './components/Hero/PageHero/Hero'
@@ -24,7 +23,7 @@ import {
   ExtendedSectionRight,
   ExtendedSectionLeft,
   SlantedSectionTop,
-} from './atoms/Section'
+} from './atoms/Section/Section'
 import Image from './components/Image/Image'
 import Callout from './atoms/Callout/Callout'
 import DFormSchema from './components/DynamicForm/FormSchema'
