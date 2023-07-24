@@ -2,7 +2,6 @@ import Theme from './theme'
 import ChakraAwesome from './utilities/ChakraAwesome'
 import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
-
 import { Card, CardWithExtended } from './components/Cards/Cards'
 import Embed from './components/Embed'
 import Hero from './components/Hero/PageHero/Hero'
@@ -10,7 +9,7 @@ import Inlay from './components/Inlay'
 import Quote from './components/Quote'
 import Banner from './components/Banner'
 import Feature from './components/Feature'
-import CallToAction from './components/CallToAction'
+import CallToAction from './components/CallToAction/CallToAction'
 import Statistic from './components/Statistic'
 import {
   IconArrowRight,
