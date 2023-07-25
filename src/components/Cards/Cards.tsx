@@ -24,7 +24,7 @@ export const Card: React.FC<CardProps> = ({
   image,
 }) => (
   <Box
-    width={type === 'short' ? '350px' : '550px'}
+    maxWidth={type === 'short' ? '350px' : '550px'}
     color={color}
     position="relative"
     display="flex"
@@ -76,7 +76,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
   color,
 }) => (
   <Box
-    width={type === 'short' ? '350px' : '550px'}
+    maxWidth={type === 'short' ? '350px' : '550px'}
     color={color}
     position="relative"
     display="flex"

@@ -11,6 +11,7 @@ import Banner from './components/Banner'
 import Feature from './components/Feature'
 import CallToAction from './components/CallToAction/CallToAction'
 import Statistic from './components/Statistic'
+import LatestNews from './components/LatestNews/LatestNews'
 import {
   IconArrowRight,
   IconArrowDown,
@@ -70,4 +71,5 @@ export {
   DDate,
   DFile,
   DSelect,
+  LatestNews,
 }
