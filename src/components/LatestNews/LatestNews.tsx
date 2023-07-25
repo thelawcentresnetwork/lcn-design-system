@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import React from 'react'
-
+import { ExtendedSectionLeft } from '../../atoms/Section/Section'
 import { Card } from '../Cards/Cards'
 import Megaphone from '../../assets/megaphone.png'
 
 import {
   Box,
-  Flex,
   Text,
   Heading,
   useMediaQuery,
@@ -50,7 +49,12 @@ const LatestNews: React.FC<NewsLatestProps> = ({
   const [selectedArticle, setSelectedArticle] = useState(articles[0] || null)
   const [isLargerThan1250] = useMediaQuery('(min-width: 1250px)')
   return (
-    <Flex bg={backgroundColor} color={cardTextColor}>
+    <ExtendedSectionLeft
+      py="8rem"
+      display="flex"
+      bg={backgroundColor}
+      color={cardTextColor}
+    >
       <Container
         maxWidth="1250px"
         display="flex"
@@ -82,7 +86,7 @@ const LatestNews: React.FC<NewsLatestProps> = ({
           <Mobile headingColor={headingColor} articles={articles} />
         )}
       </Container>
-    </Flex>
+    </ExtendedSectionLeft>
   )
 }
 const Desktop: React.FC<
@@ -121,7 +125,13 @@ const Desktop: React.FC<
           />
         </Box>
         <Box p="2rem" maxWidth="445px">
-          <Text fontFamily="bodyAlternative" fontSize="lg" mb="1rem">
+          <Text
+            as="a"
+            href={'/news/' + selectedArticle?.fields?.slug}
+            fontFamily="bodyAlternative"
+            fontSize="lg"
+            mb="1rem"
+          >
             {selectedArticle?.fields?.title}
           </Text>
           <Text pr="2rem" fontSize="2xs">
@@ -145,7 +155,7 @@ const Desktop: React.FC<
               onClick={() => {
                 setSelectedArticle(article)
               }}
-              as="a"
+              as="button"
               display="block"
               key={id}
               bg={isSelected ? 'brand.legacyTeal' : 'brand.white.500'}
