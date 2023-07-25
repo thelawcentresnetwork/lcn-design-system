@@ -5,6 +5,7 @@ const baseStyle = defineStyle({
   fontFamily: 'bodyAlternative',
   fontSize: '2xs',
   textTransform: 'uppercase',
+  textDecoration: 'none',
 })
 
 const solid = defineStyle(({ colorScheme }) => {
