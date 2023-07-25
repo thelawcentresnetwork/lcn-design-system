@@ -19,6 +19,7 @@ interface Article {
   heroDescription: string
   articleImage: {
     url: string
+    description: string
   }
 
   overrideDate: string
@@ -30,11 +31,13 @@ export interface NewsLatestProps {
   cardBackgroundColor?: string
   headingColor?: string
   cardTextColor?: string
+  backgroundImage?: string
 }
 
 const LatestNews: React.FC<NewsLatestProps> = ({
   articles,
   backgroundColor,
+  backgroundImage,
   cardBackgroundColor,
   headingColor,
   cardTextColor,
@@ -61,7 +64,7 @@ const LatestNews: React.FC<NewsLatestProps> = ({
           right="0"
           width={{ base: '50%', lg: '' }}
         >
-          <img src={Megaphone} width="100%" height="auto" alt="alt text" />
+          <img src={backgroundImage} width="100%" height="auto" alt="" />
         </Box>
 
         {isLargerThan1250 && (
@@ -110,7 +113,7 @@ const Desktop: React.FC<
         <Box width="inherit">
           <img
             src={selectedArticle?.articleImage?.url}
-            alt=""
+            alt={selectedArticle?.articleImage?.description}
             height="auto"
             width="100%"
           />
@@ -201,6 +204,9 @@ const Mobile: React.FC<NewsLatestProps> = ({ headingColor, articles }) => (
               key={article.slug}
               title={article.title}
               image={article.articleImage ? article.articleImage?.url : ''}
+              alt={
+                article.articleImage ? article.articleImage?.description : ''
+              }
               body={article.heroDescription}
               color="brand.darkBlue"
               linkText={`Read about ${article.title}`}
