@@ -11,6 +11,7 @@ export interface CardProps {
   backgroundColor: string
   color: string
   image?: string
+  alt?: string
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -22,6 +23,7 @@ export const Card: React.FC<CardProps> = ({
   backgroundColor,
   color,
   image,
+  alt,
 }) => (
   <Box
     maxWidth={type === 'short' ? '350px' : '550px'}
@@ -32,7 +34,7 @@ export const Card: React.FC<CardProps> = ({
   >
     {image && (
       <Box width="inherit">
-        <img src={image} width="100%" height="auto" />
+        <img alt={alt} src={image} width="100%" height="auto" />
       </Box>
     )}
 

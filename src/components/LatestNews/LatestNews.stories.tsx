@@ -1,6 +1,7 @@
 import React from 'react'
 import { Meta } from '@storybook/react'
 import LatestNews, { NewsLatestProps } from './LatestNews'
+import Megaphone from '../../assets/megaphone.png'
 
 const dummyArticles = [
   {
@@ -18,6 +19,7 @@ const dummyArticles = [
     overrideDate: '2023-07-24T00:00:00.000+01:00',
     articleImage: {
       url: 'https://images.ctfassets.net/y26owwfe9yxn/iwapxsmK1BiSNxpRaPBMB/b78d5ebaac4eb1ad766e1e51d5fadb30/newsbodyimage.png',
+      description: 'this is a description',
     },
   },
   {
@@ -27,6 +29,7 @@ const dummyArticles = [
     overrideDate: '2023-07-19T00:00:00.000+01:00',
     articleImage: {
       url: 'https://images.ctfassets.net/y26owwfe9yxn/iwapxsmK1BiSNxpRaPBMB/b78d5ebaac4eb1ad766e1e51d5fadb30/newsbodyimage.png',
+      description: 'this is a description',
     },
   },
 ]
@@ -38,6 +41,7 @@ export default {
     backgroundColor: 'brand.brightPink',
     cardBackgroundColor: 'brand.brightTeal',
     headingColor: 'brand.white.500',
+    backgroundImage: `${Megaphone}`,
     cardTextColor: '',
   },
 } as Meta<NewsLatestProps>
