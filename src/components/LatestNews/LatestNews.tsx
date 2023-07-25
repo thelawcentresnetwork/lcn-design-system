@@ -2,7 +2,6 @@ import { useState } from 'react'
 import React from 'react'
 import { ExtendedSectionLeft } from '../../atoms/Section/Section'
 import { Card } from '../Cards/Cards'
-import Megaphone from '../../assets/megaphone.png'
 
 import {
   Box,
@@ -142,7 +141,7 @@ const Desktop: React.FC<
           Select one to view more about the article
         </VisuallyHidden>
 
-        {articles.slice(0, 3).map((article, id) => {
+        {articles?.map((article, id) => {
           const isSelected = selectedArticle === article
           return (
             <Box
@@ -198,7 +197,7 @@ const Mobile: React.FC<NewsLatestProps> = ({ headingColor, articles }) => (
       flexWrap="wrap"
     >
       {articles &&
-        articles.slice(0, 3).map((article) => {
+        articles?.map((article) => {
           return (
             <Card
               key={article.slug}
