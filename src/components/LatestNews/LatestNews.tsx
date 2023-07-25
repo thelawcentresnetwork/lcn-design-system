@@ -14,21 +14,14 @@ import {
 } from '@chakra-ui/react'
 
 interface Article {
-  fields: {
-    title: string
-    slug: string
-    heroBodyTitle: string
-    articleImage: {
-      fields: {
-        file: {
-          url: string
-        }
-      }
-    }
+  title: string
+  slug: string
+  heroDescription: string
+  articleImage: {
+    url: string
   }
-  sys: {
-    createdAt: string
-  }
+
+  overrideDate: string
 }
 
 export interface NewsLatestProps {
@@ -116,9 +109,7 @@ const Desktop: React.FC<
       >
         <Box width="inherit">
           <img
-            src={
-              'http:' + selectedArticle?.fields?.articleImage.fields.file.url
-            }
+            src={selectedArticle?.articleImage?.url}
             alt=""
             height="auto"
             width="100%"
@@ -127,15 +118,15 @@ const Desktop: React.FC<
         <Box p="2rem" maxWidth="445px">
           <Text
             as="a"
-            href={'/news/' + selectedArticle?.fields?.slug}
+            href={'/news/' + selectedArticle?.slug}
             fontFamily="bodyAlternative"
             fontSize="lg"
             mb="1rem"
           >
-            {selectedArticle?.fields?.title}
+            {selectedArticle?.title}
           </Text>
           <Text pr="2rem" fontSize="2xs">
-            {selectedArticle?.fields?.heroBodyTitle}
+            {selectedArticle?.heroDescription}
           </Text>
         </Box>
       </Box>
@@ -174,9 +165,9 @@ const Desktop: React.FC<
                 {isSelected && 'Currently selected'}
               </VisuallyHidden>
               <Text fontSize="3xs" mb="1rem">
-                {article.sys.createdAt}
+                {article.overrideDate}
               </Text>
-              <Text fontSize="2xs">{article.fields?.title}</Text>
+              <Text fontSize="2xs">{article.title}</Text>
             </Box>
           )
         })}
@@ -207,17 +198,13 @@ const Mobile: React.FC<NewsLatestProps> = ({ headingColor, articles }) => (
         articles.slice(0, 3).map((article) => {
           return (
             <Card
-              key={article.fields.slug}
-              title={article.fields?.title}
-              image={
-                article.fields?.articleImage
-                  ? 'https:' + article.fields?.articleImage.fields.file.url
-                  : ''
-              }
-              body={article.fields?.heroBodyTitle}
+              key={article.slug}
+              title={article.title}
+              image={article.articleImage ? article.articleImage?.url : ''}
+              body={article.heroDescription}
               color="brand.darkBlue"
-              linkText={`Read about ${article.fields?.title}`}
-              link={'/news/' + article.fields?.slug}
+              linkText={`Read about ${article.title}`}
+              link={'/news/' + article.slug}
               backgroundColor="brand.brightTeal"
               type="short"
             />
