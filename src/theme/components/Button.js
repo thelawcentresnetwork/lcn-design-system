@@ -6,6 +6,8 @@ const baseStyle = defineStyle({
   fontSize: '2xs',
   textTransform: 'uppercase',
   textDecoration: 'none',
+  textWrap: 'wrap',
+  pr: '10px',
 })
 
 const solid = defineStyle(({ colorScheme }) => {

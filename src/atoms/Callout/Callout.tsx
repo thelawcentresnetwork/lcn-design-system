@@ -4,14 +4,13 @@ import { Box, BoxProps, Flex } from '@chakra-ui/react'
 export interface CalloutProps extends BoxProps {
   backgroundColor?: string
   textColor?: string
-  text?: string
   type?: string
 }
 
 const Callout = ({
   backgroundColor,
   textColor,
-  text,
+  children,
   type,
   ...restProps
 }: CalloutProps) => {
@@ -59,7 +58,7 @@ const Callout = ({
             type === 'short' ? '520px' : type === 'default' ? '550px' : '700px'
           }
         >
-          {text}
+          {children}
         </Box>
       </Box>
     </Flex>
