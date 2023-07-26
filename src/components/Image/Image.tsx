@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, BoxProps } from '@chakra-ui/react'
+import { Box, BoxProps } from '@chakra-ui/react'
 
 export interface ImageProps extends BoxProps {
   src: string
@@ -7,9 +7,9 @@ export interface ImageProps extends BoxProps {
 }
 
 const Image: React.FC<ImageProps> = ({ src, alt, ...args }) => (
-  <Flex {...args} flexDirection="column">
+  <Box {...args}>
     <img src={src} alt={alt} />
-  </Flex>
+  </Box>
 )
 
 export default Image
