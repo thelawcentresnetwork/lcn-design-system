@@ -5,6 +5,15 @@ import { selectColours } from '../../atoms/Colours/selectColours'
 export default {
   title: 'Statistic',
   component: Statistic,
+  parameters: {
+    backgrounds: {
+      default: 'brightTeal',
+      values: [
+        { name: 'brightTeal', value: '#4cded7' },
+        { name: 'grey', value: '#7A7D84' },
+      ],
+    },
+  },
   args: {
     statisticOne: ' £11',
     labelOne: 'of direct funding',

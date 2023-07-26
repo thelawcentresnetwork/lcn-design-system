@@ -6,7 +6,6 @@ export interface StatisticProps {
   labelOne: string
   statisticTwo?: string
   labelTwo?: string
-  backgroundColor?: string
   textColor?: string
 }
 
@@ -15,11 +14,10 @@ const Statistic: React.FC<StatisticProps> = ({
   labelOne,
   statisticTwo,
   labelTwo,
-  backgroundColor,
   textColor,
 }) => (
   <Flex
-    bg={backgroundColor || 'brand.brightTeal'}
+    bg="inherit"
     color={textColor || 'brand.darkBlue'}
     py="1rem"
     pl="1rem"
