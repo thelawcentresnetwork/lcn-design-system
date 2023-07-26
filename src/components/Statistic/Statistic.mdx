@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/blocks'
+import * as StatisticStories from './Statistic.stories'
+
+<Meta of={StatisticStories} />
+
+# Statistic
+
+The Statistic component is designed to display statistical data with corresponding labels. It provides a visually appealing and informative way to present numeric information on your application's user interface.
+
+## One Statistic
+
+OneStatistic demonstrates the Statistic component with a single statistic and label.
+
+<Canvas>
+  <Story of={StatisticStories.OneStatistic} />
+</Canvas>
+
+## Two Statistics
+
+TwoStatistics showcases the Statistic component with two statistics side by side.
+
+<Canvas>
+  <Story of={StatisticStories.TwoStatistics} />
+</Canvas>

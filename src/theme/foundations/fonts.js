@@ -14,6 +14,7 @@ export const fontSizes = {
   lg: '40px',
   xl: '46px',
   '2xl': '54px',
+  '2.5xl': '60px',
   '3xl': '66px',
   '4xl': '70px',
   '5xl': '90px',
