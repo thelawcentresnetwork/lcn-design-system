@@ -4,7 +4,9 @@ import { FaAngleLeft } from 'react-icons/fa'
 
 export interface CardProps {
   title: string
+  titleLink?: string
   body: string
+
   link?: string
   linkText?: string
   type: string
@@ -19,6 +21,7 @@ export const Card: React.FC<CardProps> = ({
   body,
   link,
   linkText,
+  titleLink,
   type,
   backgroundColor,
   color,
@@ -46,9 +49,22 @@ export const Card: React.FC<CardProps> = ({
       display="flex"
       flexDirection="column"
     >
-      <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg">
-        {title}
-      </Text>
+      {titleLink && (
+        <Text
+          as="a"
+          href={titleLink}
+          lineHeight="1"
+          fontFamily="bodyAlternative"
+          fontSize="lg"
+        >
+          {title}
+        </Text>
+      )}
+      {!titleLink && (
+        <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg">
+          {title}
+        </Text>
+      )}
 
       <Text mt="1.5rem" lineHeight="1.3" fontSize="2xs">
         {body}
