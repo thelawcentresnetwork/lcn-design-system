@@ -15,6 +15,7 @@ const Menu = {
       px: '3',
       padding: '1rem 1rem 0.5rem 1rem',
       border: '0',
+      borderRadius: '0',
       fontFamily: 'Anek Latin, sans-serif',
       bg: 'brand.warmYellow.500',
       color: 'brand.darkBlue',
