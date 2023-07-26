@@ -19,6 +19,7 @@ export interface HeroProps extends BoxProps {
   callToActionLink?: string | undefined
   heroImage: string
   headingBackground: string
+  heroImageAltText: string
 }
 
 const HomepageHero = ({
@@ -29,6 +30,7 @@ const HomepageHero = ({
   headingBackground,
   heroImage,
   callToActionLink,
+  heroImageAltText,
 }: HeroProps) => {
   return (
     <Flex direction="column" width="100%" as="section">
@@ -55,6 +57,7 @@ const HomepageHero = ({
             height="125%"
             top="-15%"
             src={heroImage}
+            alt={heroImageAltText}
           />
         </Flex>
         <Flex
