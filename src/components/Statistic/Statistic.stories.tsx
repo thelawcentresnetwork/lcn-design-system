@@ -22,7 +22,6 @@ export default {
   },
 
   argTypes: {
-    backgroundColor: selectColours,
     textColor: selectColours,
   },
 } as Meta
