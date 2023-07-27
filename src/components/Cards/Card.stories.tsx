@@ -13,6 +13,10 @@ export default {
     type: 'short',
     backgroundColor: 'brand.legacyBlue',
     color: 'white',
+    downloadFileURL:
+      'https://assets.ctfassets.net/y26owwfe9yxn/4NtswtIwjtB4HjQcysjouJ/f24d3353456d93cc3722bf9166e372ca/Agile-PM-101-Beginners-Guide-Non-PM-Ebook-download-open.pdf',
+    downloadFileTitle: 'Agile for beginners',
+    link: 'https://www.google.com',
   },
   argTypes: {
     title: { control: 'text' },
