@@ -16,6 +16,28 @@ export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
     ></Box>
   )
 }
+export const HeroSection = ({
+  backgroundColor,
+  ...restProps
+}: SectionProps) => {
+  return (
+    <Section
+      bg={backgroundColor}
+      mt="3rem"
+      position="relative"
+      {...restProps}
+      _after={{
+        content: '""',
+        position: 'absolute',
+        backgroundColor: 'inherit',
+        height: '50px',
+        width: '40%',
+        left: '0px',
+        bottom: '-50px',
+      }}
+    ></Section>
+  )
+}
 
 export const ExtendedSectionLeft = ({
   backgroundColor,

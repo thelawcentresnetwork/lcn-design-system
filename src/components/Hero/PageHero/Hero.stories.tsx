@@ -21,6 +21,20 @@ export const Default: Story = {
     heading: 'Fairness is at the heart of what we do',
     subHeading:
       'Lorem ipsum dolor sit amet consectetur. Sed hac laoreet risus iaculis donec. In dolor tincidunt sed elementum cursus rhoncus adipiscing. Semper sed eget dignissim.',
+  },
+  argTypes: {
+    backgroundColour: selectColours,
+    textColour: selectColours,
+  },
+  render: (args) => <Hero {...args} />,
+}
+
+export const HeroWithImage: Story = {
+  args: {
+    pageTitle: '— about law centres network',
+    backgroundColour: 'brand.legacyBlue',
+    textColour: 'brand.white.500',
+    heading: 'Fairness is at the heart of what we do',
     image: pageImage,
     imageAlt: 'this is some alt text',
   },

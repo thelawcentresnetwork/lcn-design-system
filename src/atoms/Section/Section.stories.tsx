@@ -6,6 +6,7 @@ import {
   ExtendedSectionLeft,
   ExtendedSectionRight,
   SlantedSectionTop,
+  HeroSection,
   SectionProps,
 } from './Section'
 import { Box } from '@chakra-ui/react'
@@ -31,6 +32,12 @@ export const ExtendedLeftSection: StoryObj<SectionProps> = (
 ExtendedLeftSection.args = {
   bg: 'brand.legacyBlue',
 }
+export const HeroSectionSection: StoryObj<SectionProps> = (
+  args: SectionProps
+) => <HeroSection {...args} />
+HeroSectionSection.args = {
+  bg: 'brand.legacyBlue',
+}
 
 export const ExtendedRightSection: StoryObj<SectionProps> = (
   args: SectionProps
@@ -41,10 +48,7 @@ ExtendedRightSection.args = {
 
 export const SlantedTopSection: StoryObj<SectionProps> = (
   args: SectionProps
-) => (
-  <SlantedSectionTop {...args}/>
-  
-)
+) => <SlantedSectionTop {...args} />
 SlantedTopSection.args = {
   bg: 'brand.legacyBlue',
 }

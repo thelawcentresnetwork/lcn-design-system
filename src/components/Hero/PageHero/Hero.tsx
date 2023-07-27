@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExtendedSectionLeft } from '../../../atoms/Section/Section'
+import { HeroSection } from '../../../atoms/Section/Section'
 import { Box, BoxProps, Heading, Text, Flex } from '@chakra-ui/react'
 export interface HeroProps extends BoxProps {
   heading: string
@@ -21,7 +21,7 @@ const Hero = ({
   imageAlt,
 }: HeroProps) => {
   return (
-    <ExtendedSectionLeft
+    <HeroSection
       bg={backgroundColour}
       display="flex"
       justifyContent="space-evenly"
@@ -114,7 +114,7 @@ const Hero = ({
           </Text>
         )}
       </Flex>
-    </ExtendedSectionLeft>
+    </HeroSection>
   )
 }
 
