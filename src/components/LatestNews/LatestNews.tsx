@@ -208,7 +208,6 @@ const Mobile: React.FC<NewsLatestProps> = ({ headingColor, articles }) => (
               }
               body={article.heroDescription}
               color="brand.darkBlue"
-              linkText={`Read about ${article.title}`}
               link={'/news/' + article.slug}
               backgroundColor="brand.brightTeal"
               type="short"
