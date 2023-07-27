@@ -1,12 +1,14 @@
 import React from 'react'
 import { Box, Text } from '@chakra-ui/react'
-import { FaAngleLeft } from 'react-icons/fa'
-
+import { IconDownloadFile } from '../../atoms/Icons/Icons'
+export interface DownloadButtonProps {
+  downloadFileURL: string
+  downloadFileTitle: string
+}
 export interface CardProps {
   title: string
   titleLink?: string
   body: string
-
   link?: string
   linkText?: string
   type: string
@@ -14,19 +16,21 @@ export interface CardProps {
   color: string
   image?: string
   alt?: string
+  downloadFileURL?: string
+  downloadFileTitle?: string
 }
 
 export const Card: React.FC<CardProps> = ({
   title,
   body,
   link,
-  linkText,
-  titleLink,
   type,
   backgroundColor,
   color,
   image,
   alt,
+  downloadFileURL,
+  downloadFileTitle,
 }) => (
   <Box
     maxWidth={type === 'short' ? '350px' : '550px'}
@@ -49,10 +53,10 @@ export const Card: React.FC<CardProps> = ({
       display="flex"
       flexDirection="column"
     >
-      {titleLink && (
+      {link && (
         <Text
           as="a"
-          href={titleLink}
+          href={link}
           lineHeight="1"
           fontFamily="bodyAlternative"
           fontSize="lg"
@@ -60,7 +64,7 @@ export const Card: React.FC<CardProps> = ({
           {title}
         </Text>
       )}
-      {!titleLink && (
+      {!link && (
         <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg">
           {title}
         </Text>
@@ -70,14 +74,25 @@ export const Card: React.FC<CardProps> = ({
         {body}
       </Text>
 
-      {link && (
-        <Box href={link} alignItems="center" as="a" mt="2rem" display="flex">
-          <FaAngleLeft />
-          <Text ml="0.3rem" fontSize="3xs">
-            {' '}
-            {linkText}
-          </Text>
-        </Box>
+      {downloadFileURL && (
+        <>
+          <Box
+            alignItems="center"
+            as="a"
+            mt="auto"
+            mb="0"
+            pt="20px"
+            display="flex"
+            href={downloadFileURL}
+            download={downloadFileTitle}
+            target="_blank"
+          >
+            <Text max-width="20ch" mr="1.5rem" fontSize="3xs">
+              {'Download ' + downloadFileTitle}
+            </Text>
+            <IconDownloadFile />
+          </Box>
+        </>
       )}
     </Box>
   </Box>
@@ -88,10 +103,12 @@ export const CardWithExtended: React.FC<CardProps> = ({
   title,
   body,
   link,
-  linkText,
+  alt,
   image,
   backgroundColor,
   color,
+  downloadFileURL,
+  downloadFileTitle,
 }) => (
   <Box
     maxWidth={type === 'short' ? '350px' : '550px'}
@@ -102,7 +119,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
     bg={image ? backgroundColor : 'none'}
   >
     <Box width="inherit">
-      <img src={image} width="100%" height="auto" />
+      <img src={image} alt={alt} width="100%" height="auto" />
     </Box>
     <Box
       position="relative"
@@ -114,16 +131,32 @@ export const CardWithExtended: React.FC<CardProps> = ({
       color={color}
     >
       <Box height="auto" width="82%" bg={backgroundColor}>
-        <Text
-          lineHeight="1.5"
-          fontFamily="bodyAlternative"
-          fontSize="sm"
-          pl="20px"
-          mt="0.3rem"
-          mr="1rem"
-        >
-          {title}
-        </Text>
+        {link && (
+          <Text
+            as="a"
+            href={link}
+            lineHeight="1.5"
+            fontFamily="bodyAlternative"
+            fontSize="sm"
+            pl="20px"
+            mt="0.3rem"
+            mr="1rem"
+          >
+            {title}
+          </Text>
+        )}
+        {!link && (
+          <Text
+            lineHeight="1.5"
+            fontFamily="bodyAlternative"
+            fontSize="sm"
+            pl="20px"
+            mt="0.3rem"
+            mr="1rem"
+          >
+            {title}
+          </Text>
+        )}
       </Box>
 
       <Box
@@ -138,14 +171,27 @@ export const CardWithExtended: React.FC<CardProps> = ({
         flexGrow="1"
       >
         <Text fontSize="2xs">{body}</Text>
-        {link && (
-          <Box href={link} alignItems="center" as="a" mt="2rem" display="flex">
-            <FaAngleLeft />
-            <Text ml="0.3rem" fontSize="2xs">
-              {' '}
-              {linkText}
-            </Text>
-          </Box>
+
+        {downloadFileURL && (
+          <>
+            <Box
+              alignItems="center"
+              as="a"
+              mt="auto"
+              mb="0"
+              pt="20px"
+              display="flex"
+              href={downloadFileURL}
+              download={downloadFileTitle}
+              target="_blank"
+              color={color}
+            >
+              <Text max-width="20ch" mr="1.5rem" fontSize="3xs">
+                {'Download ' + downloadFileTitle}
+              </Text>
+              <IconDownloadFile />
+            </Box>
+          </>
         )}
       </Box>
     </Box>
