@@ -33,7 +33,12 @@ const HomepageHero = ({
   heroImageAltText,
 }: HeroProps) => {
   return (
-    <Flex direction="column" width="100%" as="section">
+    <Flex
+      direction="column"
+      width="100%"
+      as="section"
+      backgroundColor="brand.brightTeal"
+    >
       <Flex
         backgroundColor="brand.legacyTeal"
         flexDirection={{
