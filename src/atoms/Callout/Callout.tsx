@@ -25,12 +25,11 @@ const Callout = ({
       <Box
         bg={backgroundColor}
         color={textColor}
-        mt="3rem"
         position="relative"
         width="100%"
         ml="5rem"
         height="fit-content"
-        padding="3rem"
+        padding="2rem"
         display="flex"
         flexWrap="wrap"
         {...restProps}
@@ -38,19 +37,19 @@ const Callout = ({
           content: '""',
           position: 'absolute',
           backgroundColor: 'inherit',
-          width: '50px',
+          width: '40px',
           height: '50%',
-          right: '-48px',
-          bottom: 0,
+          right: '-38px',
+          top: 0,
         }}
         _before={{
           content: '""',
           position: 'absolute',
           backgroundColor: 'inherit',
-          width: '50px',
+          width: '38px',
           height: '50%',
-          left: '-48px',
-          top: 0,
+          left: '-38px',
+          bottom: 0,
         }}
       >
         <Box
