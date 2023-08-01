@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import React from 'react'
-import { ExtendedSectionLeft } from '../../atoms/Section/Section'
+import { Section } from '../../atoms/Section/Section'
 import { Card } from '../Cards/Cards'
 
 import {
@@ -44,11 +44,21 @@ const LatestNews: React.FC<NewsLatestProps> = ({
   const [selectedArticle, setSelectedArticle] = useState(articles[0] || null)
   const [isLargerThan1250] = useMediaQuery('(min-width: 1250px)')
   return (
-    <ExtendedSectionLeft
-      py="8rem"
+    <Section
       display="flex"
+      position="relative"
       bg={backgroundColor}
       color={cardTextColor}
+      pb="8rem"
+      _after={{
+        content: '""',
+        position: 'absolute',
+        backgroundColor: 'inherit',
+        height: '50px',
+        width: '70%',
+        right: '0px',
+        top: '-45px',
+      }}
     >
       <Container
         maxWidth="1250px"
@@ -81,7 +91,7 @@ const LatestNews: React.FC<NewsLatestProps> = ({
           <Mobile headingColor={headingColor} articles={articles} />
         )}
       </Container>
-    </ExtendedSectionLeft>
+    </Section>
   )
 }
 const Desktop: React.FC<
