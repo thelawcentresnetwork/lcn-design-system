@@ -12,7 +12,6 @@ export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
       as="section"
       width="100%"
       minHeight="500px"
-      py="120px"
       {...restProps}
     ></Box>
   )
@@ -46,7 +45,7 @@ export const ExtendedSectionLeft = ({
   return (
     <Section
       bg={backgroundColor}
-      mt="3rem"
+      mt="5rem"
       position="relative"
       {...restProps}
       _after={{

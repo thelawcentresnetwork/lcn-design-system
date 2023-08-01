@@ -117,6 +117,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
     display="flex"
     flexDirection="column"
     bg={image ? backgroundColor : 'none'}
+    height="100%"
   >
     <Box width="inherit">
       <img src={image} alt={alt} width="100%" height="auto" />
