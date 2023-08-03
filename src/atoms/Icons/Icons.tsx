@@ -24,7 +24,7 @@ export const IconArrowRight: React.FC<SVGProps> = (props) => (
   </svg>
 )
 
-export const IconArrowLeft: React.FC<SVGProps> = (props) => (
+export const SmallIconRight: React.FC<SVGProps> = (props) => (
   <svg
     width="12"
     height="17"
