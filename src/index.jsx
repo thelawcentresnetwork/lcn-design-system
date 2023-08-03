@@ -14,7 +14,7 @@ import Statistic from './components/Statistic/Statistic'
 import LatestNews from './components/LatestNews/LatestNews'
 import {
   IconArrowRight,
-  SmallIconRight,
+  IconArrowLeft,
   IconArrowDown,
   IconPlus,
   IconMinus,
@@ -57,7 +57,7 @@ export {
   Hero,
   HomepageHero,
   IconArrowRight,
-  SmallIconRight,
+  IconArrowLeft,
   IconArrowDown,
   IconPlus,
   IconMinus,

@@ -24,19 +24,22 @@ export const IconArrowRight: React.FC<SVGProps> = (props) => (
   </svg>
 )
 
-export const SmallIconRight: React.FC<SVGProps> = (props) => (
+export const IconArrowLeft: React.FC<SVGProps> = (props) => (
   <svg
     width="12"
     height="17"
     viewBox="0 0 12 17"
-    fill="currentColor"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
     focusable="false"
     role="img"
     {...props}
   >
-    <path d="M3.66038 16.7784L11.5034 8.77856L3.84301 0.964978L1.02504 3.8393L5.86745 8.77856L0.84241 13.9041L3.66038 16.7784Z" />
+    <path
+      d="M3.66038 16.7784L11.5034 8.77856L3.84301 0.964978L1.02504 3.8393L5.86745 8.77856L0.84241 13.9041L3.66038 16.7784Z"
+      fill="#E45E37"
+    />
   </svg>
 )
 
