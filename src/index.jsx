@@ -28,6 +28,10 @@ import {
 } from './atoms/Section/Section'
 import Image from './components/Image/Image'
 import Callout from './atoms/Callout/Callout'
+import {
+  FullWidthContainer,
+  ContainerItem,
+} from './components/FlexContainer/Container'
 import DFormSchema from './components/DynamicForm/FormSchema'
 import DActions from './components/DynamicForm/Actions'
 import DInput from './components/DynamicForm/Input'
@@ -43,6 +47,8 @@ export {
   Theme,
   Image,
   Callout,
+  FullWidthContainer,
+  ContainerItem,
   Statistic,
   CallToAction,
   Feature,
