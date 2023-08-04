@@ -26,6 +26,10 @@ import {
   ExtendedSectionLeft,
   SlantedSectionTop,
 } from './atoms/Section/Section'
+import {
+  FullWidthContainer,
+  ContainerItem,
+} from './components/Flex Container/Container'
 import Image from './components/Image/Image'
 import Callout from './atoms/Callout/Callout'
 import DFormSchema from './components/DynamicForm/FormSchema'
@@ -43,6 +47,8 @@ export {
   Theme,
   Image,
   Callout,
+  FullWidthContainer,
+  ContainerItem,
   Statistic,
   CallToAction,
   Feature,
