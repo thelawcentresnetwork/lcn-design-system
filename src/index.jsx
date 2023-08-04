@@ -29,7 +29,7 @@ import {
 import {
   FullWidthContainer,
   ContainerItem,
-} from './components/Flex Container/Container'
+} from './components/FlexContainer/Container'
 import Image from './components/Image/Image'
 import Callout from './atoms/Callout/Callout'
 import DFormSchema from './components/DynamicForm/FormSchema'
