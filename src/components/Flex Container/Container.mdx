@@ -1,0 +1,244 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import {
+  Heading,
+  ListItem,
+  Text,
+  UnorderedList,
+  VStack,
+} from '@chakra-ui/react'
+import { FullWidthContainer, ContainerItem } from './FullWidthContainer'
+import { Card } from '../../Cards/Cards'
+import { Box } from '@chakra-ui/react'
+
+<Meta title="Containers" />
+
+# Containers
+
+The Containers component provides different container styles for layout and responsivity.
+
+## Full Width Container Story
+
+The Full Width Container fills up the full width of its parent element. You can specify how you want to align content and if you want it to be a column or row. It can accept Container Items (see below) and other components from the component library e.g. cards.
+
+<Canvas>
+  <Story name="Full Width Container">
+    {() => (
+      <FullWidthContainer
+        alignment="center"
+        orientation="row"
+        backgroundColor="brand.brightPink"
+      >
+        <Box height="600px"> Full width container </Box>
+      </FullWidthContainer>
+    )}
+  </Story>
+</Canvas>
+
+## Narrow Container Item
+
+The Narrow Width Container Item is meant to be used inside a Full Width Container. It displays in row format when used inside a Full Width Container.
+
+<Canvas>
+  <Story name="Narrow Container Item">
+    {() => (
+      <ContainerItem
+        alignment="center"
+        orientation="row"
+        backgroundColor="brand.brightPink"
+        width="Narrow"
+      >
+        <Box height="600px"> Narrow Container Item </Box>
+      </ContainerItem>
+    )}
+  </Story>
+</Canvas>
+
+## Moderate Container Item
+
+The Moderate Width Container Item is meant to be used inside a Full Width Container. It displays in row format when used inside a Full Width Container.
+
+<Canvas>
+  <Story name="Moderate Container Item">
+    {() => (
+      <ContainerItem
+        alignment="center"
+        orientation="row"
+        width="Moderate"
+        backgroundColor="brand.brightPink"
+      >
+        <Box height="600px"> Moderate Container Item </Box>
+      </ContainerItem>
+    )}
+  </Story>
+</Canvas>
+
+## Large Container Item
+
+The Large Width Container Item is meant to be used inside a Full Width Container. It displays in row format when used inside a Full Width Container.
+
+<Canvas>
+  <Story name=" Large Container Item">
+    {() => (
+      <ContainerItem
+        alignment="center"
+        orientation="row"
+        width="Large"
+        backgroundColor="brand.brightPink"
+      >
+        <Box height="600px"> Large Container Item </Box>
+      </ContainerItem>
+    )}
+  </Story>
+</Canvas>
+
+## Off-Center Containers
+
+The Off-CenterDesign is one example of the container structure used in the designs. It also successfully wraps on smaller screen sizes.
+
+<Canvas>
+  <Story name="Off-Center Containers">
+    {() => (
+      <FullWidthContainer
+        alignment="center"
+        orientation="row"
+        backgroundColor="brand.darkBlue"
+      >
+        <ContainerItem
+          alignment="center"
+          orientation="row"
+          width="Narrow"
+          backgroundColor="brand.brightPink"
+        >
+          <Box height="600px"> Narrow Container Item </Box>
+        </ContainerItem>
+        <ContainerItem
+          alignment="center"
+          orientation="row"
+          width="Large"
+          backgroundColor="brand.legacyOrange"
+        >
+          <Box height="600px"> Large Container Item </Box>
+        </ContainerItem>
+      </FullWidthContainer>
+    )}
+  </Story>
+</Canvas>
+
+## Even Sized Containers
+
+This is another example of how content is structured.
+
+<Canvas>
+  <Story name="Even Sized Container">
+    {() => (
+      <FullWidthContainer
+        bg="brand.darkBlue"
+        alignment="center"
+        orientation="row"
+        backgroundColor="brand.darkBlue"
+      >
+        <ContainerItem
+          alignment="center"
+          orientation="row"
+          width="Moderate"
+          backgroundColor="brand.brightPink"
+        >
+          <Box height="600px"> Moderate Container Item </Box>
+        </ContainerItem>
+
+        <ContainerItem
+          alignment="center"
+          orientation="row"
+          width="Moderate"
+          backgroundColor="brand.brightPink"
+        >
+          <Box height="600px"> Moderate Container Item </Box>
+        </ContainerItem>
+      </FullWidthContainer>
+    )}
+
+  </Story>
+</Canvas>
+
+## Full Width Container with Short Cards
+
+The Full Width Container Short Cards show how you can pass cards into the container. It automatically fills 3 cards per row as per the designs.
+
+<Canvas>
+  <Story name="Full Width Container with Short Cards">
+    {() => (
+      <FullWidthContainer
+        alignment="center"
+        orientation="row"
+        backgroundColor="brand.darkBlue"
+      >
+        <Card
+          title="this is a card"
+          body="this is the body of the card"
+          backgroundColor="brand.warmYellow.500"
+          color="brand.darkBlue"
+          type="short"
+        />
+        <Card
+          title="this is a card"
+          body="this is the body of the card"
+          backgroundColor="brand.warmYellow.500"
+          color="brand.darkBlue"
+          type="short"
+        />
+        <Card
+          title="this is a card"
+          body="this is the body of the card"
+          backgroundColor="brand.warmYellow.500"
+          color="brand.darkBlue"
+          type="short"
+        />
+      </FullWidthContainer>
+    )}
+  </Story>
+</Canvas>
+
+## Full Width Container with Long Cards
+
+The Full Width Container with Long Cards show how you can pass longer cards into the container. It automatically fills 2 cards per row as per the designs.
+
+<Canvas>
+  <Story name="Full Width Container with Long Cards">
+    {() => (
+      <FullWidthContainer
+        alignment="center"
+        orientation="row"
+        backgroundColor="brand.darkBlue"
+      >
+        <Card
+          title="this is a card which is long"
+          body="this is the body of the card"
+          backgroundColor="brand.warmYellow.500"
+          color="brand.darkBlue"
+          type="long"
+        />
+        <Card
+          title="this is a card which is long"
+          body="this is the body of the card"
+          backgroundColor="brand.warmYellow.500"
+          color="brand.darkBlue"
+          type="long"
+        />
+        <Card
+          title="this is a card which is long"
+          body="this is the body of the card"
+          backgroundColor="brand.warmYellow.500"
+          color="brand.darkBlue"
+          type="long"
+        />
+        <Card
+          title="this is a card which is long"
+          body="this is the body of the card"
+          backgroundColor="brand.warmYellow.500"
+          color="brand.darkBlue"
+          type="long"
+        />
+      </FullWidthContainer>
+    )}
+  </Story>
+</Canvas>
