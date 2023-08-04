@@ -38,6 +38,7 @@ export const Card: React.FC<CardProps> = ({
     position="relative"
     display="flex"
     flexDirection="column"
+    height="100%"
   >
     {image && (
       <Box width="inherit">
