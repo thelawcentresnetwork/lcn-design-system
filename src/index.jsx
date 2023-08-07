@@ -5,7 +5,6 @@ import FormBuilder from './patterns/FormBuilder/FormBuilder'
 import { Card, CardWithExtended } from './components/Cards/Cards'
 import Embed from './components/Embed/Embed'
 import Hero from './components/Hero/PageHero/Hero'
-import Inlay from './components/Inlay'
 import Quote from './components/Quote'
 import Banner from './components/Banner/Banner'
 import Feature from './components/Feature/Feature'
@@ -61,7 +60,6 @@ export {
   IconArrowDown,
   IconPlus,
   IconMinus,
-  Inlay,
   Quote,
   Banner,
   DFormSchema,
