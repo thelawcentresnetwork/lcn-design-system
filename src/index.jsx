@@ -5,7 +5,6 @@ import FormBuilder from './patterns/FormBuilder/FormBuilder'
 import { Card, CardWithExtended } from './components/Cards/Cards'
 import Embed from './components/Embed/Embed'
 import Hero from './components/Hero/PageHero/Hero'
-import Quote from './components/Quote'
 import Banner from './components/Banner/Banner'
 import Feature from './components/Feature/Feature'
 import CallToAction from './components/CallToAction/CallToAction'
@@ -60,7 +59,6 @@ export {
   IconArrowDown,
   IconPlus,
   IconMinus,
-  Quote,
   Banner,
   DFormSchema,
   DActions,
