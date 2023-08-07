@@ -3,7 +3,7 @@ import parse from 'html-react-parser'
 
 import { Box, BoxProps } from '@chakra-ui/react'
 
-interface EmbedProps extends BoxProps {
+export interface EmbedProps extends BoxProps {
   /** Embed code (HTML string) */
   code: string
 }
