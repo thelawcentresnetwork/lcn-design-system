@@ -3,8 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 const meta: Meta<typeof Input> = {
-  title: 'components/Forms/Input',
-  component: Input,
+  title: 'Atoms/Form Elements/Input',
   parameters: {
     backgrounds: {
       default: 'white',

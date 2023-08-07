@@ -26,8 +26,8 @@ import {
   ExtendedSectionLeft,
   SlantedSectionTop,
 } from './atoms/Section/Section'
-import Image from './components/Image/Image'
-import Callout from './atoms/Callout/Callout'
+import Image from './atoms/Image/Image'
+import Callout from './components/Callout/Callout'
 import DFormSchema from './components/DynamicForm/FormSchema'
 import DActions from './components/DynamicForm/Actions'
 import DInput from './components/DynamicForm/Input'

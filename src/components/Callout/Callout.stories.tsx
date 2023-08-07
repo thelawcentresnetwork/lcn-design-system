@@ -1,5 +1,5 @@
 import React from 'react'
-import { selectColours } from '../Colours/selectColours'
+import { selectColours } from '../../atoms/Colours/selectColours'
 import { StoryObj, Meta } from '@storybook/react'
 import Callout, { CalloutProps } from './Callout'
 import { Box } from '@chakra-ui/react'

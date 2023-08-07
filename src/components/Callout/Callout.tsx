@@ -16,7 +16,6 @@ const Callout = ({
 }: CalloutProps) => {
   return (
     <Flex
-      as="section"
       pr="3.5rem"
       maxWidth={
         type === 'short' ? '540px' : type === 'default' ? '730px' : '843px'

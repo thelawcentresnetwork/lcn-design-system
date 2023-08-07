@@ -6,7 +6,7 @@ import CardImageOne from '../../assets/designSystemImageOne.png'
 import Image, { ImageProps } from './Image'
 
 export default {
-  title: 'Image',
+  title: 'Atoms/Image',
   args: {
     src: CardImageOne,
     alt: 'this is some alt text',

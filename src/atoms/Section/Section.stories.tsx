@@ -9,11 +9,9 @@ import {
   HeroSection,
   SectionProps,
 } from './Section'
-import { Box } from '@chakra-ui/react'
 
 export default {
-  title: 'Components/Section',
-  component: Section,
+  title: 'Atoms/Section',
   argTypes: {
     bg: selectColours,
   },

@@ -1,72 +1,43 @@
-import {Canvas, Meta, Story, ColorPalette, ColorItem } from '@storybook/addon-docs'
-import {Box, Heading, VStack, Text} from '@chakra-ui/react'
+import {
+  Canvas,
+  Meta,
+  Story,
+  ColorPalette,
+  ColorItem,
+} from '@storybook/addon-docs'
+import { Box, Heading, VStack, Text } from '@chakra-ui/react'
 
-<Meta title="Colour Palette"/>
+<Meta title="Atoms/Colour Palette" />
 
 # Colour Palette
 
 LCN's colour palette combines both the existing legacy colours as well as the additional new bright colours add in the rebrand.
 
 ## New colours
+
 <ColorPalette>
-    <ColorItem
-        title="White"
-        subtitle=""
-        colors={{ White: '#FFF' }}
-     />
-    <ColorItem
-        title="Dark blue"
-        subtitle=""
-        colors={{ darkBlue: '#0B0768' }}
-    />
-    <ColorItem
-        title="Cobalt"
-        subtitle=""
-        colors={{ brightBlue: '#574CFF' }}
-    />
-    <ColorItem
-        title="Mint"
-        subtitle=""
-        colors={{ brightTeal: '#4CDED7' }}
-    />
-    <ColorItem
-        title="Amaranth"
-        subtitle=""
-        colors={{ brightPink: '#FF4476' }}
-    />
-    <ColorItem
-        title="Sunflower"
-        subtitle=""
-        colors={{ warmYellow: '#FCC24B' }}
-    />
+  <ColorItem title="White" subtitle="" colors={{ White: '#FFF' }} />
+  <ColorItem title="Dark blue" subtitle="" colors={{ darkBlue: '#0B0768' }} />
+  <ColorItem title="Cobalt" subtitle="" colors={{ brightBlue: '#574CFF' }} />
+  <ColorItem title="Mint" subtitle="" colors={{ brightTeal: '#4CDED7' }} />
+  <ColorItem title="Amaranth" subtitle="" colors={{ brightPink: '#FF4476' }} />
+  <ColorItem title="Sunflower" subtitle="" colors={{ warmYellow: '#FCC24B' }} />
 </ColorPalette>
 
 ## Legacy colours
 
 <ColorPalette>
-    <ColorItem
-        title="Icy grey"
-        subtitle=""
-        colors={{ legacyGrey: '#7A7D84' }}
-    />
-    <ColorItem
-        title="Denim"
-        subtitle=""
-        colors={{ legacyBlue: '#425390' }}
-    />
-    <ColorItem
-        title="Teal"
-        subtitle=""
-        colors={{ legacyTeal: '#00838A' }}
-    />
-    <ColorItem
-        title="Rubine red"
-        subtitle=""
-        colors={{ legacyPink: '#C90061' }}
-    />
-    <ColorItem
-        title="Persimmon"
-        subtitle=""
-        colors={{ legacyOrange: '#E45E37' }}
-    />
+  <ColorItem title="Icy grey" subtitle="" colors={{ legacyGrey: '#7A7D84' }} />
+  <ColorItem title="Denim" subtitle="" colors={{ legacyBlue: '#425390' }} />
+  <ColorItem title="Teal" subtitle="" colors={{ legacyTeal: '#00838A' }} />
+  <ColorItem
+    title="Rubine red"
+    subtitle=""
+    colors={{ legacyPink: '#C90061' }}
+  />
+  <ColorItem
+    title="Persimmon"
+    subtitle=""
+    colors={{ legacyOrange: '#E45E37' }}
+  />
 </ColorPalette>

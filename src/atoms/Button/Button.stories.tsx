@@ -2,10 +2,10 @@ import { Button, Box } from '@chakra-ui/react'
 import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 import { FaTwitter } from 'react-icons/fa'
-import { IconArrowRight } from '../../atoms/Icons/Icons'
+import { IconArrowRight } from '../Icons/Icons'
 
 const meta: Meta<typeof Button> = {
-  component: Button,
+  title: 'Atoms/Button',
   parameters: {
     backgrounds: {
       default: 'grey',
