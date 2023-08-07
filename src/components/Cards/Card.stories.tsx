@@ -5,7 +5,7 @@ import React from 'react'
 import CardImage from '../../assets/card-image.png'
 import HorizontalCardImage from '../../assets/horizontal-card-image.png'
 export default {
-  title: 'Card',
+  title: 'Components/Cards',
   component: Card,
   args: {
     title: 'Title',

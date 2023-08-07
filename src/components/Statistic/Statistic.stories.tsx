@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react'
 import Statistic, { StatisticProps } from './Statistic'
 import { selectColours } from '../../atoms/Colours/selectColours'
 export default {
-  title: 'Statistic',
+  title: 'Components/Statistic',
   component: Statistic,
   parameters: {
     backgrounds: {

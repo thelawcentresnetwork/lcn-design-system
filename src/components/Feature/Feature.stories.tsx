@@ -40,7 +40,7 @@ const dummyFeatureData = [
   },
 ]
 export default {
-  title: 'Feature',
+  title: 'Components/Feature',
   component: Feature,
   args: { featureItems: dummyFeatureData },
   argTypes: {

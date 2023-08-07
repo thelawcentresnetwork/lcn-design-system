@@ -34,7 +34,7 @@ const dummyArticles = [
   },
 ]
 export default {
-  title: 'News Latest',
+  title: 'Components/Latest News ',
   component: LatestNews,
   args: {
     articles: dummyArticles,
