@@ -9,12 +9,12 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-interface BannerProps extends StackProps {
+export interface BannerProps extends StackProps {
   text: string
   type?: string
   link?: string
   linkText?: string
-  icon: BoxProps
+  icon?: BoxProps
 }
 
 export default function Banner({
@@ -32,8 +32,8 @@ export default function Banner({
       alignItems="center"
       py="3"
       px={{ base: '3', md: '6', lg: '8' }}
-      color="white"
-      bg={type == 'alert' ? 'red.500' : 'blue.500'}
+      color="brand.white.500"
+      bg={type == 'alert' ? 'brand.legacyPink' : 'brand.darkBlue'}
       {...stackProps}
     >
       <HStack spacing="3" mr="2">
@@ -44,11 +44,11 @@ export default function Banner({
       </HStack>
       {linkText && (
         <Button
-          size="sm"
           as="a"
           href={link}
           variant="outline"
-          colorScheme="white"
+          size="short"
+          colorScheme="brand.white.500"
         >
           {linkText}
         </Button>
