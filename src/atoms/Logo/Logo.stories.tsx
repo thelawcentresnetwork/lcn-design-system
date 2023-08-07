@@ -7,8 +7,7 @@ import logo from '../../assets/lcn-logo.svg'
 import logoWhite from '../../assets/lcn-logo-white.svg'
 
 const meta: Meta<typeof Logo> = {
-  title: 'Logos',
-  component: Logo,
+  title: 'Atoms/Logos',
   parameters: {
     backgrounds: {
       default: 'mint',

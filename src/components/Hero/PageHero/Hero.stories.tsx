@@ -5,6 +5,7 @@ import { selectColours } from '../../../atoms/Colours/selectColours'
 import pageImage from '../../../assets/heroimage.png'
 
 const meta: Meta = {
+  title: 'components/Hero/Hero',
   component: Hero,
   parameters: { layout: 'fullscreen' },
 }

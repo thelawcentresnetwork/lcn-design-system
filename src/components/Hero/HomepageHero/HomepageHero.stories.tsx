@@ -3,6 +3,7 @@ import HomepageHero from './HomepageHero'
 import React from 'react'
 
 const meta: Meta = {
+  title: 'components/Hero/Homepage Hero',
   component: HomepageHero,
   parameters: { layout: 'centered' },
 }
