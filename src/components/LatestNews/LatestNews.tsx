@@ -33,6 +33,18 @@ export interface NewsLatestProps {
   backgroundImage?: string
 }
 
+export const formatDate = (date: string) => {
+  const dateWithoutTime = new Date(date?.split('T')[0])
+  const formattedDateWithComma = dateWithoutTime.toLocaleDateString('en', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+
+  return formattedDateWithComma.replaceAll(',', '')
+}
+
 const LatestNews: React.FC<NewsLatestProps> = ({
   articles,
   backgroundColor,
@@ -147,7 +159,6 @@ const Desktop: React.FC<
     <Box ml="-60px" mt="105px" width="50%">
       <Box maxWidth="611px" width="100%">
         <VisuallyHidden>
-          {' '}
           Select one to view more about the article
         </VisuallyHidden>
 
@@ -177,7 +188,7 @@ const Desktop: React.FC<
                 {isSelected && 'Currently selected'}
               </VisuallyHidden>
               <Text fontSize="3xs" mb="1rem">
-                {article.overrideDate}
+                {formatDate(article.overrideDate)}
               </Text>
               <Text fontSize="2xs">{article.title}</Text>
             </Box>
