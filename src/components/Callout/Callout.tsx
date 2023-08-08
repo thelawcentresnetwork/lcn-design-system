@@ -16,7 +16,6 @@ const Callout = ({
 }: CalloutProps) => {
   return (
     <Flex
-      pr="3.5rem"
       maxWidth={
         type === 'short' ? '540px' : type === 'default' ? '730px' : '843px'
       }
@@ -26,28 +25,28 @@ const Callout = ({
         color={textColor}
         position="relative"
         width="100%"
-        ml="5rem"
         height="fit-content"
         padding="2rem"
         display="flex"
         flexWrap="wrap"
+        mx="min(40px, 20px)"
         {...restProps}
         _after={{
           content: '""',
           position: 'absolute',
           backgroundColor: 'inherit',
-          width: '40px',
+          width: 'min(40px, 20px)',
           height: '50%',
-          right: '-38px',
+          right: ' -20px',
           top: 0,
         }}
         _before={{
           content: '""',
           position: 'absolute',
           backgroundColor: 'inherit',
-          width: '38px',
+          width: 'min(40px, 20px)',
           height: '50%',
-          left: '-38px',
+          left: '-20px',
           bottom: 0,
         }}
       >
