@@ -25,23 +25,31 @@ Hero headings use the font type [Black Han Sans](https://fonts.google.com/specim
     {({ hero, headingTwo, headingTwoAlt, headingThree, headingFour }) => (
       <VStack align="left">
         <Heading as="h1" variant="h1">
-          {hero || 'Hero/Heading 1'}
+          {hero || 'Hero/Heading 1 - H1'}
         </Heading>
 
         <Heading as="h2" variant="h2Alt">
-          {headingTwo || 'Heading 2'}
+          {headingTwo || 'Heading 2 - H2 alternative'}
         </Heading>
 
         <Heading as="h2" variant="h2">
-          {headingTwoAlt || 'Heading 2'}
+          {headingTwoAlt || 'Heading 2 - H2'}
         </Heading>
 
         <Heading as="h3" variant="h3">
-          {headingThree || 'Heading 3'}
+          {headingThree || 'Heading 3 - H3'}
         </Heading>
 
         <Heading as="h4" variant="h4">
-          {headingFour || 'Heading 4'}
+          {headingFour || 'Heading 4 - H4'}
+        </Heading>
+
+        <Heading as="h5" variant="h5">
+          {headingFour || 'Heading 5 - H5'}
+        </Heading>
+
+        <Heading as="h6" variant="h5">
+          {headingFour || 'Heading 6 - H6'}
         </Heading>
       </VStack>
     )}
