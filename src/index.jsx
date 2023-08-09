@@ -1,6 +1,4 @@
 import Theme from './theme'
-import ChakraAwesome from './utilities/ChakraAwesome'
-import FormBuilder from './patterns/FormBuilder/FormBuilder'
 
 import { Card, CardWithExtended } from './components/Cards/Cards'
 import Embed from './components/Embed/Embed'
@@ -26,25 +24,14 @@ import {
 } from './atoms/Section/Section'
 import Image from './atoms/Image/Image'
 import Callout from './components/Callout/Callout'
-import DFormSchema from './components/DynamicForm/FormSchema'
-import DActions from './components/DynamicForm/Actions'
-import DInput from './components/DynamicForm/Input'
-import DTextarea from './components/DynamicForm/Textarea'
-import DCheckbox from './components/DynamicForm/Checkbox'
-import DRadio from './components/DynamicForm/Radio'
-import DSelect from './components/DynamicForm/Select'
-import DDate from './components/DynamicForm/Date'
-import DFile from './components/DynamicForm/File'
 
 export {
-  ChakraAwesome,
   Theme,
   Image,
   Callout,
   Statistic,
   CallToAction,
   Feature,
-  FormBuilder,
   Card,
   CardWithExtended,
   Embed,
@@ -60,14 +47,5 @@ export {
   IconPlus,
   IconMinus,
   Banner,
-  DFormSchema,
-  DActions,
-  DInput,
-  DTextarea,
-  DCheckbox,
-  DRadio,
-  DDate,
-  DFile,
-  DSelect,
   LatestNews,
 }
