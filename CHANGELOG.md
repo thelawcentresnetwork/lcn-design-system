@@ -2,6 +2,49 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 3.0.36 (2023-08-09)
+
+### 3.0.35 (2023-08-08)
+
+### 3.0.34 (2023-08-07)
+
+### 3.0.33 (2023-08-04)
+
+### 3.0.32 (2023-08-03)
+
+### 3.0.31 (2023-08-01)
+
+### 3.0.30 (2023-08-01)
+
+### 3.0.29 (2023-08-01)
+
+### 3.0.28 (2023-07-28)
+
+### 3.0.27 (2023-07-27)
+
+### 3.0.26 (2023-07-27)
+
+### 3.0.25 (2023-07-26)
+
+### 3.0.24 (2023-07-26)
+
+### 3.0.23 (2023-07-25)
+
+### 3.0.22 (2023-07-25)
+
+### 3.0.21 (2023-07-25)
+
+### 3.0.20 (2023-07-24)
+
+### 3.0.19 (2023-07-21)
+
+
+### :insect: Bug Fixes
+
+* section import ([8f4dad4](https://github.com/thelawcentresnetwork/lcn-design-system/commit/8f4dad4b3d1f8198f2f8feeeda6262b4b8072013))
+
+### 3.0.18 (2023-07-20)
+
 ### 3.0.17 (2023-07-19)
 
 ### 3.0.16 (2023-07-17)
