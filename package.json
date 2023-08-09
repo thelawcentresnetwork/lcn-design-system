@@ -106,9 +106,6 @@
     "typescript": "^4.3.5",
     "webpack": "^5.86.0"
   },
-  "dependencies": {
-    "parameterize-js": "^1.0.0"
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,mdx}": [
       "eslint --fix",
