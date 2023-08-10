@@ -122,6 +122,7 @@ const HomepageHero = ({
           <Box
             fontSize="clamp(0.6rem, calc(0.8rem + 0.37vw), 1.56rem)"
             flexGrow={1}
+            whiteSpace="normal"
           >
             {callToAction}
           </Box>
