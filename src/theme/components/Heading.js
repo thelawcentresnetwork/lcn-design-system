@@ -1,7 +1,7 @@
 const Heading = {
   variants: {
     h1: {
-      fontSize: '5xl',
+      fontSize: 'clamp(5.4rem, calc(4.13rem + 3.54vw), 5.6rem)',
       lineHeight: 1.2,
       fontWeight: '400',
 
@@ -9,16 +9,16 @@ const Heading = {
       fontFamily: 'Black Han Sans',
     },
     h2: {
-      fontSize: '3xl',
+      fontSize: 'clamp(4.1rem, calc(3.24rem + 0.65vw), 4.4rem)',
       lineHeight: 1.33,
-      fontWeight: 500,
+      fontWeight: 400,
+      fontFamily: 'Black Han Sans',
+      textTransform: 'uppercase',
     },
 
     h2Alt: {
-      fontSize: '3xl',
+      fontSize: 'clamp(3.1rem, calc(2.16rem + 0.43vw), 3.4rem)',
       lineHeight: 1.33,
-      fontFamily: 'Black Han Sans',
-      textTransform: 'uppercase',
     },
 
     h3: {
@@ -27,16 +27,9 @@ const Heading = {
       fontWeight: 500,
     },
     h4: {
-      fontSize: '2xs',
+      fontSize: 'clamp(1rem, calc(0.65rem + 2.39vw), 2.5rem)',
       lineHeight: 1.33,
       fontWeight: 500,
-    },
-
-    h5: {
-      fontSize: '4xs',
-      lineHeight: 1.33,
-      fontWeight: 500,
-      textTransform: 'uppercase',
     },
   },
 }
