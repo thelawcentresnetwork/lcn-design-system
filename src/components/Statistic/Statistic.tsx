@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Flex } from '@chakra-ui/react'
+import { Stack, Text, Flex } from '@chakra-ui/react'
 
 export interface StatisticProps {
   statisticOne: string
@@ -27,7 +27,7 @@ const Statistic: React.FC<StatisticProps> = ({
     justifyContent="center"
     as="dl"
   >
-    <Box>
+    <Stack spacing={5}>
       <Text
         as="dd"
         fontWeight={600}
@@ -40,10 +40,10 @@ const Statistic: React.FC<StatisticProps> = ({
         {' '}
         {labelOne}
       </Text>
-    </Box>
+    </Stack>
 
     {statisticTwo && (
-      <Box>
+      <Stack spacing={5}>
         <Text
           as="dd"
           fontWeight={600}
@@ -56,7 +56,7 @@ const Statistic: React.FC<StatisticProps> = ({
           {' '}
           {labelTwo}
         </Text>
-      </Box>
+      </Stack>
     )}
   </Flex>
 )
