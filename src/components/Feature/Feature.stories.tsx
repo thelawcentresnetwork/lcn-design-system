@@ -45,6 +45,7 @@ export default {
   args: { featureItems: dummyFeatureData },
   argTypes: {
     textColor: selectColours,
+    centred: { control: 'boolean' }
   },
   parameters: {
     backgrounds: {
