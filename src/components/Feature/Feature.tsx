@@ -10,10 +10,11 @@ export interface FeatureProps {
     }
   }[]
   textColor?: string
+  centred?: boolean
 }
 
-const Feature: React.FC<FeatureProps> = ({ featureItems, textColor }) => (
-  <Box as="ul" maxWidth="540px">
+const Feature: React.FC<FeatureProps> = ({ featureItems, textColor, centred }) => (
+  <Box as="ul" maxWidth="540px" marginLeft={centred ? "auto" : "0rem"} marginRight={centred ? "auto" : "0rem"} >
     {featureItems.map((featureItem) => (
       <Flex
         flexWrap="wrap"
