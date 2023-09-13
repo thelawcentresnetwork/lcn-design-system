@@ -18,4 +18,18 @@ const colors = {
   },
 }
 
+export function getColor(key) {
+  const keys = key.split('.');
+  let colorObject = colors.brand[keys[0]] ? colors.brand : colors;
+
+  for (const k of keys) {
+    if (colorObject[k] === undefined) {
+      return null;
+    }
+    colorObject = colorObject[k];
+  }
+
+  return colorObject;
+}
+
 export default colors
