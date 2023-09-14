@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Image, Text } from '@chakra-ui/react'
 import { IconDownloadFile } from '../../atoms/Icons/Icons'
 export interface DownloadButtonProps {
   downloadFileURL: string
@@ -43,7 +43,7 @@ export const Card: React.FC<CardProps> = ({
   >
     {image && (
       <Box width="inherit">
-        <img alt={alt} src={image} width="100%" height="auto" />
+        <Image alt={alt} src={image} width="100%" height="100%" objectFit="cover" />
       </Box>
     )}
 
@@ -109,7 +109,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
     {...(link && {as: "a", href: link, textDecoration: 'none', target: "_blank"})}
   >
     <Box width="inherit">
-      <img src={image} alt={alt} width="100%" height="auto" />
+      <Image src={image} alt={alt} width="100%" height="100%" objectFit="cover" />
     </Box>
     <Box
       position="relative"
