@@ -59,7 +59,10 @@ const Hero = ({
             </Heading>
             {image && (
               <Text
-                fontSize="sm"
+                fontSize="30px"
+                lineHeight="36px"
+                letterSpacing="0.9px"
+                fontWeight="600"
                 color={textColour}
                 fontFamily="bodyAlternative"
                 maxWidth="30ch"
@@ -107,7 +110,10 @@ const Hero = ({
 
         {!image && (
           <Text
-            fontSize="sm"
+            fontSize="30px"
+            lineHeight="36px"
+            letterSpacing="0.9px"
+            fontWeight="600"
             color={textColour}
             fontFamily="bodyAlternative"
             maxWidth="23ch"
