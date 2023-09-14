@@ -135,7 +135,7 @@ export const SlantedSectionTop = ({
         position: 'relative',
         display: 'flex',
         backgroundColor: 'inherit',
-        height: '65px',
+        height: '80px',
         top: '-43',
         transform: 'skewY(1.5deg)',
         width: '100%',
