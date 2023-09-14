@@ -129,6 +129,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
             mt="0.3rem"
             mr="1rem"
             textDecoration="underline"
+            display="inline-block"
           >
             {title}
           </Text>
