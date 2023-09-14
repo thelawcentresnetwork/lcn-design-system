@@ -5,6 +5,10 @@ export interface SectionProps extends BoxProps {
   backgroundColor?: string
 }
 
+export interface HeroSectionProps extends SectionProps {
+  showCardDecoration?: string
+}
+
 export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
   return (
     <Box
@@ -18,9 +22,11 @@ export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
 }
 export const HeroSection = ({
   backgroundColor,
+  showCardDecoration,
   ...restProps
-}: SectionProps) => {
+}: HeroSectionProps) => {
   return (
+    <>
     <Section
       bg={backgroundColor}
       position="relative"
@@ -34,7 +40,38 @@ export const HeroSection = ({
         left: '0px',
         bottom: '-50px',
       }}
-    ></Section>
+    />
+    {showCardDecoration && <Box
+        display={{sm: "none", md: "block", lg: "block", xl: "block"}}
+        position="relative"
+       _before={{
+        content: '""',
+        display: "block",
+        position: 'absolute',
+        height: '220px',
+        width: '180px',
+        transformOrigin: 'center',
+        top: '0px',
+        left: '-85px',
+        backgroundColor: '#E45E37',
+        transform: 'rotate(38.25deg)',
+        zIndex: '2'
+      }}
+      _after={{
+        content: '""',
+        display: "block",
+        position: 'absolute',
+        height: '220px',
+        width: '180px',
+        transformOrigin: 'center',
+        top: '83px',
+        left: '-85px',
+        backgroundColor: '#FCC24B',
+        transform: 'rotate(-21.9deg)',
+        zIndex: '1'
+      }}
+    />}
+</>
   )
 }
 
