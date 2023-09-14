@@ -38,6 +38,7 @@ export const Card: React.FC<CardProps> = ({
     position="relative"
     display="flex"
     flexDirection="column"
+    width="100%"
     height="100%"
     {...(link && {as: "a", href: link, target: '_blank'})}
   >
@@ -108,7 +109,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
     height="100%"
     {...(link && {as: "a", href: link, textDecoration: 'none', target: "_blank"})}
   >
-    <Box width="inherit">
+    <Box width="inherit" flex="1">
       <Image src={image} alt={alt} width="100%" height="100%" objectFit="cover" />
     </Box>
     <Box
