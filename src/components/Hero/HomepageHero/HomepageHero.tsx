@@ -112,21 +112,31 @@ const HomepageHero = ({
         </Flex>
       </Flex>
       {callToAction && (
-        <Button
-          marginLeft="auto"
-          leftIcon={<IconArrowRight />}
-          size={{ base: 'short', sm: 'large' }}
-          as="a"
-          href={callToActionLink}
-        >
+        <Flex>
+          <Button
+            marginLeft="auto"
+            colorScheme="brand.white"
+            leftIcon={<IconArrowRight />}
+            size={{ base: 'large', sm: 'large' }}
+            as="a"
+            href={callToActionLink}
+          >
           <Box
-            fontSize="clamp(0.6rem, calc(0.8rem + 0.37vw), 1.56rem)"
+            fontSize="26px"
+            lineHeight="32px"
+            fontWeight="700"
+            letterSpacing="1.04px"
+            paddingRight="100px"
+            paddingLeft="13px"
+            py="15px"
             flexGrow={1}
             whiteSpace="normal"
           >
             {callToAction}
           </Box>
         </Button>
+        <Box width="68px" backgroundColor="brand.legacyTeal" />
+      </Flex>
       )}
     </Flex>
   )
