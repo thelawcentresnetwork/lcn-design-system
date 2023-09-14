@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Image, Text } from '@chakra-ui/react'
 import { IconDownloadFile } from '../../atoms/Icons/Icons'
 export interface DownloadButtonProps {
   downloadFileURL: string
@@ -38,11 +38,13 @@ export const Card: React.FC<CardProps> = ({
     position="relative"
     display="flex"
     flexDirection="column"
+    width="100%"
     height="100%"
+    {...(link && {as: "a", href: link, target: '_blank'})}
   >
     {image && (
       <Box width="inherit">
-        <img alt={alt} src={image} width="100%" height="auto" />
+        <Image alt={alt} src={image} width="100%" height="100%" objectFit="cover" />
       </Box>
     )}
 
@@ -54,23 +56,9 @@ export const Card: React.FC<CardProps> = ({
       display="flex"
       flexDirection="column"
     >
-      {link && (
-        <Text
-          as="a"
-          href={link}
-          lineHeight="1"
-          fontFamily="bodyAlternative"
-          fontSize="lg"
-        >
+        <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg" display="inline-block">
           {title}
         </Text>
-      )}
-      {!link && (
-        <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg">
-          {title}
-        </Text>
-      )}
-
       <Text mt="1.5rem" lineHeight="1.3" fontSize="2xs">
         {body}
       </Text>
@@ -119,9 +107,10 @@ export const CardWithExtended: React.FC<CardProps> = ({
     flexDirection="column"
     bg={image ? backgroundColor : 'none'}
     height="100%"
+    {...(link && {as: "a", href: link, textDecoration: 'none', target: "_blank"})}
   >
-    <Box width="inherit">
-      <img src={image} alt={alt} width="100%" height="auto" />
+    <Box width="inherit" flex="1">
+      <Image src={image} alt={alt} width="100%" height="100%" objectFit="cover" />
     </Box>
     <Box
       position="relative"
@@ -133,21 +122,6 @@ export const CardWithExtended: React.FC<CardProps> = ({
       color={color}
     >
       <Box height="auto" width="82%" bg={backgroundColor}>
-        {link && (
-          <Text
-            as="a"
-            href={link}
-            lineHeight="1.5"
-            fontFamily="bodyAlternative"
-            fontSize="sm"
-            pl="20px"
-            mt="0.3rem"
-            mr="1rem"
-          >
-            {title}
-          </Text>
-        )}
-        {!link && (
           <Text
             lineHeight="1.5"
             fontFamily="bodyAlternative"
@@ -155,10 +129,11 @@ export const CardWithExtended: React.FC<CardProps> = ({
             pl="20px"
             mt="0.3rem"
             mr="1rem"
+            textDecoration="underline"
+            display="inline-block"
           >
             {title}
           </Text>
-        )}
       </Box>
 
       <Box

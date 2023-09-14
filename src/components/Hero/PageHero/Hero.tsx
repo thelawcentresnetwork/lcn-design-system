@@ -9,6 +9,7 @@ export interface HeroProps extends BoxProps {
   subHeading?: string
   image?: string
   imageAlt?: string
+  showCardDecoration?: boolean
 }
 
 const Hero = ({
@@ -19,12 +20,14 @@ const Hero = ({
   subHeading,
   image,
   imageAlt,
+  showCardDecoration,
 }: HeroProps) => {
   return (
     <HeroSection
       bg={backgroundColour}
       display="flex"
       justifyContent="space-evenly"
+      showCardDecoration={showCardDecoration}
     >
       <Flex
         mt="10rem"
@@ -56,7 +59,10 @@ const Hero = ({
             </Heading>
             {image && (
               <Text
-                fontSize="sm"
+                fontSize="30px"
+                lineHeight="36px"
+                letterSpacing="0.9px"
+                fontWeight="600"
                 color={textColour}
                 fontFamily="bodyAlternative"
                 maxWidth="30ch"
@@ -104,7 +110,10 @@ const Hero = ({
 
         {!image && (
           <Text
-            fontSize="sm"
+            fontSize="30px"
+            lineHeight="36px"
+            letterSpacing="0.9px"
+            fontWeight="600"
             color={textColour}
             fontFamily="bodyAlternative"
             maxWidth="23ch"
