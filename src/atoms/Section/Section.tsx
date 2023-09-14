@@ -35,10 +35,10 @@ export const HeroSection = ({
         content: '""',
         position: 'absolute',
         backgroundColor: 'inherit',
-        height: '50px',
+        height: '81px',
         width: '40%',
         left: '0px',
-        bottom: '-50px',
+        bottom: '-79px',
       }}
     />
     {showCardDecoration && <Box
@@ -111,10 +111,10 @@ export const ExtendedSectionRight = ({
         content: '""',
         position: 'absolute',
         backgroundColor: 'inherit',
-        height: '50px',
+        height: '81px',
         width: '35%',
         left: '65%',
-        bottom: '-36px',
+        bottom: '-79px',
       }}
     ></Section>
   )
