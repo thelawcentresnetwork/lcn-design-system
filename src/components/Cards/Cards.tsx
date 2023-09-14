@@ -39,6 +39,7 @@ export const Card: React.FC<CardProps> = ({
     display="flex"
     flexDirection="column"
     height="100%"
+    {...(link && {as: "a", href: link, target: '_blank'})}
   >
     {image && (
       <Box width="inherit">
@@ -54,23 +55,9 @@ export const Card: React.FC<CardProps> = ({
       display="flex"
       flexDirection="column"
     >
-      {link && (
-        <Text
-          as="a"
-          href={link}
-          lineHeight="1"
-          fontFamily="bodyAlternative"
-          fontSize="lg"
-        >
+        <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg" display="inline-block">
           {title}
         </Text>
-      )}
-      {!link && (
-        <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg">
-          {title}
-        </Text>
-      )}
-
       <Text mt="1.5rem" lineHeight="1.3" fontSize="2xs">
         {body}
       </Text>
@@ -119,6 +106,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
     flexDirection="column"
     bg={image ? backgroundColor : 'none'}
     height="100%"
+    {...(link && {as: "a", href: link, textDecoration: 'none', target: "_blank"})}
   >
     <Box width="inherit">
       <img src={image} alt={alt} width="100%" height="auto" />
@@ -133,21 +121,6 @@ export const CardWithExtended: React.FC<CardProps> = ({
       color={color}
     >
       <Box height="auto" width="82%" bg={backgroundColor}>
-        {link && (
-          <Text
-            as="a"
-            href={link}
-            lineHeight="1.5"
-            fontFamily="bodyAlternative"
-            fontSize="sm"
-            pl="20px"
-            mt="0.3rem"
-            mr="1rem"
-          >
-            {title}
-          </Text>
-        )}
-        {!link && (
           <Text
             lineHeight="1.5"
             fontFamily="bodyAlternative"
@@ -155,10 +128,10 @@ export const CardWithExtended: React.FC<CardProps> = ({
             pl="20px"
             mt="0.3rem"
             mr="1rem"
+            textDecoration="underline"
           >
             {title}
           </Text>
-        )}
       </Box>
 
       <Box
