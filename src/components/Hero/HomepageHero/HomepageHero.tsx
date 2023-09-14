@@ -92,12 +92,16 @@ const HomepageHero = ({
           </Heading>
           <Heading
             as="h2"
-            fontSize={{ base: '4xs', lg: 'md' }}
+            fontSize="30px"
+            fontWeight="500"
+            lineHeight="36px"
+            letterSpacing="0.9px"
             color="brand.darkBlue"
             backgroundColor="brand.brightTeal"
             backgroundRepeat="no-repeat"
             width="fit-content"
-            p="5px"
+            px="43px"
+            py="13px"
             ml="20px"
           >
             {subHeading}
@@ -106,27 +110,42 @@ const HomepageHero = ({
             color="brand.white.500"
             width={{ base: '100%', md: '60%' }}
             py="clamp(0.75rem, calc(0.58rem + 0.87vw), 15rem)"
+            fontFamily="Roboto Slab"
+            fontSize="22px"
+            fontWeight="400"
+            lineHeight="30px"
+            letterSpacing="0.22px"
           >
             {introduction}
           </Text>
         </Flex>
       </Flex>
       {callToAction && (
-        <Button
-          marginLeft="auto"
-          leftIcon={<IconArrowRight />}
-          size={{ base: 'short', sm: 'large' }}
-          as="a"
-          href={callToActionLink}
-        >
+        <Flex>
+          <Button
+            marginLeft="auto"
+            colorScheme="brand.white"
+            leftIcon={<IconArrowRight />}
+            size={{ base: 'large', sm: 'large' }}
+            as="a"
+            href={callToActionLink}
+          >
           <Box
-            fontSize="clamp(0.6rem, calc(0.8rem + 0.37vw), 1.56rem)"
+            fontSize="26px"
+            lineHeight="32px"
+            fontWeight="700"
+            letterSpacing="1.04px"
+            paddingRight="100px"
+            paddingLeft="13px"
+            py="15px"
             flexGrow={1}
             whiteSpace="normal"
           >
             {callToAction}
           </Box>
         </Button>
+        <Box width="68px" backgroundColor="brand.legacyTeal" />
+      </Flex>
       )}
     </Flex>
   )

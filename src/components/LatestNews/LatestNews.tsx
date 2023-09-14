@@ -85,7 +85,7 @@ const LatestNews: React.FC<NewsLatestProps> = ({
           right="0"
           width={{ base: '50%', lg: '' }}
         >
-          <img src={backgroundImage} width="100%" height="auto" alt="" />
+          <img src={backgroundImage} width="80%" height="auto" alt="" />
         </Box>
 
         {isLargerThan1250 && (

@@ -5,6 +5,10 @@ export interface SectionProps extends BoxProps {
   backgroundColor?: string
 }
 
+export interface HeroSectionProps extends SectionProps {
+  showCardDecoration?: string
+}
+
 export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
   return (
     <Box
@@ -18,9 +22,11 @@ export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
 }
 export const HeroSection = ({
   backgroundColor,
+  showCardDecoration,
   ...restProps
-}: SectionProps) => {
+}: HeroSectionProps) => {
   return (
+    <>
     <Section
       bg={backgroundColor}
       position="relative"
@@ -29,12 +35,43 @@ export const HeroSection = ({
         content: '""',
         position: 'absolute',
         backgroundColor: 'inherit',
-        height: '50px',
+        height: '81px',
         width: '40%',
         left: '0px',
-        bottom: '-50px',
+        bottom: '-79px',
       }}
-    ></Section>
+    />
+    {showCardDecoration && <Box
+        display={{sm: "none", md: "block", lg: "block", xl: "block"}}
+        position="relative"
+       _before={{
+        content: '""',
+        display: "block",
+        position: 'absolute',
+        height: '220px',
+        width: '180px',
+        transformOrigin: 'center',
+        top: '0px',
+        left: '-85px',
+        backgroundColor: '#E45E37',
+        transform: 'rotate(38.25deg)',
+        zIndex: '2'
+      }}
+      _after={{
+        content: '""',
+        display: "block",
+        position: 'absolute',
+        height: '220px',
+        width: '180px',
+        transformOrigin: 'center',
+        top: '83px',
+        left: '-85px',
+        backgroundColor: '#FCC24B',
+        transform: 'rotate(-21.9deg)',
+        zIndex: '1'
+      }}
+    />}
+</>
   )
 }
 
@@ -74,10 +111,10 @@ export const ExtendedSectionRight = ({
         content: '""',
         position: 'absolute',
         backgroundColor: 'inherit',
-        height: '50px',
+        height: '81px',
         width: '35%',
         left: '65%',
-        bottom: '-36px',
+        bottom: '-79px',
       }}
     ></Section>
   )
@@ -98,7 +135,7 @@ export const SlantedSectionTop = ({
         position: 'relative',
         display: 'flex',
         backgroundColor: 'inherit',
-        height: '65px',
+        height: '80px',
         top: '-43',
         transform: 'skewY(1.5deg)',
         width: '100%',
