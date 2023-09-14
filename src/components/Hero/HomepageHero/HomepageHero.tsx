@@ -92,12 +92,16 @@ const HomepageHero = ({
           </Heading>
           <Heading
             as="h2"
-            fontSize={{ base: '4xs', lg: 'md' }}
+            fontSize="30px"
+            fontWeight="500"
+            lineHeight="36px"
+            letterSpacing="0.9px"
             color="brand.darkBlue"
             backgroundColor="brand.brightTeal"
             backgroundRepeat="no-repeat"
             width="fit-content"
-            p="5px"
+            px="43px"
+            py="13px"
             ml="20px"
           >
             {subHeading}
@@ -106,6 +110,11 @@ const HomepageHero = ({
             color="brand.white.500"
             width={{ base: '100%', md: '60%' }}
             py="clamp(0.75rem, calc(0.58rem + 0.87vw), 15rem)"
+            fontFamily="Roboto Slab"
+            fontSize="22px"
+            fontWeight="400"
+            lineHeight="30px"
+            letterSpacing="0.22px"
           >
             {introduction}
           </Text>
