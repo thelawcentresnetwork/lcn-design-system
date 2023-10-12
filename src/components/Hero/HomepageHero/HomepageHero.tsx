@@ -3,7 +3,7 @@ import {
   Box,
   Heading,
   Text,
-  Img,
+  Image,
   Flex,
   Button,
   BoxProps,
@@ -56,9 +56,11 @@ const HomepageHero = ({
           minHeight="310px"
           pl="clamp(1.00rem, calc(-0.39rem + 6.96vw), 5.00rem)"
         >
-          <Img
+          <Image
             marginLeft="auto"
+            paddingRight="1rem"
             position="absolute"
+            objectFit="cover"
             height="125%"
             top="-15%"
             src={heroImage}
