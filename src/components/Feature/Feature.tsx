@@ -13,17 +13,17 @@ export interface FeatureProps {
   centred?: boolean
 }
 
-const Feature: React.FC<FeatureProps> = ({ featureItems, textColor, centred }) => (
-  <Box as="ul" maxWidth="540px" marginLeft={centred ? "auto" : "0rem"} marginRight={centred ? "auto" : "0rem"} >
+const Feature: React.FC<FeatureProps> = ({ featureItems, textColor }) => (
+  <Box as="ul">
     {featureItems.map((featureItem) => (
       <Flex
-        flexWrap="wrap"
         minHeight="120px"
         borderTop="1px solid"
         gap="1.5rem"
         as="li"
         py="2rem"
         key={featureItems.indexOf(featureItem)}
+        justifyContent="space-between"
         alignItems="center"
         color={textColor}
       >
