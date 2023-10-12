@@ -133,13 +133,13 @@ const HomepageHero = ({
             href={callToActionLink}
           >
           <Box
-            fontSize="26px"
-            lineHeight="32px"
+            fontSize={{base: "18px", lg: "26px"}}
+            lineHeight={{base: "18px", lg: "32px"}}
+            letterSpacing={{base: "0.39px", lg: "1.04px"}}
             fontWeight="700"
-            letterSpacing="1.04px"
-            paddingRight="100px"
+            paddingRight={{base: "25px", lg: "100px"}}
             paddingLeft="13px"
-            py="15px"
+            py={{base: "0px", lg: "15px"}}
             flexGrow={1}
             whiteSpace="normal"
           >
