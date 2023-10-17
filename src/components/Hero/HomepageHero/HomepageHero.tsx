@@ -3,7 +3,7 @@ import {
   Box,
   Heading,
   Text,
-  Img,
+  Image,
   Flex,
   Button,
   BoxProps,
@@ -56,9 +56,11 @@ const HomepageHero = ({
           minHeight="310px"
           pl="clamp(1.00rem, calc(-0.39rem + 6.96vw), 5.00rem)"
         >
-          <Img
+          <Image
             marginLeft="auto"
+            paddingRight="1rem"
             position="absolute"
+            objectFit="cover"
             height="125%"
             top="-15%"
             src={heroImage}
@@ -131,13 +133,13 @@ const HomepageHero = ({
             href={callToActionLink}
           >
           <Box
-            fontSize="26px"
-            lineHeight="32px"
+            fontSize={{base: "18px", lg: "26px"}}
+            lineHeight={{base: "18px", lg: "32px"}}
+            letterSpacing={{base: "0.39px", lg: "1.04px"}}
             fontWeight="700"
-            letterSpacing="1.04px"
-            paddingRight="100px"
+            paddingRight={{base: "25px", lg: "100px"}}
             paddingLeft="13px"
-            py="15px"
+            py={{base: "0px", lg: "15px"}}
             flexGrow={1}
             whiteSpace="normal"
           >
