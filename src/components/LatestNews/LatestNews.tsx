@@ -33,16 +33,32 @@ export interface NewsLatestProps {
   backgroundImage?: string
 }
 
-export const formatDate = (date: string) => {
-  const dateWithoutTime = new Date(date?.split('T')[0])
-  const formattedDateWithComma = dateWithoutTime.toLocaleDateString('en', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+const getDayOfMonthSuffix = (day: number) => {
+  if (day >= 11 && day <= 13) {
+    return 'th';
+  }
+  switch (day % 10) {
+    case 1:
+      return 'st';
+    case 2:
+      return 'nd';
+    case 3:
+      return 'rd';
+    default:
+      return 'th';
+  }
+}
 
-  return formattedDateWithComma.replaceAll(',', '')
+const formatDate = (date: string) => {
+  const dateWithoutTime = new Date(date?.split('T')[0]);
+
+  const day = dateWithoutTime.getDate();
+  const month = dateWithoutTime.toLocaleString('default', { month: 'long' });
+  const year = dateWithoutTime.getFullYear();
+
+  const suffix = getDayOfMonthSuffix(day);
+
+  return `${dateWithoutTime.toLocaleDateString('en', { weekday: 'long' })}, ${day}${suffix} ${month} ${year}`;
 }
 
 const LatestNews: React.FC<NewsLatestProps> = ({
@@ -81,9 +97,9 @@ const LatestNews: React.FC<NewsLatestProps> = ({
       >
         <Box
           position="absolute"
-          top="0"
-          right="0"
-          width={{ base: '50%', lg: '' }}
+          top="17px"
+          right="-7px"
+          width={{ base: '40%', lg: '' }}
         >
           <img src={backgroundImage} width="80%" height="auto" alt="" />
         </Box>
@@ -127,7 +143,7 @@ const Desktop: React.FC<
       <Box
         bg={cardBackgroundColor}
         width="100%"
-        minHeight="914px"
+        minHeight="800px"
         position="relative"
         color={cardTextColor}
       >
@@ -139,17 +155,18 @@ const Desktop: React.FC<
             width="100%"
           />
         </Box>
-        <Box p="2rem" maxWidth="445px">
+        <Box p="2rem" maxWidth="550px">
           <Text
             as="a"
             href={'/news/' + selectedArticle?.slug}
             fontFamily="bodyAlternative"
+            lineHeight={1.1}
             fontSize="lg"
-            mb="1rem"
+            mb="2rem"
           >
             {selectedArticle?.title}
           </Text>
-          <Text pr="2rem" fontSize="2xs">
+          <Text pt="2rem" pr="1rem" fontSize="2xs">
             {selectedArticle?.heroDescription}
           </Text>
         </Box>
