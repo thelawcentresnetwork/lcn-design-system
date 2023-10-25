@@ -143,7 +143,7 @@ const Desktop: React.FC<
       <Box
         bg={cardBackgroundColor}
         width="100%"
-        minHeight="914px"
+        minHeight="800px"
         position="relative"
         color={cardTextColor}
       >
