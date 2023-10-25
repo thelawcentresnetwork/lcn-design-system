@@ -6,7 +6,7 @@ export interface SectionProps extends BoxProps {
 }
 
 export interface HeroSectionProps extends SectionProps {
-  showCardDecoration?: string
+  showCardDecoration?: boolean
 }
 
 export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
@@ -20,6 +20,7 @@ export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
     ></Box>
   )
 }
+
 export const HeroSection = ({
   backgroundColor,
   showCardDecoration,
@@ -41,8 +42,9 @@ export const HeroSection = ({
         bottom: '-79px',
       }}
     />
-    {showCardDecoration && <Box
-        display={{sm: "none", md: "block", lg: "block", xl: "block"}}
+    <Box
+        display={!showCardDecoration ? "none" : {base: "none", sm: "block"}}
+        transform="translateY(0px)"
         position="relative"
        _before={{
         content: '""',
@@ -70,7 +72,7 @@ export const HeroSection = ({
         transform: 'rotate(-21.9deg)',
         zIndex: '1'
       }}
-    />}
+    />
 </>
   )
 }

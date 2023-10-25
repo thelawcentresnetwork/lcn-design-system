@@ -15,6 +15,7 @@ export interface CardProps {
   backgroundColor: string
   color: string
   image?: string
+  newTab?: boolean
   alt?: string
   downloadFileURL?: string
   downloadFileTitle?: string
@@ -29,6 +30,7 @@ export const Card: React.FC<CardProps> = ({
   color,
   image,
   alt,
+  newTab,
   downloadFileURL,
   downloadFileTitle,
 }) => (
@@ -40,7 +42,7 @@ export const Card: React.FC<CardProps> = ({
     flexDirection="column"
     width="100%"
     height="100%"
-    {...(link && {as: "a", href: link, target: '_blank'})}
+    {...(link && {as: "a", href: link, target: newTab ? '_blank' : '_self'})}
   >
     {image && (
       <Box width="inherit">
@@ -74,7 +76,7 @@ export const Card: React.FC<CardProps> = ({
             display="flex"
             href={downloadFileURL}
             download={downloadFileTitle}
-            target="_blank"
+            target={newTab ? "_blank" : "_self"}
           >
             <Text max-width="20ch" mr="1.5rem" fontSize="3xs">
               {'Download ' + downloadFileTitle}
@@ -98,6 +100,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
   color,
   downloadFileURL,
   downloadFileTitle,
+  newTab
 }) => (
   <Box
     maxWidth={type === 'short' ? '350px' : '550px'}
@@ -107,7 +110,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
     flexDirection="column"
     bg={image ? backgroundColor : 'none'}
     height="100%"
-    {...(link && {as: "a", href: link, textDecoration: 'none', target: "_blank"})}
+    {...(link && {as: "a", href: link, textDecoration: 'none', target: newTab ? "_blank" : "_self"})}
   >
     <Box width="inherit" flex="1">
       <Image src={image} alt={alt} width="100%" height="100%" objectFit="cover" />
@@ -160,7 +163,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
               display="flex"
               href={downloadFileURL}
               download={downloadFileTitle}
-              target="_blank"
+              target={newTab ? "_blank" : "_self"}
               color={color}
             >
               <Text max-width="20ch" mr="1.5rem" fontSize="3xs">
