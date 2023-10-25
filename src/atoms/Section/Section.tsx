@@ -6,7 +6,7 @@ export interface SectionProps extends BoxProps {
 }
 
 export interface HeroSectionProps extends SectionProps {
-  showCardDecoration?: string
+  showCardDecoration?: boolean
 }
 
 export const Section = ({ backgroundColor, ...restProps }: SectionProps) => {
