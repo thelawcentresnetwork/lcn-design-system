@@ -49,7 +49,7 @@ const Hero = ({
               {pageTitle}
             </Text>
             <Heading
-              fontSize="4xl"
+              fontSize={{base: "2xl", sm: "3xl", lg: "4xl"}}
               as="h1"
               variant="h1"
               maxWidth="15ch"
