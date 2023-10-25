@@ -155,17 +155,18 @@ const Desktop: React.FC<
             width="100%"
           />
         </Box>
-        <Box p="2rem" maxWidth="445px">
+        <Box p="2rem" maxWidth="550px">
           <Text
             as="a"
             href={'/news/' + selectedArticle?.slug}
             fontFamily="bodyAlternative"
+            lineHeight={1.1}
             fontSize="lg"
-            mb="1rem"
+            mb="2rem"
           >
             {selectedArticle?.title}
           </Text>
-          <Text pr="2rem" fontSize="2xs">
+          <Text pt="2rem" pr="1rem" fontSize="2xs">
             {selectedArticle?.heroDescription}
           </Text>
         </Box>
