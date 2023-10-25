@@ -97,9 +97,9 @@ const LatestNews: React.FC<NewsLatestProps> = ({
       >
         <Box
           position="absolute"
-          top="0"
-          right="0"
-          width={{ base: '50%', lg: '' }}
+          top="17px"
+          right="-7px"
+          width={{ base: '40%', lg: '' }}
         >
           <img src={backgroundImage} width="80%" height="auto" alt="" />
         </Box>
