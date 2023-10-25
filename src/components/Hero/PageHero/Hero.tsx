@@ -79,6 +79,7 @@ const Hero = ({
               left="-50px"
               justifyContent="flex-end"
               flexDirection="column"
+              visibility={{base: "hidden", sm: "visible"}}
             >
               <Box
                 alignSelf="flex-start"
