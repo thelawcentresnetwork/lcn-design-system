@@ -33,16 +33,32 @@ export interface NewsLatestProps {
   backgroundImage?: string
 }
 
-export const formatDate = (date: string) => {
-  const dateWithoutTime = new Date(date?.split('T')[0])
-  const formattedDateWithComma = dateWithoutTime.toLocaleDateString('en', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+const getDayOfMonthSuffix = (day: number) => {
+  if (day >= 11 && day <= 13) {
+    return 'th';
+  }
+  switch (day % 10) {
+    case 1:
+      return 'st';
+    case 2:
+      return 'nd';
+    case 3:
+      return 'rd';
+    default:
+      return 'th';
+  }
+}
 
-  return formattedDateWithComma.replaceAll(',', '')
+const formatDate = (date: string) => {
+  const dateWithoutTime = new Date(date?.split('T')[0]);
+
+  const day = dateWithoutTime.getDate();
+  const month = dateWithoutTime.toLocaleString('default', { month: 'long' });
+  const year = dateWithoutTime.getFullYear();
+
+  const suffix = getDayOfMonthSuffix(day);
+
+  return `${dateWithoutTime.toLocaleDateString('en', { weekday: 'long' })}, ${day}${suffix} ${month} ${year}`;
 }
 
 const LatestNews: React.FC<NewsLatestProps> = ({
