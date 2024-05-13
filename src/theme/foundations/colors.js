@@ -15,6 +15,7 @@ const colors = {
     brightPink: '#FF4476',
     warmYellow: { 500: '#FCC24B', 400: '#FCC24BCC', accessible: '#0B0768' },
     white: { 500: '#FFF', 400: '#FFFFFFCC', accessible: '#0B0768' },
+    conference2024: { lilac: '#C188FC', nearlyBlack: '#032E1A', yellow: '#F0F423', lightBeige: '#F4E6DB', darkBrown: '#521B07', lightBrown: '#CD8E5B', red: '#FF4603', black: '#000000' }
   },
 }
 

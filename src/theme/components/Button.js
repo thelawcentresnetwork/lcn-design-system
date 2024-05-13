@@ -21,10 +21,23 @@ const solid = defineStyle(({ colorScheme }) => {
   }
 })
 
+const conference2024 = defineStyle(({ colorScheme }) => {
+  return {
+    border: '2px solid',
+    fontFamily: "Unbounded",
+    fontSize: "22px",
+    lineHeight: "26.84px",
+    letterSpacing: "1.76px",
+    borderColor: `${colorScheme}`,
+    bg: `${colorScheme}`,
+    color: "brand.conference2024.nearlyBlack"
+  }
+})
+
 const outline = defineStyle(({ colorScheme }) => {
   return {
     border: '2px solid',
-    borderColor: `${colorScheme}.500`,
+    borderColor: `${colorScheme}`,
     bg: 'none',
     color: `${colorScheme}.500`,
     _hover: { bg: `${colorScheme}.500`, color: `${colorScheme}.accessible` },
@@ -75,6 +88,7 @@ export const Button = defineStyleConfig({
     solid,
     outline,
     icon,
+    conference2024
   },
   defaultProps: {
     colorScheme: 'brand.warmYellow',
@@ -82,3 +96,4 @@ export const Button = defineStyleConfig({
     size: 'long',
   },
 })
+  

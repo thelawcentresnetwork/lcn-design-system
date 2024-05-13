@@ -2,6 +2,9 @@ export const fonts = {
   body: 'Roboto Slab, serif',
   bodyAlternative: 'Anek Latin, sans-serif',
   heading: 'Anek Latin, sans-serif',
+  bodyConference2024: 'Archivo, sans-serif',
+  headingConference2024: 'Unbounded, sans-serif',
+  subtitleConference2024: 'Sedan, serif',
 }
 
 export const fontSizes = {
@@ -18,4 +21,11 @@ export const fontSizes = {
   '3xl': '66px',
   '4xl': '70px',
   '5xl': '90px',
+  'h1Conference2024': '120px',
+  'h2Conference2024': '60px',
+  'h3Conference2024': '28px',
+  'bigSubtitleConference2024': '38px',
+  'smallSubtitleConference2024': '32px',
+  'bigBodyConference2024': '22px',
+  'bodyConference2024': '18px',
 }
