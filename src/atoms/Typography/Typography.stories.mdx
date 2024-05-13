@@ -21,33 +21,48 @@ The Typography component provides various heading styles and body text. Three Go
 Hero headings use the font type [Black Han Sans](https://fonts.google.com/specimen/Black+Han+Sans). The remaining headings use [Anek Latin](https://fonts.google.com/specimen/Anek+Latin?query=Anek+Latin).
 
 <Canvas>
-  <Story name="Headings" argTypes={{ hero: { control: 'text' }, headingTwo: { control: 'text' }, headingTwoAlt: { control: 'text' }, headingThree: { control: 'text' }, headingFour: { control: 'text' } }}>
-    {({ hero, headingTwo, headingTwoAlt, headingThree, headingFour }) => (
+  <Story name="Headings" argTypes={{
+    hero: { control: 'text' },
+    headingTwo: { control: 'text' },
+    headingTwoAlt: { control: 'text' },
+    headingThree: { control: 'text' },
+    headingFour: { control: 'text' },
+    h1Conference2024: { control: 'text'},
+    h2Conference2024: { control: 'text'},
+    h3Conference2024: { control: 'text'},
+    h4Conference2024: { control: 'text'},
+  }}>
+    {({ hero, headingTwo, headingTwoAlt, headingThree, headingFour, h1Conference2024, h2Conference2024, h3Conference2024, h4Conference2024}) => (
       <VStack align="left">
         <Heading as="h1" variant="h1">
           {hero || 'Hero/Heading 1 - H1'}
         </Heading>
-
         <Heading as="h2" variant="h2">
           {headingTwoAlt || 'Heading 2 - H2'}
         </Heading>
-
           <Heading as="h2" variant="h2Alt">
           {headingTwo || 'Heading 2 - H2 alternative'}
         </Heading>
-
-
         <Heading as="h3" variant="h3">
           {headingThree || 'Heading 3 - H3'}
         </Heading>
-
         <Heading as="h4" variant="h4">
           {headingFour || 'Heading 4 - H4'}
         </Heading>
-
+        <Heading as="h1" variant="h1Conference2024">
+          {h1Conference2024 || 'H1 / Conference 2024'}
+        </Heading>
+        <Heading as="h2" variant="h2Conference2024">
+          {h2Conference2024 || 'H2 / Conference 2024'}
+        </Heading>
+        <Heading as="h3" variant="h3Conference2024">
+          {h3Conference2024 || 'H3 / Conference 2024'}
+        </Heading>
+        <Heading as="h4" variant="h4Conference2024">
+          {h4Conference2024 || 'H4 / Conference 2024'}
+        </Heading>
       </VStack>
     )}
-
   </Story>
 </Canvas>
 
@@ -61,12 +76,16 @@ The Body component contains the main body text. Body text uses [Roboto Slab](htt
     argTypes={{
       bodyDefault: { control: 'text' },
       bodyLarge: { control: 'text' },
+      bodyDefaultConference2024: { control: 'text' },
+      bodyLargeConference2024: { control: 'text' },
     }}
   >
-    {({ bodyDefault, bodyLarge }) => (
+    {({ bodyDefault, bodyLarge, bodyDefaultConference2024, bodyLargeConference2024 }) => (
       <VStack align="left">
         <Text>{bodyDefault || 'Body/Default'}</Text>
         <Text fontSize="2xs">{bodyLarge || 'Body/Large'}</Text>
+        <Text fontSize="bodyConference2024" fontFamily="bodyConference2024">{bodyDefault || 'Body / Default / Conference 2024'}</Text>
+        <Text fontSize="bigBodyConference2024" fontFamily="bodyConference2024">{bodyLarge || 'Body / Large / Conference 2024'}</Text>
       </VStack>
     )}
   </Story>
@@ -83,9 +102,12 @@ Subtitles use [Anek Latin](https://fonts.google.com/specimen/Anek+Latin?query=An
       subtitleDefault: { control: 'text' },
       subtitleBold: { control: 'text' },
       subtitleLarge: { control: 'text' },
+      smallSubtitleConference2024: { control: 'text' },
+      bigSubtitleConference2024: { control: 'text' },
     }}
   >
-    {({ subtitleDefault, subtitleBold, subtitleLarge }) => (
+    {({ subtitleDefault, subtitleBold, subtitleLarge, smallSubtitleConference2024, bigSubtitleConference2024 }) => (
+      <>
       <VStack align="left" fontFamily="bodyAlternative">
         <Text fontSize="sm">{subtitleDefault || 'Subtitle/Default'}</Text>
         <Text as="b" fontSize="sm">
@@ -95,6 +117,15 @@ Subtitles use [Anek Latin](https://fonts.google.com/specimen/Anek+Latin?query=An
           {subtitleLarge || 'Subtitle/Large'}
         </Text>
       </VStack>
+      <VStack align="left" fontFamily="subtitleConference2024">
+        <Text fontSize="smallSubtitleConference2024">
+          {smallSubtitleConference2024 || 'Small Subtitle / Conference 2024'}
+        </Text>
+        <Text fontSize="bigSubtitleConference2024">
+          {bigSubtitleConference2024 || 'Big Subtitle / Conference 2024'}
+        </Text>
+      </VStack>
+      </>
     )}
   </Story>
 </Canvas>

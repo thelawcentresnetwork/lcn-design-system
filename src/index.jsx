@@ -1,6 +1,6 @@
 import Theme from './theme'
 
-import { Card, CardWithExtended } from './components/Cards/Cards'
+import { Card, CardWithExtended, Conference2024Card } from './components/Cards/Cards'
 import Embed from './components/Embed/Embed'
 import Hero from './components/Hero/PageHero/Hero'
 import Banner from './components/Banner/Banner'
@@ -23,16 +23,18 @@ import {
   SlantedSectionTop,
 } from './atoms/Section/Section'
 import Image from './atoms/Image/Image'
-import Callout from './components/Callout/Callout'
+import { Callout, CalloutConference2024 }  from './components/Callout/Callout'
 
 export {
   Theme,
   Image,
   Callout,
+  CalloutConference2024,
   Statistic,
   CallToAction,
   Feature,
   Card,
+  Conference2024Card,
   CardWithExtended,
   Embed,
   Section,
