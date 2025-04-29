@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Box, Stack, Text, BoxProps } from '@chakra-ui/react'
 import ChakraAwesome from '../utilities/ChakraAwesome'
-import { IconName } from '@fortawesome/fontawesome-svg-core'
+import { IconName } from '../polyfill'
 
 interface FeatureProps extends BoxProps {
   /** Title of card, must be included for link overlays to work */

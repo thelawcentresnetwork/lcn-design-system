@@ -1,11 +1,11 @@
 import { chakra } from '@chakra-ui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  IconPrefix,
-  IconName,
+  FontAwesomeIcon,
   IconDefinition,
-} from '@fortawesome/fontawesome-svg-core'
+  IconName,
+  IconPrefix,
+  library,
+} from '../polyfill'
 
 const ChakraAwesome = chakra(FontAwesomeIcon)
 

@@ -26,6 +26,18 @@ import DSelect from './components/DynamicForm/Select'
 import DDate from './components/DynamicForm/Date'
 import DFile from './components/DynamicForm/File'
 
+
+import { library, fal, far, fas, fad, fab } from './polyfill'
+
+function TestComponent() {
+  return (
+    <div>
+      <h1>Test</h1>
+      <p>This is a test component</p>
+    </div>
+  )
+}
+
 export {
   ChakraAwesome,
   Theme,
@@ -48,4 +60,11 @@ export {
   DDate,
   DFile,
   DSelect,
+  TestComponent,
+  library,
+  fal,
+  far,
+  fas,
+  fad,
+  fab
 }
