@@ -4,8 +4,8 @@
 // It should default to normal if using in a non-Contentful environment.
 
 import React from 'react'
-import { useContentfulInspectorMode } from '@contentful/live-preview/react'
 import type { Entry } from 'contentful'
+
 
 import {
     Box,
@@ -41,7 +41,7 @@ export function withContentfulInspector<T extends object>(
 
         // For self-closing components like Image, don't pass children
         const isSelfClosing = Component === Image
-        
+
         if (isSelfClosing) {
             return (
                 <Component
