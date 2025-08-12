@@ -23,7 +23,7 @@ export interface HeroProps extends BoxProps {
   heroImage: string
   headingBackground: string
   heroImageAltText: string
-  entry?: Entry<Record<string, unknown>>
+  entry?: Entry<any>
   inspectorProps?: (options: { fieldId: string }) => object
 }
 
@@ -73,8 +73,8 @@ const HomepageHero = ({
             objectFit="cover"
             height="125%"
             top="-15%"
-            src={entry?.fields?.heroImage?.fields?.file?.url || heroImage}
-            alt={entry?.fields?.heroImage?.fields?.description || heroImageAltText}
+            src={(entry?.fields as any)?.heroImage?.fields?.file?.url || heroImage}
+            alt={(entry?.fields as any)?.heroImage?.fields?.description || heroImageAltText}
           />
         </Flex>
         <Flex

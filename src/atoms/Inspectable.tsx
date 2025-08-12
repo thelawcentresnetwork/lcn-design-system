@@ -5,6 +5,7 @@
 
 import React from 'react'
 import type { Entry } from 'contentful'
+import { useContentfulInspectorMode } from '@contentful/live-preview/react'
 
 
 import {
@@ -17,7 +18,7 @@ import {
 } from '@chakra-ui/react'
 
 type BaseInspectorProps = {
-    entry?: Entry<Record<string, unknown>>
+    entry?: Entry<any>
     field: string
     children?: React.ReactNode
     inspectorProps?: (options: { fieldId: string }) => object
@@ -52,7 +53,7 @@ export function withContentfulInspector<T extends object>(
         }
 
         // Use children if provided, otherwise get the field value from entry
-        const fieldContent = children ?? (entry?.fields?.[field] as React.ReactNode)
+        const fieldContent = children ?? (entry?.fields?.[field] as any)
 
         return (
             <Component
