@@ -1,6 +1,6 @@
 {
   "name": "law-centres-design-system",
-  "version": "3.0.46",
+  "version": "3.1.0",
   "description": "A design system for Law Centre sites and apps. Built using Chakra-ui.",
   "author": {
     "name": "andrewflett"
@@ -123,7 +123,6 @@
   },
   "readme": "https://github.com/thelawcentresnetwork/lcn-design-system#readme",
   "homepage": "https://github.com/thelawcentresnetwork/lcn-design-system#readme",
-  "_id": "law-centres-design-system@2.6.6",
   "dependencies": {
     "contentful": "^11.7.6",
     "global": "^4.4.0",
