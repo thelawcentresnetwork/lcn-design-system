@@ -1259,11 +1259,11 @@
     json-pointer "^0.6.2"
 
 "@contentful/live-preview@^4.6.27":
-  version "4.6.27"
-  resolved "https://registry.yarnpkg.com/@contentful/live-preview/-/live-preview-4.6.27.tgz#f2e8d5e157426c3d5ceda5cec15a9fee8e3c4955"
-  integrity sha512-8t1hju15eilVqjIovmoUYr9yuhKWI0ulTlNqyleugjiutKxpngHfwSHQRQLDvdpiV29LnXbz9fwwgivYXgM1Tw==
+  version "4.6.39"
+  resolved "https://registry.yarnpkg.com/@contentful/live-preview/-/live-preview-4.6.39.tgz#289fab7f60f8b3ccc069410366e2817e2446aa5f"
+  integrity sha512-NhuDLIb/aQMPgxjwnQ8EihLknccytl7haOWcoAhOd8g7EEdzE1AW2IqMLFRPF+XIDdHqZjCYHG5qsreGle5DvQ==
   dependencies:
-    "@contentful/content-source-maps" "^0.11.24"
+    "@contentful/content-source-maps" "^0.11.31"
     "@contentful/rich-text-types" "^17.0.0"
     flatted "^3.2.9"
     graphql-tag "^2.12.6"
@@ -1276,9 +1276,9 @@
   integrity sha512-q18RJuJCOuYveGiCIjE5xLCQc5lZ3L2Qgxrlg/H2YEobDFqdtmklazRi1XwEWaK3tMg6yVXBzKKkQfLB4qW14A==
 
 "@contentful/rich-text-types@^17.0.0":
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-17.0.1.tgz#9b5d8520decc0630756231415e6f4f2d6776b166"
-  integrity sha512-T+btHJY9mdLeZ1Sn2GcWLiG93gwBvovBxR73/tjUeIYsosBM3dkOdMRKXzBV9ghcuE1q+QP0TbyxA77hYIF9Jw==
+  version "17.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-17.1.0.tgz#48be22639d2b645dc3d41a8f48c7792be532029b"
+  integrity sha512-L0rok1VoMUbtQPJefR0Oxr5z1ow9/ZDIvuNWu16VT4IVVOKkeL4sVsjNj08cCT3ON+HUUzbPWVzyTuyvee2TSg==
   dependencies:
     is-plain-obj "^3.0.0"
 

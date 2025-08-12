@@ -20,10 +20,9 @@
     "build": "rm -rf dist && mkdir dist && babel src/ -d dist --extensions \".js,.jsx,.tsx\" --copy-files",
     "yalc:release": "yarn build && yalc publish --push",
     "dev:build": "chokidar 'src/**/*' -c 'yarn build'",
-    "yalc:dev": "concurrently -k \"yarn dev:build\" \"chokidar dist --initial --silent --delay 300 -c 'yalc push'\"",
+    "yalc:dev": "yarn yalc:release && concurrently -k \"yarn dev:build\" \"chokidar dist --initial --silent --delay 150 -c 'yalc push'\"",
     "reset": "rm -rf .yalc yalc.lock node_modules dist && yarn install",
-    "reset-and-dev": "yarn reset && yarn yalc:dev",
-    "postpublish": "yalc push"
+    "reset-and-dev": "yarn reset && yarn yalc:dev"
   },
   "main": "dist/index.js",
   "keywords": [
