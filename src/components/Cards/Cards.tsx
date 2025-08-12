@@ -1,6 +1,8 @@
 import React from 'react'
 import { Box, Image, Text } from '@chakra-ui/react'
 import { IconDownloadFile } from '../../atoms/Icons/Icons'
+import { Inspectable } from '../../atoms/Inspectable'
+import type { Entry } from 'contentful'
 export interface DownloadButtonProps {
   downloadFileURL: string
   downloadFileTitle: string
@@ -19,6 +21,8 @@ export interface CardProps {
   alt?: string
   downloadFileURL?: string
   downloadFileTitle?: string
+  entry?: Entry<any>
+  inspectorProps?: any
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -33,6 +37,8 @@ export const Card: React.FC<CardProps> = ({
   newTab,
   downloadFileURL,
   downloadFileTitle,
+  entry,
+  inspectorProps,
 }) => (
   <Box
     maxWidth={type === 'short' ? '350px' : '550px'}
@@ -42,11 +48,20 @@ export const Card: React.FC<CardProps> = ({
     flexDirection="column"
     width="100%"
     height="100%"
-    {...(link && {as: "a", href: link, target: newTab ? '_blank' : '_self'})}
+    {...(link && { as: 'a', href: link, target: newTab ? '_blank' : '_self' })}
   >
     {image && (
       <Box width="inherit">
-        <Image alt={alt} src={image} width="100%" height="100%" objectFit="cover" />
+        <Inspectable.Image
+          entry={entry}
+          field="cardImage"
+          inspectorProps={inspectorProps}
+          alt={alt}
+          src={image}
+          width="100%"
+          height="100%"
+          objectFit="cover"
+        />
       </Box>
     )}
 
@@ -58,12 +73,27 @@ export const Card: React.FC<CardProps> = ({
       display="flex"
       flexDirection="column"
     >
-        <Text lineHeight="1" fontFamily="bodyAlternative" fontSize="lg" display="inline-block">
-          {title}
-        </Text>
-      <Text mt="1.5rem" lineHeight="1.3" fontSize="2xs">
+      <Inspectable.Text
+        entry={entry}
+        field="label"
+        inspectorProps={inspectorProps}
+        lineHeight="1"
+        fontFamily="bodyAlternative"
+        fontSize="lg"
+        display="inline-block"
+      >
+        {title}
+      </Inspectable.Text>
+      <Inspectable.Text
+        entry={entry}
+        field="cardBody"
+        inspectorProps={inspectorProps}
+        mt="1.5rem"
+        lineHeight="1.3"
+        fontSize="2xs"
+      >
         {body}
-      </Text>
+      </Inspectable.Text>
 
       {downloadFileURL && (
         <>
@@ -76,7 +106,7 @@ export const Card: React.FC<CardProps> = ({
             display="flex"
             href={downloadFileURL}
             download={downloadFileTitle}
-            target={newTab ? "_blank" : "_self"}
+            target={newTab ? '_blank' : '_self'}
           >
             <Text max-width="20ch" mr="1.5rem" fontSize="3xs">
               {'Download ' + downloadFileTitle}
@@ -100,6 +130,8 @@ export const Conference2024Card: React.FC<CardProps> = ({
   newTab,
   downloadFileURL,
   downloadFileTitle,
+  entry,
+  inspectorProps,
 }) => (
   <Box
     maxWidth={'350px'}
@@ -109,11 +141,17 @@ export const Conference2024Card: React.FC<CardProps> = ({
     flexDirection="column"
     width="100%"
     height="100%"
-    {...(link && {as: "a", href: link, target: newTab ? '_blank' : '_self'})}
+    {...(link && { as: 'a', href: link, target: newTab ? '_blank' : '_self' })}
   >
     {image && (
       <Box width="inherit">
-        <Image alt={alt} src={image} width="100%" height="100%" objectFit="cover" />
+        <Image
+          alt={alt}
+          src={image}
+          width="100%"
+          height="100%"
+          objectFit="cover"
+        />
       </Box>
     )}
 
@@ -125,12 +163,28 @@ export const Conference2024Card: React.FC<CardProps> = ({
       display="flex"
       flexDirection="column"
     >
-        <Text fontFamily="bigSubtitleConference2024" fontSize="bigSubtitleConference2024" lineHeight="45.6px" display="inline-block">
-          {title}
-        </Text>
-      <Text mt={title ? "1.5rem" : "0rem"} fontFamily="smallSubtitleConference2024" fontSize="smallSubtitleConference2024" lineHeight="38.4px">
+      <Inspectable.Text
+        entry={entry}
+        field="label"
+        inspectorProps={inspectorProps}
+        fontFamily="bigSubtitleConference2024"
+        fontSize="bigSubtitleConference2024"
+        lineHeight="45.6px"
+        display="inline-block"
+      >
+        {title}
+      </Inspectable.Text>
+      <Inspectable.Text
+        entry={entry}
+        field="cardBody"
+        inspectorProps={inspectorProps}
+        mt={title ? '1.5rem' : '0rem'}
+        fontFamily="smallSubtitleConference2024"
+        fontSize="smallSubtitleConference2024"
+        lineHeight="38.4px"
+      >
         {body}
-      </Text>
+      </Inspectable.Text>
 
       {downloadFileURL && (
         <>
@@ -143,7 +197,7 @@ export const Conference2024Card: React.FC<CardProps> = ({
             display="flex"
             href={downloadFileURL}
             download={downloadFileTitle}
-            target={newTab ? "_blank" : "_self"}
+            target={newTab ? '_blank' : '_self'}
           >
             <Text max-width="20ch" mr="1.5rem" fontSize="3xs">
               {'Download ' + downloadFileTitle}
@@ -167,7 +221,9 @@ export const CardWithExtended: React.FC<CardProps> = ({
   color,
   downloadFileURL,
   downloadFileTitle,
-  newTab
+  newTab,
+  entry,
+  inspectorProps,
 }) => (
   <Box
     maxWidth={type === 'short' ? '350px' : '550px'}
@@ -177,10 +233,21 @@ export const CardWithExtended: React.FC<CardProps> = ({
     flexDirection="column"
     bg={image ? backgroundColor : 'none'}
     height="100%"
-    {...(link && {as: "a", href: link, textDecoration: 'none', target: newTab ? "_blank" : "_self"})}
+    {...(link && {
+      as: 'a',
+      href: link,
+      textDecoration: 'none',
+      target: newTab ? '_blank' : '_self',
+    })}
   >
     <Box width="inherit" flex="1">
-      <Image src={image} alt={alt} width="100%" height="100%" objectFit="cover" />
+      <Image
+        src={image}
+        alt={alt}
+        width="100%"
+        height="100%"
+        objectFit="cover"
+      />
     </Box>
     <Box
       position="relative"
@@ -192,18 +259,21 @@ export const CardWithExtended: React.FC<CardProps> = ({
       color={color}
     >
       <Box height="auto" width="82%" bg={backgroundColor}>
-          <Text
-            lineHeight="1.5"
-            fontFamily="bodyAlternative"
-            fontSize="sm"
-            pl="20px"
-            mt="0.3rem"
-            mr="1rem"
-            textDecoration="underline"
-            display="inline-block"
-          >
-            {title}
-          </Text>
+        <Inspectable.Text
+          entry={entry}
+          field="label"
+          inspectorProps={inspectorProps}
+          lineHeight="1.5"
+          fontFamily="bodyAlternative"
+          fontSize="sm"
+          pl="20px"
+          mt="0.3rem"
+          mr="1rem"
+          textDecoration="underline"
+          display="inline-block"
+        >
+          {title}
+        </Inspectable.Text>
       </Box>
 
       <Box
@@ -217,7 +287,14 @@ export const CardWithExtended: React.FC<CardProps> = ({
         position="relative"
         flexGrow="1"
       >
-        <Text fontSize="2xs">{body}</Text>
+        <Inspectable.Text
+          entry={entry}
+          field="cardBody"
+          inspectorProps={inspectorProps}
+          fontSize="2xs"
+        >
+          {body}
+        </Inspectable.Text>
 
         {downloadFileURL && (
           <>
@@ -230,7 +307,7 @@ export const CardWithExtended: React.FC<CardProps> = ({
               display="flex"
               href={downloadFileURL}
               download={downloadFileTitle}
-              target={newTab ? "_blank" : "_self"}
+              target={newTab ? '_blank' : '_self'}
               color={color}
             >
               <Text max-width="20ch" mr="1.5rem" fontSize="3xs">

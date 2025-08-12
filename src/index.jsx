@@ -24,6 +24,7 @@ import {
 } from './atoms/Section/Section'
 import Image from './atoms/Image/Image'
 import { Callout, CalloutConference2024 }  from './components/Callout/Callout'
+import { Inspectable } from './atoms/Inspectable'
 
 export {
   Theme,
@@ -50,4 +51,5 @@ export {
   IconMinus,
   Banner,
   LatestNews,
+  Inspectable,
 }

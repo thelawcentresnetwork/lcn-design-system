@@ -8,6 +8,8 @@ import {
   Button,
   Text,
 } from '@chakra-ui/react'
+import { Inspectable } from '../../atoms/Inspectable'
+import type { Entry } from 'contentful'
 
 export interface BannerProps extends StackProps {
   text: string
@@ -15,6 +17,8 @@ export interface BannerProps extends StackProps {
   link?: string
   linkText?: string
   icon?: BoxProps
+  entry?: Entry<any>
+  inspectorProps?: any
 }
 
 export default function Banner({
@@ -23,6 +27,8 @@ export default function Banner({
   link,
   linkText,
   icon,
+  entry,
+  inspectorProps,
   ...stackProps
 }: BannerProps) {
   return (
@@ -38,12 +44,21 @@ export default function Banner({
     >
       <HStack spacing="3" mr="2">
         <>{icon}</>
-        <Text fontWeight="medium" marginEnd="2">
+        <Inspectable.Text
+          entry={entry}
+          field="text"
+          inspectorProps={inspectorProps}
+          fontWeight="medium"
+          marginEnd="2"
+        >
           {text}
-        </Text>
+        </Inspectable.Text>
       </HStack>
       {linkText && (
-        <Button
+        <Inspectable.Button
+          entry={entry}
+          field="linkText"
+          inspectorProps={inspectorProps}
           as="a"
           href={link}
           variant="outline"
@@ -51,7 +66,7 @@ export default function Banner({
           colorScheme="brand.white.500"
         >
           {linkText}
-        </Button>
+        </Inspectable.Button>
       )}
     </Stack>
   )
