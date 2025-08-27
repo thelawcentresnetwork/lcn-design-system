@@ -1,5 +1,7 @@
 import React from 'react'
 import { Stack, Text, Flex } from '@chakra-ui/react'
+import { Inspectable } from '../../atoms/Inspectable'
+import type { Entry } from 'contentful'
 
 export interface StatisticProps {
   statisticOne: string
@@ -7,6 +9,8 @@ export interface StatisticProps {
   statisticTwo?: string
   labelTwo?: string
   textColor?: string
+  entry?: Entry<any>
+  inspectorProps?: any
 }
 
 const Statistic: React.FC<StatisticProps> = ({
@@ -15,6 +19,8 @@ const Statistic: React.FC<StatisticProps> = ({
   statisticTwo,
   labelTwo,
   textColor,
+  entry,
+  inspectorProps,
 }) => (
   <Flex
     bg="inherit"
@@ -28,34 +34,52 @@ const Statistic: React.FC<StatisticProps> = ({
     as="dl"
   >
     <Stack spacing={5}>
-      <Text
+      <Inspectable.Text
+        entry={entry}
+        field="statisticOne"
+        inspectorProps={inspectorProps}
         as="dd"
         fontWeight={600}
         fontFamily="bodyAlternative"
         fontSize="2.5xl"
       >
         {statisticOne}
-      </Text>
-      <Text as="dt" maxWidth="15ch" fontSize="2xs">
-        {' '}
+      </Inspectable.Text>
+      <Inspectable.Text
+        entry={entry}
+        field="labelOne"
+        inspectorProps={inspectorProps}
+        as="dt"
+        maxWidth="15ch"
+        fontSize="2xs"
+      >
         {labelOne}
-      </Text>
+      </Inspectable.Text>
     </Stack>
 
     {statisticTwo && (
       <Stack spacing={5}>
-        <Text
+        <Inspectable.Text
+          entry={entry}
+          field="statisticTwo"
+          inspectorProps={inspectorProps}
           as="dd"
           fontWeight={600}
           fontFamily="bodyAlternative"
           fontSize="2.5xl"
         >
           {statisticTwo}
-        </Text>
-        <Text maxWidth="15ch" as="dt" fontSize="2xs">
-          {' '}
+        </Inspectable.Text>
+        <Inspectable.Text
+          entry={entry}
+          field="labelTwo"
+          inspectorProps={inspectorProps}
+          maxWidth="15ch"
+          as="dt"
+          fontSize="2xs"
+        >
           {labelTwo}
-        </Text>
+        </Inspectable.Text>
       </Stack>
     )}
   </Flex>

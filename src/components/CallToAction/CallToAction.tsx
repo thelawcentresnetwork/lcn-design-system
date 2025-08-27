@@ -8,6 +8,8 @@ import {
   Heading,
   Container,
 } from '@chakra-ui/react'
+import { Inspectable } from '../../atoms/Inspectable'
+import type { Entry } from 'contentful'
 
 export interface CallToActionProps extends BoxProps {
   /** Heading for call to action */
@@ -18,6 +20,8 @@ export interface CallToActionProps extends BoxProps {
   buttonText: string
   /** Main call to action link */
   link: string
+  entry?: Entry<any>
+  inspectorProps?: any
 }
 
 const CallToAction = ({
@@ -25,19 +29,41 @@ const CallToAction = ({
   description,
   buttonText,
   link,
+  entry,
+  inspectorProps,
   ...rest
 }: CallToActionProps) => {
   return (
     <Box as="section" textAlign="center" {...rest}>
-      <Heading as="h2" fontSize="xl" fontWeight="extrabold">
+      <Inspectable.Heading
+        entry={entry}
+        field="heading"
+        inspectorProps={inspectorProps}
+        as="h2"
+        fontSize="xl"
+        fontWeight="extrabold"
+      >
         {heading}
-      </Heading>
-      <Text mt="25px" fontSize="sm">
+      </Inspectable.Heading>
+      <Inspectable.Text
+        entry={entry}
+        field="description"
+        inspectorProps={inspectorProps}
+        mt="25px"
+        fontSize="sm"
+      >
         {description}
-      </Text>
-      <Button mt="25px" as="a" href={link}>
+      </Inspectable.Text>
+      <Inspectable.Button
+        entry={entry}
+        field="buttonText"
+        inspectorProps={inspectorProps}
+        mt="25px"
+        as="a"
+        href={link}
+      >
         {buttonText}
-      </Button>
+      </Inspectable.Button>
     </Box>
   )
 }

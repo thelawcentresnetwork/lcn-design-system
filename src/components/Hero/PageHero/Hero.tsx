@@ -1,6 +1,8 @@
 import React from 'react'
 import { HeroSection } from '../../../atoms/Section/Section'
 import { Box, BoxProps, Heading, Text, Flex } from '@chakra-ui/react'
+import { Inspectable } from '../../../atoms/Inspectable'
+import type { Entry } from 'contentful'
 export interface HeroProps extends BoxProps {
   heading: string
   pageTitle?: string
@@ -10,6 +12,8 @@ export interface HeroProps extends BoxProps {
   image?: string
   imageAlt?: string
   showCardDecoration?: boolean
+  entry?: Entry<any>
+  inspectorProps?: any
 }
 
 const Hero = ({
@@ -21,6 +25,8 @@ const Hero = ({
   image,
   imageAlt,
   showCardDecoration,
+  entry,
+  inspectorProps,
 }: HeroProps) => {
   return (
     <HeroSection
@@ -39,7 +45,10 @@ const Hero = ({
       >
         <Flex justifyContent="flex-start">
           <Box mb="1rem">
-            <Text
+            <Inspectable.Text
+              entry={entry}
+              field="pageTitle"
+              inspectorProps={inspectorProps}
               color={textColour}
               fontFamily="bodyAlternative"
               textTransform="uppercase"
@@ -47,18 +56,24 @@ const Hero = ({
               pb="1rem"
             >
               {pageTitle}
-            </Text>
-            <Heading
-              fontSize={{base: "2xl", sm: "3xl", lg: "4xl"}}
+            </Inspectable.Text>
+            <Inspectable.Heading
+              entry={entry}
+              field="heading"
+              inspectorProps={inspectorProps}
+              fontSize={{ base: '2xl', sm: '3xl', lg: '4xl' }}
               as="h1"
               variant="h1"
               maxWidth="15ch"
               color={textColour}
             >
               {heading}
-            </Heading>
+            </Inspectable.Heading>
             {image && (
-              <Text
+              <Inspectable.Text
+                entry={entry}
+                field="subHeading"
+                inspectorProps={inspectorProps}
                 fontSize="30px"
                 lineHeight="36px"
                 letterSpacing="0.9px"
@@ -69,7 +84,7 @@ const Hero = ({
                 pt="2rem"
               >
                 {subHeading}
-              </Text>
+              </Inspectable.Text>
             )}
 
             <Flex
@@ -79,7 +94,7 @@ const Hero = ({
               left="-50px"
               justifyContent="flex-end"
               flexDirection="column"
-              visibility={{base: "hidden", sm: "visible"}}
+              visibility={{ base: 'hidden', sm: 'visible' }}
             >
               <Box
                 alignSelf="flex-start"
@@ -105,12 +120,23 @@ const Hero = ({
             flexDirection="column"
             maxWidth="500px"
           >
-            <img src={image} alt={imageAlt} height="auto" width="100%" />
+            <Inspectable.Image
+              entry={entry}
+              field="heroImage"
+              inspectorProps={inspectorProps}
+              src={image}
+              alt={imageAlt}
+              height="auto"
+              width="100%"
+            />
           </Box>
         )}
 
         {!image && (
-          <Text
+          <Inspectable.Text
+            entry={entry}
+            field="subHeading"
+            inspectorProps={inspectorProps}
             fontSize="30px"
             lineHeight="36px"
             letterSpacing="0.9px"
@@ -121,7 +147,7 @@ const Hero = ({
             pt="2rem"
           >
             {subHeading}
-          </Text>
+          </Inspectable.Text>
         )}
       </Flex>
     </HeroSection>
